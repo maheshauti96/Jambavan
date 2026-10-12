@@ -1,4 +1,5 @@
-import { CheckCheck, ChevronDown, Filter, X } from "lucide-react";
+import { CheckCheck, ChevronDown, Filter, LayoutGrid, X } from "lucide-react";
+import { TaskFamilyIcon } from "../icons/TaskFamilyIcon";
 import { taskCategories, departments } from "../state/seed";
 import {
   dueTodayCount,
@@ -182,6 +183,7 @@ export function FeedView() {
               aria-pressed={categoryFilter === "All categories"}
               onClick={() => setCategoryFilter("All categories")}
             >
+              <LayoutGrid size={16} strokeWidth={1.75} aria-hidden="true" />
               All<span>{familyTotal}</span>
             </button>
             {taskCategories.map(category => (
@@ -192,6 +194,7 @@ export function FeedView() {
                 aria-pressed={categoryFilter === category}
                 onClick={() => setCategoryFilter(category)}
               >
+                <TaskFamilyIcon category={category} size={16} />
                 {category}
                 <span>{counts[category]}</span>
               </button>

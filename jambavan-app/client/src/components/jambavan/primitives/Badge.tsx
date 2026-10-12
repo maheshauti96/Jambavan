@@ -4,15 +4,13 @@ import { AlertCircle, CircleDashed, Clock3 } from "lucide-react";
 import type { HTMLAttributes, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import {
-  AngadFoot,
   Gada,
   MissionArrow,
   SignalBars,
-  SquirrelStone,
   StrategyScroll,
-  SugrivPennant,
   TargetHit,
 } from "../icons/RamayanaIcons";
+import { TaskFamilyIcon } from "../icons/TaskFamilyIcon";
 import { sourceLabel } from "../state/selectors";
 import type { Status, Task, TaskCategory } from "../state/types";
 
@@ -44,20 +42,11 @@ export function Badge({
   );
 }
 
-const family: Record<TaskCategory, { className: string; icon: ReactNode }> = {
-  Squirrel: {
-    className: "bg-jb-forest-100 text-jb-forest-700",
-    icon: <SquirrelStone />,
-  },
-  Angad: { className: "bg-jb-blue-100 text-jb-blue-700", icon: <AngadFoot /> },
-  Sugriv: {
-    className: "bg-jb-saffron-100 text-jb-saffron-700",
-    icon: <SugrivPennant />,
-  },
-  HANUMAN: {
-    className: "bg-jb-maroon-700 text-jb-cream-50 tracking-[0.04em]",
-    icon: <Gada />,
-  },
+const family: Record<TaskCategory, string> = {
+  Squirrel: "bg-jb-forest-100 text-jb-forest-700",
+  Angad: "bg-jb-blue-100 text-jb-blue-700",
+  Sugriv: "bg-jb-saffron-100 text-jb-saffron-700",
+  HANUMAN: "bg-jb-maroon-700 text-jb-cream-50 tracking-[0.04em]",
 };
 
 /** Task Family: emblem plus name; HANUMAN is a filled maroon pill. */
@@ -68,9 +57,11 @@ export function FamilyBadge({
   category: TaskCategory;
   className?: string;
 }) {
-  const f = family[category];
   return (
-    <Badge className={cn(f.className, className)} icon={f.icon}>
+    <Badge
+      className={cn(family[category], className)}
+      icon={<TaskFamilyIcon category={category} />}
+    >
       {category}
     </Badge>
   );
