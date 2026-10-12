@@ -1237,14 +1237,6 @@ input[type="checkbox"] {
   color: var(--jb-ink);
   background: #fffaf0;
 }
-.leadership-avatars {
-  display: flex;
-  align-items: center;
-  margin-top: 13px;
-}
-.leadership-avatars > span {
-  margin-right: -7px;
-}
 .dashboard-summary > div:first-child small {
   display: block;
   color: var(--jb-earth-600);
@@ -1321,18 +1313,6 @@ input[type="checkbox"] {
   font-size: 13px;
   line-height: 1.55;
   margin: 0 0 16px;
-}
-.coverage-list {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.coverage-list span {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  color: var(--jb-earth-600);
-  font-size: 13px;
 }
 @media (max-width: 760px) {
   .leadership-banner {
@@ -1856,13 +1836,6 @@ input[type="checkbox"] {
 .mom-record-attendance {
   padding-left: 18px;
   border-left: 1px solid #efefe9;
-}
-.attendance-avatars {
-  display: flex;
-  margin: 11px 0 8px;
-}
-.attendance-avatars span {
-  margin-right: -6px;
 }
 .mom-record-attendance p {
   color: var(--jb-earth-600);
@@ -3596,9 +3569,6 @@ input[type="checkbox"] {
   }
   .ack-task-row {
     grid-template-columns: auto 1fr;
-  }
-  .ack-task-row > span {
-    grid-column: 2;
   }
 }
 .self-profile-page {

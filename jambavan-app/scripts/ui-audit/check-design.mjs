@@ -4,7 +4,7 @@ import postcss from 'postcss';
 
 const failures = [];
 function files(dir) { return fs.readdirSync(dir,{withFileTypes:true}).flatMap(entry=>entry.isDirectory()?files(path.join(dir,entry.name)):[path.join(dir,entry.name)]); }
-for (const file of files('client/src/styles').filter(file=>file.endsWith('.css'))) {
+for (const file of files('client/src').filter(file=>file.endsWith('.css'))) {
   postcss.parse(fs.readFileSync(file,'utf8')).walkDecls('font-size',decl=>{
     const pixels=/^([\d.]+)px$/.exec(decl.value);
     if(pixels&&Number(pixels[1])<13)failures.push(`${file}:${decl.source.start.line} has ${decl.value} text`);

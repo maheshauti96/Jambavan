@@ -1,14 +1,14 @@
 /* Shared primitive styles that are awkward as utilities (§3.3, §3.4). */
 
-/* Eyebrow: 12/16, +0.1em, uppercase, sans 600, saffron-700 (the only 12 px style). */
+/* Eyebrow: 13/18, uppercase, sans 600, saffron-700. */
 .jb-eyebrow {
   display: flex;
   align-items: center;
   gap: 6px;
   margin: 0;
   font-family: var(--jb-font-sans);
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 13px;
+  line-height: 18px;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -21,7 +21,12 @@
   inset: 0 0 auto 0;
   height: 4px;
   opacity: 0.55;
-  background-image: repeating-linear-gradient(90deg, var(--jb-gold-600) 0 8px, var(--jb-gold-500) 8px 12px, transparent 12px 16px);
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--jb-gold-600) 0 8px,
+    var(--jb-gold-500) 8px 12px,
+    transparent 12px 16px
+  );
   pointer-events: none;
 }
 

@@ -61,8 +61,8 @@ export function PeopleView() {
               <p>
                 CEO and Directors can see all departments, personal notes, and
                 private tasks. Employees who belong to multiple departments keep
-                separate department feeds. Every member profile requires a photo
-                before activation.
+                separate department feeds. New profiles require a photo before
+                activation.
               </p>
             </div>
             <button
@@ -81,9 +81,8 @@ export function PeopleView() {
                 </span>
                 <h2>Employee profiles</h2>
                 <p>
-                  Every employee profile includes a photograph, contact number,
-                  joining year, position, working hours, weekly off, and
-                  availability status.
+                  Contact details, working hours and availability for each
+                  employee.
                 </p>
               </div>
               <div className="report-actions">

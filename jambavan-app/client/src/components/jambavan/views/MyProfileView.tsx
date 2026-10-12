@@ -48,7 +48,7 @@ export function MyProfileView() {
                 {profileDraft.access}
               </span>
               <small>
-                Profile photograph is compulsory and visible across JAMBAVAN.
+                Your photo or initials identify you in the employee directory.
               </small>
             </article>
             <article className="self-profile-card">

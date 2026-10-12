@@ -177,7 +177,7 @@ export function DashboardView() {
                   <span className="eyebrow">
                     <Bell size={13} /> Deadline watch
                   </span>
-                  <h3>People with overdue tasks</h3>
+                  <h3>Upcoming and overdue tasks</h3>
                 </div>
                 <strong>{deadlineReminders.length}</strong>
               </div>
@@ -204,26 +204,26 @@ export function DashboardView() {
               <div className="attention-card-head">
                 <div>
                   <span className="eyebrow">
-                    <Users size={13} /> Photo indicators
+                    <Users size={13} /> Department contacts
                   </span>
-                  <h3>Reporting relationships</h3>
+                  <h3>Department heads</h3>
                 </div>
-                <strong>4/4</strong>
+                <strong>{departments.length}</strong>
               </div>
-              <p>
-                Every department head is represented with a profile photo so
-                leadership can scan ownership at a glance.
-              </p>
+              <p>The people responsible for each department.</p>
               <div className="coverage-list">
                 {departments.map(dept => (
-                  <span key={dept.name}>
+                  <div key={dept.name}>
                     <Avatar
                       text={initials(dept.lead)}
                       name={dept.lead}
                       tone={dept.color}
                     />
-                    <small>{dept.name}</small>
-                  </span>
+                    <div>
+                      <strong>{dept.lead}</strong>
+                      <small>{dept.name}</small>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
@@ -292,22 +292,24 @@ export function DashboardView() {
                     name={task.assignee}
                     tone={task.department.toLowerCase()}
                   />
-                  <div>
+                  <div className="ack-task-copy">
                     <strong>{task.title}</strong>
                     <span>
                       {task.department} · Owner {task.assignee}
                     </span>
                   </div>
-                  <span>{task.seenBy?.length || 0} seen</span>
-                  <span
-                    className={
-                      task.acknowledgedBy?.length || 0
-                        ? "ack-ok"
-                        : "ack-pending"
-                    }
-                  >
-                    {task.acknowledgedBy?.length || 0} acknowledged
-                  </span>
+                  <div className="ack-task-counts">
+                    <span>{task.seenBy?.length || 0} seen</span>
+                    <span
+                      className={
+                        task.acknowledgedBy?.length || 0
+                          ? "ack-ok"
+                          : "ack-pending"
+                      }
+                    >
+                      {task.acknowledgedBy?.length || 0} acknowledged
+                    </span>
+                  </div>
                 </div>
               ))}
             </div>
@@ -320,8 +322,7 @@ export function DashboardView() {
                 </span>
                 <h3>Reported blockers</h3>
                 <p>
-                  Blocker reasons turn delay into a solvable process
-                  conversation. They are not employee performance labels.
+                  Reasons reported by task owners for work that cannot continue.
                 </p>
               </div>
               <div className="blocker-highlight">
@@ -353,16 +354,16 @@ export function DashboardView() {
               </div>
               <div className="blocker-dashboard-foot">
                 <span>
-                  <strong>{blockerAnalytics.delayedTasks.length}</strong>{" "}
-                  delayed/open process signals
+                  <strong>{blockerAnalytics.delayedTasks.length}</strong> tasks
+                  needing help
                 </span>
                 <span>
                   <strong>{blockerAnalytics.reportedTasks.length}</strong>{" "}
                   check-ins recorded
                 </span>
                 <small>
-                  Leadership can use this view to remove dependencies, clarify
-                  work, and rebalance load.
+                  Use these reports to resolve dependencies and confirm the next
+                  step with the owner.
                 </small>
               </div>
             </div>
@@ -374,10 +375,7 @@ export function DashboardView() {
                   <GitBranch size={13} /> Task dependencies
                 </span>
                 <h3>Task dependencies</h3>
-                <p>
-                  JAMBAVAN follows the chain so managers see the first pending
-                  prerequisite instead of only seeing a late final outcome.
-                </p>
+                <p>Tasks waiting for another task to be completed.</p>
               </div>
               <strong>
                 {dependencyAlerts.length} downstream alert
@@ -429,7 +427,7 @@ export function DashboardView() {
             />
             <TrendChart
               title="Department completion snapshot"
-              subtitle="Current completion rate by department, with photo-led ownership elsewhere in the dashboard."
+              subtitle="Current completion rate for each department."
               labels={completionByDepartment.map(item => item.name.slice(0, 3))}
               series={[
                 {
@@ -446,7 +444,7 @@ export function DashboardView() {
                 <div className="reward-icon">
                   <Trophy size={21} />
                 </div>
-                <span className="eyebrow">Encouragement, not competition</span>
+                <span className="eyebrow">Recognition</span>
               </div>
               <h3>Your completed work</h3>
               <div className="reward-score">
@@ -459,8 +457,8 @@ export function DashboardView() {
                 </b>
               </div>
               <p>
-                On-time completion earns recognition. Missed tasks are a
-                reminder to ask for help, not a public penalty.
+                Completed tasks earn points. Overdue tasks stay listed so you
+                can follow up.
               </p>
               <div className="reward-stats">
                 <span>

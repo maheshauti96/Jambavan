@@ -27,6 +27,18 @@
     "evidence_file": "width-checks.json"
   },
   "browser_console_errors": 0,
+  "guide_followup": {
+    "full_desktop_pages_reviewed": 14,
+    "desktop_viewport": [1440, 1000],
+    "guide_viewports": [1440, 768, 390, 2200],
+    "targeted_phone_views": ["Dashboard", "MOM directory"],
+    "native_size_detail_crops": true,
+    "guide_creation_escape_and_focus_return": "passed",
+    "guide_destination_links": 3,
+    "acknowledgment_rows_desktop_and_phone": "passed",
+    "report": "docs/design/page-review.md",
+    "evidence_subdirectory": "guide-review"
+  },
   "artwork_files": 7,
   "flows": {
     "taskValidation": true,

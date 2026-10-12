@@ -1,4 +1,3 @@
-// "Use template" keep today's copy behaviour.
 import { CalendarDays, Download, FileText, Plus } from "lucide-react";
 import { departments } from "../state/seed";
 import { useJambavan } from "../state/JambavanProvider";
@@ -12,6 +11,8 @@ export function EventPlannerView() {
     exportEventPdf,
     openEventPlanner,
   } = useJambavan();
+  const eventCount = eventPlans.filter(plan => !plan.isTemplate).length;
+  const templateCount = eventPlans.length - eventCount;
   return (
     <>
       {activeView === "eventPlanner" && (
@@ -51,8 +52,8 @@ export function EventPlannerView() {
                 <FileText size={14} /> Event PDF
               </button>
               <span className="event-count">
-                {eventPlans.length} plans ·{" "}
-                {eventPlans.filter(plan => plan.isTemplate).length} templates
+                {eventCount} event{eventCount === 1 ? "" : "s"} ·{" "}
+                {templateCount} template{templateCount === 1 ? "" : "s"}
               </span>
             </div>
           </div>

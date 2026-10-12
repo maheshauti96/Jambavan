@@ -176,13 +176,12 @@ export function AuditLogView() {
           <div className="daily-digest-card">
             <div>
               <span className="eyebrow">
-                <Bell size={13} /> Daily notification digest
+                <Bell size={13} /> Follow-ups
               </span>
               <h3>Pending acknowledgments and expiring notices</h3>
               <p>
-                The digest is ready to send each day. Email delivery needs an
-                enabled Resend or Elastic Email connector; until then, the same
-                digest appears in the in-app notification center.
+                Review tasks that still need confirmation and notices close to
+                expiry.
               </p>
             </div>
             <div className="daily-digest-metrics">
@@ -191,7 +190,7 @@ export function AuditLogView() {
               <strong>{expiringNoticeCount}</strong>
               <span>expiring notices</span>
             </div>
-            <span className="connector-pending">Email connector required</span>
+            <span className="connector-pending">In-app summary</span>
           </div>
         </section>
       )}

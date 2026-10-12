@@ -51,7 +51,7 @@ export function ProfileDialog() {
                 {profileDraft.position} · {profileDraft.department}
               </span>
               <small>
-                Profile photograph is compulsory and already on file.
+                Your photo or initials identify you in the employee directory.
               </small>
             </div>
           </div>

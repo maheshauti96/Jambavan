@@ -9,6 +9,8 @@ const core = /\.(?:avatar|sidebar|main-nav|brand-lockup|brand-mark|workspace-swi
 css.walkComments(node => node.remove());
 css.walkAtRules(node => { if (['import', 'theme', 'custom-variant', 'layer'].includes(node.name)) node.remove(); });
 css.walkRules(rule => {
+  if (rule.selector === '.ack-task-row > span') { rule.remove(); return; }
+  if (/^\.(?:leadership-avatars|attendance-avatars|coverage-list)(?:\s|$)/.test(rule.selector)) { rule.remove(); return; }
   if (rule.selector === ':root' || rule.selector === '.jambavan-app' || /^(?:html|body|\*|button, input, select|button)$/.test(rule.selector) || core.test(rule.selector)) rule.remove();
 });
 const aliases = { ink: 'ink', saffron: 'saffron-700', mint: 'forest-700', coral: 'danger-700', parchment: 'cream-100', shadow: 'e1' };

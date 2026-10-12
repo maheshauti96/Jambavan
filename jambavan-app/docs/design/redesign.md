@@ -14,6 +14,8 @@ The redesign keeps tasks, meeting records, events, notices, employee profiles an
 
 `eventPlans.ts` owns plan replacement and linked-task synchronization. An event edit preserves its ID. New rows create new tasks, removed rows archive their linked tasks, and existing rows retain task progress and history. Templates create no assigned tasks until used.
 
+`GuideView` uses the existing Card component for section padding, borders and radii. The first section has a compact Create task action. Ownership and workflow descriptions use semantic lists. Dashboard acknowledgment rows give the avatar, task copy and counters separate layout classes so the avatar's HTML element cannot change its grid placement.
+
 ## Style structure
 
 `theme/tokens.css` is the palette and type source. `styles/workspace.css` contains the shared interface rules. `scripts/refine-legacy-styles.mjs` produces `styles/sections.css` from the initial screen layouts after removing the old shared layout rules, theme aliases and tiny type. The generated file stays committed so the application does not need Git at runtime.
@@ -24,6 +26,6 @@ The artwork is decorative and has empty alternative text. Essential information 
 
 ## Checks
 
-Run the commands in the application README. `check:design` checks the type floor, stale copy and artwork files. `scripts/ui-audit/dom.js` measures the rendered interface. Inspect desktop, tablet and phone layouts, then test task creation, edit cancellation, completion, archive and restore, blockers, handovers, personal planning, meeting capture, event edits and search.
+Run the commands in the application README. `check:design` checks the type floor in every source CSS file, stale copy and artwork files. `scripts/ui-audit/dom.js` measures the rendered interface. Inspect desktop, tablet and phone layouts, then test task creation, edit cancellation, completion, archive and restore, blockers, handovers, personal planning, meeting capture, event edits and search. Review complete pages in readable detail, including sections below the opening viewport. The page review is recorded in `docs/design/page-review.md`.
 
 Production persistence and authorization remain separate backend work. This redesign preserves the current preview data model.
