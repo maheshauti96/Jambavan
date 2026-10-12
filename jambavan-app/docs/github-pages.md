@@ -9,16 +9,15 @@ pnpm check:pages --base /Jambavan/
 
 The deployable files are in `dist/pages/`. This directory contains only the compiled frontend and its public assets. The build creates `404.html` for recovery links and `.nojekyll` for static branch publishing. The normal local and Express frontend builds use `dist/public/` and remain independent.
 
-## Publishing routes
+## Deployment
 
-GitHub's Pages settings currently require a public repository or an eligible account plan for the private `maheshauti96/Jambavan` repository.
+The source repository `maheshauti96/Jambavan` is public with the user's approval. GitHub Pages uses GitHub Actions as its publishing source.
 
-- A separate public preview repository can contain the compiled files from `dist/pages/`. The source repository and its history stay private. Set the base to the preview repository's name before building.
-- Publishing directly from `Jambavan` requires making that source repository public or upgrading the account plan.
+`.github/workflows/pages.yml` runs when application files or the workflow change on `main`. It can also run manually from the Actions tab. It installs the locked dependencies, checks types and design, runs tests, builds the Pages files and verifies their paths before deploying.
 
-Changing repository visibility exposes source and Git history. Choose the publishing route before changing visibility or creating the public deployment repository.
+The deployment base comes from GitHub's Pages configuration. The build job reads source and Pages metadata; the deploy job can publish Pages and obtain its deployment identity. Actions are pinned to verified commit references. No personal access token or additional secret is required.
 
-For a repository containing compiled files, enable Pages from the `main` branch and the root folder. A source repository can instead use GitHub Actions to build and publish `dist/pages/`.
+Site URL: [Jambavan](https://maheshauti96.github.io/Jambavan/).
 
 ## Verification
 

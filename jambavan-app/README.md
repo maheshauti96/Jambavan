@@ -26,7 +26,7 @@ Set `JAMBAVAN_BASE_PATH` to the repository's Pages path, including both slashes.
 
 Publish only `dist/pages/`. It contains the compiled frontend, local artwork, fonts and a static configuration script. The application router and artwork URLs use the same deployment base. The separate output directory keeps the local preview intact. Root development and the Express build continue to use `/` by default.
 
-The current GitHub account requires a public repository or an eligible plan for Pages. A separate public repository can hold the compiled preview while this source repository stays private. Pages does not run the Express server or database.
+The public repository deploys through `.github/workflows/pages.yml` on changes to `main`. The workflow checks types, design, tests and built asset paths before publishing `dist/pages/`. [Deployment notes](docs/github-pages.md) describe the setup. Pages does not run the Express server or database.
 
 ## Design
 
