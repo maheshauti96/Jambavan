@@ -14,6 +14,8 @@
     "db:migrate": "drizzle-kit migrate",
     "dev:static": "vite --host 0.0.0.0 --port ${PORT:-3000} --strictPort",
     "build:static": "vite build",
+    "build:pages": "vite build --outDir ../dist/pages && node scripts/prepare-pages.mjs",
+    "check:pages": "node scripts/check-pages-build.mjs",
     "check:design": "node scripts/ui-audit/check-design.mjs"
   },
   "dependencies": {

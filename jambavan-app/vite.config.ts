@@ -56,7 +56,7 @@ function writeToLogFile(source: LogSource, entries: unknown[]) {
   const logPath = path.join(LOG_DIR, `${source}.log`);
 
   // Format entries with timestamps
-  const lines = entries.map((entry) => {
+  const lines = entries.map(entry => {
     const ts = new Date().toISOString();
     return `[${ts}] ${JSON.stringify(entry)}`;
   });
@@ -131,7 +131,7 @@ function vitePluginManusDebugCollector(): Plugin {
         }
 
         let body = "";
-        req.on("data", (chunk) => {
+        req.on("data", chunk => {
           body += chunk.toString();
         });
 
@@ -153,24 +153,51 @@ function vitePluginManusDebugCollector(): Plugin {
 // as Express. Runtime-only secrets never enter the browser bundle. Express keeps
 // serving this path dynamically when the application server is selected.
 function vitePluginPublicPlatformConfig(): Plugin {
+  let base = "/";
   return {
     name: "manus-public-platform-config",
+    configResolved(config) {
+      base = config.base;
+    },
+    transformIndexHtml: {
+      order: "post",
+      handler() {
+        return [
+          {
+            tag: "script",
+            attrs: { src: `${base}api/platform/config.js` },
+            injectTo: "head",
+          },
+        ];
+      },
+    },
     configureServer(server) {
-      server.middlewares.use("/api/platform/config.js", (_req, res) => {
+      server.middlewares.use(`${base}api/platform/config.js`, (_req, res) => {
         res.setHeader("Content-Type", "application/javascript");
         res.setHeader("Cache-Control", "no-store");
         res.end(publicPlatformScript());
       });
     },
     generateBundle() {
-      this.emitFile({ type: "asset", fileName: "api/platform/config.js", source: publicPlatformScript() });
+      this.emitFile({
+        type: "asset",
+        fileName: "api/platform/config.js",
+        source: publicPlatformScript(),
+      });
     },
   };
 }
 
-const plugins = [vitePluginPublicPlatformConfig(), react(), tailwindcss(), jsxLocPlugin(), vitePluginManusDebugCollector()];
+const plugins = [
+  vitePluginPublicPlatformConfig(),
+  react(),
+  tailwindcss(),
+  jsxLocPlugin(),
+  vitePluginManusDebugCollector(),
+];
 
 export default defineConfig({
+  base: process.env.JAMBAVAN_BASE_PATH ?? "/",
   plugins,
   resolve: {
     alias: {

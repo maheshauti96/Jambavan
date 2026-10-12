@@ -20,6 +20,14 @@ Configure authentication, database and storage through deployment environment va
 
 The current institute workflows use an in-memory preview model. My day keeps a separate personal plan by date during the current session. Reloading resets the preview model. A frontend build does not enable durable task storage or production role enforcement.
 
+## GitHub Pages preview
+
+Set `JAMBAVAN_BASE_PATH` to the repository's Pages path, including both slashes. For example, `JAMBAVAN_BASE_PATH=/Jambavan/ pnpm build:pages` builds the preview for that project URL. Run `pnpm check:pages --base /Jambavan/` to verify the built assets, public configuration script and 404 fallback.
+
+Publish only `dist/pages/`. It contains the compiled frontend, local artwork, fonts and a static configuration script. The application router and artwork URLs use the same deployment base. The separate output directory keeps the local preview intact. Root development and the Express build continue to use `/` by default.
+
+The current GitHub account requires a public repository or an eligible plan for Pages. A separate public repository can hold the compiled preview while this source repository stays private. Pages does not run the Express server or database.
+
 ## Design
 
 Shared tokens, fonts and reduced-motion behavior live in `client/src/theme/`. `styles/workspace.css` owns shared layout, typography, controls and task cards. `styles/sections.css` retains the existing screen layouts with larger type and normalized foreground colors.

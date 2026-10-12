@@ -19,7 +19,7 @@ export function PageHeader() {
       </div>
       <img
         className="page-artwork"
-        src={`/art/${meta.artwork}.webp`}
+        src={`${import.meta.env.BASE_URL}art/${meta.artwork}.webp`}
         alt=""
         aria-hidden="true"
         width="320"
