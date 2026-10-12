@@ -12,6 +12,20 @@
     "tablet": 14,
     "phone": 14
   },
+  "page_layout": {
+    "shared_max_width_px": 1600,
+    "gutters_px": {
+      "desktop": 28,
+      "tablet": 20,
+      "phone": 16
+    },
+    "scrollbar_gutter": "stable",
+    "shell_layout": "block",
+    "reviewed_width_captures": 42,
+    "wide_screen_checks": 3,
+    "wide_viewport_px": 2200,
+    "evidence_file": "width-checks.json"
+  },
   "browser_console_errors": 0,
   "artwork_files": 7,
   "flows": {

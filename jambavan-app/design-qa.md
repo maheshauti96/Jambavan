@@ -28,6 +28,7 @@ State: light theme, initial institute example data, task feed with task details 
 4. The tablet planner squeezed a time-block title between status and edit controls. The planner now uses one column below 1024 px, with visible labels and a two-column field form. The post-fix tablet capture shows the full title and native time values.
 5. A handover opened from the task menu lost focus on close because its menu item unmounted. The menu now focuses the persistent trigger before opening the dialog. The receiver field receives initial focus, Escape closes the dialog and focus returns to More actions.
 6. Event editing and reuse needed separate operations. Edits keep the event ID and task history. Reuse creates a new draft, and saving a template creates no assigned tasks. UI and unit checks cover these behaviors.
+7. Pages had different widths because an inherited flex shell let the main region shrink to fit each view. The old shell rules were removed from the layout generator. A shared `page-container` now gives the top bar, page content and footer the same 1600 px maximum and responsive side gutters. The document reserves its scrollbar gutter. All 42 desktop, tablet and phone captures were refreshed and reviewed, plus three checks at 2200 px to confirm the shared width cap. Short Projects and My profile pages now align with the scrolling task feed.
 
 ## Interaction checks
 

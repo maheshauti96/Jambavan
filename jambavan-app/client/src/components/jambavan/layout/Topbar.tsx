@@ -48,148 +48,150 @@ export function Topbar() {
   return (
     <>
       <header className="topbar">
-        <button
-          className="mobile-menu icon-button"
-          onClick={() => setShowMobileNav(true)}
-          aria-label="Open menu"
-          aria-expanded={showMobileNav}
-        >
-          <Menu size={20} />
-        </button>
-        <span className="mobile-brand">JAMBAVAN</span>
-        <div className="crumbs">
-          <span>Workspace</span>
-          <span aria-hidden="true">/</span>
-          <strong>{viewMeta[activeView].title}</strong>
-        </div>
-        <div className="top-actions">
+        <div className="topbar-content page-container">
           <button
-            className="search-button"
-            onClick={() => setShowSearch(true)}
-            aria-keyshortcuts="Meta+K Control+K"
+            className="mobile-menu icon-button"
+            onClick={() => setShowMobileNav(true)}
+            aria-label="Open menu"
+            aria-expanded={showMobileNav}
           >
-            <Search size={17} aria-hidden="true" />
-            <span>Search tasks and people</span>
-            <kbd aria-hidden="true">⌘ K</kbd>
+            <Menu size={20} />
           </button>
-          <button
-            className="icon-button search-icon-button"
-            aria-label="Search"
-            onClick={() => setShowSearch(true)}
-          >
-            <Search size={18} />
-          </button>
-          <div className="notification-wrap" ref={wrapRef}>
-            <button
-              ref={bellRef}
-              className="icon-button notification-button"
-              aria-label={
-                unread ? `Notifications, ${unread} unread` : "Notifications"
-              }
-              aria-expanded={showNotifications}
-              aria-controls="notification-panel"
-              onClick={() => setShowNotifications(current => !current)}
-            >
-              <Bell size={18} />
-              {unread > 0 && <i />}
-            </button>
-            {showNotifications && (
-              <div
-                className="notification-panel"
-                id="notification-panel"
-                role="dialog"
-                aria-label="Notifications"
-              >
-                <div className="notification-head">
-                  <div>
-                    <strong>Notifications</strong>
-                    <span>
-                      Assignments, private replies, deadline reminders, and
-                      system updates.
-                    </span>
-                  </div>
-                  <button
-                    className="text-button"
-                    onClick={() => {
-                      setAppNotifications(current =>
-                        current.map(item => ({ ...item, read: true }))
-                      );
-                      setReadReminderIds(
-                        deadlineReminders.map(reminder => reminder.id)
-                      );
-                    }}
-                  >
-                    Mark all read
-                  </button>
-                </div>
-
-                {appNotifications.map(item => (
-                  <button
-                    key={item.id}
-                    className={`live-notification ${item.kind}`}
-                    onClick={() =>
-                      setAppNotifications(current =>
-                        current.map(entry =>
-                          entry.id === item.id
-                            ? { ...entry, read: true }
-                            : entry
-                        )
-                      )
-                    }
-                  >
-                    <span className="reminder-icon">
-                      <Bell size={14} />
-                    </span>
-                    <span className="reminder-copy">
-                      <strong>{item.title}</strong>
-                      <small>{item.detail}</small>
-                    </span>
-                    <em>{item.at}</em>
-                  </button>
-                ))}
-                {deadlineReminders.map(reminder => (
-                  <button
-                    key={`deadline-${reminder.id}`}
-                    className={`reminder-item ${reminder.urgency}`}
-                    onClick={() => {
-                      setReadReminderIds(current =>
-                        current.includes(reminder.id)
-                          ? current
-                          : [...current, reminder.id]
-                      );
-                      setShowNotifications(false);
-                      setActiveView("feed");
-                    }}
-                  >
-                    <span className="reminder-icon">
-                      <Clock3 size={14} />
-                    </span>
-                    <span className="reminder-copy">
-                      <strong>{reminder.task.title}</strong>
-                      <small>
-                        <Avatar
-                          text={reminder.task.initials}
-                          name={reminder.task.assignee}
-                          tone={reminder.task.department.toLowerCase()}
-                        />{" "}
-                        {reminder.task.assignee} +{" "}
-                        {reminder.task.assistants.length} contributor
-                        {reminder.task.assistants.length === 1 ? "" : "s"}
-                      </small>
-                    </span>
-                    <em>{reminder.task.due}</em>
-                  </button>
-                ))}
-                {appNotifications.length === 0 &&
-                  deadlineReminders.length === 0 && (
-                    <p className="empty-notice">
-                      You have no new notifications.
-                    </p>
-                  )}
-              </div>
-            )}
+          <span className="mobile-brand">JAMBAVAN</span>
+          <div className="crumbs">
+            <span>Workspace</span>
+            <span aria-hidden="true">/</span>
+            <strong>{viewMeta[activeView].title}</strong>
           </div>
-          <Avatar text="AM" name="Arjun Mehta" tone="saffron" />
+          <div className="top-actions">
+            <button
+              className="search-button"
+              onClick={() => setShowSearch(true)}
+              aria-keyshortcuts="Meta+K Control+K"
+            >
+              <Search size={17} aria-hidden="true" />
+              <span>Search tasks and people</span>
+              <kbd aria-hidden="true">⌘ K</kbd>
+            </button>
+            <button
+              className="icon-button search-icon-button"
+              aria-label="Search"
+              onClick={() => setShowSearch(true)}
+            >
+              <Search size={18} />
+            </button>
+            <div className="notification-wrap" ref={wrapRef}>
+              <button
+                ref={bellRef}
+                className="icon-button notification-button"
+                aria-label={
+                  unread ? `Notifications, ${unread} unread` : "Notifications"
+                }
+                aria-expanded={showNotifications}
+                aria-controls="notification-panel"
+                onClick={() => setShowNotifications(current => !current)}
+              >
+                <Bell size={18} />
+                {unread > 0 && <i />}
+              </button>
+              {showNotifications && (
+                <div
+                  className="notification-panel"
+                  id="notification-panel"
+                  role="dialog"
+                  aria-label="Notifications"
+                >
+                  <div className="notification-head">
+                    <div>
+                      <strong>Notifications</strong>
+                      <span>
+                        Assignments, private replies, deadline reminders, and
+                        system updates.
+                      </span>
+                    </div>
+                    <button
+                      className="text-button"
+                      onClick={() => {
+                        setAppNotifications(current =>
+                          current.map(item => ({ ...item, read: true }))
+                        );
+                        setReadReminderIds(
+                          deadlineReminders.map(reminder => reminder.id)
+                        );
+                      }}
+                    >
+                      Mark all read
+                    </button>
+                  </div>
+
+                  {appNotifications.map(item => (
+                    <button
+                      key={item.id}
+                      className={`live-notification ${item.kind}`}
+                      onClick={() =>
+                        setAppNotifications(current =>
+                          current.map(entry =>
+                            entry.id === item.id
+                              ? { ...entry, read: true }
+                              : entry
+                          )
+                        )
+                      }
+                    >
+                      <span className="reminder-icon">
+                        <Bell size={14} />
+                      </span>
+                      <span className="reminder-copy">
+                        <strong>{item.title}</strong>
+                        <small>{item.detail}</small>
+                      </span>
+                      <em>{item.at}</em>
+                    </button>
+                  ))}
+                  {deadlineReminders.map(reminder => (
+                    <button
+                      key={`deadline-${reminder.id}`}
+                      className={`reminder-item ${reminder.urgency}`}
+                      onClick={() => {
+                        setReadReminderIds(current =>
+                          current.includes(reminder.id)
+                            ? current
+                            : [...current, reminder.id]
+                        );
+                        setShowNotifications(false);
+                        setActiveView("feed");
+                      }}
+                    >
+                      <span className="reminder-icon">
+                        <Clock3 size={14} />
+                      </span>
+                      <span className="reminder-copy">
+                        <strong>{reminder.task.title}</strong>
+                        <small>
+                          <Avatar
+                            text={reminder.task.initials}
+                            name={reminder.task.assignee}
+                            tone={reminder.task.department.toLowerCase()}
+                          />{" "}
+                          {reminder.task.assignee} +{" "}
+                          {reminder.task.assistants.length} contributor
+                          {reminder.task.assistants.length === 1 ? "" : "s"}
+                        </small>
+                      </span>
+                      <em>{reminder.task.due}</em>
+                    </button>
+                  ))}
+                  {appNotifications.length === 0 &&
+                    deadlineReminders.length === 0 && (
+                      <p className="empty-notice">
+                        You have no new notifications.
+                      </p>
+                    )}
+                </div>
+              )}
+            </div>
+            <Avatar text="AM" name="Arjun Mehta" tone="saffron" />
+          </div>
         </div>
       </header>
       <CommandSearch />

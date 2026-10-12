@@ -42,7 +42,7 @@ export function AppShell() {
       <main className="main-content">
         <Topbar />
 
-        <div className="content-wrap">
+        <div className="content-wrap page-container">
           <PageHeader />
 
           <MyDayView />
@@ -60,9 +60,11 @@ export function AppShell() {
           <MyProfileView />
           <PeopleView />
         </div>
-        <footer className="app-footer">
-          <span>Jambavan Institute</span>
-          <span>Tasks, meetings and responsibilities</span>
+        <footer className="app-footer page-container">
+          <div className="footer-content">
+            <span>Jambavan Institute</span>
+            <span>Tasks, meetings and responsibilities</span>
+          </div>
         </footer>
       </main>
 

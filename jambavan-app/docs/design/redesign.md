@@ -18,6 +18,8 @@ The redesign keeps tasks, meeting records, events, notices, employee profiles an
 
 `theme/tokens.css` is the palette and type source. `styles/workspace.css` contains the shared interface rules. `scripts/refine-legacy-styles.mjs` produces `styles/sections.css` from the initial screen layouts after removing the old shared layout rules, theme aliases and tiny type. The generated file stays committed so the application does not need Git at runtime.
 
+`page-container` sets one 1600 px maximum for the top bar, page content and footer. Their side gutters are 28 px on desktop, 20 px on tablet and 16 px on phones. The shell uses block layout so each view fills the available width regardless of its content. A stable scrollbar gutter keeps short and long pages aligned.
+
 The artwork is decorative and has empty alternative text. Essential information stays in HTML. The seven illustrations use one art direction and are stored locally as WebP files. Their original PNGs were preserved outside the source tree during the design run.
 
 ## Checks
