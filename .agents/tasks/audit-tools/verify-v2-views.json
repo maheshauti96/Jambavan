@@ -1,0 +1,360 @@
+{
+ "console": [
+  {
+   "label": "desktop:roleMatrix",
+   "type": "error",
+   "text": "Each child in a list should have a unique \"key\" prop.%s%s See https://react.dev/link/warning-keys for more information. \n\nCheck the render method of `div`.  It was passed a child from Home."
+  },
+  {
+   "label": "mobile:roleMatrix",
+   "type": "error",
+   "text": "Each child in a list should have a unique \"key\" prop.%s%s See https://react.dev/link/warning-keys for more information. \n\nCheck the render method of `div`.  It was passed a child from Home."
+  }
+ ],
+ "views": {
+  "desktop:navButtons": [
+   {
+    "text": "My feed 3",
+    "active": true
+   },
+   {
+    "text": "My Day",
+    "active": false
+   },
+   {
+    "text": "Department",
+    "active": false
+   },
+   {
+    "text": "Dashboard",
+    "active": false
+   },
+   {
+    "text": "MOM Directory",
+    "active": false
+   },
+   {
+    "text": "Event Planner",
+    "active": false
+   },
+   {
+    "text": "Yearly Calendar",
+    "active": false
+   },
+   {
+    "text": "Notices & feedback",
+    "active": false
+   },
+   {
+    "text": "People",
+    "active": false
+   },
+   {
+    "text": "My profile",
+    "active": false
+   },
+   {
+    "text": "Access matrix",
+    "active": false
+   },
+   {
+    "text": "Audit log",
+    "active": false
+   },
+   {
+    "text": "Workspace settings",
+    "active": false
+   }
+  ],
+  "desktop:feed": {
+   "file": "desktop-01-feed.png",
+   "heading": "Good morning, Arjun",
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:myDay": {
+   "file": "desktop-02-myDay.png",
+   "heading": "My Day",
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:department": {
+   "file": "desktop-03-department.png",
+   "heading": "Department pulse",
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:momDirectory": {
+   "file": "desktop-04-momDirectory.png",
+   "heading": "MOM Directory",
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:dashboard": {
+   "file": "desktop-05-dashboard.png",
+   "heading": "Execution dashboard",
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:calendar": {
+   "file": "desktop-06-calendar.png",
+   "heading": "Yearly Calendar",
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:eventPlanner": {
+   "file": "desktop-07-eventPlanner.png",
+   "heading": "Event Planner",
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:guide": {
+   "file": "desktop-08-guide.png",
+   "heading": "JAMBAVAN Guide",
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:projects": {
+   "file": "desktop-09-projects.png",
+   "heading": "Major responsibilities",
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:people": {
+   "file": "desktop-10-people.png",
+   "heading": "People & hierarchy",
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:myProfile": {
+   "file": "desktop-11-myProfile.png",
+   "heading": "My employee profile",
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:roleMatrix": {
+   "file": "desktop-12-roleMatrix.png",
+   "heading": "Role access matrix",
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:auditLog": {
+   "file": "desktop-13-auditLog.png",
+   "heading": "Audit log",
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "mobile:navButtons": [
+   {
+    "text": "My feed 3",
+    "active": true
+   },
+   {
+    "text": "My Day",
+    "active": false
+   },
+   {
+    "text": "Department",
+    "active": false
+   },
+   {
+    "text": "Dashboard",
+    "active": false
+   },
+   {
+    "text": "MOM Directory",
+    "active": false
+   },
+   {
+    "text": "Event Planner",
+    "active": false
+   },
+   {
+    "text": "Yearly Calendar",
+    "active": false
+   },
+   {
+    "text": "Notices & feedback",
+    "active": false
+   },
+   {
+    "text": "People",
+    "active": false
+   },
+   {
+    "text": "My profile",
+    "active": false
+   },
+   {
+    "text": "Access matrix",
+    "active": false
+   },
+   {
+    "text": "Audit log",
+    "active": false
+   },
+   {
+    "text": "Workspace settings",
+    "active": false
+   }
+  ],
+  "mobile:feed": {
+   "file": "mobile-01-feed.png",
+   "heading": "Good morning, Arjun",
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:myDay": {
+   "file": "mobile-02-myDay.png",
+   "heading": "My Day",
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:department": {
+   "file": "mobile-03-department.png",
+   "heading": "Department pulse",
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:momDirectory": {
+   "file": "mobile-04-momDirectory.png",
+   "heading": "MOM Directory",
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:dashboard": {
+   "file": "mobile-05-dashboard.png",
+   "heading": "Execution dashboard",
+   "overflow": {
+    "scrollWidth": 609,
+    "innerWidth": 609,
+    "overflowX": false
+   }
+  },
+  "mobile:calendar": {
+   "file": "mobile-06-calendar.png",
+   "heading": "Yearly Calendar",
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:eventPlanner": {
+   "file": "mobile-07-eventPlanner.png",
+   "heading": "Event Planner",
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:guide": {
+   "file": "mobile-08-guide.png",
+   "heading": "JAMBAVAN Guide",
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:projects": {
+   "file": "mobile-09-projects.png",
+   "heading": "Major responsibilities",
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:people": {
+   "file": "mobile-10-people.png",
+   "heading": "People & hierarchy",
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:myProfile": {
+   "file": "mobile-11-myProfile.png",
+   "heading": "My employee profile",
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:roleMatrix": {
+   "file": "mobile-12-roleMatrix.png",
+   "heading": "Role access matrix",
+   "overflow": {
+    "scrollWidth": 766,
+    "innerWidth": 766,
+    "overflowX": false
+   }
+  },
+  "mobile:auditLog": {
+   "file": "mobile-13-auditLog.png",
+   "heading": "Audit log",
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  }
+ },
+ "modals": {},
+ "features": {}
+}

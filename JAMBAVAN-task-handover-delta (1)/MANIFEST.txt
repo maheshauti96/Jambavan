@@ -1,0 +1,13 @@
+JAMBAVAN post-3 PM delta
+Baseline: 2b00d0b
+Current: 5f248af
+Feature: Task Handover packages
+
+Apply-ready patch:
+- jambavan-task-handover.patch
+
+Changed files:
+- files/DEVELOPER_HANDOFF.md
+- files/plan.md
+- files/client/src/Home.tsx
+- files/client/src/index.css

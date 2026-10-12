@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mock 2 · JAMBAVAN · TaskCard + Create mission</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Mukta:wght@400;500;600;700&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="jambavan-mock.css" />
+<style>
+  body { background: var(--jb-cream-100); }
+  .board { display: grid; grid-template-columns: minmax(0, 1fr) 600px; gap: 32px; padding: 32px; max-width: 1340px; margin: 0 auto; align-items: start; }
+  .stack { display: grid; gap: 16px; }
+  .backdrop { background: rgba(28,21,18,.55); border-radius: var(--r-xl); padding: 24px; }
+  .backdrop .dialog { margin: 0 auto; }
+  @media (max-width: 1100px) { .board { grid-template-columns: 1fr; padding: 16px; } .backdrop { padding: 0; background: none; } }
+</style>
+</head>
+<body>
+<div class="board">
+  <div class="stack">
+    <p class="artboard-label">TaskCard · expanded details (seed task 4: Squirrel · Manual task · owner = you)</p>
+    <article class="task" style="--fam:var(--jb-forest-700)" aria-labelledby="ta">
+      <div class="top">
+        <span class="badge fam-squirrel"><svg><use href="#i-squirrel"/></svg>Squirrel</span>
+        <span class="badge b-neutral">Manual task</span>
+        <span class="badge b-neutral"><svg><use href="#i-clock"/></svg>Not started</span>
+        <span class="spacer"></span>
+        <button class="icon-btn" aria-label="Edit task: Approve parent orientation deck"><svg width="18" height="18"><use href="#i-pencil"/></svg></button>
+        <button class="icon-btn" aria-label="More actions" aria-expanded="true" aria-haspopup="menu" style="background:var(--jb-cream-200)"><svg width="18" height="18"><use href="#i-more"/></svg></button>
+      </div>
+      <div class="menu" role="menu" aria-label="More actions" style="position:absolute;right:20px;top:64px;z-index:2"><button role="menuitem" class="hl"><svg aria-hidden="true"><use href="#i-handover"/></svg>Hand over task…</button><button role="menuitem"><svg aria-hidden="true"><use href="#i-archive"/></svg>Archive</button></div>
+      <h3 id="ta">Approve parent orientation deck</h3>
+      <div class="meta"><span class="item"><svg><use href="#i-calendar"/></svg>30 Sep</span><span class="item prio" aria-label="Priority: Medium"><svg aria-hidden="true"><use href="#i-sig2"/></svg>Medium</span><span class="item"><svg><use href="#i-lock"/></svg>Private</span><span class="item"><svg><use href="#i-bridge"/></svg>Parent Connect</span></div>
+      <div class="blocker-line"><svg aria-hidden="true"><use href="#i-sanjeevani"/></svg><span><b>Not moving: Too much other work</b> · Reported by Arjun Mehta (you)</span></div>
+      <button class="checkin-btn" aria-expanded="true" aria-controls="ci4"><svg aria-hidden="true"><use href="#i-alert"/></svg>Why is this task not moving?<svg aria-hidden="true" style="transform:rotate(180deg)"><use href="#i-chevron"/></svg></button>
+      <div id="ci4" style="padding:4px 0 2px">
+        <p class="small muted">One click helps management fix process bottlenecks instead of blaming people.</p>
+        <div class="reasons" role="group" aria-label="Why is this task not moving?">
+          <button class="reason" aria-pressed="false">I haven't started</button><button class="reason" aria-pressed="false">Waiting for someone</button><button class="reason" aria-pressed="false">Waiting for information</button><button class="reason" aria-pressed="true"><svg aria-hidden="true"><use href="#i-check"/></svg>Too much other work</button><button class="reason" aria-pressed="false">I don't understand the task</button><button class="reason" aria-pressed="false">Unexpected issue</button><button class="reason" aria-pressed="false">Forgot</button><button class="reason" aria-pressed="false">Other</button>
+        </div>
+        <div class="field" style="margin-top:10px"><label for="ctx4">Context for management (optional)</label><div class="input ph" id="ctx4">e.g. Waiting for principal sign-off</div></div>
+        <button class="btn btn-ghost btn-sm" style="margin-top:6px">It's moving again</button>
+      </div>
+      <div class="owner"><span class="avatar" style="--av:#F7EDCC">YO</span><span><strong>Task Owner · Arjun Mehta (you)</strong><span>Leadership</span></span><span style="flex:1"></span><span class="small muted">0 of 1 parts done</span></div>
+      <div class="progress"><span class="track" aria-hidden="true"><i style="width:0%"></i></span><span>0%</span></div>
+      <div class="actions">
+        <button class="btn btn-primary btn-sm focus-demo"><svg><use href="#i-hit"/></svg>Complete mission</button>
+        <button class="toggle-btn" aria-pressed="false"><svg><use href="#i-checks"/></svg>Mark seen</button>
+        <button class="toggle-btn" aria-pressed="false"><svg><use href="#i-thumb"/></svg>Acknowledge</button>
+        <button class="toggle-btn" aria-pressed="true"><svg><use href="#i-check"/></svg>In My Day</button>
+        <span class="spacer"></span>
+        <button class="btn btn-ghost btn-sm" aria-expanded="true">Hide details<svg style="transform:rotate(180deg)"><use href="#i-chevron"/></svg></button>
+      </div>
+      <div class="details">
+        <div>
+          <h4><svg width="16" height="16"><use href="#i-sena"/></svg>Contributors · 0 of 1 parts done</h4>
+          <button class="chip" aria-pressed="false"><span class="avatar sm" style="--av:#F7EDCC">YO</span>Arjun Mehta (you) · mark part done</button>
+        </div>
+        <div>
+          <h4><svg width="16" height="16"><use href="#i-scroll"/></svg>Subtasks · none yet</h4>
+          <p class="small muted">Break the mission into steps, or complete it as one.</p>
+          <div class="inline-add" style="margin-top:6px"><label class="sr-only" for="ns">New subtask</label><span class="input ph" id="ns">Add a subtask…</span><button class="btn btn-secondary btn-sm"><svg><use href="#i-plus"/></svg>Add</button></div>
+        </div>
+        <div>
+          <h4><svg width="16" height="16"><use href="#i-clip"/></svg>Files &amp; links · none yet</h4>
+          <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-secondary btn-sm">Add Completion Evidence</button><button class="btn btn-secondary btn-sm">Add Task Guidance</button></div>
+        </div>
+      </div>
+    </article>
+
+    <p class="artboard-label">TaskCard · completion micro-reward (600 ms; static under reduced motion). October Launch = mean of its linked tasks 1 and 2, 34% → 50%; Today's journey = tasks 1, 4 and 9, 43% → 53%</p>
+    <article class="task just-done" style="--fam:var(--jb-forest-700)" aria-labelledby="tb">
+      <div class="top">
+        <span class="badge fam-squirrel"><svg><use href="#i-squirrel"/></svg>Squirrel</span>
+        <span class="badge b-neutral"><svg><use href="#i-scroll"/></svg>MOM task</span>
+        <span class="badge b-done"><svg><use href="#i-hit"/></svg>Completed</span>
+      </div>
+      <h3 id="tb" style="color:var(--jb-earth-700)">Finalize October JEE batch timetable</h3>
+      <div class="meta"><span class="item" style="color:var(--jb-forest-700)"><svg><use href="#i-hit"/></svg>Completed by Arjun Mehta (you) · 05 Oct 2026, 3:15 PM</span><button class="btn btn-ghost btn-sm">Reopen</button></div>
+      <div class="reward-setu" role="status" style="margin-top:12px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px 16px;align-items:center;padding:12px 14px;border-radius:var(--r-md);background:var(--jb-gold-100);box-shadow:0 0 0 1px rgba(168,132,20,.35) inset">
+        <div data-setu="50" data-from="34" data-name="October Launch Setu"></div>
+        <p style="font-size:15px;color:var(--jb-ink)"><b>One more stone placed.</b> The October Launch Setu moved forward. Today's journey is now 53%.</p>
+      </div>
+    </article>
+
+    <div class="toast" role="status"><svg width="20" height="20" style="color:#E9C97E"><use href="#i-hit"/></svg><span><b>Mission completed.</b> Today&#39;s journey moved to 53%.</span><button class="close" aria-label="Dismiss notification"><svg width="16" height="16"><use href="#i-x"/></svg></button></div>
+
+    <p class="artboard-label">Empty state · no tasks match</p>
+    <div class="empty">
+      <svg width="88" height="40" viewBox="0 0 88 40" aria-hidden="true"><path d="M4 34c18-12 30 4 44-8s22-14 36-10" stroke="#8A8378" stroke-width="2" stroke-dasharray="3 5" fill="none" stroke-linecap="round"/><rect x="38" y="20" width="12" height="9" rx="3.5" fill="#C9A97E" stroke="#7A5A36"/></svg>
+      <h3>Your journey awaits.</h3>
+      <p>Every great mission begins with one step.</p>
+      <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap"><button class="btn btn-primary"><svg><use href="#i-plus"/></svg>Create mission</button><button class="btn btn-secondary">Clear filters</button></div>
+    </div>
+  </div>
+
+  <div class="backdrop">
+    <p class="artboard-label" style="color:var(--jb-cream-50);background:var(--jb-ink);display:inline-block;padding:4px 10px;border-radius:6px">Create mission dialog · Radix Dialog, focus-trapped, Esc closes, sticky footer</p>
+    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dlg-t" aria-describedby="dlg-d">
+      <div class="dialog-head">
+        <svg class="arrow-art" viewBox="0 0 260 120" preserveAspectRatio="xMaxYMid slice" aria-hidden="true"><defs><linearGradient id="ag" x1="0" x2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="1" stop-color="#FCE9D2"/></linearGradient></defs><rect width="260" height="120" fill="url(#ag)"/><circle cx="214" cy="58" r="30" fill="none" stroke="#E3D3B5" stroke-width="2"/><circle cx="214" cy="58" r="16" fill="none" stroke="#E3D3B5" stroke-width="2"/><circle cx="214" cy="58" r="4" fill="#C9A227" opacity=".7"/><path d="M90 88 210 60" stroke="#C9A227" stroke-width="1.6" stroke-dasharray="2 6" stroke-linecap="round" opacity=".8"/></svg>
+        <div class="eyebrow"><svg width="16" height="16"><use href="#i-arrow"/></svg>New mission</div>
+        <h2 id="dlg-t">Create mission</h2>
+        <p id="dlg-d">Only the Task Owner can complete the task. Contributors report their own part.</p>
+        <button class="icon-btn close" aria-label="Close dialog"><svg width="20" height="20"><use href="#i-x"/></svg></button>
+      </div>
+      <div class="dialog-body">
+        <div class="field">
+          <label for="mt">Mission title <span aria-hidden="true" style="color:var(--jb-danger-700)">*</span></label>
+          <div class="input invalid ph" id="mt" aria-invalid="true" aria-describedby="mt-err">e.g. Confirm next week's faculty roster</div>
+          <div class="err" id="mt-err"><svg width="16" height="16"><use href="#i-alert"/></svg>Give your mission a title to start it.</div>
+        </div>
+        <div class="field">
+          <span class="label" id="fam-l">Task family</span>
+          <div class="family-picker" role="radiogroup" aria-labelledby="fam-l">
+            <div class="family-opt" role="radio" aria-checked="true"><svg style="color:var(--jb-forest-700)"><use href="#i-squirrel"/></svg><strong>Squirrel</strong><span>Small, focused work · one Task Owner</span></div>
+            <div class="family-opt" role="radio" aria-checked="false"><svg style="color:var(--jb-blue-700)"><use href="#i-foot"/></svg><strong>Angad</strong><span>Larger deliverable · optional subtasks</span></div>
+            <div class="family-opt" role="radio" aria-checked="false"><svg style="color:var(--jb-saffron-700)"><use href="#i-pennant"/></svg><strong>Sugriv</strong><span>Team responsibility · Owner + Contributors</span></div>
+            <div class="family-opt" role="radio" aria-checked="false"><svg style="color:var(--jb-maroon-700)"><use href="#i-gada"/></svg><strong>HANUMAN</strong><span>Strategic work over months · updates and milestones</span></div>
+          </div>
+          <div class="hint">Squirrel and Angad have one Task Owner, so switching to them clears Contributors.</div>
+        </div>
+        <div class="form-2">
+          <div class="field"><label>Task Owner</label><div class="select" style="width:100%">You (Arjun Mehta)</div></div>
+          <div class="field"><label>Department</label><div class="select" style="width:100%">Academic</div></div>
+          <div class="field"><label>Deadline</label><div class="select" style="width:100%">03 Oct</div></div>
+          <div class="field"><label>Priority</label><div class="select" style="width:100%">Medium</div></div>
+          <div class="field"><label>Task source</label><div class="select" style="width:100%">Manual task</div></div>
+          <div class="field"><span class="label">Options</span>
+            <div class="row-check"><span class="box"></span><span>Show as team task</span></div>
+            <div class="row-check"><span class="box"></span><span>Keep as HANUMAN mission (long-running, with updates)</span></div>
+          </div>
+        </div>
+        <div class="field">
+          <label for="dep">Depends on</label>
+          <div class="select" id="dep" style="width:100%" aria-describedby="dep-h">No dependency</div>
+          <div class="hint" id="dep-h">Optional. This task shows as waiting until the chosen task is completed.</div>
+        </div>
+        <div class="field">
+          <label for="mb">Mission brief for you</label>
+          <div class="input textarea ph" id="mb">What exactly should the Task Owner do?</div>
+          <div class="hint">Optional. Shown on the card as the owner's responsibility note.</div>
+        </div>
+        <div class="field">
+          <span class="label">Subtasks (optional)</span>
+          <div class="inline-add"><span class="input ph">e.g. Collect faculty availability</span><button class="btn btn-secondary"><svg><use href="#i-plus"/></svg>Add</button></div>
+        </div>
+      </div>
+      <div class="dialog-foot">
+        <button class="btn btn-secondary">Cancel</button>
+        <button class="btn btn-primary"><svg><use href="#i-arrow"/></svg>Start mission</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="jambavan-mock-art.js"></script>
+</body>
+</html>

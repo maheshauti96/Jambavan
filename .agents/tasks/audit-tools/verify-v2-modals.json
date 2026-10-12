@@ -1,0 +1,319 @@
+{
+ "console": [],
+ "views": {},
+ "modals": {
+  "desktop:create-task": {
+   "clicked": "Create task",
+   "file": "desktop-modal-create-task.png",
+   "heading": "Create a task",
+   "clippedBottom": true,
+   "scrollable": false,
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:edit-task-dependency": {
+   "clicked": true,
+   "file": "desktop-modal-edit-task-dependency.png",
+   "heading": "Edit task",
+   "clippedBottom": true,
+   "scrollable": false,
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:handover": {
+   "clicked": "Handover Task",
+   "file": "desktop-modal-handover.png",
+   "heading": "Make this task easy to take over",
+   "clippedBottom": false,
+   "scrollable": false,
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:mom": {
+   "clicked": "Write new MOM",
+   "file": "desktop-modal-mom.png",
+   "heading": "Write meeting MOM",
+   "clippedBottom": false,
+   "scrollable": true,
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:mom-assign-task": {
+   "clicked": "Assign / add task",
+   "file": "desktop-modal-mom-assign-task.png",
+   "heading": "Create a task",
+   "clippedBottom": true,
+   "scrollable": false,
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:event": {
+   "clicked": "Plan an event",
+   "file": "desktop-modal-event.png",
+   "heading": "Plan an event",
+   "clippedBottom": false,
+   "scrollable": true,
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:calendar": {
+   "clicked": "Add calendar event",
+   "file": "desktop-modal-calendar.png",
+   "heading": "Add calendar event",
+   "clippedBottom": false,
+   "scrollable": false,
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:notice": {
+   "clicked": "Send notice",
+   "file": "desktop-modal-notice.png",
+   "heading": "Send a notice",
+   "clippedBottom": false,
+   "scrollable": true,
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:feedback": {
+   "clicked": "Request feedback",
+   "file": "desktop-modal-feedback.png",
+   "heading": "Ask for feedback",
+   "clippedBottom": true,
+   "scrollable": false,
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:attachment": {
+   "clicked": "Add completion evidence",
+   "file": "desktop-modal-attachment.png",
+   "heading": "Add completion evidence",
+   "clippedBottom": false,
+   "scrollable": false,
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:profile": {
+   "clicked": "Manage my profile",
+   "file": "desktop-modal-profile.png",
+   "heading": "Manage my profile",
+   "clippedBottom": false,
+   "scrollable": false,
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:access": {
+   "clicked": "Manage access",
+   "file": "desktop-modal-access.png",
+   "heading": "Add employee",
+   "clippedBottom": false,
+   "scrollable": false,
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:notifications": {
+   "clicked": true,
+   "file": "desktop-modal-notifications.png",
+   "heading": "Live notifications",
+   "clippedBottom": false,
+   "scrollable": false,
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "mobile:create-task": {
+   "clicked": "Create task",
+   "file": "mobile-modal-create-task.png",
+   "heading": "Create a task",
+   "clippedBottom": true,
+   "scrollable": false,
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:edit-task-dependency": {
+   "clicked": true,
+   "file": "mobile-modal-edit-task-dependency.png",
+   "heading": "Edit task",
+   "clippedBottom": true,
+   "scrollable": false,
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:handover": {
+   "clicked": "Handover Task",
+   "file": "mobile-modal-handover.png",
+   "heading": "Make this task easy to take over",
+   "clippedBottom": true,
+   "scrollable": false,
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:mom": {
+   "clicked": "Write new MOM",
+   "file": "mobile-modal-mom.png",
+   "heading": "Write meeting MOM",
+   "clippedBottom": false,
+   "scrollable": true,
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:mom-assign-task": {
+   "clicked": "Assign / add task",
+   "file": "mobile-modal-mom-assign-task.png",
+   "heading": "Create a task",
+   "clippedBottom": true,
+   "scrollable": false,
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:event": {
+   "clicked": "Plan an event",
+   "file": "mobile-modal-event.png",
+   "heading": "Plan an event",
+   "clippedBottom": false,
+   "scrollable": true,
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:calendar": {
+   "clicked": "Add calendar event",
+   "file": "mobile-modal-calendar.png",
+   "heading": "Add calendar event",
+   "clippedBottom": false,
+   "scrollable": true,
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:notice": {
+   "clicked": "Send notice",
+   "file": "mobile-modal-notice.png",
+   "heading": "Send a notice",
+   "clippedBottom": false,
+   "scrollable": true,
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:feedback": {
+   "clicked": "Request feedback",
+   "file": "mobile-modal-feedback.png",
+   "heading": "Ask for feedback",
+   "clippedBottom": true,
+   "scrollable": false,
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:attachment": {
+   "clicked": "Add completion evidence",
+   "file": "mobile-modal-attachment.png",
+   "heading": "Add completion evidence",
+   "clippedBottom": false,
+   "scrollable": false,
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:profile": {
+   "clicked": "Manage my profile",
+   "file": "mobile-modal-profile.png",
+   "heading": "Manage my profile",
+   "clippedBottom": true,
+   "scrollable": false,
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:access": {
+   "clicked": "Manage access",
+   "file": "mobile-modal-access.png",
+   "heading": "Add employee",
+   "clippedBottom": true,
+   "scrollable": false,
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:notifications": {
+   "clicked": true,
+   "file": "mobile-modal-notifications.png",
+   "heading": "Live notifications",
+   "clippedBottom": false,
+   "scrollable": false,
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  }
+ },
+ "features": {}
+}

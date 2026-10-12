@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mock 1 · JAMBAVAN · My feed (Ayodhya dawn)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Mukta:wght@400;500;600;700&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="jambavan-mock.css" />
+<style>
+  .feed-grid { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 24px; align-items: start; }
+  .rail { display: grid; gap: 16px; position: sticky; top: 84px; margin-top: 32px; }
+  .notice-mini { display: grid; gap: 4px; padding: 12px 0; border-top: 1px solid var(--jb-cream-200); }
+  .notice-mini:first-of-type { border-top: 0; }
+  .notice-mini strong { font-size: 15px; }
+  .notice-mini span { font-size: 13px; color: var(--jb-stone-600); }
+  .task-list { display: grid; gap: 14px; }
+  @media (max-width: 1279px) { .feed-grid { grid-template-columns: 1fr; } .rail { position: static; grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 767px) { .rail { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar" aria-label="Main navigation">
+    <div class="brand"><span class="brand-mark"><svg width="22" height="22" style="color:#F7EDCC"><use href="#i-bow"/></svg></span><span><strong>JAMBAVAN</strong><small>Mission command</small></span></div>
+    <div class="nav-group">Workspace</div>
+    <a class="nav-item" aria-current="page" href="#"><svg><use href="#i-home"/></svg>My feed<span class="count" aria-label="6 reminders">6</span></a>
+    <a class="nav-item" href="#"><svg><use href="#i-sunrise"/></svg>My Day</a>
+    <a class="nav-item" href="#"><svg><use href="#i-users"/></svg>Department</a>
+    <a class="nav-item" href="#"><svg><use href="#i-chart"/></svg>Dashboard</a>
+    <div class="nav-group">Execution</div>
+    <a class="nav-item" href="#"><svg><use href="#i-scroll"/></svg>MOM Directory</a>
+    <a class="nav-item" href="#"><svg><use href="#i-calendar"/></svg>Event Planner</a>
+    <a class="nav-item" href="#"><svg><use href="#i-bridge"/></svg>Projects</a>
+    <div class="nav-group">Communication</div>
+    <a class="nav-item" href="#"><svg><use href="#i-calendar"/></svg>Yearly Calendar</a>
+    <a class="nav-item" href="#"><svg><use href="#i-megaphone"/></svg>Notices &amp; feedback</a>
+    <div class="nav-group">People &amp; Control</div>
+    <a class="nav-item" href="#"><svg><use href="#i-sena"/></svg>People</a>
+    <a class="nav-item" href="#"><svg><use href="#i-user"/></svg>My profile</a>
+    <a class="nav-item" href="#"><svg><use href="#i-shield"/></svg>Access matrix</a>
+    <a class="nav-item" href="#"><svg><use href="#i-clock"/></svg>Audit log</a>
+    <div class="sidebar-foot">
+      <a class="nav-item" href="#"><svg><use href="#i-path"/></svg>JAMBAVAN Guide</a>
+      <div class="user-card"><span class="avatar" style="--av:#F7EDCC">AM</span><span><strong>Arjun Mehta</strong><span>Department Head · Academic</span></span></div>
+      <div class="sacred-mini" lang="hi">॥ श्री राम ॥</div>
+    </div>
+  </aside>
+
+  <div>
+    <header class="topbar">
+      <button class="icon-btn mobile-only" aria-label="Open menu"><svg width="22" height="22"><use href="#i-menu"/></svg></button>
+      <div class="crumbs">Workspace / <b>My feed</b></div>
+      <div class="top-actions">
+        <button class="search" aria-label="Search tasks, people and MOMs"><svg width="18" height="18"><use href="#i-search"/></svg><span>Search tasks, people, MOMs…</span><kbd>⌘K</kbd></button>
+        <button class="icon-btn" aria-label="Notifications, 7 unread"><svg width="20" height="20"><use href="#i-bell"/></svg><span class="dot" aria-hidden="true">7</span></button>
+        <span class="avatar" style="--av:#F7EDCC" aria-hidden="true">AM</span>
+      </div>
+    </header>
+
+    <!-- 4-layer SceneBackdrop: env (Ayodhya dawn) / atmosphere / readability scrim / content -->
+    <section class="scene hero" aria-labelledby="hero-title">
+      <div class="l-env" data-env="ayodhya-dawn"></div>
+      <div class="l-atmo"></div>
+      <div class="l-scrim"></div>
+      <div class="hero-copy">
+        <div class="wordmark">JAMBAVAN</div>
+        <h1 id="hero-title">Plan. Act. Complete.</h1>
+        <p class="lede">Good morning, Arjun. 3 active missions are on your path today. Every great mission is completed one step at a time.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary btn-lg"><svg><use href="#i-plus"/></svg>Create mission</button>
+        </div>
+        <p class="inspired">Inspired by the wisdom, courage and teamwork of the Ramayana.</p>
+      </div>
+    </section>
+
+    <main class="content" id="main">
+      <div class="mission-strip">
+        <article class="card ornament-top">
+          <div class="eyebrow"><svg width="16" height="16"><use href="#i-bridge"/></svg>Today's Mission · Journey progress</div>
+          <div data-setu="43" data-name="Today's Mission" style="margin-top:10px"></div>
+          <p class="small muted" style="margin-top:4px">3 active missions · 0 completed today</p>
+        </article>
+        <article class="card stat"><span>My open tasks</span><strong>4</strong><span>2 due today</span></article>
+        <article class="card stat"><span>Needs attention</span><strong style="color:var(--jb-danger-700)">2</strong><span style="display:inline-flex;gap:6px;align-items:center"><svg class="sanj-inline" aria-hidden="true"><use href="#i-sanjeevani"/></svg>1 overdue · 2 blocked</span></article>
+        <article class="card stat"><span>Team follow-ups</span><strong>9</strong><span>Open tasks with contributors</span></article>
+      </div>
+
+      <div class="feed-grid">
+        <div>
+          <div class="section-head">
+            <div><h2>Missions in motion</h2><p>Tasks across you, your team and your department.</p></div>
+            <div class="filters">
+              <span class="select" role="button" aria-label="Department: All departments">All departments</span>
+              <span class="select" role="button" aria-label="Status: All work">All work</span>
+              <span class="select" role="button" aria-label="Show: Active tasks">Active tasks</span>
+            </div>
+          </div>
+          <div class="tabs" role="group" aria-label="Task family" style="margin-bottom:14px">
+            <button class="tab" aria-pressed="true">All <small>12</small></button>
+            <button class="tab"><svg width="16" height="16"><use href="#i-squirrel"/></svg>Squirrel <small>2</small></button>
+            <button class="tab"><svg width="16" height="16"><use href="#i-foot"/></svg>Angad <small>4</small></button>
+            <button class="tab"><svg width="16" height="16"><use href="#i-pennant"/></svg>Sugriv <small>5</small></button>
+            <button class="tab"><svg width="16" height="16"><use href="#i-gada"/></svg>HANUMAN <small>1</small></button>
+          </div>
+
+          <div class="task-list">
+            <article class="task" style="--fam:var(--jb-forest-700)" aria-labelledby="t1">
+              <div class="top">
+                <span class="badge fam-squirrel"><svg><use href="#i-squirrel"/></svg>Squirrel</span>
+                <span class="badge b-neutral"><svg><use href="#i-scroll"/></svg>MOM task</span>
+                <span class="badge b-progress"><svg><use href="#i-clock"/></svg>In progress</span>
+                <span class="spacer"></span>
+                <button class="icon-btn" aria-label="Edit task: Finalize October JEE batch timetable"><svg width="18" height="18"><use href="#i-pencil"/></svg></button>
+                <button class="icon-btn" aria-label="More actions"><svg width="18" height="18"><use href="#i-more"/></svg></button>
+              </div>
+              <h3 id="t1">Finalize October JEE batch timetable</h3>
+              <div class="meta">
+                <span class="item"><svg><use href="#i-calendar"/></svg>Due today</span>
+                <span class="item prio prio-high" aria-label="Priority: High"><svg aria-hidden="true"><use href="#i-sig3"/></svg>High</span>
+                <span class="item"><svg><use href="#i-bridge"/></svg>October Launch</span>
+                <span class="item"><svg><use href="#i-scroll"/></svg>Academic Huddle · 26 Sep</span>
+              </div>
+              <div class="blocker-line"><svg aria-hidden="true"><use href="#i-sanjeevani"/></svg><span><b>Not moving: Waiting for information</b> · Final batch count is still awaited. · Reported by Arjun Mehta (you)</span></div>
+              <button class="checkin-btn" aria-expanded="false"><svg aria-hidden="true"><use href="#i-alert"/></svg>Why is this task not moving?<svg aria-hidden="true"><use href="#i-chevron"/></svg></button>
+              <div class="owner">
+                <span class="avatar" style="--av:#F7EDCC">AM</span>
+                <span><strong>Task Owner · Arjun Mehta (you)</strong><span>Academic Core · Academic</span></span>
+                <span style="flex:1"></span>
+                <span class="avatar-stack" aria-label="Contributors: Priya Nair (part done), Karan Joshi"><span class="avatar sm" style="--av:#E2EEDF">PN</span><span class="avatar sm" style="--av:#E1E9F2">KJ</span></span>
+                <span class="small muted">1 of 2 parts done</span>
+              </div>
+              <div class="progress"><span class="track" aria-hidden="true"><i style="width:68%"></i></span><span>68%</span></div>
+              <div class="actions">
+                <button class="btn btn-primary btn-sm"><svg><use href="#i-hit"/></svg>Complete mission</button>
+                <button class="toggle-btn" aria-pressed="false"><svg><use href="#i-checks"/></svg>Mark seen</button>
+                <button class="toggle-btn" aria-pressed="false"><svg><use href="#i-thumb"/></svg>Acknowledge</button>
+                <button class="toggle-btn" aria-pressed="false"><svg><use href="#i-sunrise"/></svg>Add to My Day</button>
+                <span class="spacer"></span>
+                <button class="btn btn-ghost btn-sm" aria-expanded="false">Details<svg><use href="#i-chevron"/></svg></button>
+              </div>
+            </article>
+
+            <article class="task is-hanuman" aria-labelledby="t7">
+              <div class="lanka-strip" data-env="lanka-strip"></div>
+              <div class="top">
+                <span class="badge fam-hanuman"><svg><use href="#i-gada"/></svg>HANUMAN</span>
+                <span class="badge b-neutral">HANUMAN mission · year-long</span>
+                <span class="badge b-progress"><svg><use href="#i-clock"/></svg>In progress</span>
+                <span class="spacer"></span>
+                <button class="icon-btn" aria-label="Edit task: Build the 2027 Coaching Excellence Gurukul"><svg width="18" height="18"><use href="#i-pencil"/></svg></button>
+                <button class="icon-btn" aria-label="More actions"><svg width="18" height="18"><use href="#i-more"/></svg></button>
+              </div>
+              <h3 id="t7">Build the 2027 Coaching Excellence Gurukul</h3>
+              <div class="meta"><span class="item"><svg><use href="#i-calendar"/></svg>30 Sep 2027</span><span class="item prio prio-high" aria-label="Priority: High"><svg aria-hidden="true"><use href="#i-sig3"/></svg>High</span><span class="item"><svg><use href="#i-scroll"/></svg>1 journal update · 1 of 2 subtasks</span></div>
+              <div style="margin-top:12px" data-setu="24" data-name="HANUMAN journey toward Lanka"></div>
+              <button class="checkin-btn" aria-expanded="false"><svg aria-hidden="true"><use href="#i-alert"/></svg>Why is this task not moving?<svg aria-hidden="true"><use href="#i-chevron"/></svg></button>
+              <div class="actions">
+                <button class="btn btn-primary btn-sm"><svg><use href="#i-hit"/></svg>Complete mission</button>
+                <button class="btn btn-secondary btn-sm"><svg><use href="#i-scroll"/></svg>Post update</button>
+                <button class="toggle-btn" aria-pressed="false"><svg><use href="#i-checks"/></svg>Mark seen</button>
+                <button class="toggle-btn" aria-pressed="false"><svg><use href="#i-thumb"/></svg>Acknowledge</button>
+                <button class="toggle-btn" aria-pressed="false"><svg><use href="#i-sunrise"/></svg>Add to My Day</button>
+                <span class="spacer"></span>
+                <button class="btn btn-ghost btn-sm" aria-expanded="false">Journal &amp; details<svg><use href="#i-chevron"/></svg></button>
+              </div>
+            </article>
+
+            <article class="task" style="--fam:var(--jb-saffron-700)" aria-labelledby="t6">
+              <div class="top">
+                <span class="badge fam-sugriv"><svg><use href="#i-pennant"/></svg>Sugriv</span>
+                <span class="badge b-neutral">Manual task</span>
+                <span class="badge b-blocked"><svg><use href="#i-alert"/></svg>Blocked</span>
+                <span class="spacer"></span>
+                <button class="icon-btn" aria-label="Edit task: Resolve projector issue in Room 204"><svg width="18" height="18"><use href="#i-pencil"/></svg></button>
+                <button class="icon-btn" aria-label="More actions"><svg width="18" height="18"><use href="#i-more"/></svg></button>
+              </div>
+              <h3 id="t6">Resolve projector issue in Room 204</h3>
+              <div class="meta"><span class="item overdue"><svg aria-hidden="true"><use href="#i-sanjeevani"/></svg>Overdue by 2 days</span><span class="item prio prio-high" aria-label="Priority: High"><svg aria-hidden="true"><use href="#i-sig3"/></svg>High</span><span class="item"><svg><use href="#i-users"/></svg>Team task</span></div>
+              <div class="blocker-line"><svg aria-hidden="true"><use href="#i-sanjeevani"/></svg><span><b>Not moving: Unexpected issue</b> · Projector replacement part has not arrived. · Reported by Vikram Nair</span></div>
+              <button class="checkin-btn" aria-expanded="false"><svg aria-hidden="true"><use href="#i-alert"/></svg>Why is this task not moving?<svg aria-hidden="true"><use href="#i-chevron"/></svg></button>
+              <div class="owner"><span class="avatar" style="--av:#E1E9F2">VN</span><span><strong>Task Owner · Vikram Nair</strong><span>Operations</span></span><span style="flex:1"></span><span class="avatar-stack" aria-label="Contributors: Vikram Nair, Omkar Patil"><span class="avatar sm" style="--av:#E1E9F2">VN</span><span class="avatar sm" style="--av:#E1E9F2">OP</span></span><span class="small muted">0 of 2 parts done</span></div>
+              <div class="progress"><span class="track" aria-hidden="true"><i style="width:20%"></i></span><span>20%</span></div>
+              <div class="actions">
+                <span class="owner-note"><svg width="16" height="16"><use href="#i-shield"/></svg>Only the Task Owner completes</span>
+                <button class="toggle-btn" aria-pressed="false"><svg><use href="#i-checks"/></svg>Mark seen</button>
+                <button class="toggle-btn" aria-pressed="false"><svg><use href="#i-thumb"/></svg>Acknowledge</button>
+                <span class="spacer"></span>
+                <button class="btn btn-ghost btn-sm" aria-expanded="false">Details<svg><use href="#i-chevron"/></svg></button>
+              </div>
+            </article>
+
+            <article class="task" style="--fam:var(--jb-saffron-700)" aria-labelledby="t10">
+              <div class="top">
+                <span class="badge fam-sugriv"><svg><use href="#i-pennant"/></svg>Sugriv</span>
+                <span class="badge b-neutral">Project responsibility</span>
+                <span class="badge b-neutral"><svg><use href="#i-clock"/></svg>Not started</span>
+                <span class="spacer"></span>
+                <button class="icon-btn" aria-label="Edit task: Send approved poster to schools"><svg width="18" height="18"><use href="#i-pencil"/></svg></button>
+                <button class="icon-btn" aria-label="More actions"><svg width="18" height="18"><use href="#i-more"/></svg></button>
+              </div>
+              <h3 id="t10">Send approved poster to schools</h3>
+              <div class="dep-line"><div data-chain="d,b,w,w,w" data-focus="2" aria-label="Admission Campaign chain: 1 of 5 stones placed. Held at Approve admission campaign poster (Blocked). This task is stone 3."></div><span>Waiting on <b>Approve admission campaign poster</b> · Blocked</span></div>
+              <div class="meta"><span class="item"><svg><use href="#i-calendar"/></svg>Tomorrow</span><span class="item prio prio-high" aria-label="Priority: High"><svg aria-hidden="true"><use href="#i-sig3"/></svg>High</span><span class="item"><svg><use href="#i-scroll"/></svg>Admission Campaign playbook</span></div>
+              <div class="owner"><span class="avatar" style="--av:#E2EEDF">NK</span><span><strong>Task Owner · Neha Kapoor</strong><span>Admission Campaign · Admissions</span></span><span style="flex:1"></span><span class="avatar-stack" aria-label="Contributors: Aditi Rao"><span class="avatar sm" style="--av:#E2EEDF">AR</span></span><span class="small muted">0 of 1 parts done</span></div>
+              <div class="actions">
+                <span class="owner-note"><svg width="16" height="16"><use href="#i-shield"/></svg>Only the Task Owner completes</span>
+                <button class="toggle-btn" aria-pressed="false"><svg><use href="#i-checks"/></svg>Mark seen</button>
+                <button class="toggle-btn" aria-pressed="false"><svg><use href="#i-thumb"/></svg>Acknowledge</button>
+                <span class="spacer"></span>
+                <button class="btn btn-ghost btn-sm" aria-expanded="false">Details<svg><use href="#i-chevron"/></svg></button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <aside class="rail" aria-label="Notices and feedback">
+          <section class="card">
+            <div class="eyebrow"><svg width="16" height="16"><use href="#i-megaphone"/></svg>Latest notices</div>
+            <div style="margin-top:8px">
+              <div class="notice-mini"><strong>October test timetable</strong><span>Academic · Reply requested · 05 Oct, 9:10 AM</span><button class="toggle-btn" aria-pressed="false" style="justify-self:start"><svg><use href="#i-checks"/></svg>Seen by me</button></div>
+              <div class="notice-mini"><strong>Parent orientation reminder</strong><span>Audio note · 04 Oct, 4:40 PM</span><button class="toggle-btn" aria-pressed="true" style="justify-self:start"><svg><use href="#i-checks"/></svg>Seen by me</button></div>
+            </div>
+            <button class="btn btn-secondary btn-sm" style="width:100%;margin-top:8px">Open notices &amp; feedback</button>
+          </section>
+          <section class="card">
+            <div class="eyebrow"><svg width="16" height="16"><use href="#i-users"/></svg>Feedback requests</div>
+            <p style="margin-top:8px;font-weight:600">Faculty development pulse</p>
+            <p class="small muted">Open question · waiting for your answer</p>
+          </section>
+        </aside>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="jambavan-mock-art.js"></script>
+</body>
+</html>

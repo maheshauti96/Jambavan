@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mock 3 · JAMBAVAN · Projects + Dashboard with Ram Setu progress</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Mukta:wght@400;500;600;700&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="jambavan-mock.css" />
+<style>
+  .project .head { display: flex; align-items: center; gap: 8px; }
+  .project .head .spacer { flex: 1; }
+  .project h3 { font-family: var(--font-display); font-size: 26px; font-weight: 600; margin: 10px 0 6px; }
+  .project .foot { display: flex; justify-content: space-between; font-size: 14px; color: var(--jb-earth-600); margin-top: 10px; }
+  .stages { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }
+  .stages .card { padding: 14px; }
+  .stages .card p { font-size: 13px; font-weight: 600; color: var(--jb-stone-600); }
+  .reflect { position: relative; isolation: isolate; overflow: hidden; color: var(--jb-cream-50); padding: 0; background: var(--jb-night-900); }
+  .reflect .l-env { position: absolute; inset: 0; z-index: -2; }
+  .reflect .l-env svg { width: 100%; height: 100%; }
+  .reflect { --text-zone-end: 62%; }
+  /* dark scrim contract (review H2): night-900 at .92 across the text box, fade only beyond it */
+  .reflect .l-scrim { position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgb(28 21 18 / .92) 0%, rgb(28 21 18 / .92) var(--text-zone-end), rgb(28 21 18 / 0) calc(var(--text-zone-end) + 22%)); }
+  .reflect .inner { padding: 22px; max-width: min(520px, 58%); }
+  @media (max-width: 767px) { .reflect .inner { max-width: none; } .reflect .l-scrim { background: rgb(28 21 18 / .92); } }
+  .proj-src { font-size: 13px; color: var(--jb-stone-600); margin-top: 2px; }
+  .band-actions { margin-top: 14px; }
+  /* RamSetuProgress size sm (proposal §10.2): 40 px tall SVG, no stage row; the % stays as text in the row */
+  [data-size="sm"] { max-width: none; }
+  [data-size="sm"] .setu { height: 40px; width: 100%; }
+  @media (max-width: 767px) {
+    .dept-row.has-setu { grid-template-columns: 1fr auto; row-gap: 6px; }
+    .dept-row.has-setu [data-setu] { grid-column: 1 / -1; order: 3; }
+  }
+  .sanj { display: flex; gap: 16px; align-items: center; }
+  .sanj svg { width: 48px; height: 48px; color: var(--jb-forest-700); flex: none; }
+  .reflect .quote { color: #F7EDCC; font-size: 24px; }
+  .reflect .quote-tr { color: var(--jb-cream-100); }
+  .reflect .eyebrow { color: #F7C873; }
+  @media (max-width: 1023px) { .stages { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 767px) { .stages { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+</style>
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar" aria-label="Main navigation">
+    <div class="brand"><span class="brand-mark"><svg width="22" height="22" style="color:#F7EDCC"><use href="#i-bow"/></svg></span><span><strong>JAMBAVAN</strong><small>Mission command</small></span></div>
+    <div class="nav-group">Workspace</div>
+    <a class="nav-item" href="#"><svg><use href="#i-home"/></svg>My feed<span class="count" aria-label="6 reminders">6</span></a>
+    <a class="nav-item" href="#"><svg><use href="#i-sunrise"/></svg>My Day</a>
+    <a class="nav-item" href="#"><svg><use href="#i-users"/></svg>Department</a>
+    <a class="nav-item" href="#"><svg><use href="#i-chart"/></svg>Dashboard</a>
+    <div class="nav-group">Execution</div>
+    <a class="nav-item" href="#"><svg><use href="#i-scroll"/></svg>MOM Directory</a>
+    <a class="nav-item" href="#"><svg><use href="#i-calendar"/></svg>Event Planner</a>
+    <a class="nav-item" aria-current="page" href="#"><svg><use href="#i-bridge"/></svg>Projects</a>
+    <div class="nav-group">Communication</div>
+    <a class="nav-item" href="#"><svg><use href="#i-calendar"/></svg>Yearly Calendar</a>
+    <a class="nav-item" href="#"><svg><use href="#i-megaphone"/></svg>Notices &amp; feedback</a>
+    <div class="nav-group">People &amp; Control</div>
+    <a class="nav-item" href="#"><svg><use href="#i-sena"/></svg>People</a>
+    <a class="nav-item" href="#"><svg><use href="#i-user"/></svg>My profile</a>
+    <a class="nav-item" href="#"><svg><use href="#i-shield"/></svg>Access matrix</a>
+    <a class="nav-item" href="#"><svg><use href="#i-clock"/></svg>Audit log</a>
+    <div class="sidebar-foot">
+      <a class="nav-item" href="#"><svg><use href="#i-path"/></svg>JAMBAVAN Guide</a>
+      <div class="user-card"><span class="avatar" style="--av:#F7EDCC">AM</span><span><strong>Arjun Mehta</strong><span>Department Head · Academic</span></span></div>
+    </div>
+  </aside>
+  <div>
+    <header class="topbar">
+      <button class="icon-btn mobile-only" aria-label="Open menu"><svg width="22" height="22"><use href="#i-menu"/></svg></button>
+      <div class="crumbs">Execution / <b>Projects</b></div>
+      <div class="top-actions">
+        <button class="search" aria-label="Search tasks, people and MOMs"><svg width="18" height="18"><use href="#i-search"/></svg><span>Search tasks, people, MOMs…</span><kbd>⌘K</kbd></button>
+        <button class="icon-btn" aria-label="Notifications, 7 unread"><svg width="20" height="20"><use href="#i-bell"/></svg><span class="dot" aria-hidden="true">7</span></button>
+      </div>
+    </header>
+
+    <section class="scene band" aria-labelledby="pj-title">
+      <div class="l-env" data-env="setu-shore"></div><div class="l-atmo"></div><div class="l-scrim"></div>
+      <div class="scene-copy">
+        <div class="eyebrow"><svg width="16" height="16"><use href="#i-bridge"/></svg>Execution · Journey progress</div>
+        <h1 id="pj-title">Projects</h1>
+        <p>Every project is a Setu. Each completed task moves the Setu forward.</p>
+        <div class="band-actions"><button class="btn btn-primary"><svg><use href="#i-plus"/></svg>Create mission</button></div>
+      </div>
+    </section>
+
+    <main class="content">
+      <div class="grid-3" style="margin-top:4px">
+        <article class="card project ornament-top">
+          <div class="head"><span class="badge b-neutral">Admissions + Academic</span><span class="spacer"></span></div>
+          <h3>October Launch</h3>
+          <div data-setu="34" data-name="October Launch"></div>
+          <p class="proj-src">From 2 linked tasks</p>
+          <div class="foot"><span>2 open · 0 completed</span><span>Launches 03 Oct</span></div>
+          <button class="btn btn-secondary btn-sm" style="margin-top:12px">View tasks<svg aria-hidden="true"><use href="#i-arrowright"/></svg></button>
+        </article>
+        <article class="card project ornament-top">
+          <div class="head"><span class="badge b-neutral">Leadership + Operations</span></div>
+          <h3>Parent Connect</h3>
+          <div data-setu="0" data-name="Parent Connect"></div>
+          <p class="proj-src">From 1 linked task</p>
+          <div class="foot"><span>1 open · 0 completed</span><span>Review 10 Oct</span></div>
+          <button class="btn btn-secondary btn-sm" style="margin-top:12px">View tasks<svg aria-hidden="true"><use href="#i-arrowright"/></svg></button>
+        </article>
+        <article class="card project ornament-top">
+          <div class="head"><span class="badge b-neutral">Academic</span></div>
+          <h3>Faculty Excellence</h3>
+          <div data-setu="24" data-name="Faculty Excellence"></div>
+          <p class="proj-src">From 1 linked task</p>
+          <div class="foot"><span>1 open · 0 completed</span><span>Quarterly</span></div>
+          <button class="btn btn-secondary btn-sm" style="margin-top:12px">View tasks<svg aria-hidden="true"><use href="#i-arrowright"/></svg></button>
+        </article>
+      </div>
+
+      <div class="section-head"><div><h2>Ram Setu stages</h2><p>Reference for the progress component: 20 stones, numeric value always shown, completion lights the far-shore diya.</p></div></div>
+      <div class="stages">
+        <div class="card"><p>0–19%</p><div data-setu="2" data-name="Stage 1"></div></div>
+        <div class="card"><p>20–39%</p><div data-setu="30" data-name="Stage 2"></div></div>
+        <div class="card"><p>40–59%</p><div data-setu="50" data-name="Stage 3"></div></div>
+        <div class="card"><p>60–79%</p><div data-setu="70" data-name="Stage 4"></div></div>
+        <div class="card"><p>80–99%</p><div data-setu="99" data-name="Stage 5"></div></div>
+        <div class="card"><p>100%</p><div data-setu="100" data-name="Complete"></div></div>
+      </div>
+
+      <div class="section-head"><div><h2>Execution dashboard · preview</h2><p>Leadership view. Jambavan's reflection band replaces the generic banner.</p></div></div>
+      <div class="grid-2">
+        <article class="card">
+          <div class="eyebrow"><svg width="16" height="16"><use href="#i-bridge"/></svg>Institute completion · this week</div>
+          <div data-setu="69" data-name="Institute completion" style="margin-top:10px"></div>
+          <div style="margin-top:14px">
+            <div class="dept-row has-setu"><strong>Academic</strong><div data-setu="76" data-compact="1" data-size="sm" data-name="Academic"></div><strong>76%</strong><span class="small muted hide-sm">14 open · Arjun Mehta</span></div>
+            <div class="dept-row has-setu"><strong>Admissions</strong><div data-setu="64" data-compact="1" data-size="sm" data-name="Admissions"></div><strong>64%</strong><span class="small muted hide-sm">11 open · Neha Kapoor</span></div>
+            <div class="dept-row has-setu"><strong>Operations</strong><div data-setu="52" data-compact="1" data-size="sm" data-name="Operations"></div><strong>52%</strong><span class="small muted hide-sm">9 open · Ritesh Shah</span></div>
+            <div class="dept-row has-setu"><strong>Marketing</strong><div data-setu="83" data-compact="1" data-size="sm" data-name="Marketing"></div><strong>83%</strong><span class="small muted hide-sm">4 open · Sana Iyer</span></div>
+          </div>
+        </article>
+        <article class="card reflect">
+          <div class="l-env" data-env="jambavan-dusk"></div><div class="l-scrim"></div>
+          <div class="inner">
+            <div class="eyebrow"><svg width="16" height="16"><use href="#i-scroll"/></svg>Jambavan's reflection</div>
+            <p class="quote" lang="hi" style="margin-top:12px">धर्मो रक्षति रक्षितः</p>
+            <p class="quote-tr">Dharma protects those who protect it.</p>
+            <p style="margin-top:14px;font-size:16px">Operations is 31 points behind Marketing. 2 missions are overdue or blocked across 2 departments. A short check-in with each Task Owner may unblock them.</p>
+            <button class="btn btn-secondary btn-sm" style="margin-top:14px">Review deadline watch</button>
+          </div>
+        </article>
+      </div>
+      <div class="grid-2" style="margin-top:20px">
+      <article class="card sanj" aria-labelledby="sj"><svg aria-hidden="true"><use href="#i-sanjeevani"/></svg><div><div class="eyebrow">Needs attention · 0 <span class="small" style="text-transform:none;letter-spacing:0">(empty-state variant)</span></div><h3 id="sj" style="font-family:var(--font-display);font-size:24px;margin-top:6px">No mission needs rescue today.</h3><p class="muted" style="font-size:15px">Nothing is overdue or blocked.</p></div></article>
+      <div class="empty" style="margin:0">
+        <svg width="120" height="30" viewBox="0 0 120 30" aria-hidden="true"><rect y="18" width="120" height="12" fill="#E1E9F2"/><path d="M0 30V12q8-4 16-2l6 8v12z" fill="#4E3A2A"/><rect x="26" y="14" width="10" height="7" rx="3" fill="#C9A97E" stroke="#7A5A36"/><rect x="40" y="14" width="10" height="7" rx="3" fill="none" stroke="#8A8378" stroke-dasharray="2 2"/></svg>
+        <h3>The Setu has not yet begun.</h3>
+        <p>Choose your mission and start placing the first stone.</p>
+      </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="jambavan-mock-art.js"></script>
+</body>
+</html>

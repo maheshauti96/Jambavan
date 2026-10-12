@@ -1,0 +1,17 @@
+/* Ram Setu progress (§10.2, §8): newly placed stones settle with a 30 ms stagger (delay set inline), ≤ 400 ms.
+   The base.css reduced-motion kill switch reduces this to an instant change. */
+@keyframes jb-setu-settle {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.jb-setu-fresh {
+  animation: jb-setu-settle 280ms var(--motion-ease) both;
+  transform-box: fill-box;
+}

@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mock 4 · JAMBAVAN · My Day (Daily Dharma), Task Handover, leadership panels</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Mukta:wght@400;500;600;700&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="jambavan-mock.css" />
+<style>
+  .myday-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+  .myday-grid .wide { grid-column: 1 / -1; }
+  .card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .card-head h2 { font-size: 24px; margin-top: 4px; }
+  .sub { font-size: 14px; color: var(--jb-earth-600); margin-top: 2px; }
+  .pill { min-width: 28px; height: 28px; padding: 0 10px; border-radius: 999px; background: var(--jb-cream-200); color: var(--jb-earth-700); font-size: 13px; font-weight: 600; display: inline-grid; place-items: center; white-space: nowrap; }
+  .arrow-row { display: flex; gap: 12px; align-items: center; min-height: 48px; border-top: 1px solid var(--jb-cream-200); font-size: 16px; }
+  .arrow-row:first-of-type { border-top: 0; }
+  .arrow-row svg { width: 20px; height: 20px; color: var(--jb-saffron-700); flex: none; }
+  .arrow-row.done span.t { color: var(--jb-earth-600); text-decoration: line-through; }
+  .arrow-row.done svg { color: var(--jb-forest-700); }
+  .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; padding: 12px 0; border-top: 1px solid var(--jb-cream-200); }
+  .row:first-of-type { border-top: 0; }
+  .row .time { font-weight: 700; font-size: 15px; min-width: 104px; }
+  .row .grow { flex: 1; min-width: 160px; }
+  .row .grow strong { display: block; font-size: 16px; }
+  .row .grow span { font-size: 14px; color: var(--jb-earth-600); }
+  .row.editing { background: var(--jb-gold-100); border-radius: var(--r-md); padding: 12px; box-shadow: 0 0 0 1px rgba(168,132,20,.4) inset; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 12px; margin-top: 12px; }
+  .form-grid .field { margin: 0; }
+  .form-grid .full { grid-column: 1 / -1; }
+  .actions-end { display: flex; gap: 8px; justify-content: flex-end; flex-wrap: wrap; margin-top: 10px; }
+  .privacy { display: flex; gap: 8px; align-items: center; margin-top: 10px; font-size: 14px; color: var(--jb-earth-700); }
+  .privacy svg { width: 16px; height: 16px; color: var(--jb-maroon-700); flex: none; }
+  .date-ctl { display: flex; gap: 8px; align-items: flex-end; margin-top: 14px; flex-wrap: wrap; }
+  .date-ctl .field { margin: 0; }
+  .date-ctl .input { min-width: 180px; }
+  .review { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 12px; }
+  .review .textarea { min-height: 96px; }
+  .panel-head { display: flex; gap: 14px; align-items: flex-start; }
+  .panel-head > svg { width: 40px; height: 40px; flex: none; color: var(--jb-danger-700); }
+  .headline { font-size: 18px; font-weight: 600; margin-top: 14px; }
+  .bars { display: grid; gap: 10px; margin-top: 14px; }
+  .bar { display: grid; grid-template-columns: 170px 1fr 64px; gap: 10px; align-items: center; font-size: 14px; }
+  .bar .tr { height: 10px; border-radius: 10px; background: var(--jb-cream-200); overflow: hidden; }
+  .bar .tr i { display: block; height: 100%; background: var(--jb-earth-700); border-radius: 10px; }
+  .bar strong { text-align: right; }
+  .foot-line { font-size: 14px; color: var(--jb-earth-600); margin-top: 14px; border-top: 1px solid var(--jb-cream-200); padding-top: 10px; }
+  .held { margin-top: 14px; padding: 14px; border-radius: var(--r-md); border: 1px solid var(--jb-sand-300); background: var(--jb-cream-50); }
+  .held h3 { font-size: 16px; }
+  .held ol { margin: 10px 0 0; padding-left: 20px; font-size: 14px; color: var(--jb-earth-700); display: grid; gap: 4px; }
+  .held ol b { color: var(--jb-ink); font-weight: 600; }
+  .backdrop { background: rgba(28,21,18,.55); border-radius: var(--r-xl); padding: 24px; }
+  .backdrop .dialog { margin: 0 auto; max-width: 560px; }
+  .sumbox { padding: 12px 14px; border-radius: var(--r-md); background: var(--jb-cream-100); border: 1px solid var(--jb-sand-300); display: grid; gap: 4px; font-size: 14px; color: var(--jb-earth-700); }
+  .sumbox strong { font-size: 16px; color: var(--jb-ink); }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+  @media (max-width: 1100px) { .two { grid-template-columns: 1fr; } }
+  @media (max-width: 1023px) { .myday-grid, .review { grid-template-columns: 1fr; } }
+  @media (max-width: 1023px) { .top-actions .hide-sm { display: none; } }
+  @media (max-width: 767px) { .form-grid { grid-template-columns: 1fr; } .bar { grid-template-columns: 1fr 52px; } .bar .tr { grid-column: 1 / -1; grid-row: 2; } .backdrop { padding: 0; background: none; } .dialog { border-radius: var(--r-xl) var(--r-xl) 0 0; } .date-ctl .input { min-width: 0; flex: 1; } }
+</style>
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar" aria-label="Main navigation">
+    <div class="brand"><span class="brand-mark"><svg width="22" height="22" style="color:#F7EDCC"><use href="#i-bow"/></svg></span><span><strong>JAMBAVAN</strong><small>Mission command</small></span></div>
+    <div class="nav-group">Workspace</div>
+    <a class="nav-item" href="#"><svg><use href="#i-home"/></svg>My feed<span class="count" aria-label="6 reminders">6</span></a>
+    <a class="nav-item" aria-current="page" href="#"><svg><use href="#i-sunrise"/></svg>My Day</a>
+    <a class="nav-item" href="#"><svg><use href="#i-users"/></svg>Department</a>
+    <a class="nav-item" href="#"><svg><use href="#i-chart"/></svg>Dashboard</a>
+    <div class="nav-group">Execution</div>
+    <a class="nav-item" href="#"><svg><use href="#i-scroll"/></svg>MOM Directory</a>
+    <a class="nav-item" href="#"><svg><use href="#i-calendar"/></svg>Event Planner</a>
+    <a class="nav-item" href="#"><svg><use href="#i-bridge"/></svg>Projects</a>
+    <div class="nav-group">Communication</div>
+    <a class="nav-item" href="#"><svg><use href="#i-calendar"/></svg>Yearly Calendar</a>
+    <a class="nav-item" href="#"><svg><use href="#i-megaphone"/></svg>Notices &amp; feedback</a>
+    <div class="nav-group">People &amp; Control</div>
+    <a class="nav-item" href="#"><svg><use href="#i-sena"/></svg>People</a>
+    <a class="nav-item" href="#"><svg><use href="#i-user"/></svg>My profile</a>
+    <a class="nav-item" href="#"><svg><use href="#i-shield"/></svg>Access matrix</a>
+    <a class="nav-item" href="#"><svg><use href="#i-clock"/></svg>Audit log</a>
+    <div class="sidebar-foot">
+      <a class="nav-item" href="#"><svg><use href="#i-path"/></svg>JAMBAVAN Guide</a>
+      <div class="user-card"><span class="avatar" style="--av:#F7EDCC">AM</span><span><strong>Arjun Mehta</strong><span>Department Head · Academic</span></span></div>
+      <div class="sacred-mini" lang="hi">॥ श्री राम ॥</div>
+    </div>
+  </aside>
+
+  <div>
+    <header class="topbar">
+      <button class="icon-btn mobile-only" aria-label="Open menu"><svg width="22" height="22"><use href="#i-menu"/></svg></button>
+      <div class="crumbs">Workspace / <b>My Day</b></div>
+      <div class="top-actions">
+        <button class="search" aria-label="Search tasks, people and MOMs"><svg width="18" height="18"><use href="#i-search"/></svg><span>Search tasks, people, MOMs…</span><kbd>⌘K</kbd></button>
+        <button class="btn btn-secondary btn-sm" aria-label="Create mission"><svg><use href="#i-plus"/></svg><span class="hide-sm">Create mission</span></button>
+        <button class="icon-btn" aria-label="Notifications, 7 unread"><svg width="20" height="20"><use href="#i-bell"/></svg><span class="dot" aria-hidden="true">7</span></button>
+      </div>
+    </header>
+
+    <!-- 4-layer SceneBackdrop: env (vanvas-ashram) / atmosphere / readability scrim / content -->
+    <section class="scene band" aria-labelledby="md-title">
+      <div class="l-env" data-env="vanvas-ashram"></div><div class="l-atmo"></div><div class="l-scrim"></div>
+      <div class="scene-copy">
+        <div class="eyebrow"><svg width="16" height="16"><use href="#i-sunrise"/></svg>Daily Dharma · Monday, 5 October 2026</div>
+        <h1 id="md-title">My Day</h1>
+        <p>A private plan for your day. Choose three priorities, block your time and close the loop.</p>
+        <p class="privacy"><svg aria-hidden="true"><use href="#i-lock2"/></svg>Private to you. My Day never appears in dashboards, reports, search or team views.</p>
+        <div class="date-ctl"><div class="field"><label for="plan-for">Plan for</label><div class="input" id="plan-for">05/10/2026</div></div><button class="btn btn-ghost">Today</button></div>
+      </div>
+    </section>
+
+    <main class="content">
+      <div class="myday-grid">
+        <section class="card ornament-top" aria-labelledby="arrows-t">
+          <div class="card-head"><div><div class="eyebrow"><svg width="16" height="16"><use href="#i-arrow"/></svg>Top 3 priorities</div><h2 id="arrows-t">Today's three arrows</h2></div><span class="pill" aria-label="1 of 3 priorities done">1 of 3</span></div>
+          <div style="margin-top:8px">
+            <label class="arrow-row done"><span class="box on" aria-hidden="true"><svg width="14" height="14" style="color:#fff"><use href="#i-check"/></svg></span><svg aria-hidden="true"><use href="#i-hit"/></svg><span class="t">Review today's top priorities</span></label>
+            <label class="arrow-row"><span class="box" aria-hidden="true"></span><svg aria-hidden="true"><use href="#i-arrow"/></svg><span class="t">Confirm Batch 3 faculty backup</span></label>
+            <label class="arrow-row"><span class="box" aria-hidden="true"></span><svg aria-hidden="true"><use href="#i-arrow"/></svg><span class="t">Approve the campaign poster</span></label>
+          </div>
+          <p class="sub" style="margin-top:8px">Three of three chosen. Finish them before anything else.</p>
+        </section>
+
+        <section class="card" aria-labelledby="sched-t">
+          <div class="card-head"><div><div class="eyebrow"><svg width="16" height="16"><use href="#i-clock"/></svg>Time blocks</div><h2 id="sched-t">My schedule</h2></div><span class="pill" aria-label="2 time blocks">2</span></div>
+          <div style="margin-top:8px">
+            <div class="row"><span class="time">09:00–10:00</span><div class="grow"><strong>Academy focus block</strong><span>Work</span></div><span class="chip-status done"><svg aria-hidden="true"><use href="#i-check"/></svg>Completed</span><button class="btn btn-ghost btn-sm">Edit</button><button class="icon-btn" aria-label="Delete time block: Academy focus block"><svg width="18" height="18"><use href="#i-trash"/></svg></button></div>
+            <div class="row editing"><span class="time">14:00–15:00</span><div class="grow"><strong>Call two parents about orientation</strong><span>Work · editing in place</span></div><span class="chip-status prog"><svg aria-hidden="true"><use href="#i-clock"/></svg>In progress</span></div>
+          </div>
+          <div class="form-grid">
+            <div class="field"><label for="b-s">Start</label><div class="input" id="b-s">14:00</div></div>
+            <div class="field"><label for="b-e">End</label><div class="input" id="b-e">15:00</div></div>
+            <div class="field full"><label for="b-a">Activity</label><div class="input" id="b-a">Call two parents about orientation</div></div>
+            <div class="field"><label for="b-c">Category</label><div class="input" id="b-c">Work</div></div>
+            <div class="field"><label for="b-st">Status</label><div class="select" id="b-st" style="width:100%">In progress</div></div>
+          </div>
+          <div class="actions-end"><button class="btn btn-secondary btn-sm">Cancel</button><button class="btn btn-primary btn-sm">Save block</button></div>
+        </section>
+
+        <section class="card" aria-labelledby="linked-t">
+          <div class="card-head"><div><div class="eyebrow"><svg width="16" height="16"><use href="#i-checks"/></svg>Source of truth</div><h2 id="linked-t">Academy tasks in My Day</h2><p class="sub">Private links to tasks you own. The tasks themselves do not change.</p></div><span class="pill" aria-label="2 linked tasks">2</span></div>
+          <div style="margin-top:8px">
+            <div class="row"><span class="badge fam-squirrel"><svg><use href="#i-squirrel"/></svg>Squirrel</span><div class="grow"><strong>Approve parent orientation deck</strong><span>30 Sep</span></div><span class="badge b-neutral"><svg><use href="#i-clock"/></svg>Not started</span><button class="btn btn-ghost btn-sm">Open task<svg aria-hidden="true"><use href="#i-arrowright"/></svg></button></div>
+            <div class="row"><span class="badge fam-squirrel"><svg><use href="#i-squirrel"/></svg>Squirrel</span><div class="grow"><strong>Finalize October JEE batch timetable</strong><span>Handed over to Karan Joshi. It stays here until you remove it.</span></div><button class="btn btn-secondary btn-sm">Remove from My Day</button></div>
+          </div>
+        </section>
+
+        <section class="card" aria-labelledby="act-t">
+          <div class="card-head"><div><div class="eyebrow"><svg width="16" height="16"><use href="#i-notebook"/></svg>Personal memory</div><h2 id="act-t">Personal actionables</h2></div><span class="pill" aria-label="1 open">1 open</span></div>
+          <div style="margin-top:8px">
+            <div class="row"><span class="box" aria-hidden="true"></span><div class="grow"><strong>Renew library card</strong><span>Due 06 Oct</span></div><span class="prio" aria-label="Priority: Low"><svg aria-hidden="true"><use href="#i-sig1"/></svg>Low</span><button class="icon-btn" aria-label="Delete actionable: Renew library card"><svg width="18" height="18"><use href="#i-trash"/></svg></button></div>
+          </div>
+          <div class="form-grid">
+            <div class="field full"><label for="a-t">What do you want to remember?</label><div class="input ph" id="a-t">e.g. Call the bank</div></div>
+            <div class="field full"><label for="a-n">Note (optional)</label><div class="input ph" id="a-n">Anything to add</div></div>
+            <div class="field"><label for="a-d">Due</label><div class="input" id="a-d">05/10/2026</div></div>
+            <div class="field"><label for="a-p">Priority</label><div class="select" id="a-p" style="width:100%">Medium</div></div>
+          </div>
+          <div class="actions-end"><button class="btn btn-secondary btn-sm"><svg><use href="#i-plus"/></svg>Add</button></div>
+        </section>
+
+        <section class="card wide" aria-labelledby="rev-t">
+          <div class="card-head"><div><div class="eyebrow"><svg width="16" height="16"><use href="#i-mooncave"/></svg>Close the loop</div><h2 id="rev-t">End-of-day review</h2><p class="sub">This reflection stays with the date you picked and is never part of management reporting.</p></div></div>
+          <div class="review">
+            <div class="field"><label for="r1">What did I complete?</label><div class="input textarea" id="r1">Finished the timetable draft.</div></div>
+            <div class="field"><label for="r2">What is still pending?</label><div class="input textarea ph" id="r2">Carry-over items</div></div>
+            <div class="field"><label for="r3">Tomorrow's main priority</label><div class="input textarea ph" id="r3">The one thing that matters most</div></div>
+          </div>
+          <div class="actions-end"><button class="btn btn-secondary">Save review</button></div>
+        </section>
+      </div>
+
+      <div class="section-head"><div><h2>Dashboard · leadership panels</h2><p>"Why are open tasks not moving?" and "Task dependencies" stay on the Dashboard, below Deadline watch (IA-11). Seed values.</p></div></div>
+      <div class="two">
+        <section class="card" aria-labelledby="bp-t">
+          <div class="panel-head"><svg aria-hidden="true"><use href="#i-sanjeevani"/></svg><div><div class="eyebrow">Process signals</div><h2 id="bp-t" style="margin-top:4px">Why are open tasks not moving?</h2><p class="sub">Every stalled mission can be rescued. These reasons show where help is needed; they are not performance labels.</p></div></div>
+          <p class="headline">40% of delayed tasks with a check-in are waiting for someone.</p>
+          <div class="bars">
+            <div class="bar"><span>Waiting for someone</span><span class="tr" aria-hidden="true"><i style="width:40%"></i></span><strong>2 · 40%</strong></div>
+            <div class="bar"><span>Waiting for information</span><span class="tr" aria-hidden="true"><i style="width:20%"></i></span><strong>1 · 20%</strong></div>
+            <div class="bar"><span>I haven't started</span><span class="tr" aria-hidden="true"><i style="width:20%"></i></span><strong>1 · 20%</strong></div>
+            <div class="bar"><span>Unexpected issue</span><span class="tr" aria-hidden="true"><i style="width:20%"></i></span><strong>1 · 20%</strong></div>
+          </div>
+          <p class="foot-line">5 open tasks with a delay signal · 5 check-ins</p>
+        </section>
+
+        <section class="card" aria-labelledby="dp-t">
+          <div class="eyebrow"><svg width="16" height="16"><use href="#i-bridge"/></svg>Task dependencies</div>
+          <h2 id="dp-t" style="margin-top:4px">Where the Setu is waiting</h2>
+          <p class="sub">Each stone needs the one before it. JAMBAVAN shows the stone the rest of the bridge is waiting on. 3 tasks waiting.</p>
+          <div class="held">
+            <h3>Held at Approve admission campaign poster · Blocked · Arjun Mehta (you)</h3>
+            <div class="md" data-chain="d,b,w,w,w" style="margin-top:10px" aria-label="Admission Campaign chain: 1 of 5 stones placed. Held at Approve admission campaign poster (Blocked)."></div>
+            <ol>
+              <li><b>Prepare admission campaign poster</b> · Completed</li>
+              <li><b>Approve admission campaign poster</b> · Blocked · the bridge waits here</li>
+              <li><b>Send approved poster to schools</b> · waiting · Neha Kapoor</li>
+              <li><b>Make school follow-up calls</b> · waiting · Manav Shah</li>
+              <li><b>Update admission data</b> · waiting · Ritesh Shah</li>
+            </ol>
+          </div>
+        </section>
+      </div>
+
+      <div class="section-head"><div><h2>Task Handover</h2><p>"Hand over task…" in the card's More menu opens the dialog; the card then shows who now carries the mission.</p></div></div>
+      <div class="two">
+        <div class="backdrop">
+          <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="ho-t" aria-describedby="ho-d">
+            <div class="dialog-head">
+              <div class="eyebrow"><svg width="16" height="16"><use href="#i-handover"/></svg>Task Handover</div>
+              <h2 id="ho-t">Hand over this mission</h2>
+              <p id="ho-d">Share where things stand so the next Task Owner can carry it on without reading every comment.</p>
+              <button class="icon-btn close" aria-label="Close dialog"><svg width="20" height="20"><use href="#i-x"/></svg></button>
+            </div>
+            <div class="dialog-body">
+              <div class="sumbox"><strong>Approve parent orientation deck</strong><span>Parent Connect · Leadership</span><span>Current Task Owner · Arjun Mehta (you)</span><span style="display:flex;gap:8px;align-items:center"><span class="badge b-neutral"><svg><use href="#i-clock"/></svg>Not started</span>0% complete</span></div>
+              <div class="field"><label for="ho-to">New Task Owner <span aria-hidden="true" style="color:var(--jb-danger-700)">*</span></label><div class="select invalid input" id="ho-to" style="width:100%" aria-invalid="true" aria-describedby="ho-to-e">Choose a person</div><div class="err" id="ho-to-e"><svg width="16" height="16"><use href="#i-alert"/></svg>Choose who takes over this mission.</div></div>
+              <div class="field"><label for="ho-la">Last action <span aria-hidden="true" style="color:var(--jb-danger-700)">*</span></label><div class="input textarea" id="ho-la">No recent action recorded</div></div>
+              <div class="field"><label for="ho-wf">Waiting for</label><div class="input textarea" id="ho-wf">Nothing currently waiting</div></div>
+              <div class="field"><label for="ho-na">Next action <span aria-hidden="true" style="color:var(--jb-danger-700)">*</span></label><div class="input textarea" id="ho-na">Continue the next assigned step</div></div>
+              <div class="field"><label for="ho-nt">Important notes</label><div class="input textarea ph" id="ho-nt">Anything the next Task Owner should know</div></div>
+            </div>
+            <div class="dialog-foot"><button class="btn btn-secondary">Cancel</button><button class="btn btn-primary"><svg><use href="#i-handover"/></svg>Hand over mission</button></div>
+          </div>
+        </div>
+
+        <div style="display:grid;gap:16px">
+          <p class="artboard-label">Task 2 after "Hand over mission" to Manav Shah. The package is collapsed by default for anyone but the new Task Owner; shown here after "View handover"</p>
+          <article class="task" style="--fam:var(--jb-blue-700)" aria-labelledby="t2">
+            <div class="top"><span class="badge fam-angad"><svg><use href="#i-foot"/></svg>Angad</span><span class="badge b-neutral">Manual task</span><span class="badge b-neutral"><svg><use href="#i-clock"/></svg>Not started</span><span class="spacer"></span><button class="icon-btn" aria-label="Edit task: Call pending scholarship applicants"><svg width="18" height="18"><use href="#i-pencil"/></svg></button><button class="icon-btn" aria-label="More actions"><svg width="18" height="18"><use href="#i-more"/></svg></button></div>
+            <h3 id="t2">Call pending scholarship applicants</h3>
+            <div class="meta"><span class="item"><svg><use href="#i-calendar"/></svg>Due today</span><span class="item prio prio-high" aria-label="Priority: High"><svg aria-hidden="true"><use href="#i-sig3"/></svg>High</span><span class="item"><svg><use href="#i-users"/></svg>Team task</span><span class="item"><svg><use href="#i-bridge"/></svg>October Launch</span></div>
+            <div class="owner"><span class="avatar" style="--av:#E2EEDF">MS</span><span><strong>Task Owner · Manav Shah</strong><span>Admissions Desk · Admissions</span></span><span style="flex:1"></span><span class="avatar-stack" aria-label="Contributors: Aditi Rao"><span class="avatar sm" style="--av:#E2EEDF">AR</span></span><span class="small muted">0 of 1 parts done</span></div>
+            <div class="handover-line"><svg aria-hidden="true"><use href="#i-handover"/></svg><span><b>Mission handed over to Manav Shah</b> · from Neha Kapoor · created by Arjun Mehta (you) · 05 Oct 2026, 3:15 PM</span><button class="btn btn-ghost btn-sm" aria-expanded="true">Hide handover</button></div>
+            <dl class="pkg">
+              <div><dt>Current status</dt><dd>Not started · 0% complete</dd></div>
+              <div><dt>Last action</dt><dd>Scholarship applicant list reviewed</dd></div>
+              <div><dt>Waiting for</dt><dd>Applicant availability confirmation</dd></div>
+              <div><dt>Next action</dt><dd>Start the first call block on 06 Oct</dd></div>
+              <div class="wide"><dt>Important notes</dt><dd>Prioritize the five applicants marked urgent in the admissions sheet.</dd></div>
+            </dl>
+            <div class="actions"><span class="owner-note"><svg width="16" height="16"><use href="#i-shield"/></svg>Only the Task Owner completes</span><button class="toggle-btn" aria-pressed="false"><svg><use href="#i-checks"/></svg>Mark seen</button><button class="toggle-btn" aria-pressed="false"><svg><use href="#i-thumb"/></svg>Acknowledge</button><span class="spacer"></span><button class="btn btn-ghost btn-sm" aria-expanded="false">Details<svg><use href="#i-chevron"/></svg></button></div>
+          </article>
+          <div class="toast" role="status"><svg width="20" height="20" style="color:#E9C97E"><use href="#i-handover"/></svg><span>Mission handed over to Manav Shah.</span><button class="close" aria-label="Dismiss notification"><svg width="16" height="16"><use href="#i-x"/></svg></button></div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="jambavan-mock-art.js"></script>
+</body>
+</html>

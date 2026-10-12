@@ -1,0 +1,718 @@
+{
+ "console": [],
+ "views": {},
+ "modals": {},
+ "features": {
+  "desktop:myDay": {
+   "addToMyDayBtnOnArjunTask": true,
+   "addToMyDayClick": "Add to My Day",
+   "addToMyDayToast": "Finalize October JEE batch timetable was added to your private My Day plan. The academy task was not changed.",
+   "navClick": "My Day",
+   "heading": "My Day",
+   "initial": {
+    "top3": [
+     "Review today's top priorities"
+    ],
+    "schedule": [
+     "Academy focus block"
+    ],
+    "actionables": [],
+    "linked": [
+     "Finalize October JEE batch timetable"
+    ]
+   },
+   "top3After": {
+    "rows": [
+     "Review today's top priorities",
+     "QA priority: verify handover"
+    ],
+    "doneCount": 1,
+    "count": "2/3"
+   },
+   "scheduleInputs": [
+    "time:14:00",
+    "time:15:00",
+    "text:Activity or time block",
+    "text:Category"
+   ],
+   "scheduleAfter": [
+    "09:00 10:00 Academy focus block Work · In Progress Planned In Progress Completed Missed Ed",
+    "14:00 15:00 QA time block Testing · Planned Planned In Progress Completed Missed Edit"
+   ],
+   "actionableInputs": [
+    "INPUT:What do you want to remember?",
+    "INPUT:Optional note",
+    "INPUT:date",
+    "SELECT:select-one"
+   ],
+   "actionableAddClick": "Add",
+   "actionablesAfter": {
+    "rows": [
+     "QA actionable: call vendor"
+    ],
+    "done": 1,
+    "count": "0 open"
+   },
+   "linkedAfter": [
+    "Squirrel Finalize October JEE batch timetable Today · In progress Remove from My Day"
+   ],
+   "reviewToast": "Your private end-of-day review was saved.",
+   "reviewValues": [
+    "Verified My Day",
+    "Mobile pass",
+    "Ship handover"
+   ],
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   },
+   "feedTaskAfter": {
+    "owner": "Task Owner · Arjun Mehta",
+    "blockedBy": "",
+    "downstream": "",
+    "blocker": "Current blocker: Waiting for information Final batch count is still awaited. · Reported by Arjun Mehta",
+    "handover": "",
+    "hasHandoverBtn": true,
+    "hasMyDayBtn": true,
+    "status": ""
+   }
+  },
+  "desktop:blocker": {
+   "dashBefore": {
+    "bars": [
+     "Waiting for someone 2",
+     "I haven't started 1",
+     "Waiting for information 1",
+     "Unexpected issue 1"
+    ],
+    "foot": "5 delayed/open process signals 5 check-ins recorded Leadership can use this view to remove dependencies, clarify work, and rebalance load.",
+    "highlight": "40% of delayed tasks with a check-in are waiting for someone"
+   },
+   "target": "Approve parent orientation deck",
+   "click": "Too much other work",
+   "toast": "Thanks — this blocker is recorded as a process signal for management.",
+   "cardAfter": "Current blocker: Too much other work QA: waiting for principal sign-off · Reported by Arjun Mehta",
+   "selectedButton": "Too much other work",
+   "dashAfter": {
+    "bars": [
+     "Waiting for someone 2",
+     "I haven't started 1",
+     "Waiting for information 1",
+     "Too much other work 1",
+     "Unexpected issue 1"
+    ],
+    "foot": "6 delayed/open process signals 6 check-ins recorded Leadership can use this view to remove dependencies, clarify work, and rebalance load.",
+    "highlight": "33% of delayed tasks with a check-in are waiting for someone"
+   },
+   "auditHasBlocker": true
+  },
+  "desktop:dependency": {
+   "seeded": {
+    "approve": {
+     "owner": "Task Owner · You",
+     "blockedBy": "",
+     "downstream": "",
+     "blocker": "",
+     "handover": "",
+     "hasHandoverBtn": true,
+     "hasMyDayBtn": true,
+     "status": ""
+    }
+   },
+   "seededChain": [
+    {
+     "t": "Prepare admission campaign poster",
+     "info": {
+      "owner": "Task Owner · Sana Iyer",
+      "blockedBy": "",
+      "downstream": "",
+      "blocker": "",
+      "handover": "",
+      "hasHandoverBtn": false,
+      "hasMyDayBtn": false,
+      "status": ""
+     }
+    },
+    {
+     "t": "Send approved poster",
+     "info": {
+      "owner": "Task Owner · Neha Kapoor",
+      "blockedBy": "BLOCKED BY Approve admission campaign poster Blocked",
+      "downstream": "",
+      "blocker": "",
+      "handover": "",
+      "hasHandoverBtn": true,
+      "hasMyDayBtn": false,
+      "status": ""
+     }
+    },
+    {
+     "t": "Make school follow-up",
+     "info": {
+      "owner": "Task Owner · Manav Shah",
+      "blockedBy": "BLOCKED BY Send approved poster to schools Pending",
+      "downstream": "",
+      "blocker": "",
+      "handover": "",
+      "hasHandoverBtn": true,
+      "hasMyDayBtn": false,
+      "status": ""
+     }
+    }
+   ],
+   "editHeading": "Edit task",
+   "optionsWhenEditingHead": [
+    "No dependency",
+    "October Launch · Finalize October JEE batch timetable",
+    "October Launch · Call pending scholarship applicants",
+    "Share weekly faculty attendance summary",
+    "Parent Connect · Approve parent orientation deck",
+    "Upload student success stories for October campaign",
+    "Resolve projector issue in Room 204",
+    "Faculty Excellence · Build the 2027 Coaching Excellence Gurukul"
+   ],
+   "cycleCandidatesOffered": [
+    "Parent Connect · Approve parent orientation deck"
+   ],
+   "midChain": {
+    "offersDownstream11": false,
+    "offersUpstream8": true,
+    "selected": "Admission Campaign · Approve admission campaign poster"
+   },
+   "createAfterCancelHeading": "Edit task",
+   "createHeading": "Create a task",
+   "chosenUpstream": "October Launch · Finalize October JEE batch timetable",
+   "reach": {
+    "dependencySelectBottom": 449,
+    "createBtnBottom": 1047,
+    "innerHeight": 800,
+    "backdropOverflowY": "visible"
+   },
+   "createClick": "Create task",
+   "modalClosed": true,
+   "newCard": {
+    "owner": "Task Owner · You",
+    "blockedBy": "BLOCKED BY Finalize October JEE batch timetable Pending",
+    "downstream": "",
+    "blocker": "",
+    "handover": "",
+    "hasHandoverBtn": true,
+    "hasMyDayBtn": true,
+    "status": ""
+   },
+   "upstreamCard": {
+    "owner": "Task Owner · Arjun Mehta",
+    "blockedBy": "",
+    "downstream": "DOWNSTREAM IMPACT 1 follow-up task waiting on this step QA dependent task",
+    "blocker": "Current blocker: Waiting for information Final batch count is still awaited. · Reported by Arjun Mehta",
+    "handover": "",
+    "hasHandoverBtn": true,
+    "hasMyDayBtn": true,
+    "status": ""
+   },
+   "leadershipPanel": {
+    "head": "4 downstream alerts",
+    "rows": [
+     "Leadership QA dependent task Campaign delayed because Finalize October JEE batch timetable Pending · Arjun Mehta",
+     "Admission Campaign Send approved poster to schools Campaign delayed because Approve admission campaign poster Blocked · Arjun Mehta",
+     "Admission Campaign Make school follow-up calls Campaign delayed because Send approved poster to schools Pending · Neha Kapoor",
+     "Admission Campaign Update admission data Campaign delayed because Make school follow-up calls Pending · Manav Shah"
+    ]
+   }
+  },
+  "desktop:handover": {
+   "seeded": {
+    "owner": "Task Owner · Neha Kapoor",
+    "blockedBy": "",
+    "downstream": "",
+    "blocker": "Current blocker: I haven't started No extra context added. · Reported by Neha Kapoor",
+    "handover": "TASK HANDOVER Ready for Aditi Rao Created by Neha Kapoor · 05 Oct 2026, 4:20 PM CURRENT STATUS Not started · 0% complete LAST ACTION Scholarship applicant list reviewed WAITING FOR Applicant availability confirmation NEXT ACTION Start the first call block on 06 Oct IMPORTANT NOTES Prioritize the five applicants marked urgent in the admissions sheet.",
+    "hasHandoverBtn": true,
+    "hasMyDayBtn": false,
+    "status": ""
+   },
+   "seededAny": [
+    {
+     "title": "Call pending scholarship applicants",
+     "owner": "Task Owner · Neha Kapoor",
+     "handover": "TASK HANDOVER Ready for Aditi Rao Created by Neha Kapoor · 05 Oct 2026, 4:20 PM CURRENT STATUS Not started · 0% complete LAST ACTION Scholarship applicant list reviewed WAITING FOR Applicant availability confirmation NEXT ACTION Start the first call block on 06 Oct IMPORTANT NOTES Prioritize the fiv"
+    }
+   ],
+   "openTasksWithButton": {
+    "cards": 12,
+    "withButton": 10
+   },
+   "before": {
+    "owner": "Task Owner · Arjun Mehta",
+    "blockedBy": "",
+    "downstream": "",
+    "blocker": "Current blocker: Waiting for information Final batch count is still awaited. · Reported by Arjun Mehta",
+    "handover": "",
+    "hasHandoverBtn": true,
+    "hasMyDayBtn": true,
+    "status": ""
+   },
+   "notificationPresentBefore": false,
+   "openClick": "Handover Task",
+   "modal": {
+    "cls": "task-modal handover-modal",
+    "role": null,
+    "ariaModal": null,
+    "top": 94,
+    "bottom": 706,
+    "height": 613,
+    "innerHeight": 800,
+    "clippedTop": false,
+    "clippedBottom": false,
+    "scrollable": false,
+    "heading": "Make this task easy to take over"
+   },
+   "prefill": {
+    "preview": "TASK Finalize October JEE batch timetable October Launch · Academic",
+    "to": "Karan Joshi",
+    "options": [
+     "Select employee",
+     "Priya Nair",
+     "Karan Joshi",
+     "Neha Kapoor",
+     "Aditi Rao",
+     "Manav Shah",
+     "Ritesh Shah",
+     "Vikram Nair",
+     "Sana Iyer",
+     "Rhea Sen",
+     "Omkar Patil"
+    ],
+    "fields": [
+     "In progress · 68% complete",
+     "68% progress recorded",
+     "Final batch count is still awaited.",
+     "Continue the next assigned step",
+     ""
+    ],
+    "createDisabled": false
+   },
+   "reach": {
+    "createBtnBottom": 682,
+    "innerHeight": 800,
+    "modalOverflowY": "visible",
+    "backdropOverflowY": "visible"
+   },
+   "createEnabled": true,
+   "createClick": "Create handover package",
+   "modalClosed": true,
+   "toast": "Handover package created for Neha Kapoor.",
+   "after": {
+    "owner": "Task Owner · Neha Kapoor",
+    "blockedBy": "",
+    "downstream": "",
+    "blocker": "Current blocker: Waiting for information Final batch count is still awaited. · Reported by Arjun Mehta",
+    "handover": "TASK HANDOVER Ready for Neha Kapoor Created by Arjun Mehta · 06 Oct 2026, 3:45 PM CURRENT STATUS In progress · 68% complete LAST ACTION QA: timetable draft shared with faculty WAITING FOR QA: final batch count NEXT ACTION QA: publish timetable by 07 Oct IMPORTANT NOTES QA: check lab slots",
+    "hasHandoverBtn": true,
+    "hasMyDayBtn": false,
+    "status": ""
+   },
+   "notification": "Task handover received Finalize October JEE batch timetable · Ready for Neha Kapoor Just now Deadline reminder 2 tasks n",
+   "notificationPanelHas": true,
+   "auditEntry": "Task handed over Finalize October JEE batch timetable From Arjun Mehta to Neha Kapoor Arjun Mehta 05 Oct 2026, 3:15 PM Task completed Upload student success stories for October campaign No additional "
+  },
+  "desktop:old": {
+   "create": {
+    "before": 12,
+    "after": 13,
+    "card": true,
+    "toast": "Task created. It is now visible to the right people in their feed."
+   },
+   "editHeading": "Edit task",
+   "saveClick": "Save changes",
+   "edit": {
+    "edited": true,
+    "cards": 13
+   },
+   "completeTarget": "QA regression task edited",
+   "complete": {
+    "toast": "Nice work — task marked complete and the team feed is updated.",
+    "card": "Squirrel Manual task QA regression task edited 0 people seen Mark seen Acknowledge Add to My Day 03 Oct Medium Task Owner · You Leadership · Academic Completed by You Contributors 0/0 parts done Add subtask Files & links 0 Add completion evidence Add task guid"
+   },
+   "momModal": "Write meeting MOM",
+   "momSubmit": "Lock MOM & save",
+   "mom": {
+    "modalClosed": true,
+    "toast": "MOM locked in the department directory. No task was auto-generated from the written MOM.",
+    "listed": true
+   },
+   "eventModal": "Plan an event",
+   "eventSubmit": "Create event & tasks",
+   "event": {
+    "modalClosed": true,
+    "before": 2,
+    "after": 3,
+    "toast": "Event planned. 0 tasks added to the task feed.",
+    "listed": true
+   },
+   "noticeModal": "Send a notice",
+   "noticeSubmit": "Send notice",
+   "notice": {
+    "modalClosed": true,
+    "toast": "Notice sent to the selected audience.",
+    "listed": true
+   }
+  },
+  "mobile:myDay": {
+   "addToMyDayBtnOnArjunTask": true,
+   "addToMyDayClick": "Add to My Day",
+   "addToMyDayToast": "Finalize October JEE batch timetable was added to your private My Day plan. The academy task was not changed.",
+   "heading": "My Day",
+   "initial": {
+    "top3": [
+     "Review today's top priorities"
+    ],
+    "schedule": [
+     "Academy focus block"
+    ],
+    "actionables": [],
+    "linked": [
+     "Finalize October JEE batch timetable"
+    ]
+   },
+   "top3After": {
+    "rows": [
+     "Review today's top priorities",
+     "QA priority: verify handover"
+    ],
+    "doneCount": 1,
+    "count": "2/3"
+   },
+   "scheduleInputs": [
+    "time:14:00",
+    "time:15:00",
+    "text:Activity or time block",
+    "text:Category"
+   ],
+   "scheduleAfter": [
+    "09:00 10:00 Academy focus block Work · In Progress Planned In Progress Completed Missed Ed",
+    "14:00 15:00 QA time block Testing · Planned Planned In Progress Completed Missed Edit"
+   ],
+   "actionableInputs": [
+    "INPUT:What do you want to remember?",
+    "INPUT:Optional note",
+    "INPUT:date",
+    "SELECT:select-one"
+   ],
+   "actionableAddClick": "Add",
+   "actionablesAfter": {
+    "rows": [
+     "QA actionable: call vendor"
+    ],
+    "done": 1,
+    "count": "0 open"
+   },
+   "linkedAfter": [
+    "Squirrel Finalize October JEE batch timetable Today · In progress Remove from My Day"
+   ],
+   "reviewToast": "Your private end-of-day review was saved.",
+   "reviewValues": [
+    "Verified My Day",
+    "Mobile pass",
+    "Ship handover"
+   ],
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   },
+   "feedTaskAfter": {
+    "owner": "Task Owner · Arjun Mehta",
+    "blockedBy": "",
+    "downstream": "",
+    "blocker": "Current blocker: Waiting for information Final batch count is still awaited. · Reported by Arjun Mehta",
+    "handover": "",
+    "hasHandoverBtn": true,
+    "hasMyDayBtn": true,
+    "status": ""
+   }
+  },
+  "mobile:blocker": {
+   "dashBefore": {
+    "bars": [
+     "Waiting for someone 2",
+     "I haven't started 1",
+     "Waiting for information 1",
+     "Unexpected issue 1"
+    ],
+    "foot": "5 delayed/open process signals 5 check-ins recorded Leadership can use this view to remove dependencies, clarify work, and rebalance load.",
+    "highlight": "40% of delayed tasks with a check-in are waiting for someone"
+   },
+   "target": "Approve parent orientation deck",
+   "click": "Too much other work",
+   "toast": "Thanks — this blocker is recorded as a process signal for management.",
+   "cardAfter": "Current blocker: Too much other work QA: waiting for principal sign-off · Reported by Arjun Mehta",
+   "selectedButton": "Too much other work",
+   "dashAfter": {
+    "bars": [
+     "Waiting for someone 2",
+     "I haven't started 1",
+     "Waiting for information 1",
+     "Too much other work 1",
+     "Unexpected issue 1"
+    ],
+    "foot": "6 delayed/open process signals 6 check-ins recorded Leadership can use this view to remove dependencies, clarify work, and rebalance load.",
+    "highlight": "33% of delayed tasks with a check-in are waiting for someone"
+   },
+   "auditHasBlocker": true
+  },
+  "mobile:dependency": {
+   "seeded": {
+    "approve": {
+     "owner": "Task Owner · You",
+     "blockedBy": "",
+     "downstream": "",
+     "blocker": "",
+     "handover": "",
+     "hasHandoverBtn": true,
+     "hasMyDayBtn": true,
+     "status": ""
+    }
+   },
+   "seededChain": [
+    {
+     "t": "Prepare admission campaign poster",
+     "info": {
+      "owner": "Task Owner · Sana Iyer",
+      "blockedBy": "",
+      "downstream": "",
+      "blocker": "",
+      "handover": "",
+      "hasHandoverBtn": false,
+      "hasMyDayBtn": false,
+      "status": ""
+     }
+    },
+    {
+     "t": "Send approved poster",
+     "info": {
+      "owner": "Task Owner · Neha Kapoor",
+      "blockedBy": "BLOCKED BY Approve admission campaign poster Blocked",
+      "downstream": "",
+      "blocker": "",
+      "handover": "",
+      "hasHandoverBtn": true,
+      "hasMyDayBtn": false,
+      "status": ""
+     }
+    },
+    {
+     "t": "Make school follow-up",
+     "info": {
+      "owner": "Task Owner · Manav Shah",
+      "blockedBy": "BLOCKED BY Send approved poster to schools Pending",
+      "downstream": "",
+      "blocker": "",
+      "handover": "",
+      "hasHandoverBtn": true,
+      "hasMyDayBtn": false,
+      "status": ""
+     }
+    }
+   ],
+   "editHeading": "Edit task",
+   "optionsWhenEditingHead": [
+    "No dependency",
+    "October Launch · Finalize October JEE batch timetable",
+    "October Launch · Call pending scholarship applicants",
+    "Share weekly faculty attendance summary",
+    "Parent Connect · Approve parent orientation deck",
+    "Upload student success stories for October campaign",
+    "Resolve projector issue in Room 204",
+    "Faculty Excellence · Build the 2027 Coaching Excellence Gurukul"
+   ],
+   "cycleCandidatesOffered": [
+    "Parent Connect · Approve parent orientation deck"
+   ],
+   "midChain": {
+    "offersDownstream11": false,
+    "offersUpstream8": true,
+    "selected": "Admission Campaign · Approve admission campaign poster"
+   },
+   "createAfterCancelHeading": "Edit task",
+   "createHeading": "Create a task",
+   "chosenUpstream": "October Launch · Finalize October JEE batch timetable",
+   "reach": {
+    "dependencySelectBottom": 614,
+    "createBtnBottom": 1313,
+    "innerHeight": 844,
+    "backdropOverflowY": "visible"
+   },
+   "createClick": "Create task",
+   "modalClosed": true,
+   "newCard": {
+    "owner": "Task Owner · You",
+    "blockedBy": "BLOCKED BY Finalize October JEE batch timetable Pending",
+    "downstream": "",
+    "blocker": "",
+    "handover": "",
+    "hasHandoverBtn": true,
+    "hasMyDayBtn": true,
+    "status": ""
+   },
+   "upstreamCard": {
+    "owner": "Task Owner · Arjun Mehta",
+    "blockedBy": "",
+    "downstream": "DOWNSTREAM IMPACT 1 follow-up task waiting on this step QA dependent task",
+    "blocker": "Current blocker: Waiting for information Final batch count is still awaited. · Reported by Arjun Mehta",
+    "handover": "",
+    "hasHandoverBtn": true,
+    "hasMyDayBtn": true,
+    "status": ""
+   },
+   "leadershipPanel": {
+    "head": "4 downstream alerts",
+    "rows": [
+     "Leadership QA dependent task Campaign delayed because Finalize October JEE batch timetable Pending · Arjun Mehta",
+     "Admission Campaign Send approved poster to schools Campaign delayed because Approve admission campaign poster Blocked · Arjun Mehta",
+     "Admission Campaign Make school follow-up calls Campaign delayed because Send approved poster to schools Pending · Neha Kapoor",
+     "Admission Campaign Update admission data Campaign delayed because Make school follow-up calls Pending · Manav Shah"
+    ]
+   }
+  },
+  "mobile:handover": {
+   "seeded": {
+    "owner": "Task Owner · Neha Kapoor",
+    "blockedBy": "",
+    "downstream": "",
+    "blocker": "Current blocker: I haven't started No extra context added. · Reported by Neha Kapoor",
+    "handover": "TASK HANDOVER Ready for Aditi Rao Created by Neha Kapoor · 05 Oct 2026, 4:20 PM CURRENT STATUS Not started · 0% complete LAST ACTION Scholarship applicant list reviewed WAITING FOR Applicant availability confirmation NEXT ACTION Start the first call block on 06 Oct IMPORTANT NOTES Prioritize the five applicants marked urgent in the admissions sheet.",
+    "hasHandoverBtn": true,
+    "hasMyDayBtn": false,
+    "status": ""
+   },
+   "seededAny": [
+    {
+     "title": "Call pending scholarship applicants",
+     "owner": "Task Owner · Neha Kapoor",
+     "handover": "TASK HANDOVER Ready for Aditi Rao Created by Neha Kapoor · 05 Oct 2026, 4:20 PM CURRENT STATUS Not started · 0% complete LAST ACTION Scholarship applicant list reviewed WAITING FOR Applicant availability confirmation NEXT ACTION Start the first call block on 06 Oct IMPORTANT NOTES Prioritize the fiv"
+    }
+   ],
+   "openTasksWithButton": {
+    "cards": 12,
+    "withButton": 10
+   },
+   "before": {
+    "owner": "Task Owner · Arjun Mehta",
+    "blockedBy": "",
+    "downstream": "",
+    "blocker": "Current blocker: Waiting for information Final batch count is still awaited. · Reported by Arjun Mehta",
+    "handover": "",
+    "hasHandoverBtn": true,
+    "hasMyDayBtn": true,
+    "status": ""
+   },
+   "notificationPresentBefore": false,
+   "openClick": "Handover Task",
+   "modal": {
+    "cls": "task-modal handover-modal",
+    "role": null,
+    "ariaModal": null,
+    "top": 22,
+    "bottom": 976,
+    "height": 954,
+    "innerHeight": 844,
+    "clippedTop": false,
+    "clippedBottom": true,
+    "scrollable": false,
+    "heading": "Make this task easy to take over"
+   },
+   "prefill": {
+    "preview": "TASK Finalize October JEE batch timetable October Launch · Academic",
+    "to": "Karan Joshi",
+    "options": [
+     "Select employee",
+     "Priya Nair",
+     "Karan Joshi",
+     "Neha Kapoor",
+     "Aditi Rao",
+     "Manav Shah",
+     "Ritesh Shah",
+     "Vikram Nair",
+     "Sana Iyer",
+     "Rhea Sen",
+     "Omkar Patil"
+    ],
+    "fields": [
+     "In progress · 68% complete",
+     "68% progress recorded",
+     "Final batch count is still awaited.",
+     "Continue the next assigned step",
+     ""
+    ],
+    "createDisabled": false
+   },
+   "reach": {
+    "createBtnBottom": 952,
+    "innerHeight": 844,
+    "modalOverflowY": "visible",
+    "backdropOverflowY": "visible"
+   },
+   "createEnabled": true,
+   "createClick": "Create handover package",
+   "modalClosed": true,
+   "toast": "Handover package created for Neha Kapoor.",
+   "after": {
+    "owner": "Task Owner · Neha Kapoor",
+    "blockedBy": "",
+    "downstream": "",
+    "blocker": "Current blocker: Waiting for information Final batch count is still awaited. · Reported by Arjun Mehta",
+    "handover": "TASK HANDOVER Ready for Neha Kapoor Created by Arjun Mehta · 06 Oct 2026, 3:45 PM CURRENT STATUS In progress · 68% complete LAST ACTION QA: timetable draft shared with faculty WAITING FOR QA: final batch count NEXT ACTION QA: publish timetable by 07 Oct IMPORTANT NOTES QA: check lab slots",
+    "hasHandoverBtn": true,
+    "hasMyDayBtn": false,
+    "status": ""
+   },
+   "notification": "Task handover received Finalize October JEE batch timetable · Ready for Neha Kapoor Just now Deadline reminder 2 tasks n",
+   "notificationPanelHas": true,
+   "auditEntry": "Task handed over Finalize October JEE batch timetable From Arjun Mehta to Neha Kapoor Arjun Mehta 05 Oct 2026, 3:15 PM Task completed Upload student success stories for October campaign No additional "
+  },
+  "mobile:old": {
+   "create": {
+    "before": 12,
+    "after": 13,
+    "card": true,
+    "toast": "Task created. It is now visible to the right people in their feed."
+   },
+   "editHeading": "Edit task",
+   "saveClick": "Save changes",
+   "edit": {
+    "edited": true,
+    "cards": 13
+   },
+   "completeTarget": "QA regression task edited",
+   "complete": {
+    "toast": "Nice work — task marked complete and the team feed is updated.",
+    "card": "Squirrel Manual task QA regression task edited 0 people seen Mark seen Acknowledge Add to My Day 03 Oct Medium Task Owner · You Leadership · Academic Completed by You Contributors 0/0 parts done Add subtask Files & links 0 Add completion evidence Add task guid"
+   },
+   "momModal": "Write meeting MOM",
+   "momSubmit": "Lock MOM & save",
+   "mom": {
+    "modalClosed": true,
+    "toast": "MOM locked in the department directory. No task was auto-generated from the written MOM.",
+    "listed": true
+   },
+   "eventModal": "Plan an event",
+   "eventSubmit": "Create event & tasks",
+   "event": {
+    "modalClosed": true,
+    "before": 2,
+    "after": 3,
+    "toast": "Event planned. 0 tasks added to the task feed.",
+    "listed": true
+   },
+   "noticeModal": "Send a notice",
+   "noticeSubmit": "Send notice",
+   "notice": {
+    "modalClosed": true,
+    "toast": "Notice sent to the selected audience.",
+    "listed": true
+   }
+  }
+ }
+}

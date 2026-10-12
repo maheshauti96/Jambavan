@@ -1,0 +1,936 @@
+{
+ "label": "ir1",
+ "console": [],
+ "failedRequests": [],
+ "views": {
+  "desktop:feed": {
+   "file": "desktop-01-feed.png",
+   "heading": "Good morning, Arjun",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 1280,
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "visualViewportWidth": 1280,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "desktop:myDay": {
+   "file": "desktop-02-myDay.png",
+   "heading": "My Day",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 1280,
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "visualViewportWidth": 1280,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "desktop:department": {
+   "file": "desktop-03-department.png",
+   "heading": "Department pulse",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 1280,
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "visualViewportWidth": 1280,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "desktop:dashboard": {
+   "file": "desktop-04-dashboard.png",
+   "heading": "Execution dashboard",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 1280,
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "visualViewportWidth": 1280,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "desktop:momDirectory": {
+   "file": "desktop-05-momDirectory.png",
+   "heading": "MOM Directory",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 1280,
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "visualViewportWidth": 1280,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "desktop:eventPlanner": {
+   "file": "desktop-06-eventPlanner.png",
+   "heading": "Event Planner",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 1280,
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "visualViewportWidth": 1280,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "desktop:projects": {
+   "file": "desktop-07-projects.png",
+   "heading": "Major responsibilities",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 1280,
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "visualViewportWidth": 1280,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "desktop:calendar": {
+   "file": "desktop-08-calendar.png",
+   "heading": "Yearly Calendar",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 1280,
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "visualViewportWidth": 1280,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "desktop:guide": {
+   "file": "desktop-09-guide.png",
+   "heading": "JAMBAVAN Guide",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 1280,
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "visualViewportWidth": 1280,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "desktop:people": {
+   "file": "desktop-10-people.png",
+   "heading": "People & hierarchy",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 1280,
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "visualViewportWidth": 1280,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "desktop:myProfile": {
+   "file": "desktop-11-myProfile.png",
+   "heading": "My employee profile",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 1280,
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "visualViewportWidth": 1280,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "desktop:roleMatrix": {
+   "file": "desktop-12-roleMatrix.png",
+   "heading": "Role access matrix",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 1280,
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "visualViewportWidth": 1280,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "desktop:auditLog": {
+   "file": "desktop-13-auditLog.png",
+   "heading": "Audit log",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 1280,
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "visualViewportWidth": 1280,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "mobile:feed": {
+   "file": "mobile-01-feed.png",
+   "heading": "Good morning, Arjun",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 390,
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "visualViewportWidth": 390,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "mobile:myDay": {
+   "file": "mobile-02-myDay.png",
+   "heading": "My Day",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 390,
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "visualViewportWidth": 390,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "mobile:department": {
+   "file": "mobile-03-department.png",
+   "heading": "Department pulse",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 390,
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "visualViewportWidth": 390,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "mobile:dashboard": {
+   "file": "mobile-04-dashboard.png",
+   "heading": "Execution dashboard",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 390,
+    "scrollWidth": 609,
+    "innerWidth": 609,
+    "visualViewportWidth": 390,
+    "overflowX": true,
+    "culprits": [
+     {
+      "el": "article.reward-card",
+      "right": 609
+     },
+     {
+      "el": "article.planner-card",
+      "right": 609
+     }
+    ]
+   }
+  },
+  "mobile:momDirectory": {
+   "file": "mobile-05-momDirectory.png",
+   "heading": "MOM Directory",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 390,
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "visualViewportWidth": 390,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "mobile:eventPlanner": {
+   "file": "mobile-06-eventPlanner.png",
+   "heading": "Event Planner",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 390,
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "visualViewportWidth": 390,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "mobile:projects": {
+   "file": "mobile-07-projects.png",
+   "heading": "Major responsibilities",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 390,
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "visualViewportWidth": 390,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "mobile:calendar": {
+   "file": "mobile-08-calendar.png",
+   "heading": "Yearly Calendar",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 390,
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "visualViewportWidth": 390,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "mobile:guide": {
+   "file": "mobile-09-guide.png",
+   "heading": "JAMBAVAN Guide",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 390,
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "visualViewportWidth": 390,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "mobile:people": {
+   "file": "mobile-10-people.png",
+   "heading": "People & hierarchy",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 390,
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "visualViewportWidth": 390,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "mobile:myProfile": {
+   "file": "mobile-11-myProfile.png",
+   "heading": "My employee profile",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 390,
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "visualViewportWidth": 390,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "mobile:roleMatrix": {
+   "file": "mobile-12-roleMatrix.png",
+   "heading": "Role access matrix",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 390,
+    "scrollWidth": 766,
+    "innerWidth": 766,
+    "visualViewportWidth": 390,
+    "overflowX": true,
+    "culprits": [
+     {
+      "el": "section.access-matrix-hero",
+      "right": 766
+     },
+     {
+      "el": "div.access-matrix-card",
+      "right": 766
+     },
+     {
+      "el": "div.access-matrix-footer",
+      "right": 766
+     }
+    ]
+   }
+  },
+  "mobile:auditLog": {
+   "file": "mobile-13-auditLog.png",
+   "heading": "Audit log",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 390,
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "visualViewportWidth": 390,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "tablet:feed": {
+   "file": "tablet-01-feed.png",
+   "heading": "Good morning, Arjun",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 768,
+    "scrollWidth": 849,
+    "innerWidth": 849,
+    "visualViewportWidth": 768,
+    "overflowX": true,
+    "culprits": [
+     {
+      "el": "div.hanuman-mini-list",
+      "right": 849
+     }
+    ]
+   }
+  },
+  "tablet:myDay": {
+   "file": "tablet-02-myDay.png",
+   "heading": "My Day",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 768,
+    "scrollWidth": 768,
+    "innerWidth": 768,
+    "visualViewportWidth": 768,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "tablet:department": {
+   "file": "tablet-03-department.png",
+   "heading": "Department pulse",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 768,
+    "scrollWidth": 768,
+    "innerWidth": 768,
+    "visualViewportWidth": 768,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "tablet:dashboard": {
+   "file": "tablet-04-dashboard.png",
+   "heading": "Execution dashboard",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 768,
+    "scrollWidth": 768,
+    "innerWidth": 768,
+    "visualViewportWidth": 768,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "tablet:momDirectory": {
+   "file": "tablet-05-momDirectory.png",
+   "heading": "MOM Directory",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 768,
+    "scrollWidth": 768,
+    "innerWidth": 768,
+    "visualViewportWidth": 768,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "tablet:eventPlanner": {
+   "file": "tablet-06-eventPlanner.png",
+   "heading": "Event Planner",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 768,
+    "scrollWidth": 768,
+    "innerWidth": 768,
+    "visualViewportWidth": 768,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "tablet:projects": {
+   "file": "tablet-07-projects.png",
+   "heading": "Major responsibilities",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 768,
+    "scrollWidth": 768,
+    "innerWidth": 768,
+    "visualViewportWidth": 768,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "tablet:calendar": {
+   "file": "tablet-08-calendar.png",
+   "heading": "Yearly Calendar",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 768,
+    "scrollWidth": 768,
+    "innerWidth": 768,
+    "visualViewportWidth": 768,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "tablet:guide": {
+   "file": "tablet-09-guide.png",
+   "heading": "JAMBAVAN Guide",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 768,
+    "scrollWidth": 768,
+    "innerWidth": 768,
+    "visualViewportWidth": 768,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "tablet:people": {
+   "file": "tablet-10-people.png",
+   "heading": "People & hierarchy",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 768,
+    "scrollWidth": 768,
+    "innerWidth": 768,
+    "visualViewportWidth": 768,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "tablet:myProfile": {
+   "file": "tablet-11-myProfile.png",
+   "heading": "My employee profile",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 768,
+    "scrollWidth": 768,
+    "innerWidth": 768,
+    "visualViewportWidth": 768,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "tablet:roleMatrix": {
+   "file": "tablet-12-roleMatrix.png",
+   "heading": "Role access matrix",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 768,
+    "scrollWidth": 996,
+    "innerWidth": 996,
+    "visualViewportWidth": 768,
+    "overflowX": true,
+    "culprits": [
+     {
+      "el": "section.access-matrix-hero",
+      "right": 996
+     },
+     {
+      "el": "div.access-matrix-card",
+      "right": 996
+     },
+     {
+      "el": "div.access-matrix-footer",
+      "right": 996
+     }
+    ]
+   }
+  },
+  "tablet:auditLog": {
+   "file": "tablet-13-auditLog.png",
+   "heading": "Audit log",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 768,
+    "scrollWidth": 768,
+    "innerWidth": 768,
+    "visualViewportWidth": 768,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "wide:feed": {
+   "file": "wide-01-feed.png",
+   "heading": "Good morning, Arjun",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 1536,
+    "scrollWidth": 1536,
+    "innerWidth": 1536,
+    "visualViewportWidth": 1536,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "wide:myDay": {
+   "file": "wide-02-myDay.png",
+   "heading": "My Day",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 1536,
+    "scrollWidth": 1536,
+    "innerWidth": 1536,
+    "visualViewportWidth": 1536,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "wide:department": {
+   "file": "wide-03-department.png",
+   "heading": "Department pulse",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 1536,
+    "scrollWidth": 1536,
+    "innerWidth": 1536,
+    "visualViewportWidth": 1536,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "wide:dashboard": {
+   "file": "wide-04-dashboard.png",
+   "heading": "Execution dashboard",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 1536,
+    "scrollWidth": 1536,
+    "innerWidth": 1536,
+    "visualViewportWidth": 1536,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "wide:momDirectory": {
+   "file": "wide-05-momDirectory.png",
+   "heading": "MOM Directory",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 1536,
+    "scrollWidth": 1536,
+    "innerWidth": 1536,
+    "visualViewportWidth": 1536,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "wide:eventPlanner": {
+   "file": "wide-06-eventPlanner.png",
+   "heading": "Event Planner",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 1536,
+    "scrollWidth": 1536,
+    "innerWidth": 1536,
+    "visualViewportWidth": 1536,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "wide:projects": {
+   "file": "wide-07-projects.png",
+   "heading": "Major responsibilities",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 1536,
+    "scrollWidth": 1536,
+    "innerWidth": 1536,
+    "visualViewportWidth": 1536,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "wide:calendar": {
+   "file": "wide-08-calendar.png",
+   "heading": "Yearly Calendar",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 1536,
+    "scrollWidth": 1536,
+    "innerWidth": 1536,
+    "visualViewportWidth": 1536,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "wide:guide": {
+   "file": "wide-09-guide.png",
+   "heading": "JAMBAVAN Guide",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 1536,
+    "scrollWidth": 1536,
+    "innerWidth": 1536,
+    "visualViewportWidth": 1536,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "wide:people": {
+   "file": "wide-10-people.png",
+   "heading": "People & hierarchy",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 1536,
+    "scrollWidth": 1536,
+    "innerWidth": 1536,
+    "visualViewportWidth": 1536,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "wide:myProfile": {
+   "file": "wide-11-myProfile.png",
+   "heading": "My employee profile",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 1536,
+    "scrollWidth": 1536,
+    "innerWidth": 1536,
+    "visualViewportWidth": 1536,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "wide:roleMatrix": {
+   "file": "wide-12-roleMatrix.png",
+   "heading": "Role access matrix",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 1536,
+    "scrollWidth": 1536,
+    "innerWidth": 1536,
+    "visualViewportWidth": 1536,
+    "overflowX": false,
+    "culprits": []
+   }
+  },
+  "wide:auditLog": {
+   "file": "wide-13-auditLog.png",
+   "heading": "Audit log",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "deviceWidth": 1536,
+    "scrollWidth": 1536,
+    "innerWidth": 1536,
+    "visualViewportWidth": 1536,
+    "overflowX": false,
+    "culprits": []
+   }
+  }
+ },
+ "desktop:fonts": {
+  "mukta": true,
+  "cormorant": false,
+  "tiro": true,
+  "bodyFamily": "Mukta, \"Noto Sans Devanagari\", system-ui, sans-serif",
+  "loaded": [
+   "Mukta 400",
+   "Mukta 500",
+   "Mukta 600",
+   "Mukta 700",
+   "Mukta 700"
+  ]
+ },
+ "mobile:fonts": {
+  "mukta": true,
+  "cormorant": false,
+  "tiro": true,
+  "bodyFamily": "Mukta, \"Noto Sans Devanagari\", system-ui, sans-serif",
+  "loaded": [
+   "Mukta 400",
+   "Mukta 500",
+   "Mukta 600",
+   "Mukta 700",
+   "Mukta 700"
+  ]
+ },
+ "tablet:fonts": {
+  "mukta": true,
+  "cormorant": false,
+  "tiro": true,
+  "bodyFamily": "Mukta, \"Noto Sans Devanagari\", system-ui, sans-serif",
+  "loaded": [
+   "Mukta 400",
+   "Mukta 500",
+   "Mukta 600",
+   "Mukta 700",
+   "Mukta 700"
+  ]
+ },
+ "wide:fonts": {
+  "mukta": true,
+  "cormorant": false,
+  "tiro": true,
+  "bodyFamily": "Mukta, \"Noto Sans Devanagari\", system-ui, sans-serif",
+  "loaded": [
+   "Mukta 400",
+   "Mukta 500",
+   "Mukta 600",
+   "Mukta 700",
+   "Mukta 700"
+  ]
+ },
+ "reducedMotion": {
+  "elements": 2034,
+  "withMotionOver0_01ms": 0,
+  "sample": []
+ }
+}

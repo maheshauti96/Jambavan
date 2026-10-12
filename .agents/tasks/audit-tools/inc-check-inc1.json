@@ -1,0 +1,371 @@
+{
+ "label": "inc1",
+ "console": [],
+ "failedRequests": [],
+ "views": {
+  "desktop:feed": {
+   "file": "desktop-01-feed.png",
+   "heading": "Good morning, Arjun",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:myDay": {
+   "file": "desktop-02-myDay.png",
+   "heading": "My Day",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:department": {
+   "file": "desktop-03-department.png",
+   "heading": "Department pulse",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:dashboard": {
+   "file": "desktop-04-dashboard.png",
+   "heading": "Execution dashboard",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:momDirectory": {
+   "file": "desktop-05-momDirectory.png",
+   "heading": "MOM Directory",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:eventPlanner": {
+   "file": "desktop-06-eventPlanner.png",
+   "heading": "Event Planner",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:projects": {
+   "file": "desktop-07-projects.png",
+   "heading": "Major responsibilities",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:calendar": {
+   "file": "desktop-08-calendar.png",
+   "heading": "Yearly Calendar",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:guide": {
+   "file": "desktop-09-guide.png",
+   "heading": "JAMBAVAN Guide",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:people": {
+   "file": "desktop-10-people.png",
+   "heading": "People & hierarchy",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:myProfile": {
+   "file": "desktop-11-myProfile.png",
+   "heading": "My employee profile",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:roleMatrix": {
+   "file": "desktop-12-roleMatrix.png",
+   "heading": "Role access matrix",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "desktop:auditLog": {
+   "file": "desktop-13-auditLog.png",
+   "heading": "Audit log",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "overflowX": false
+   }
+  },
+  "mobile:feed": {
+   "file": "mobile-01-feed.png",
+   "heading": "Good morning, Arjun",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:myDay": {
+   "file": "mobile-02-myDay.png",
+   "heading": "My Day",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:department": {
+   "file": "mobile-03-department.png",
+   "heading": "Department pulse",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:dashboard": {
+   "file": "mobile-04-dashboard.png",
+   "heading": "Execution dashboard",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "scrollWidth": 609,
+    "innerWidth": 609,
+    "overflowX": false
+   }
+  },
+  "mobile:momDirectory": {
+   "file": "mobile-05-momDirectory.png",
+   "heading": "MOM Directory",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:eventPlanner": {
+   "file": "mobile-06-eventPlanner.png",
+   "heading": "Event Planner",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:projects": {
+   "file": "mobile-07-projects.png",
+   "heading": "Major responsibilities",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:calendar": {
+   "file": "mobile-08-calendar.png",
+   "heading": "Yearly Calendar",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:guide": {
+   "file": "mobile-09-guide.png",
+   "heading": "JAMBAVAN Guide",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:people": {
+   "file": "mobile-10-people.png",
+   "heading": "People & hierarchy",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:myProfile": {
+   "file": "mobile-11-myProfile.png",
+   "heading": "My employee profile",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  },
+  "mobile:roleMatrix": {
+   "file": "mobile-12-roleMatrix.png",
+   "heading": "Role access matrix",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "scrollWidth": 766,
+    "innerWidth": 766,
+    "overflowX": false
+   }
+  },
+  "mobile:auditLog": {
+   "file": "mobile-13-auditLog.png",
+   "heading": "Audit log",
+   "images": {
+    "total": 0,
+    "broken": 0
+   },
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "overflowX": false
+   }
+  }
+ },
+ "desktop:fonts": {
+  "mukta": true,
+  "cormorant": false,
+  "tiro": true,
+  "bodyFamily": "Mukta, \"Noto Sans Devanagari\", system-ui, sans-serif",
+  "loaded": [
+   "Mukta 400",
+   "Mukta 500",
+   "Mukta 600",
+   "Mukta 700",
+   "Mukta 700"
+  ]
+ },
+ "mobile:fonts": {
+  "mukta": true,
+  "cormorant": false,
+  "tiro": true,
+  "bodyFamily": "Mukta, \"Noto Sans Devanagari\", system-ui, sans-serif",
+  "loaded": [
+   "Mukta 400",
+   "Mukta 500",
+   "Mukta 600",
+   "Mukta 700",
+   "Mukta 700"
+  ]
+ }
+}

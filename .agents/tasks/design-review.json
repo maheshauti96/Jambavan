@@ -1,0 +1,90 @@
+{
+  "verdict": "CHANGES_REQUESTED",
+  "findings": [
+    {
+      "id": "M1",
+      "severity": "MEDIUM",
+      "title": "Celebrating completion fires a toast while the CelebrationOverlay dialog is open (breaks AC-6.6)",
+      "where": "§8 Complete task + Major milestone rows; §3.5 Toasts; §14.3; AC-6.5, AC-6.6",
+      "fix": "In completeTask compute celebrationFor(...) first; if non-null, skip notify() (overlay carries the message). In useRegisterOpenDialog call sonner toast.dismiss() when the open-dialog count goes 0→1. Reword AC-6.6 to cover toasts created just before a dialog opened; add an audit case (complete task 1 then 4 → overlay open, 0 [data-sonner-toast]). Change §8 to 'Toast only when celebrationFor returns null.'"
+    },
+    {
+      "id": "M2",
+      "severity": "MEDIUM",
+      "title": "'HANUMAN mission' has three conflicting predicates (longRunning / category / kind)",
+      "where": "§11 IA-7 todaysMission; §8 celebration trigger (a) and copy variants; §9.1 family picker and Feed summary; §3.5 TaskCard HANUMAN variant; §12 F13",
+      "fix": "Add `export const isHanumanMission = (t: Task) => t.longRunning === true;` and use it for todaysMission exclusion, celebrationFor trigger (a) (drop category === 'HANUMAN'), the TaskCard HANUMAN variant, and the §8 copy-variant comments. FamilyBadge keeps category, sourceLabel keeps kind. In §9.1 replace 'sets only category' with 'writes category with today's side effects verbatim: Squirrel/Angad clear contributors and keep only the owner note; HANUMAN also sets longRunning: true and kind: \"HANUMAN\"'. Test: a category-HANUMAN task without longRunning is in todaysMission, never triggers 'hanuman', and has non-null journey."
+    },
+    {
+      "id": "M3",
+      "severity": "MEDIUM",
+      "title": "Jambavan's Reflection observation and its 'Review deadline watch' button are unspecified",
+      "where": "§9.1 Dashboard band; §9.4 item 3; mock 3",
+      "fix": "Add the pure reflectionFor(depts, tasks): string[] in selectors.ts (tie-break by name, zero case 'Nothing is overdue or blocked.', singular/plural, 'sits with {dept}' only when all stuck tasks share one department, else 'across {n} departments'); drop 'this week' (department values are static seed). Seed output: 'Operations is 31 points behind Marketing.' / '1 mission is overdue and blocked, and it sits with Operations.' / 'A short check-in with its Task Owner may unblock it.' The button scrolls to and focuses the existing Dashboard 'Deadline watch' card heading (Home.tsx:1012), secondary variant. Add unit tests and AC-12.3 (seed lines; after task 6 is completed or archived, 'Nothing is overdue or blocked.')."
+    },
+    {
+      "id": "N1",
+      "severity": "NIT",
+      "title": "Lede '2 missions need you today' sits next to '1 due today' (task 4 is due 30 Sep)",
+      "where": "§9.1 Feed hero, AC-6.4, mock 1",
+      "fix": "Reword to '{n} active missions are on your path today.' / '1 active mission is on your path today.', or explicitly accept the current wording."
+    },
+    {
+      "id": "N2",
+      "severity": "NIT",
+      "title": "Pure mergeTaskEdit(existing, draft) needs profiles and nextId() it does not receive",
+      "where": "§12.1",
+      "fix": "mergeTaskEdit(existing, draft, ctx: { departmentOf: (name) => string | undefined; nextId: () => number }); the store passes a profiles lookup and Date.now()+Math.random(); tests pass stubs."
+    },
+    {
+      "id": "N3",
+      "severity": "NIT",
+      "title": "Team task toggle on edit changes isTeamTask but not team/visibility; not stated",
+      "where": "§12.1 merge table",
+      "fix": "State: 'isTeamTask changes only the Team task pill on edit; team and visibility never change through edit'. Add the edit-mode hint 'Visibility is set when the mission is created.'"
+    },
+    {
+      "id": "N4",
+      "severity": "NIT",
+      "title": "Increment 2 depends on projectFilter (4b) and the notices view (4c)",
+      "where": "§16 increments 2, 4b, 4c; §11 IA-3, IA-6",
+      "fix": "In increment 2 add projectFilter state (null, no UI) and the 'notices' ViewKey, with NoticesView rendering the existing notice and feedback markup verbatim until 4c; or keep today's setActiveView('feed') until 4c and start the 13-view assertion at 4c."
+    },
+    {
+      "id": "N5",
+      "severity": "NIT",
+      "title": "celebrationFor returns keys[] but §8 and the tests text say 'key'",
+      "where": "§8, §13.2, §15 celebration.test.ts",
+      "fix": "Use keys: ['hanuman:7'] / ['today:05 Oct 2026'] in the text; the store adds every returned key to celebrated."
+    },
+    {
+      "id": "N6",
+      "severity": "NIT",
+      "title": "AC-6.7 (refused completion of task 2) has no browser path",
+      "where": "AC-6.7",
+      "fix": "Make it a tasks.test.ts assertion (result null, same tasks reference); the store calls logActivity and notify only when result !== null."
+    },
+    {
+      "id": "N7",
+      "severity": "NIT",
+      "title": "AC numbering and indentation",
+      "where": "AC-9.3/9.4 order, AC-13.3 indent",
+      "fix": "Renumber AC-9 in order and fix the AC-13.3 indentation."
+    },
+    {
+      "id": "N8",
+      "severity": "NIT",
+      "title": "Unlisted mock details",
+      "where": "§19; mocks 1–3",
+      "fix": "Note or fix in §19: mock 3 caption '(HANUMAN mission)' suffix; mock 3 'View tasks' uses an external-link arrow (use ArrowRight); mock 2 fresh dialog shows Angad selected (default is Squirrel); add 'Team task (when isTeamTask)' to the §3.5 TaskCard meta row, as mock 1 shows."
+    },
+    {
+      "id": "N9",
+      "severity": "NIT",
+      "title": "Sanjeevani symbol used only for the 'nothing to rescue' state (brief §7 maps it to critical/rescue tasks)",
+      "where": "§6.3 hanuman.sanjeevani, §9.2",
+      "fix": "Also show the aria-hidden Sanjeevani glyph next to 'Overdue' on the Needs attention tile when count > 0 and on overdue High-priority cards."
+    }
+  ],
+  "reviewDoc": "/Users/maheshauti/Documents/Startups/JAMBAVAN (1)/.agents/tasks/design-review.md"
+}

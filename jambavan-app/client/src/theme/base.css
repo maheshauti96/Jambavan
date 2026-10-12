@@ -1,0 +1,69 @@
+/* Base layer (§13.1): reset, body, focus, reduced-motion kill switch, .sr-only, selection. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--jb-font-sans);
+  color: var(--jb-ink);
+  background-color: var(--jb-cream-50);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* Global focus (§3.5): 2 px blue-700 outline with a 2 px offset, keyboard focus only. */
+:focus-visible {
+  outline: 2px solid var(--jb-blue-700);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--jb-gold-100);
+  color: var(--jb-ink);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Sacred text (§9.4) is always set in Tiro Devanagari Hindi. */
+.jb-sacred {
+  font-family: var(--jb-font-deva);
+}
+
+/* Reduced-motion kill switch (§8). Near-zero rather than zero durations, so Radix Presence and
+   tw-animate-css still fire animationend and dialogs unmount (review N5). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

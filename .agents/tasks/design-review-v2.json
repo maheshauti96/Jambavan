@@ -1,0 +1,90 @@
+{
+  "verdict": "APPROVED",
+  "findings": [
+    {
+      "id": "R4-M1",
+      "severity": "MEDIUM",
+      "title": "Unchanged edit cannot be saved when the task's upstream is archived",
+      "where": "§12.1 dependsOnTaskId row; §14.2 Depends on; §9.3; §10.3 edge cases; Home.tsx:1216 options exclude archived",
+      "fix": "Validate dependsOnTaskId only when draft.dependsOnTaskId !== existing.dependsOnTaskId (exists, !archived, !self, !wouldCycle); an unchanged link is always valid. Render the current archived upstream as an extra option labelled '{title} (Archived)'. Unit test: archive 9, save 10 unchanged keeps dependsOnTaskId 9. Add to AC-21.3 that changing to an archived task is refused."
+    },
+    {
+      "id": "R4-M2",
+      "severity": "MEDIUM",
+      "title": "canHandOver references a non-existent permission and its pure signature cannot see it",
+      "where": "§12 F17(g); §13.1/§13.2 state/handover.ts; §3.5 More menu; §14.1 Hand over rows",
+      "fix": "Define canHandOver(task, ctx: { canEditOrReassign: boolean }) = !task.archived && task.status !== 'done' && (isCurrentUser(task.assignee) || ctx.canEditOrReassign); the store passes accessMatrix['Department Head']['Edit or reassign tasks'] (current user is Department Head, §18). handoverTaskPure returns null for missing, done, archived, !canHandOver or invalid draft and takes the same ctx. Test: with the toggle off, the item shows only on tasks 1, 4, 7, 9; AC: absent on archived and done tasks."
+    },
+    {
+      "id": "R4-M3",
+      "severity": "MEDIUM",
+      "title": "ChainSetu is linear but dependency groups can branch; rendering rule missing",
+      "where": "§10.3 Rendering; §3.5 TaskCard dependency lines; IA-11; AC-21.2",
+      "fix": "Dashboard group: path = upstreamPath(deepest waiting task; ties by title asc); the ordered list names every waiting task; when waiting has tasks off the path, caption '+{k} more waiting on other branches' (also in aria-label). Card 'wait on this one' line: text only, no ChainSetu; ChainSetu sm only with the 'Waiting on' line using upstreamPath(task). Add a dependencies.test.ts case with two dependents of task 9."
+    },
+    {
+      "id": "R4-N1",
+      "severity": "NIT",
+      "title": "'Only data-model change' claim is now false",
+      "where": "§12.3 People lifecycle",
+      "fix": "Replace with: 'There are two data-model changes: EmployeeProfile.access gains \"Removed\", and TaskHandover gains createdBy: string (F17).'"
+    },
+    {
+      "id": "R4-N2",
+      "severity": "NIT",
+      "title": "HandoverLine template omits 'created by' that F17 and mock 4 show",
+      "where": "§3.5 TaskCard handover line vs F17(c), §19 mock (iv)",
+      "fix": "Template: 'Mission handed over to {displayName(to)} · from {displayName(from)}{createdBy !== from ? ` · created by ${displayName(createdBy)}` : \"\"} · {createdAt}'."
+    },
+    {
+      "id": "R4-N3",
+      "severity": "NIT",
+      "title": "§5 scrim results omit mock 4",
+      "where": "§5 'Results on the revised mocks'",
+      "fix": "Add 'mock 4 worst 6.00:1 (band eyebrow)' to match §19."
+    },
+    {
+      "id": "R4-N4",
+      "severity": "NIT",
+      "title": "New component colour pairs missing from the contrast allowlist",
+      "where": "§3.2 allowlist; §3.5 BlockerLine, HandoverLine",
+      "fix": "Add round 4 pairs: earth-700/danger-100 (7.91), ink/danger-100 (13.41), earth-700/cream-100 (compute with contrast.mjs)."
+    },
+    {
+      "id": "R4-N5",
+      "severity": "NIT",
+      "title": "Singular/plural forms for dependent counts unspecified",
+      "where": "§3.5 '{n} task(s) wait on this one'; F23 confirm copy; AC-21.1; AC-21.3",
+      "fix": "Write both forms: '1 task waits on this one: {title}' / '{n} tasks wait on this one: …'; '1 task that waits on it will stop waiting.' / '{n} tasks that wait on it will stop waiting.'"
+    },
+    {
+      "id": "R4-N6",
+      "severity": "NIT",
+      "title": "Handover draft edge cases: default-recipient fallback wording and over-length prefill",
+      "where": "§13.2 defaultHandoverDraft; §14.2 Handover rows",
+      "fix": "State 'to = first unfinished contributor in handoverRecipients(task), else \"\"; today's first-staff-option fallback is dropped.' Truncate Last/Next action prefill to 300 chars at a word boundary with '…' and add 'Keep the last action under 300 characters.'"
+    },
+    {
+      "id": "R4-N7",
+      "severity": "NIT",
+      "title": "AC-13.4 and AC-13.5 mis-indented (round 3 N7 partly closed)",
+      "where": "§16 AC-13",
+      "fix": "Indent AC-13.4 and AC-13.5 with 4 spaces like AC-13.3."
+    },
+    {
+      "id": "R4-N8",
+      "severity": "NIT",
+      "title": "'Add to My Day' links to the date selected in My Day, not necessarily today; My Day eyebrow date ambiguous",
+      "where": "§3.5 action row; §11 IA-10; mock 4",
+      "fix": "Keep today's behaviour and label the button 'Add to My Day · {d MMM}' when myDayDate !== todayIso() (or always link to todayIso(); state the choice). State the band eyebrow is 'Daily Dharma · {TODAY_LONG}'; the selected date appears only in the date field and 'Three arrows for {d MMM}'."
+    },
+    {
+      "id": "R4-N9",
+      "severity": "NIT",
+      "title": "Handoff docs will contradict the relabelled features",
+      "where": "§16 increment 6; DEVELOPER_HANDOFF.md:79–80; Task Handover integration guide",
+      "fix": "In increment 6 update DEVELOPER_HANDOFF.md lines 79–80 to 'Waiting on' / 'Held at' and 'Hand over task… in the card's More menu', and note there that the integration guide's 'Handover Task is visible' check is superseded."
+    }
+  ],
+  "reviewDoc": "/Users/maheshauti/Documents/Startups/JAMBAVAN (1)/.agents/tasks/design-review-v2.md"
+}

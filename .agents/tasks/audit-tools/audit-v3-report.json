@@ -1,0 +1,1917 @@
+{
+ "console": [
+  {
+   "label": "recheck:B5:roleMatrix",
+   "type": "error",
+   "text": "Each child in a list should have a unique \"key\" prop.%s%s See https://react.dev/link/warning-keys for more information. \n\nCheck the render method of `div`.  It was passed a child from Home."
+  }
+ ],
+ "desktop": {
+  "feed": {
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "culprits": []
+   },
+   "contrastWhole": {
+    "checked": 522,
+    "failing": 264,
+    "sizes": {
+     "lt10": 408,
+     "lt12": 478,
+     "lt14": 507,
+     "total": 522
+    }
+   },
+   "blockerCheckin": {
+    "scopes": 10,
+    "checked": 110,
+    "failing": 20,
+    "sizes": {
+     "lt10": 100,
+     "lt12": 110,
+     "total": 110
+    },
+    "minFont": 8,
+    "worst": [
+     {
+      "sel": "button.selected < blocker-options",
+      "ratio": 2.96,
+      "sample": "Waiting for information",
+      "fg": "#ffffff",
+      "bg": "#c7894a",
+      "px": 9
+     },
+     {
+      "sel": "span < blocker-current",
+      "ratio": 3.28,
+      "sample": "Final batch count is still awaited. · Reported by Arjun Meht",
+      "fg": "#a1846a",
+      "bg": "#fff7e9",
+      "px": 8
+     },
+     {
+      "sel": "p < blocker-checkin",
+      "ratio": 3.4,
+      "sample": "One click helps management fix process bottlenecks instead o",
+      "fg": "#9b8877",
+      "bg": "#ffffff",
+      "px": 9
+     }
+    ]
+   },
+   "blockerTaps": {
+    "total": 100,
+    "under44": 100,
+    "under24": 10,
+    "minH": 23,
+    "samples": [
+     {
+      "t": "Why is this task not moving?",
+      "w": 900,
+      "h": 23
+     },
+     {
+      "t": "I haven't started",
+      "w": 90,
+      "h": 28
+     },
+     {
+      "t": "Waiting for someone",
+      "w": 108,
+      "h": 28
+     },
+     {
+      "t": "Waiting for information",
+      "w": 119,
+      "h": 28
+     },
+     {
+      "t": "Too much other work",
+      "w": 111,
+      "h": 28
+     },
+     {
+      "t": "I don't understand the task",
+      "w": 137,
+      "h": 28
+     }
+    ]
+   },
+   "dependencyBlocked": {
+    "scopes": 3,
+    "checked": 9,
+    "failing": 6,
+    "sizes": {
+     "lt10": 9,
+     "lt12": 9,
+     "total": 9
+    },
+    "minFont": 8,
+    "worst": [
+     {
+      "sel": "span < dependency-blocked",
+      "ratio": 3.04,
+      "sample": "Blocked by",
+      "fg": "#9b8b88",
+      "bg": "#fff5f2",
+      "px": 8
+     },
+     {
+      "sel": "em < dependency-blocked",
+      "ratio": 4.37,
+      "sample": "Blocked",
+      "fg": "#a5504d",
+      "bg": "#fce0dc",
+      "px": 8
+     }
+    ]
+   },
+   "dependencyDownstream": {
+    "scopes": 1,
+    "checked": 3,
+    "failing": 2,
+    "sizes": {
+     "lt10": 3,
+     "lt12": 3,
+     "total": 3
+    },
+    "minFont": 8,
+    "worst": [
+     {
+      "sel": "span < dependency-downstream",
+      "ratio": 3.13,
+      "sample": "Downstream impact",
+      "fg": "#9b8b88",
+      "bg": "#fffaf0",
+      "px": 8
+     },
+     {
+      "sel": "small < dependency-downstream",
+      "ratio": 3.16,
+      "sample": "Send approved poster to schools",
+      "fg": "#a18a70",
+      "bg": "#fffaf0",
+      "px": 8
+     }
+    ]
+   },
+   "handoverSummary": {
+    "scopes": 1,
+    "checked": 13,
+    "failing": 6,
+    "sizes": {
+     "lt10": 12,
+     "lt12": 13,
+     "total": 13
+    },
+    "minFont": 8,
+    "worst": [
+     {
+      "sel": "small < handover-summary-head",
+      "ratio": 2.84,
+      "sample": "Created by Neha Kapoor · 05 Oct 2026, 4:20 PM",
+      "fg": "#a194b3",
+      "bg": "#ffffff",
+      "px": 8
+     },
+     {
+      "sel": "small < div",
+      "ratio": 2.95,
+      "sample": "Next action",
+      "fg": "#9f91ad",
+      "bg": "#ffffff",
+      "px": 8
+     },
+     {
+      "sel": "small < handover-notes",
+      "ratio": 2.95,
+      "sample": "Important notes",
+      "fg": "#9f91ad",
+      "bg": "#ffffff",
+      "px": 8
+     }
+    ]
+   },
+   "ackRow": {
+    "scopes": 12,
+    "checked": 50,
+    "failing": 12,
+    "sizes": {
+     "lt10": 50,
+     "lt12": 50,
+     "total": 50
+    },
+    "minFont": 8,
+    "worst": [
+     {
+      "sel": "span < ack-row",
+      "ratio": 2.38,
+      "sample": "0 people seen",
+      "fg": "#aaa4b0",
+      "bg": "#fbfdfb",
+      "px": 8
+     }
+    ]
+   },
+   "ackRowTaps": {
+    "total": 38,
+    "under44": 38,
+    "under24": 0,
+    "minH": 24,
+    "samples": [
+     {
+      "t": "Mark seen",
+      "w": 76,
+      "h": 24
+     },
+     {
+      "t": "Acknowledge",
+      "w": 89,
+      "h": 24
+     },
+     {
+      "t": "Add to My Day",
+      "w": 93,
+      "h": 24
+     },
+     {
+      "t": "Handover Task",
+      "w": 95,
+      "h": 24
+     },
+     {
+      "t": "Mark seen",
+      "w": 76,
+      "h": 24
+     },
+     {
+      "t": "Acknowledge",
+      "w": 89,
+      "h": 24
+     }
+    ]
+   },
+   "blockerInputsUnlabeled": 10,
+   "blockerSelectedState": {
+    "selected": {
+     "color": "rgb(255, 255, 255)",
+     "bg": "rgb(199, 137, 74)",
+     "border": "rgb(199, 137, 74)",
+     "weight": "400"
+    },
+    "unselected": {
+     "color": "rgb(120, 101, 81)",
+     "bg": "rgb(255, 253, 249)",
+     "border": "rgb(234, 223, 206)",
+     "weight": "400"
+    },
+    "ariaPressed": null,
+    "hasIconOrText": false
+   },
+   "detailsOpenByDefault": "5 of 10",
+   "taskCardHeights": [
+    668,
+    772,
+    632,
+    465,
+    487,
+    632,
+    487,
+    727,
+    548,
+    548,
+    516,
+    768
+   ],
+   "firstTaskCardTop": 1552,
+   "cardCount": 12,
+   "campaignCategories": [
+    "Prepare admission camp: Squirrel",
+    "Approve admission camp: Squirrel",
+    "Send approved poster t: Squirrel",
+    "Make school follow-up : Squirrel",
+    "Update admission data: Squirrel"
+   ],
+   "handoverButtonCount": 10,
+   "myDayButtonCount": 4
+  },
+  "focus": {
+   "blockerSummary": {
+    "el": "summary.",
+    "text": "Why is this task not moving?",
+    "outlineStyle": "auto",
+    "outlineWidth": "1px",
+    "outlineColor": "rgb(0, 95, 204)",
+    "boxShadow": "none",
+    "insideModal": false,
+    "reachedTarget": true
+   },
+   "blockerOption": {
+    "el": "button.",
+    "text": "I haven't started",
+    "outlineStyle": "auto",
+    "outlineWidth": "1px",
+    "outlineColor": "rgb(0, 95, 204)",
+    "boxShadow": "none",
+    "insideModal": false,
+    "reachedTarget": true
+   },
+   "handoverButton": {
+    "el": "button.ack-button handover-button",
+    "text": "Handover Task",
+    "outlineStyle": "auto",
+    "outlineWidth": "1px",
+    "outlineColor": "rgb(0, 95, 204)",
+    "boxShadow": "none",
+    "insideModal": false,
+    "reachedTarget": true
+   },
+   "myDayButton": {
+    "el": "button.ack-button my-day-link",
+    "text": "Add to My Day",
+    "outlineStyle": "auto",
+    "outlineWidth": "1px",
+    "outlineColor": "rgb(0, 95, 204)",
+    "boxShadow": "none",
+    "insideModal": false,
+    "reachedTarget": true
+   },
+   "summaryToggleByKey": false,
+   "summaryOpenAfterEnter": false
+  },
+  "blocker": {
+   "before": null,
+   "after": "Current blocker: Too much other work QA note · Reported by Arjun Mehta",
+   "toast": "Thanks — this blocker is recorded as a process signal for management.",
+   "toastRole": null,
+   "clearBlockerControl": false
+  },
+  "myDay": {
+   "navClicked": true,
+   "heading": "My Day",
+   "pageSubtitleOrDate": "Workspace / My Day Search tasks, people... ⌘ K",
+   "dateInput": "2026-10-07",
+   "dateLabel": "WEDNESDAY, 7 OCTOBER 2026",
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "culprits": []
+   },
+   "contrast": {
+    "scopes": 1,
+    "checked": 39,
+    "failing": 16,
+    "sizes": {
+     "lt10": 13,
+     "lt12": 31,
+     "total": 39
+    },
+    "minFont": 8,
+    "worst": [
+     {
+      "sel": "h2 < div",
+      "ratio": 1.04,
+      "sample": "Plan the day you want to complete.",
+      "fg": "#fffaf0",
+      "bg": "#fbf5e9",
+      "px": 20
+     },
+     {
+      "sel": "p < div",
+      "ratio": 1.11,
+      "sample": "Only you can see or manage this planner. Academy tasks stay ",
+      "fg": "#e8e9f5",
+      "bg": "#fbf5e9",
+      "px": 10
+     },
+     {
+      "sel": "span.eyebrow < div",
+      "ratio": 1.16,
+      "sample": "Private personal planner",
+      "fg": "#ffe2a2",
+      "bg": "#fbf5e9",
+      "px": 10
+     },
+     {
+      "sel": "label < my-day-date-picker",
+      "ratio": 1.23,
+      "sample": "Date",
+      "fg": "#d9def1",
+      "bg": "#fbf5e9",
+      "px": 8
+     },
+     {
+      "sel": "small < div",
+      "ratio": 2.9,
+      "sample": "Work · Planned",
+      "fg": "#9a90a4",
+      "bg": "#faf9fd",
+      "px": 8
+     },
+     {
+      "sel": "small < span",
+      "ratio": 3.13,
+      "sample": "Your personal priorities, schedule, actionables, and end-of-",
+      "fg": "#938aa1",
+      "bg": "#fbf8ff",
+      "px": 9
+     },
+     {
+      "sel": "p.my-day-help < my-day-card",
+      "ratio": 3.55,
+      "sample": "These are private references to academy tasks assigned to yo",
+      "fg": "#8e8497",
+      "bg": "#fffffe",
+      "px": 9
+     },
+     {
+      "sel": "button.text-button < schedule-row",
+      "ratio": 4.35,
+      "sample": "Edit",
+      "fg": "#92703b",
+      "bg": "#faf9fd",
+      "px": 10
+     }
+    ]
+   },
+   "taps": {
+    "total": 22,
+    "under44": 19,
+    "under24": 5,
+    "minH": 13,
+    "samples": [
+     {
+      "t": "date",
+      "w": 145,
+      "h": 34
+     },
+     {
+      "t": "Today",
+      "w": 64,
+      "h": 38
+     },
+     {
+      "t": "checkbox",
+      "w": 13,
+      "h": 13
+     },
+     {
+      "t": "Add a priority...",
+      "w": 389,
+      "h": 32
+     },
+     {
+      "t": "Add",
+      "w": 40,
+      "h": 15
+     },
+     {
+      "t": "Planned In Progress Completed Miss",
+      "w": 67,
+      "h": 27
+     }
+    ]
+   },
+   "unlabeled": {
+    "fields": 15,
+    "withoutAccessibleName": [
+     "date",
+     "Add a priority...",
+     "select-one",
+     "time",
+     "time",
+     "Activity or time block",
+     "Category",
+     "What do you want to remember?",
+     "Optional note",
+     "date",
+     "select-one"
+    ],
+    "iconButtonsWithoutName": 0
+   },
+   "headings": [
+    "H2:Plan the day you want to complete.",
+    "H2:My Day",
+    "H3:Today’s Top 3",
+    "H3:My Schedule",
+    "H3:Personal Actionables",
+    "H3:Academy Tasks Added to My Day",
+    "H3:End of Day"
+   ],
+   "scheduleEdit": {
+    "before": 1,
+    "afterEditClick": 0,
+    "draftTitle": "Academy focus block",
+    "afterDateSwitchAndBack": 0
+   },
+   "reviewToast": "Your private end-of-day review was saved.",
+   "reviewValueAfterClearing": "Finished the timetable",
+   "top3": {
+    "count": "3/3",
+    "addInputStillShown": false
+   },
+   "addToMyDayToast": "Finalize October JEE batch timetable was added to your private My Day plan. The academy task was not changed.",
+   "linkedAfterHandover": "SOURCE OF TRUTH Academy Tasks Added to My Day 1 These are private references to academy tasks assigned to you. Adding them here never duplicates or changes the original task. Squirrel Finalize October JEE batch timetable"
+  },
+  "handover": {
+   "dialog": {
+    "height": 613,
+    "top": 94,
+    "bottom": 706,
+    "innerHeight": 800,
+    "maxHeight": "none",
+    "overflowY": "visible",
+    "backdropOverflowY": "visible",
+    "role": null,
+    "ariaModal": null,
+    "primaryText": "Create handover package",
+    "primaryBottom": 682,
+    "primaryReachableWithoutScroll": true,
+    "closeButtonName": "(none)"
+   },
+   "contrast": {
+    "scopes": 1,
+    "checked": 17,
+    "failing": 4,
+    "sizes": {
+     "lt10": 2,
+     "lt12": 15,
+     "total": 17
+    },
+    "minFont": 8,
+    "worst": [
+     {
+      "sel": "span < handover-preview",
+      "ratio": 3.09,
+      "sample": "Task",
+      "fg": "#9a86b1",
+      "bg": "#faf7ff",
+      "px": 8
+     },
+     {
+      "sel": "small < handover-preview",
+      "ratio": 3.1,
+      "sample": "October Launch · Academic",
+      "fg": "#958a9d",
+      "bg": "#faf7ff",
+      "px": 9
+     },
+     {
+      "sel": "p < div",
+      "ratio": 3.16,
+      "sample": "Share the current situation in one compact package so the ne",
+      "fg": "#8d919b",
+      "bg": "#ffffff",
+      "px": 10
+     },
+     {
+      "sel": "span.eyebrow < div",
+      "ratio": 4.05,
+      "sample": "Task Handover",
+      "fg": "#a17642",
+      "bg": "#ffffff",
+      "px": 10
+     }
+    ]
+   },
+   "taps": {
+    "total": 9,
+    "under44": 5,
+    "under24": 0,
+    "minH": 34,
+    "samples": [
+     {
+      "t": "submit",
+      "w": 28,
+      "h": 34
+     },
+     {
+      "t": "Select employee Priya Nair Karan J",
+      "w": 241,
+      "h": 38
+     },
+     {
+      "t": "text",
+      "w": 241,
+      "h": 38
+     },
+     {
+      "t": "e.g. Called principal on 5 Oct",
+      "w": 241,
+      "h": 72
+     },
+     {
+      "t": "e.g. School confirmation",
+      "w": 241,
+      "h": 72
+     },
+     {
+      "t": "e.g. Call again on 8 Oct",
+      "w": 241,
+      "h": 72
+     }
+    ]
+   },
+   "unlabeled": {
+    "fields": 6,
+    "withoutAccessibleName": [],
+    "iconButtonsWithoutName": 1
+   },
+   "defaults": {
+    "to": "Karan Joshi",
+    "statusField": "In progress · 68% complete",
+    "textareas": [
+     "68% progress recorded",
+     "Final batch count is still awaited.",
+     "Continue the next assigned step",
+     ""
+    ]
+   },
+   "focusOnOpen": {
+    "el": "button.ack-button handover-button",
+    "text": "Handover Task",
+    "outlineStyle": "none",
+    "outlineWidth": "3px",
+    "outlineColor": "rgb(118, 84, 160)",
+    "boxShadow": "none",
+    "insideModal": false
+   },
+   "tab": {
+    "escapedAfterTabs": 1,
+    "to": {
+     "el": "summary.",
+     "text": "Why is this task not moving?",
+     "outlineStyle": "auto",
+     "outlineWidth": "1px",
+     "outlineColor": "rgb(0, 95, 204)",
+     "boxShadow": "none",
+     "insideModal": false
+    }
+   },
+   "closesOnEscape": false,
+   "task4": {
+    "domSelectValue": "",
+    "shownOption": "Select employee",
+    "optionCount": 11,
+    "youIsAnOption": false,
+    "createEnabled": true,
+    "afterCreate": {
+     "owner": "Task Owner · You",
+     "pkg": "TASK HANDOVER Ready for You Created by Arjun Mehta · 06 Oct 2026, 3:45 PM",
+     "toast": "Handover package created for You."
+    }
+   },
+   "seedTask2": {
+    "owner": "Task Owner · Neha Kapoor",
+    "pkg": "TASK HANDOVER Ready for Aditi Rao Created by Neha Kapoor · 05 Oct 2026, 4:20 PM"
+   },
+   "task2After": {
+    "owner": "Task Owner · Manav Shah",
+    "packages": 1,
+    "pkg": "TASK HANDOVER Ready for Manav Shah Created by Arjun Mehta · 06 Oct 2026, 3:45 PM"
+   },
+   "auditTop": true
+  },
+  "createTask": {
+   "dialog": {
+    "height": 1049,
+    "top": 22,
+    "bottom": 1071,
+    "innerHeight": 800,
+    "maxHeight": "none",
+    "overflowY": "visible",
+    "backdropOverflowY": "visible",
+    "role": null,
+    "ariaModal": null,
+    "primaryText": "Create task",
+    "primaryBottom": 1047,
+    "primaryReachableWithoutScroll": false,
+    "closeButtonName": "(none)"
+   },
+   "dependsOn": {
+    "top": 411,
+    "bottom": 449,
+    "accessibleNameSource": "Depends on Optional · the upstream task must be completed first No dependency October Launch · Finalize October JEE batch timetable October Launch · Call pending scholarship applicants Share weekly faculty attendance summary Parent Connect · Approve parent orientation deck Upload student success stories for October campaign Resolve projector issue in Room 204 Admission Campaign · Prepare admission campaign poster Admission Campaign · Approve admission campaign poster Admission Campaign · Send approved poster to schools Admission Campaign · Make school follow-up calls Admission Campaign · Update admission data Faculty Excellence · Build the 2027 Coaching Excellence Gurukul",
+    "options": 13,
+    "hintFontPx": 8
+   },
+   "dependsOnContrast": {
+    "scopes": 1,
+    "checked": 2,
+    "failing": 1,
+    "sizes": {
+     "lt10": 1,
+     "lt12": 2,
+     "total": 2
+    },
+    "minFont": 8,
+    "worst": [
+     {
+      "sel": "small < span",
+      "ratio": 3.19,
+      "sample": "Optional · the upstream task must be completed first",
+      "fg": "#9a8e86",
+      "bg": "#ffffff",
+      "px": 8
+     }
+    ]
+   },
+   "dependentCard": {
+    "blockedBy": "BLOCKED BY Call pending scholarship applicants Pending",
+    "completeButton": true,
+    "afterComplete": {
+     "done": true,
+     "stamp": "Completed by You",
+     "upstreamStillOpen": false
+    }
+   }
+  },
+  "dashboard": {
+   "overflow": {
+    "scrollWidth": 1280,
+    "innerWidth": 1280,
+    "culprits": []
+   },
+   "blockerPanel": {
+    "scopes": 1,
+    "checked": 18,
+    "failing": 9,
+    "sizes": {
+     "lt10": 9,
+     "lt12": 14,
+     "total": 18
+    },
+    "minFont": 8,
+    "worst": [
+     {
+      "sel": "small < blocker-dashboard-foot",
+      "ratio": 2.88,
+      "sample": "Leadership can use this view to remove dependencies, clarify",
+      "fg": "#a38e7d",
+      "bg": "#fbf5e9",
+      "px": 8
+     },
+     {
+      "sel": "p < div",
+      "ratio": 3.41,
+      "sample": "Blocker reasons turn delay into a solvable process conversat",
+      "fg": "#9a806b",
+      "bg": "#fbf5e9",
+      "px": 9
+     },
+     {
+      "sel": "span < blocker-dashboard-foot",
+      "ratio": 3.48,
+      "sample": "check-ins recorded",
+      "fg": "#967f6e",
+      "bg": "#fbf5e9",
+      "px": 9
+     },
+     {
+      "sel": "span.eyebrow < div",
+      "ratio": 3.73,
+      "sample": "Process signals",
+      "fg": "#a17642",
+      "bg": "#fbf5e9",
+      "px": 10
+     },
+     {
+      "sel": "strong < blocker-bar-row",
+      "ratio": 4.27,
+      "sample": "2",
+      "fg": "#9b6a3e",
+      "bg": "#fbf5e9",
+      "px": 10
+     }
+    ]
+   },
+   "dependencyPanel": {
+    "scopes": 1,
+    "checked": 20,
+    "failing": 12,
+    "sizes": {
+     "lt10": 12,
+     "lt12": 19,
+     "total": 20
+    },
+    "minFont": 8,
+    "worst": [
+     {
+      "sel": "div.dependency-dashboard-foot < dependency-dashboard",
+      "ratio": 2.81,
+      "sample": "Dependency links are manager-editable. Completing the upstre",
+      "fg": "#8795a8",
+      "bg": "#fbf5e9",
+      "px": 8
+     },
+     {
+      "sel": "span < dependency-chain-label",
+      "ratio": 3.05,
+      "sample": "Admission Campaign",
+      "fg": "#8795a8",
+      "bg": "#ffffff",
+      "px": 8
+     },
+     {
+      "sel": "p < div",
+      "ratio": 3.15,
+      "sample": "JAMBAVAN follows the chain so managers see the first pending",
+      "fg": "#7e8ca0",
+      "bg": "#fbf5e9",
+      "px": 9
+     },
+     {
+      "sel": "span < dependency-cause",
+      "ratio": 3.22,
+      "sample": "Pending · Manav Shah",
+      "fg": "#9b8d82",
+      "bg": "#ffffff",
+      "px": 8
+     },
+     {
+      "sel": "small < dependency-cause",
+      "ratio": 3.38,
+      "sample": "Campaign delayed because",
+      "fg": "#a08776",
+      "bg": "#ffffff",
+      "px": 8
+     },
+     {
+      "sel": "span.eyebrow < div",
+      "ratio": 3.73,
+      "sample": "Task dependencies",
+      "fg": "#a17642",
+      "bg": "#fbf5e9",
+      "px": 10
+     }
+    ]
+   },
+   "blockerHeadline": " employee performance labels. 40% of delayed tasks with a check-in are waiting for someone",
+   "blockerBars": "PROCESS SIGNALS Why are open tasks not moving? Blocker reasons turn delay into a solvable process conversation. They are not employee performance labels. 40% of delayed tasks with a check-in are waiting for someone Waiting for someone 2 I haven't started 1 Waiting for information 1 Unexpected issue 1 5 delayed/open process signals 5 check-ins recorded Leadership can use this view to remove dependencies, clarify work, and rebalance load.",
+   "dependencyRows": [
+    "TASK DEPENDENCIES",
+    "Admission Campaign Send approved poster to schools Campaign delayed because Approve admission campaign poster Blocked · Arjun Mehta",
+    "Admission Campaign Make school follow-up calls Campaign delayed because Send approved poster to schools Pending · Neha Kapoor",
+    "Admission Campaign Update admission data Campaign delayed because Make school follow-up calls Pending · Manav Shah"
+   ],
+   "dependencyCount": "3 downstream alerts"
+  }
+ },
+ "mobile": {
+  "feed": {
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "culprits": [
+     {
+      "c": "select-wrap",
+      "right": 474
+     },
+     {
+      "c": "SELECT",
+      "right": 444
+     },
+     {
+      "c": "svg",
+      "right": 464
+     },
+     {
+      "c": "rect",
+      "right": 463
+     },
+     {
+      "c": "path",
+      "right": 462
+     }
+    ]
+   },
+   "contrastWhole": {
+    "checked": 517,
+    "failing": 260,
+    "sizes": {
+     "lt10": 411,
+     "lt12": 474,
+     "lt14": 502,
+     "total": 517
+    }
+   },
+   "blockerCheckin": {
+    "scopes": 10,
+    "checked": 110,
+    "failing": 20,
+    "sizes": {
+     "lt10": 100,
+     "lt12": 110,
+     "total": 110
+    },
+    "minFont": 8,
+    "worst": [
+     {
+      "sel": "button.selected < blocker-options",
+      "ratio": 2.96,
+      "sample": "Waiting for information",
+      "fg": "#ffffff",
+      "bg": "#c7894a",
+      "px": 8
+     },
+     {
+      "sel": "span < blocker-current",
+      "ratio": 3.28,
+      "sample": "Final batch count is still awaited. · Reported by Arjun Meht",
+      "fg": "#a1846a",
+      "bg": "#fff7e9",
+      "px": 8
+     },
+     {
+      "sel": "p < blocker-checkin",
+      "ratio": 3.4,
+      "sample": "One click helps management fix process bottlenecks instead o",
+      "fg": "#9b8877",
+      "bg": "#ffffff",
+      "px": 9
+     }
+    ]
+   },
+   "blockerTaps": {
+    "total": 100,
+    "under44": 100,
+    "under24": 10,
+    "minH": 23,
+    "samples": [
+     {
+      "t": "Why is this task not moving?",
+      "w": 302,
+      "h": 23
+     },
+     {
+      "t": "I haven't started",
+      "w": 83,
+      "h": 26
+     },
+     {
+      "t": "Waiting for someone",
+      "w": 99,
+      "h": 26
+     },
+     {
+      "t": "Waiting for information",
+      "w": 109,
+      "h": 26
+     },
+     {
+      "t": "Too much other work",
+      "w": 101,
+      "h": 26
+     },
+     {
+      "t": "I don't understand the task",
+      "w": 125,
+      "h": 26
+     }
+    ]
+   },
+   "dependencyBlocked": {
+    "scopes": 3,
+    "checked": 9,
+    "failing": 6,
+    "sizes": {
+     "lt10": 9,
+     "lt12": 9,
+     "total": 9
+    },
+    "minFont": 8,
+    "worst": [
+     {
+      "sel": "span < dependency-blocked",
+      "ratio": 3.04,
+      "sample": "Blocked by",
+      "fg": "#9b8b88",
+      "bg": "#fff5f2",
+      "px": 8
+     },
+     {
+      "sel": "em < dependency-blocked",
+      "ratio": 4.37,
+      "sample": "Blocked",
+      "fg": "#a5504d",
+      "bg": "#fce0dc",
+      "px": 8
+     }
+    ]
+   },
+   "dependencyDownstream": {
+    "scopes": 1,
+    "checked": 3,
+    "failing": 2,
+    "sizes": {
+     "lt10": 3,
+     "lt12": 3,
+     "total": 3
+    },
+    "minFont": 8,
+    "worst": [
+     {
+      "sel": "span < dependency-downstream",
+      "ratio": 3.13,
+      "sample": "Downstream impact",
+      "fg": "#9b8b88",
+      "bg": "#fffaf0",
+      "px": 8
+     },
+     {
+      "sel": "small < dependency-downstream",
+      "ratio": 3.16,
+      "sample": "Send approved poster to schools",
+      "fg": "#a18a70",
+      "bg": "#fffaf0",
+      "px": 8
+     }
+    ]
+   },
+   "handoverSummary": {
+    "scopes": 1,
+    "checked": 13,
+    "failing": 6,
+    "sizes": {
+     "lt10": 12,
+     "lt12": 13,
+     "total": 13
+    },
+    "minFont": 8,
+    "worst": [
+     {
+      "sel": "small < handover-summary-head",
+      "ratio": 2.84,
+      "sample": "Created by Neha Kapoor · 05 Oct 2026, 4:20 PM",
+      "fg": "#a194b3",
+      "bg": "#ffffff",
+      "px": 8
+     },
+     {
+      "sel": "small < div",
+      "ratio": 2.95,
+      "sample": "Next action",
+      "fg": "#9f91ad",
+      "bg": "#ffffff",
+      "px": 8
+     },
+     {
+      "sel": "small < handover-notes",
+      "ratio": 2.95,
+      "sample": "Important notes",
+      "fg": "#9f91ad",
+      "bg": "#ffffff",
+      "px": 8
+     }
+    ]
+   },
+   "ackRow": {
+    "scopes": 12,
+    "checked": 50,
+    "failing": 12,
+    "sizes": {
+     "lt10": 50,
+     "lt12": 50,
+     "total": 50
+    },
+    "minFont": 8,
+    "worst": [
+     {
+      "sel": "span < ack-row",
+      "ratio": 2.38,
+      "sample": "0 people seen",
+      "fg": "#aaa4b0",
+      "bg": "#fbfdfb",
+      "px": 8
+     }
+    ]
+   },
+   "ackRowTaps": {
+    "total": 38,
+    "under44": 38,
+    "under24": 0,
+    "minH": 34,
+    "samples": [
+     {
+      "t": "Mark seen",
+      "w": 72,
+      "h": 36
+     },
+     {
+      "t": "Acknowledge",
+      "w": 89,
+      "h": 36
+     },
+     {
+      "t": "Add to My Day",
+      "w": 72,
+      "h": 36
+     },
+     {
+      "t": "Handover Task",
+      "w": 73,
+      "h": 36
+     },
+     {
+      "t": "Mark seen",
+      "w": 104,
+      "h": 34
+     },
+     {
+      "t": "Acknowledge",
+      "w": 104,
+      "h": 34
+     }
+    ]
+   },
+   "blockerInputsUnlabeled": 10,
+   "blockerSelectedState": {
+    "selected": {
+     "color": "rgb(255, 255, 255)",
+     "bg": "rgb(199, 137, 74)",
+     "border": "rgb(199, 137, 74)",
+     "weight": "400"
+    },
+    "unselected": {
+     "color": "rgb(120, 101, 81)",
+     "bg": "rgb(255, 253, 249)",
+     "border": "rgb(234, 223, 206)",
+     "weight": "400"
+    },
+    "ariaPressed": null,
+    "hasIconOrText": false
+   },
+   "detailsOpenByDefault": "5 of 10",
+   "taskCardHeights": [
+    870,
+    1105,
+    843,
+    559,
+    580,
+    832,
+    590,
+    940,
+    659,
+    659,
+    627,
+    917
+   ],
+   "firstTaskCardTop": 2553,
+   "cardCount": 12,
+   "campaignCategories": [
+    "Prepare admission camp: Squirrel",
+    "Approve admission camp: Squirrel",
+    "Send approved poster t: Squirrel",
+    "Make school follow-up : Squirrel",
+    "Update admission data: Squirrel"
+   ],
+   "handoverButtonCount": 10,
+   "myDayButtonCount": 4
+  },
+  "focus": {
+   "blockerSummary": {
+    "el": "summary.",
+    "text": "Why is this task not moving?",
+    "outlineStyle": "auto",
+    "outlineWidth": "1px",
+    "outlineColor": "rgb(0, 95, 204)",
+    "boxShadow": "none",
+    "insideModal": false,
+    "reachedTarget": true
+   },
+   "blockerOption": {
+    "el": "button.",
+    "text": "I haven't started",
+    "outlineStyle": "auto",
+    "outlineWidth": "1px",
+    "outlineColor": "rgb(0, 95, 204)",
+    "boxShadow": "none",
+    "insideModal": false,
+    "reachedTarget": true
+   },
+   "handoverButton": {
+    "el": "button.ack-button handover-button",
+    "text": "Handover Task",
+    "outlineStyle": "auto",
+    "outlineWidth": "1px",
+    "outlineColor": "rgb(0, 95, 204)",
+    "boxShadow": "none",
+    "insideModal": false,
+    "reachedTarget": true
+   },
+   "myDayButton": {
+    "el": "button.ack-button my-day-link",
+    "text": "Add to My Day",
+    "outlineStyle": "auto",
+    "outlineWidth": "1px",
+    "outlineColor": "rgb(0, 95, 204)",
+    "boxShadow": "none",
+    "insideModal": false,
+    "reachedTarget": true
+   },
+   "summaryToggleByKey": false,
+   "summaryOpenAfterEnter": false
+  },
+  "blocker": {
+   "before": null,
+   "after": "Current blocker: Too much other work QA note · Reported by Arjun Mehta",
+   "toast": "Thanks — this blocker is recorded as a process signal for management.",
+   "toastRole": null,
+   "clearBlockerControl": false
+  },
+  "myDay": {
+   "navClicked": true,
+   "heading": "My Day",
+   "pageSubtitleOrDate": "",
+   "dateInput": "2026-10-07",
+   "dateLabel": "WEDNESDAY, 7 OCTOBER 2026",
+   "overflow": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "culprits": []
+   },
+   "contrast": {
+    "scopes": 1,
+    "checked": 39,
+    "failing": 16,
+    "sizes": {
+     "lt10": 13,
+     "lt12": 31,
+     "total": 39
+    },
+    "minFont": 8,
+    "worst": [
+     {
+      "sel": "h2 < div",
+      "ratio": 1.04,
+      "sample": "Plan the day you want to complete.",
+      "fg": "#fffaf0",
+      "bg": "#fbf5e9",
+      "px": 17
+     },
+     {
+      "sel": "p < div",
+      "ratio": 1.11,
+      "sample": "Only you can see or manage this planner. Academy tasks stay ",
+      "fg": "#e8e9f5",
+      "bg": "#fbf5e9",
+      "px": 10
+     },
+     {
+      "sel": "span.eyebrow < div",
+      "ratio": 1.16,
+      "sample": "Private personal planner",
+      "fg": "#ffe2a2",
+      "bg": "#fbf5e9",
+      "px": 10
+     },
+     {
+      "sel": "label < my-day-date-picker",
+      "ratio": 1.23,
+      "sample": "Date",
+      "fg": "#d9def1",
+      "bg": "#fbf5e9",
+      "px": 8
+     },
+     {
+      "sel": "small < div",
+      "ratio": 2.9,
+      "sample": "Work · Planned",
+      "fg": "#9a90a4",
+      "bg": "#faf9fd",
+      "px": 8
+     },
+     {
+      "sel": "small < span",
+      "ratio": 3.13,
+      "sample": "Your personal priorities, schedule, actionables, and end-of-",
+      "fg": "#938aa1",
+      "bg": "#fbf8ff",
+      "px": 9
+     },
+     {
+      "sel": "p.my-day-help < my-day-card",
+      "ratio": 3.55,
+      "sample": "These are private references to academy tasks assigned to yo",
+      "fg": "#8e8497",
+      "bg": "#fffffe",
+      "px": 9
+     },
+     {
+      "sel": "button.text-button < schedule-row",
+      "ratio": 4.35,
+      "sample": "Edit",
+      "fg": "#92703b",
+      "bg": "#faf9fd",
+      "px": 10
+     }
+    ]
+   },
+   "taps": {
+    "total": 22,
+    "under44": 19,
+    "under24": 5,
+    "minH": 13,
+    "samples": [
+     {
+      "t": "date",
+      "w": 322,
+      "h": 34
+     },
+     {
+      "t": "Today",
+      "w": 64,
+      "h": 38
+     },
+     {
+      "t": "checkbox",
+      "w": 13,
+      "h": 13
+     },
+     {
+      "t": "Add a priority...",
+      "w": 271,
+      "h": 32
+     },
+     {
+      "t": "Add",
+      "w": 40,
+      "h": 15
+     },
+     {
+      "t": "Planned In Progress Completed Miss",
+      "w": 206,
+      "h": 27
+     }
+    ]
+   },
+   "unlabeled": {
+    "fields": 15,
+    "withoutAccessibleName": [
+     "date",
+     "Add a priority...",
+     "select-one",
+     "time",
+     "time",
+     "Activity or time block",
+     "Category",
+     "What do you want to remember?",
+     "Optional note",
+     "date",
+     "select-one"
+    ],
+    "iconButtonsWithoutName": 0
+   },
+   "headings": [
+    "H2:Plan the day you want to complete.",
+    "H2:My Day",
+    "H3:Today’s Top 3",
+    "H3:My Schedule",
+    "H3:Personal Actionables",
+    "H3:Academy Tasks Added to My Day",
+    "H3:End of Day"
+   ],
+   "scheduleEdit": {
+    "before": 1,
+    "afterEditClick": 0,
+    "draftTitle": "Academy focus block",
+    "afterDateSwitchAndBack": 0
+   },
+   "reviewToast": "Your private end-of-day review was saved.",
+   "reviewValueAfterClearing": "Finished the timetable",
+   "top3": {
+    "count": "3/3",
+    "addInputStillShown": false
+   },
+   "addToMyDayToast": "Finalize October JEE batch timetable was added to your private My Day plan. The academy task was not changed.",
+   "linkedAfterHandover": "SOURCE OF TRUTH Academy Tasks Added to My Day 1 These are private references to academy tasks assigned to you. Adding them here never duplicates or changes the original task. Squirrel Finalize October JEE batch timetable"
+  },
+  "handover": {
+   "dialog": {
+    "height": 954,
+    "top": 22,
+    "bottom": 976,
+    "innerHeight": 844,
+    "maxHeight": "none",
+    "overflowY": "visible",
+    "backdropOverflowY": "visible",
+    "role": null,
+    "ariaModal": null,
+    "primaryText": "Create handover package",
+    "primaryBottom": 952,
+    "primaryReachableWithoutScroll": false,
+    "closeButtonName": "(none)"
+   },
+   "contrast": {
+    "scopes": 1,
+    "checked": 17,
+    "failing": 4,
+    "sizes": {
+     "lt10": 2,
+     "lt12": 15,
+     "total": 17
+    },
+    "minFont": 8,
+    "worst": [
+     {
+      "sel": "span < handover-preview",
+      "ratio": 3.09,
+      "sample": "Task",
+      "fg": "#9a86b1",
+      "bg": "#faf7ff",
+      "px": 8
+     },
+     {
+      "sel": "small < handover-preview",
+      "ratio": 3.1,
+      "sample": "October Launch · Academic",
+      "fg": "#958a9d",
+      "bg": "#faf7ff",
+      "px": 9
+     },
+     {
+      "sel": "p < div",
+      "ratio": 3.16,
+      "sample": "Share the current situation in one compact package so the ne",
+      "fg": "#8d919b",
+      "bg": "#ffffff",
+      "px": 10
+     },
+     {
+      "sel": "span.eyebrow < div",
+      "ratio": 4.05,
+      "sample": "Task Handover",
+      "fg": "#a17642",
+      "bg": "#ffffff",
+      "px": 10
+     }
+    ]
+   },
+   "taps": {
+    "total": 9,
+    "under44": 5,
+    "under24": 1,
+    "minH": 34,
+    "samples": [
+     {
+      "t": "submit",
+      "w": 18,
+      "h": 34
+     },
+     {
+      "t": "Select employee Priya Nair Karan J",
+      "w": 298,
+      "h": 38
+     },
+     {
+      "t": "text",
+      "w": 298,
+      "h": 38
+     },
+     {
+      "t": "e.g. Called principal on 5 Oct",
+      "w": 298,
+      "h": 72
+     },
+     {
+      "t": "e.g. School confirmation",
+      "w": 298,
+      "h": 72
+     },
+     {
+      "t": "e.g. Call again on 8 Oct",
+      "w": 298,
+      "h": 72
+     }
+    ]
+   },
+   "unlabeled": {
+    "fields": 6,
+    "withoutAccessibleName": [],
+    "iconButtonsWithoutName": 1
+   },
+   "defaults": {
+    "to": "Karan Joshi",
+    "statusField": "In progress · 68% complete",
+    "textareas": [
+     "68% progress recorded",
+     "Final batch count is still awaited.",
+     "Continue the next assigned step",
+     ""
+    ]
+   },
+   "focusOnOpen": {
+    "el": "button.ack-button handover-button",
+    "text": "Handover Task",
+    "outlineStyle": "none",
+    "outlineWidth": "3px",
+    "outlineColor": "rgb(118, 84, 160)",
+    "boxShadow": "none",
+    "insideModal": false
+   },
+   "tab": {
+    "escapedAfterTabs": 1,
+    "to": {
+     "el": "summary.",
+     "text": "Why is this task not moving?",
+     "outlineStyle": "auto",
+     "outlineWidth": "1px",
+     "outlineColor": "rgb(0, 95, 204)",
+     "boxShadow": "none",
+     "insideModal": false
+    }
+   },
+   "closesOnEscape": false,
+   "task4": {
+    "domSelectValue": "",
+    "shownOption": "Select employee",
+    "optionCount": 11,
+    "youIsAnOption": false,
+    "createEnabled": true,
+    "afterCreate": {
+     "owner": "Task Owner · You",
+     "pkg": "TASK HANDOVER Ready for You Created by Arjun Mehta · 06 Oct 2026, 3:45 PM",
+     "toast": "Handover package created for You."
+    }
+   },
+   "seedTask2": {
+    "owner": "Task Owner · Neha Kapoor",
+    "pkg": "TASK HANDOVER Ready for Aditi Rao Created by Neha Kapoor · 05 Oct 2026, 4:20 PM"
+   },
+   "task2After": {
+    "owner": "Task Owner · Manav Shah",
+    "packages": 1,
+    "pkg": "TASK HANDOVER Ready for Manav Shah Created by Arjun Mehta · 06 Oct 2026, 3:45 PM"
+   },
+   "auditTop": true
+  },
+  "createTask": {
+   "dialog": {
+    "height": 1315,
+    "top": 22,
+    "bottom": 1337,
+    "innerHeight": 844,
+    "maxHeight": "none",
+    "overflowY": "visible",
+    "backdropOverflowY": "visible",
+    "role": null,
+    "ariaModal": null,
+    "primaryText": "Create task",
+    "primaryBottom": 1313,
+    "primaryReachableWithoutScroll": false,
+    "closeButtonName": "(none)"
+   },
+   "dependsOn": {
+    "top": 576,
+    "bottom": 614,
+    "accessibleNameSource": "Depends on Optional · the upstream task must be completed first No dependency October Launch · Finalize October JEE batch timetable October Launch · Call pending scholarship applicants Share weekly faculty attendance summary Parent Connect · Approve parent orientation deck Upload student success stories for October campaign Resolve projector issue in Room 204 Admission Campaign · Prepare admission campaign poster Admission Campaign · Approve admission campaign poster Admission Campaign · Send approved poster to schools Admission Campaign · Make school follow-up calls Admission Campaign · Update admission data Faculty Excellence · Build the 2027 Coaching Excellence Gurukul",
+    "options": 13,
+    "hintFontPx": 8
+   },
+   "dependsOnContrast": {
+    "scopes": 1,
+    "checked": 2,
+    "failing": 1,
+    "sizes": {
+     "lt10": 1,
+     "lt12": 2,
+     "total": 2
+    },
+    "minFont": 8,
+    "worst": [
+     {
+      "sel": "small < span",
+      "ratio": 3.19,
+      "sample": "Optional · the upstream task must be completed first",
+      "fg": "#9a8e86",
+      "bg": "#ffffff",
+      "px": 8
+     }
+    ]
+   },
+   "dependentCard": {
+    "blockedBy": "BLOCKED BY Call pending scholarship applicants Pending",
+    "completeButton": true,
+    "afterComplete": {
+     "done": true,
+     "stamp": "Completed by You",
+     "upstreamStillOpen": false
+    }
+   }
+  },
+  "dashboard": {
+   "overflow": {
+    "scrollWidth": 609,
+    "innerWidth": 609,
+    "culprits": []
+   },
+   "blockerPanel": {
+    "scopes": 1,
+    "checked": 18,
+    "failing": 9,
+    "sizes": {
+     "lt10": 9,
+     "lt12": 14,
+     "total": 18
+    },
+    "minFont": 8,
+    "worst": [
+     {
+      "sel": "small < blocker-dashboard-foot",
+      "ratio": 2.88,
+      "sample": "Leadership can use this view to remove dependencies, clarify",
+      "fg": "#a38e7d",
+      "bg": "#fbf5e9",
+      "px": 8
+     },
+     {
+      "sel": "p < div",
+      "ratio": 3.41,
+      "sample": "Blocker reasons turn delay into a solvable process conversat",
+      "fg": "#9a806b",
+      "bg": "#fbf5e9",
+      "px": 9
+     },
+     {
+      "sel": "span < blocker-dashboard-foot",
+      "ratio": 3.48,
+      "sample": "check-ins recorded",
+      "fg": "#967f6e",
+      "bg": "#fbf5e9",
+      "px": 9
+     },
+     {
+      "sel": "span.eyebrow < div",
+      "ratio": 3.73,
+      "sample": "Process signals",
+      "fg": "#a17642",
+      "bg": "#fbf5e9",
+      "px": 10
+     },
+     {
+      "sel": "strong < blocker-bar-row",
+      "ratio": 4.27,
+      "sample": "2",
+      "fg": "#9b6a3e",
+      "bg": "#fbf5e9",
+      "px": 10
+     }
+    ]
+   },
+   "dependencyPanel": {
+    "scopes": 1,
+    "checked": 20,
+    "failing": 12,
+    "sizes": {
+     "lt10": 12,
+     "lt12": 19,
+     "total": 20
+    },
+    "minFont": 8,
+    "worst": [
+     {
+      "sel": "div.dependency-dashboard-foot < dependency-dashboard",
+      "ratio": 2.81,
+      "sample": "Dependency links are manager-editable. Completing the upstre",
+      "fg": "#8795a8",
+      "bg": "#fbf5e9",
+      "px": 8
+     },
+     {
+      "sel": "span < dependency-chain-label",
+      "ratio": 3.05,
+      "sample": "Admission Campaign",
+      "fg": "#8795a8",
+      "bg": "#ffffff",
+      "px": 8
+     },
+     {
+      "sel": "p < div",
+      "ratio": 3.15,
+      "sample": "JAMBAVAN follows the chain so managers see the first pending",
+      "fg": "#7e8ca0",
+      "bg": "#fbf5e9",
+      "px": 9
+     },
+     {
+      "sel": "span < dependency-cause",
+      "ratio": 3.22,
+      "sample": "Pending · Manav Shah",
+      "fg": "#9b8d82",
+      "bg": "#ffffff",
+      "px": 8
+     },
+     {
+      "sel": "small < dependency-cause",
+      "ratio": 3.38,
+      "sample": "Campaign delayed because",
+      "fg": "#a08776",
+      "bg": "#ffffff",
+      "px": 8
+     },
+     {
+      "sel": "span.eyebrow < div",
+      "ratio": 3.73,
+      "sample": "Task dependencies",
+      "fg": "#a17642",
+      "bg": "#fbf5e9",
+      "px": 10
+     }
+    ]
+   },
+   "blockerHeadline": " employee performance labels. 40% of delayed tasks with a check-in are waiting for someone",
+   "blockerBars": "PROCESS SIGNALS Why are open tasks not moving? Blocker reasons turn delay into a solvable process conversation. They are not employee performance labels. 40% of delayed tasks with a check-in are waiting for someone Waiting for someone 2 I haven't started 1 Waiting for information 1 Unexpected issue 1 5 delayed/open process signals 5 check-ins recorded Leadership can use this view to remove dependencies, clarify work, and rebalance load.",
+   "dependencyRows": [
+    "TASK DEPENDENCIES",
+    "Admission Campaign Send approved poster to schools Campaign delayed because Approve admission campaign poster Blocked · Arjun Mehta",
+    "Admission Campaign Make school follow-up calls Campaign delayed because Send approved poster to schools Pending · Neha Kapoor",
+    "Admission Campaign Update admission data Campaign delayed because Make school follow-up calls Pending · Manav Shah"
+   ],
+   "dependencyCount": "3 downstream alerts"
+  }
+ },
+ "recheck": {
+  "nav": [
+   {
+    "text": "My feed 3",
+    "active": true
+   },
+   {
+    "text": "My Day",
+    "active": false
+   },
+   {
+    "text": "Department",
+    "active": false
+   },
+   {
+    "text": "Dashboard",
+    "active": false
+   },
+   {
+    "text": "MOM Directory",
+    "active": false
+   },
+   {
+    "text": "Event Planner",
+    "active": false
+   },
+   {
+    "text": "Yearly Calendar",
+    "active": false
+   },
+   {
+    "text": "Notices & feedback",
+    "active": false
+   },
+   {
+    "text": "People",
+    "active": false
+   },
+   {
+    "text": "My profile",
+    "active": false
+   },
+   {
+    "text": "Access matrix",
+    "active": false
+   },
+   {
+    "text": "Audit log",
+    "active": false
+   },
+   {
+    "text": "Workspace settings",
+    "active": false
+   }
+  ],
+  "viewportMeta": "width=device-width, initial-scale=1.0, maximum-scale=1",
+  "fonts": {
+   "size": 0,
+   "bodyFont": "\"Plus Jakarta Sans\", Inter, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif"
+  },
+  "images": {
+   "total": 31,
+   "broken": 31,
+   "sampleSrc": "/manus-storage/async-images/UuSAJlzYvc759IyEod4JJP/image-1.webp",
+   "sampleAlt": "Arjun Mehta profile"
+  },
+  "staticMetrics": [
+   "My open work 3 2 due today",
+   "Team follow-ups 8 3 from MOM",
+   "Completed this week 24 +18% vs last week",
+   "Needs attention 3 1 overdue"
+  ],
+  "navBadge": "3",
+  "toastAtLoad": "Welcome back. 3 tasks need your attention today.",
+  "toastAfter8s": "Welcome back. 3 tasks need your attention today.",
+  "sidebar": {
+   "clientHeight": 800,
+   "scrollHeight": 935,
+   "overflowY": "visible"
+  },
+  "task1": {
+   "completeButton": false,
+   "ownerNote": "Owner completes"
+  },
+  "blockedCardShowsStatus": false,
+  "task9StatusVisible": {
+   "topline": "Squirrel Project responsibility",
+   "meta": "Today High"
+  },
+  "grammar": {
+   "peopleSeen": [
+    "0 people seen"
+   ],
+   "updates": "1 updates"
+  },
+  "A1": {
+   "before": {
+    "updates": "1 updates",
+    "progress": "24%",
+    "team": "Strategic initiatives · Academic"
+   },
+   "after": {
+    "updates": "0 updates",
+    "progress": "(no bar)",
+    "team": "Leadership · Academic"
+   }
+  },
+  "editKeepsNewFields": {
+   "task2": {
+    "blocker": true,
+    "handover": true
+   },
+   "task10": {
+    "blockedBy": ""
+   }
+  },
+  "A2": {
+   "heading": "Edit task",
+   "hasDelete": true
+  },
+  "A7": {
+   "cardsBefore": 12,
+   "cardsAfterDelete": 11,
+   "confirmShown": false
+  },
+  "A6": {
+   "editPlanButton": true,
+   "before": 1,
+   "after": 2
+  },
+  "B5": {
+   "dashboard": {
+    "scrollWidth": 609,
+    "innerWidth": 609,
+    "culprits": []
+   },
+   "roleMatrix": {
+    "scrollWidth": 766,
+    "innerWidth": 766,
+    "culprits": []
+   },
+   "myDay": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "culprits": []
+   },
+   "feed": {
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "culprits": [
+     {
+      "c": "select-wrap",
+      "right": 474
+     },
+     {
+      "c": "SELECT",
+      "right": 444
+     },
+     {
+      "c": "svg",
+      "right": 464
+     },
+     {
+      "c": "rect",
+      "right": 463
+     },
+     {
+      "c": "path",
+      "right": 462
+     }
+    ]
+   }
+  },
+  "C1mobile": 2553,
+  "mobileTapsFeed": {
+   "total": 261,
+   "under44": 261,
+   "under24": 35
+  }
+ },
+ "consoleSummary": {
+  "recheck:B5 error Each child in a list should have a unique \"key\" prop.%s%s Se": 1
+ }
+}

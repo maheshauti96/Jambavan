@@ -1,0 +1,943 @@
+{
+ "label": "before-func",
+ "startedAt": "2026-10-07T12:45:52.623Z",
+ "console": [],
+ "checks": [
+  {
+   "name": "load: toast is announced (role=status/aria-live) and dismisses itself within 8 s",
+   "pass": false,
+   "detail": {
+    "atLoad": {
+     "text": "Welcome back. 3 tasks need your attention today.",
+     "role": null,
+     "live": null
+    },
+    "after8_5s": {
+     "text": "Welcome back. 3 tasks need your attention today.",
+     "role": null,
+     "live": null
+    }
+   }
+  },
+  {
+   "name": "load: page heading date matches the seed clock (one 'today')",
+   "pass": false,
+   "detail": {
+    "eyebrow": "TUESDAY, 29 SEPTEMBER 2026"
+   }
+  },
+  {
+   "name": "task create: empty title shows an inline error, not silence",
+   "pass": false,
+   "detail": {
+    "open": true,
+    "invalid": false,
+    "error": null
+   }
+  },
+  {
+   "name": "task create: a titled task is added to My feed",
+   "pass": false,
+   "error": "Object reference chain is too long"
+  },
+  {
+   "name": "task dialog (create): role, aria-modal, name, focus trap, Escape, focus return, reachable primary",
+   "pass": false,
+   "detail": {
+    "role": null,
+    "ariaModal": null,
+    "name": null,
+    "height": 1049,
+    "innerHeight": 800,
+    "top": 22,
+    "bottom": 1071,
+    "primary": "Create task",
+    "primaryReachable": false,
+    "iconButtonsWithoutName": 1,
+    "fieldsWithoutName": [
+     "e.g. Collect faculty availability"
+    ],
+    "focusOnOpen": true,
+    "tabEscapedAfter": 15,
+    "shiftTabEscapedAfter": 1,
+    "closedByEscape": false,
+    "focusReturned": null
+   }
+  },
+  {
+   "name": "task dialog (create) at 390: primary action reachable, fields named",
+   "pass": false,
+   "detail": {
+    "role": null,
+    "ariaModal": null,
+    "name": null,
+    "height": 1315,
+    "innerHeight": 844,
+    "top": 22,
+    "bottom": 1337,
+    "primary": "Create task",
+    "primaryReachable": false,
+    "iconButtonsWithoutName": 1,
+    "fieldsWithoutName": [
+     "e.g. Collect faculty availability"
+    ]
+   }
+  },
+  {
+   "name": "task edit (A1): saving the HANUMAN task unchanged keeps journal, progress, subtasks, team",
+   "pass": false,
+   "detail": {
+    "before": {
+     "updates": 1,
+     "progress": "24%",
+     "subtasksDone": 1,
+     "team": "Strategic initiatives · Academic",
+     "parts": "1/2 parts done"
+    },
+    "after": {
+     "updates": 0,
+     "progress": null,
+     "subtasksDone": 0,
+     "team": "Leadership · Academic",
+     "parts": "0/2 parts done"
+    }
+   }
+  },
+  {
+   "name": "task edit (A2): Cancel on edit, then Create opens a fresh 'Create' dialog",
+   "pass": false,
+   "detail": {
+    "heading": "Edit task",
+    "title": "Finalize October JEE batch timetable",
+    "hasDelete": true
+   }
+  },
+  {
+   "name": "task delete (A7): asks for confirmation; Cancel keeps the task; confirm deletes it",
+   "pass": false,
+   "detail": {
+    "before": 12,
+    "confirmShown": false,
+    "afterDeleteClick": 11,
+    "afterCancel": null,
+    "afterConfirm": null
+   }
+  },
+  {
+   "name": "task complete (A4): the signed-in user can complete their own task 1 and reopen it",
+   "pass": false,
+   "detail": {
+    "completeButton": false,
+    "ownerNote": "Owner completes"
+   }
+  },
+  {
+   "name": "task complete (F14): a refused completion writes no audit entry and no toast",
+   "pass": true,
+   "detail": {
+    "completeButtonOnOthersTask": false
+   }
+  },
+  {
+   "name": "task status (A9): every card shows its status in text (task 6 'Blocked')",
+   "pass": false,
+   "detail": {
+    "firstLines": "Sugriv | Manual task | Team task | Resolve projector issue in Room 204 | 0 people seen | Mark seen"
+   }
+  },
+  {
+   "name": "seed families (D7): tasks 8 and 12 Angad, 9–11 Sugriv",
+   "pass": false,
+   "detail": {
+    "families": [
+     "Squirrel",
+     "Squirrel",
+     "Squirrel",
+     "Squirrel",
+     "Squirrel"
+    ]
+   }
+  },
+  {
+   "name": "subtasks: inline add, then toggle done",
+   "pass": false,
+   "detail": {
+    "added": true,
+    "done": true,
+    "fieldNamed": false
+   }
+  },
+  {
+   "name": "journal: post an update on the HANUMAN task; empty post is ignored",
+   "pass": true,
+   "detail": {
+    "before": 1,
+    "afterEmpty": 1,
+    "after": 2,
+    "countLabel": "2 updates"
+   }
+  },
+  {
+   "name": "attachments: dialog a11y",
+   "pass": false,
+   "detail": {
+    "role": null,
+    "ariaModal": null,
+    "name": null,
+    "height": 468,
+    "innerHeight": 800,
+    "top": 166,
+    "bottom": 634,
+    "primary": "",
+    "primaryReachable": null,
+    "iconButtonsWithoutName": 1,
+    "fieldsWithoutName": [
+     "https://example.com/resource"
+    ],
+    "focusOnOpen": false,
+    "tabEscapedAfter": 1,
+    "shiftTabEscapedAfter": 1,
+    "closedByEscape": false,
+    "focusReturned": null
+   }
+  },
+  {
+   "name": "attachments: a non-URL link is refused with an inline error; a valid https link is added",
+   "pass": false,
+   "detail": {
+    "invalid": {
+     "stillOpen": false,
+     "error": null,
+     "chips": 1
+    },
+    "chipsAfterValid": 1
+   }
+  },
+  {
+   "name": "acknowledge: Mark seen and Acknowledge change state and expose it (aria-pressed or text)",
+   "pass": false,
+   "detail": {
+    "seen": true,
+    "ack": true,
+    "seenCount": "1 people seen"
+   }
+  },
+  {
+   "name": "archive/restore: archive hides the card, Archived filter shows it, Restore brings it back",
+   "pass": true,
+   "detail": {
+    "hidden": true,
+    "inArchive": true,
+    "restored": true
+   }
+  },
+  {
+   "name": "filters: department, family, status narrow the list; an empty result says so",
+   "pass": false,
+   "detail": {
+    "departmentOnly": true,
+    "cardsOpsDone": 0,
+    "emptyListText": ""
+   }
+  },
+  {
+   "name": "search: the topbar search button opens a search dialog",
+   "pass": false,
+   "detail": {
+    "dialog": null
+   }
+  },
+  {
+   "name": "search: ⌘K opens search, typing finds a task, Enter jumps to it, Escape closes",
+   "pass": false,
+   "detail": {
+    "opened": false
+   }
+  },
+  {
+   "name": "search: dialog a11y",
+   "pass": false,
+   "detail": {
+    "opened": false
+   }
+  },
+  {
+   "name": "notifications: bell opens a labelled panel, Escape closes it, Mark all read clears the dot",
+   "pass": false,
+   "detail": {
+    "open": true,
+    "ariaExpanded": null,
+    "closedByEscape": false,
+    "focusReturned": true,
+    "dotAfterMarkAll": false
+   }
+  },
+  {
+   "name": "role switching: CEO/Director lens toggles and is exposed as pressed state",
+   "pass": false,
+   "detail": {
+    "heading": "Director lens across JAMBAVAN",
+    "ariaPressed": null
+   }
+  },
+  {
+   "name": "MOM: empty save shows errors; a filled MOM locks into the directory and creates its quick task",
+   "pass": false,
+   "detail": {
+    "emptySave": {
+     "open": true,
+     "invalid": 0
+    },
+    "inDirectory": true,
+    "quickTaskCreated": true
+   }
+  },
+  {
+   "name": "MOM: dialog a11y",
+   "pass": false,
+   "detail": {
+    "role": null,
+    "ariaModal": null,
+    "name": null,
+    "height": 736,
+    "innerHeight": 800,
+    "top": 32,
+    "bottom": 768,
+    "primary": "Lock MOM & save",
+    "primaryReachable": true,
+    "iconButtonsWithoutName": 1,
+    "fieldsWithoutName": [
+     "Task to assign",
+     "select-one",
+     "select-one"
+    ],
+    "focusOnOpen": true,
+    "tabEscapedAfter": 13,
+    "shiftTabEscapedAfter": 1,
+    "closedByEscape": false,
+    "focusReturned": null
+   }
+  },
+  {
+   "name": "event planner (A6): no action duplicates an existing event",
+   "pass": false,
+   "detail": {
+    "editPlanButton": true,
+    "before": 1,
+    "after": 2
+   }
+  },
+  {
+   "name": "event planner: Plan an event with a task row creates the event and its task",
+   "pass": false,
+   "detail": {
+    "eventListed": true,
+    "taskSourceLabel": "Squirrel Project responsibility QA event task 0 people seen Mark seen Acknowledge Add to My Day Handover Task Why is this task not moving? Date to be confirmed "
+   }
+  },
+  {
+   "name": "event planner: dialog a11y",
+   "pass": false,
+   "detail": {
+    "role": null,
+    "ariaModal": null,
+    "name": null,
+    "height": 736,
+    "innerHeight": 800,
+    "top": 32,
+    "bottom": 768,
+    "primary": "Create event & tasks",
+    "primaryReachable": true,
+    "iconButtonsWithoutName": 1,
+    "fieldsWithoutName": [
+     "Role e.g. Event head",
+     "select-one",
+     "select-one",
+     "Task to complete for this event",
+     "select-one",
+     "select-one",
+     "select-one",
+     "Responsibility note"
+    ],
+    "focusOnOpen": true,
+    "tabEscapedAfter": 21,
+    "shiftTabEscapedAfter": 1,
+    "closedByEscape": false,
+    "focusReturned": null
+   }
+  },
+  {
+   "name": "calendar: add an event; empty save shows an error",
+   "pass": false,
+   "detail": {
+    "emptySave": {
+     "open": true,
+     "invalid": 0
+    },
+    "listed": true
+   }
+  },
+  {
+   "name": "calendar: dialog a11y",
+   "pass": false,
+   "detail": {
+    "role": null,
+    "ariaModal": null,
+    "name": null,
+    "height": 631,
+    "innerHeight": 800,
+    "top": 84,
+    "bottom": 716,
+    "primary": "Save event",
+    "primaryReachable": true,
+    "iconButtonsWithoutName": 1,
+    "fieldsWithoutName": [],
+    "focusOnOpen": true,
+    "tabEscapedAfter": 14,
+    "shiftTabEscapedAfter": 1,
+    "closedByEscape": false,
+    "focusReturned": null
+   }
+  },
+  {
+   "name": "notices nav (C4): 'Notices & feedback' opens its own view and marks itself current",
+   "pass": false,
+   "detail": {
+    "current": null,
+    "active": false,
+    "h1": "Good morning, Arjun",
+    "noticeBoard": true
+   }
+  },
+  {
+   "name": "notices: send a notice; reply privately; mark seen",
+   "pass": false,
+   "detail": {
+    "sent": true,
+    "replyFieldNamed": false,
+    "seenState": {
+     "text": "Seen by me",
+     "pressed": null,
+     "toLine": "To: Targeted · Academic, You · seen · Sent by Arjun Mehta · Active for 24 hours"
+    }
+   }
+  },
+  {
+   "name": "notices: Send notice dialog a11y",
+   "pass": false,
+   "detail": {
+    "role": null,
+    "ariaModal": null,
+    "name": null,
+    "height": 736,
+    "innerHeight": 800,
+    "top": 32,
+    "bottom": 768,
+    "primary": "Send notice",
+    "primaryReachable": true,
+    "iconButtonsWithoutName": 1,
+    "fieldsWithoutName": [],
+    "focusOnOpen": true,
+    "tabEscapedAfter": 15,
+    "shiftTabEscapedAfter": 1,
+    "closedByEscape": false,
+    "focusReturned": null
+   }
+  },
+  {
+   "name": "feedback: request (empty save errors), respond to a poll",
+   "pass": false,
+   "detail": {
+    "emptySave": {
+     "open": true,
+     "invalid": 0
+    },
+    "listed": true,
+    "responses": "For Academic · Event: Annual Parent Orientation · 1 response"
+   }
+  },
+  {
+   "name": "feedback: dialog a11y",
+   "pass": false,
+   "detail": {
+    "role": null,
+    "ariaModal": null,
+    "name": null,
+    "height": 797,
+    "innerHeight": 800,
+    "top": 22,
+    "bottom": 819,
+    "primary": "Send request",
+    "primaryReachable": true,
+    "iconButtonsWithoutName": 1,
+    "fieldsWithoutName": [
+     "text",
+     "text"
+    ],
+    "focusOnOpen": true,
+    "tabEscapedAfter": 16,
+    "shiftTabEscapedAfter": 1,
+    "closedByEscape": false,
+    "focusReturned": null
+   }
+  },
+  {
+   "name": "people (A7): the signed-in user cannot remove or deactivate themselves; removal asks first and keeps the record",
+   "pass": false,
+   "detail": {
+    "selfActions": {
+     "remove": true,
+     "suspend": true
+    },
+    "confirmShown": false,
+    "cardsBefore": 11,
+    "cardsAfter": 10
+   }
+  },
+  {
+   "name": "people: Add employee dialog a11y",
+   "pass": false,
+   "detail": {
+    "role": null,
+    "ariaModal": null,
+    "name": null,
+    "height": 577,
+    "innerHeight": 800,
+    "top": 111,
+    "bottom": 689,
+    "primary": "Add employee",
+    "primaryReachable": true,
+    "iconButtonsWithoutName": 1,
+    "fieldsWithoutName": [],
+    "focusOnOpen": true,
+    "tabEscapedAfter": 9,
+    "shiftTabEscapedAfter": 1,
+    "closedByEscape": false,
+    "focusReturned": null
+   }
+  },
+  {
+   "name": "my profile (C4): nav opens the view without opening the edit dialog; Edit opens it",
+   "pass": false,
+   "detail": {
+    "dialogOnNav": true,
+    "dialogOnEdit": true
+   }
+  },
+  {
+   "name": "my profile: dialog a11y",
+   "pass": false,
+   "detail": {
+    "role": null,
+    "ariaModal": null,
+    "name": null,
+    "height": 685,
+    "innerHeight": 800,
+    "top": 58,
+    "bottom": 743,
+    "primary": "Save profile",
+    "primaryReachable": true,
+    "iconButtonsWithoutName": 1,
+    "fieldsWithoutName": [],
+    "focusOnOpen": false,
+    "tabEscapedAfter": 1,
+    "shiftTabEscapedAfter": 1,
+    "closedByEscape": false,
+    "focusReturned": null
+   }
+  },
+  {
+   "name": "access matrix: toggling a permission flips it and writes an audit entry",
+   "pass": false,
+   "detail": {
+    "before": "Allowed",
+    "after": "Restricted",
+    "toggleAccessibleName": "Restricted | ",
+    "latestAudit": "Access matrix updated CEO · View all departments Updated by CEO AM Arjun Mehta 05 Oct 2026, 3:15 PM"
+   }
+  },
+  {
+   "name": "audit log: search filters, empty filter says so, Export audit CSV downloads a well-formed, injection-safe CSV",
+   "pass": false,
+   "detail": {
+    "emptyText": "No audit records match these filters.",
+    "names": [
+     "jambavan-audit-log.csv"
+    ],
+    "header": "\"Action\",\"Subject\",\"Actor\",\"Timestamp\",\"Detail\"",
+    "rows": 5,
+    "formulaCellUnescaped": true,
+    "formulaRow": "\"Task created\",\"=HYPERLINK(\"\"http://x\"\",\"\"y\"\")\",\"Arjun Mehta\",\"05 Oct 2026, 3:15 PM\",\"Visible to permitted people\""
+   }
+  },
+  {
+   "name": "My Day: Top 3 add with Enter, cap at 3",
+   "pass": true,
+   "detail": {
+    "count": "3/3",
+    "inputShown": false
+   }
+  },
+  {
+   "name": "My Day (D5): Edit on a time block keeps it until saved; Cancel leaves it unchanged",
+   "pass": false,
+   "detail": {
+    "before": 1,
+    "afterEditClick": 0,
+    "cancelButton": false,
+    "afterCancel": 0,
+    "afterSave": [
+     "QA edited block"
+    ]
+   }
+  },
+  {
+   "name": "My Day (D6): a saved review answer can be cleared",
+   "pass": false,
+   "detail": {
+    "valueAfterClearing": "Finished the timetable"
+   }
+  },
+  {
+   "name": "My Day: date label and default date follow the seed clock (Monday, 5 October 2026)",
+   "pass": false,
+   "detail": {
+    "input": "2026-10-07",
+    "label": "WEDNESDAY, 7 OCTOBER 2026"
+   }
+  },
+  {
+   "name": "My Day: every field has an accessible name",
+   "pass": false,
+   "detail": {
+    "unnamed": [
+     "date",
+     "Add a priority...",
+     "select-one",
+     "time",
+     "time",
+     "Activity or time block",
+     "Category",
+     "What do you want to remember?",
+     "Optional note",
+     "date",
+     "select-one"
+    ]
+   }
+  },
+  {
+   "name": "My Day: privacy — Top 3 text never leaks to Dashboard, Audit log, feed or search",
+   "pass": true,
+   "detail": {
+    "leaks": {
+     "dashboard": false,
+     "auditLog": false,
+     "feed": false,
+     "people": false,
+     "search": false
+    }
+   }
+  },
+  {
+   "name": "blocker check-in (D15/D9): selected reason exposes aria-pressed; it can be cleared; completion clears it",
+   "pass": false,
+   "detail": {
+    "ariaPressed": null,
+    "current": "Current blocker: Too much other work No extra context added. · Reported by Arjun Mehta",
+    "noteFieldNamed": false,
+    "clearControl": false,
+    "blockerAfterClear": true,
+    "blockerAfterCompleteReopen": "Current blocker: Too much other work No extra context added. · Reported by Arjun Mehta"
+   }
+  },
+  {
+   "name": "blocker dashboard headline is grammatical",
+   "pass": true,
+   "detail": {
+    "headline": "PROCESS SIGNALS Why are open tasks not moving? Blocker reasons turn delay into a solvable process conversation. They are not employee performance labels. 40% of delayed tasks with a check-in are waiti"
+   }
+  },
+  {
+   "name": "dependencies: hint and card copy say 'waiting', not 'must be completed first' / 'Blocked by'",
+   "pass": false,
+   "detail": {
+    "cardLine": "BLOCKED BY Approve admission campaign poster Blocked",
+    "hint": "Optional · the upstream task must be completed first",
+    "selectLabelLength": 680
+   }
+  },
+  {
+   "name": "dependencies: cycle prevention — editing task 9 does not offer its downstream tasks 10–12",
+   "pass": true,
+   "detail": {
+    "offendingOptions": [],
+    "optionCount": 9
+   }
+  },
+  {
+   "name": "dependencies (F23): deleting an upstream task clears links to it",
+   "pass": false,
+   "detail": {
+    "confirmText": "",
+    "task12DependencyLine": null
+   }
+  },
+  {
+   "name": "handover (D1): task 4 cannot be handed to 'You'; default is a valid recipient or blank and blocks submit",
+   "pass": false,
+   "detail": {
+    "value": "",
+    "shown": "Select employee",
+    "youOption": false,
+    "createEnabled": true,
+    "ownerAfter": "Task Owner · You"
+   }
+  },
+  {
+   "name": "handover (D2/D4): from = previous owner, created by = current user; recipient leaves Contributors",
+   "pass": false,
+   "detail": {
+    "defaultRecipient": "Karan Joshi",
+    "owner": "Task Owner · Karan Joshi",
+    "pkg": "TASK HANDOVER Ready for Karan Joshi Created by Arjun Mehta · 06 Oct 2026, 3:45 PM",
+    "contributors": [
+     "PN Priya Nair",
+     "KJ Karan Joshi"
+    ],
+    "audit": "Task handed over Finalize October JEE batch timetable From Arjun Mehta to Karan Joshi AM Arjun Mehta 05 Oct 2026, 3:15 PM"
+   }
+  },
+  {
+   "name": "handover (D2): handing over Neha's task 2 records 'from Neha Kapoor'",
+   "pass": false,
+   "detail": {
+    "audit": "Task handed over Call pending scholarship applicants From Arjun Mehta to Manav Shah AM Arjun Mehta 05 Oct 2026, 3:15 PM"
+   }
+  },
+  {
+   "name": "handover: dialog a11y",
+   "pass": false,
+   "detail": {
+    "role": null,
+    "ariaModal": null,
+    "name": null,
+    "height": 613,
+    "innerHeight": 800,
+    "top": 94,
+    "bottom": 706,
+    "primary": "Create handover package",
+    "primaryReachable": true,
+    "iconButtonsWithoutName": 1,
+    "fieldsWithoutName": [],
+    "focusOnOpen": false,
+    "tabEscapedAfter": 1,
+    "shiftTabEscapedAfter": 1,
+    "closedByEscape": false,
+    "focusReturned": null
+   }
+  },
+  {
+   "name": "handover at 390: primary reachable",
+   "pass": false,
+   "detail": {
+    "role": null,
+    "ariaModal": null,
+    "name": null,
+    "height": 939,
+    "innerHeight": 844,
+    "top": 22,
+    "bottom": 961,
+    "primary": "Create handover package",
+    "primaryReachable": false,
+    "iconButtonsWithoutName": 1,
+    "fieldsWithoutName": [],
+    "toastOverDialog": {
+     "text": "Welcome back. 3 tasks need your attention today.",
+     "role": null,
+     "live": null
+    }
+   }
+  },
+  {
+   "name": "navigation (A5): every view, including Projects and Guide, is reachable from the sidebar",
+   "pass": false,
+   "detail": {
+    "missing": [
+     "Projects",
+     "Guide"
+    ],
+    "ariaCurrent": null
+   }
+  },
+  {
+   "name": "dead controls (C3): no visible button without a handler (Workspace settings, New project, Open project, This week, banner arrow)",
+   "pass": false,
+   "detail": {
+    "dead": {
+     "feed": [
+      "Workspace settings",
+      "Search tasks, people... ⌘ K",
+      "Open focus details"
+     ],
+     "projects": [
+      "Workspace settings",
+      "Search tasks, people... ⌘ K",
+      "New project",
+      "Open project",
+      "Open project",
+      "Open project"
+     ],
+     "dashboard": [
+      "Workspace settings",
+      "Search tasks, people... ⌘ K",
+      "This week"
+     ]
+    }
+   }
+  },
+  {
+   "name": "mobile nav (A8): drawer has a named close button and backdrop, traps focus, Escape closes and returns focus",
+   "pass": false,
+   "detail": {
+    "role": null,
+    "ariaModal": null,
+    "closeBtn": false,
+    "backdrop": false,
+    "expanded": null,
+    "focusInside": false,
+    "tabEscapedAfter": 1,
+    "closedByEscape": false,
+    "focusReturned": false
+   }
+  },
+  {
+   "name": "focus-visible: keyboard focus shows a ≥2 px outline or ring on buttons, nav items, inputs and the active nav pill",
+   "pass": false,
+   "detail": {
+    "results": [
+     {
+      "sel": ".page-heading button",
+      "reached": true,
+      "outline": "solid 2px rgb(30, 58, 95)",
+      "boxShadow": "rgba(31, 42, 86, 0.15) 0px 6px 14px 0px",
+      "visible": true
+     },
+     {
+      "sel": ".sidebar .main-nav button.active",
+      "reached": false,
+      "outline": "solid 2px rgb(30, 58, 95)",
+      "boxShadow": "none",
+      "visible": true
+     },
+     {
+      "sel": ".sidebar .main-nav button:not(.active)",
+      "reached": true,
+      "outline": "solid 2px rgb(30, 58, 95)",
+      "boxShadow": "none",
+      "visible": true
+     },
+     {
+      "sel": ".task-card .ack-button",
+      "reached": true,
+      "outline": "solid 2px rgb(30, 58, 95)",
+      "boxShadow": "none",
+      "visible": true
+     },
+     {
+      "sel": ".filter-row select",
+      "reached": true,
+      "outline": "none 3px rgb(105, 113, 125)",
+      "boxShadow": "none",
+      "visible": false
+     },
+     {
+      "sel": ".task-card .inline-subtask-add input",
+      "reached": true,
+      "outline": "none 3px rgb(94, 100, 113)",
+      "boxShadow": "rgba(212, 164, 90, 0.12) 0px 0px 0px 3px",
+      "visible": true
+     },
+     {
+      "sel": ".blocker-checkin summary",
+      "reached": true,
+      "outline": "solid 2px rgb(30, 58, 95)",
+      "boxShadow": "none",
+      "visible": true
+     }
+    ]
+   }
+  },
+  {
+   "name": "reduced motion: no transition/animation longer than 0.01 ms",
+   "pass": true,
+   "detail": {
+    "elements": 2034,
+    "moving": 0
+   }
+  }
+ ],
+ "metrics": {},
+ "summary": {
+  "checks": 64,
+  "passed": 8,
+  "failed": [
+   "load: toast is announced (role=status/aria-live) and dismisses itself within 8 s",
+   "load: page heading date matches the seed clock (one 'today')",
+   "task create: empty title shows an inline error, not silence",
+   "task create: a titled task is added to My feed",
+   "task dialog (create): role, aria-modal, name, focus trap, Escape, focus return, reachable primary",
+   "task dialog (create) at 390: primary action reachable, fields named",
+   "task edit (A1): saving the HANUMAN task unchanged keeps journal, progress, subtasks, team",
+   "task edit (A2): Cancel on edit, then Create opens a fresh 'Create' dialog",
+   "task delete (A7): asks for confirmation; Cancel keeps the task; confirm deletes it",
+   "task complete (A4): the signed-in user can complete their own task 1 and reopen it",
+   "task status (A9): every card shows its status in text (task 6 'Blocked')",
+   "seed families (D7): tasks 8 and 12 Angad, 9–11 Sugriv",
+   "subtasks: inline add, then toggle done",
+   "attachments: dialog a11y",
+   "attachments: a non-URL link is refused with an inline error; a valid https link is added",
+   "acknowledge: Mark seen and Acknowledge change state and expose it (aria-pressed or text)",
+   "filters: department, family, status narrow the list; an empty result says so",
+   "search: the topbar search button opens a search dialog",
+   "search: ⌘K opens search, typing finds a task, Enter jumps to it, Escape closes",
+   "search: dialog a11y",
+   "notifications: bell opens a labelled panel, Escape closes it, Mark all read clears the dot",
+   "role switching: CEO/Director lens toggles and is exposed as pressed state",
+   "MOM: empty save shows errors; a filled MOM locks into the directory and creates its quick task",
+   "MOM: dialog a11y",
+   "event planner (A6): no action duplicates an existing event",
+   "event planner: Plan an event with a task row creates the event and its task",
+   "event planner: dialog a11y",
+   "calendar: add an event; empty save shows an error",
+   "calendar: dialog a11y",
+   "notices nav (C4): 'Notices & feedback' opens its own view and marks itself current",
+   "notices: send a notice; reply privately; mark seen",
+   "notices: Send notice dialog a11y",
+   "feedback: request (empty save errors), respond to a poll",
+   "feedback: dialog a11y",
+   "people (A7): the signed-in user cannot remove or deactivate themselves; removal asks first and keeps the record",
+   "people: Add employee dialog a11y",
+   "my profile (C4): nav opens the view without opening the edit dialog; Edit opens it",
+   "my profile: dialog a11y",
+   "access matrix: toggling a permission flips it and writes an audit entry",
+   "audit log: search filters, empty filter says so, Export audit CSV downloads a well-formed, injection-safe CSV",
+   "My Day (D5): Edit on a time block keeps it until saved; Cancel leaves it unchanged",
+   "My Day (D6): a saved review answer can be cleared",
+   "My Day: date label and default date follow the seed clock (Monday, 5 October 2026)",
+   "My Day: every field has an accessible name",
+   "blocker check-in (D15/D9): selected reason exposes aria-pressed; it can be cleared; completion clears it",
+   "dependencies: hint and card copy say 'waiting', not 'must be completed first' / 'Blocked by'",
+   "dependencies (F23): deleting an upstream task clears links to it",
+   "handover (D1): task 4 cannot be handed to 'You'; default is a valid recipient or blank and blocks submit",
+   "handover (D2/D4): from = previous owner, created by = current user; recipient leaves Contributors",
+   "handover (D2): handing over Neha's task 2 records 'from Neha Kapoor'",
+   "handover: dialog a11y",
+   "handover at 390: primary reachable",
+   "navigation (A5): every view, including Projects and Guide, is reachable from the sidebar",
+   "dead controls (C3): no visible button without a handler (Workspace settings, New project, Open project, This week, banner arrow)",
+   "mobile nav (A8): drawer has a named close button and backdrop, traps focus, Escape closes and returns focus",
+   "focus-visible: keyboard focus shows a ≥2 px outline or ring on buttons, nav items, inputs and the active nav pill"
+  ],
+  "consoleEntries": 0
+ }
+}

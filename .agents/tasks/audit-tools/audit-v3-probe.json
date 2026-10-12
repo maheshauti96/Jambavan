@@ -1,0 +1,28 @@
+{
+ "task10Before": "BLOCKED BY Approve admission campaign poster Blocked",
+ "task10DependsOnInDialog": "Admission Campaign · Approve admission campaign poster",
+ "task10After": "BLOCKED BY Approve admission campaign poster Blocked",
+ "completeWithPendingUpstream": {
+  "dependentDone": true,
+  "upstreamDone": false,
+  "auditTop": null
+ },
+ "summaryOpensWithEnter": true,
+ "blockerAfterCompleteReopen": "Current blocker: Too much other work No extra context added. · Reported by Arjun Mehta",
+ "toastVisibleWhileHandoverOpen": {
+  "text": "Task reopened by the department head for another review.",
+  "z": "50",
+  "overlapsDialog": false
+ },
+ "myDayTextLeaksTo": {
+  "dashboard": false,
+  "auditLog": false,
+  "feed": false,
+  "department": false
+ },
+ "headerDate": "TUESDAY, 29 SEPTEMBER 2026 Department pulse See what your department is moving, ",
+ "navIcons": [
+  "My Day: lucide lucide-calendar-days",
+  "Event Planner: lucide lucide-calendar-days"
+ ]
+}

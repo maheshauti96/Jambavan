@@ -1,0 +1,140 @@
+/* JAMBAVAN "dawn manuscript" design tokens (redesign proposal §3.2–§3.4, §8).
+   Every token uses the --jb- prefix so it can never collide with the legacy Monsoon Ledger names
+   (--ink, --saffron, …), which now live only in legacy-aliases.css until increment 6. */
+
+:root {
+  /* Colour (§3.2). Text/background pairs are restricted to the allowlist in theme/contrast.ts. */
+  --jb-cream-50: #fffbf3;
+  --jb-cream-100: #fbf3e4;
+  --jb-cream-200: #f3e6cf;
+  --jb-sand-300: #e3d3b5;
+  --jb-white: #ffffff;
+  --jb-ink: #2b1d14;
+  --jb-earth-700: #5a3f2e;
+  --jb-earth-600: #6b5344;
+  --jb-stone-600: #6e675e;
+  --jb-stone-500: #8a8378;
+  --jb-maroon-700: #7a1e2c;
+  --jb-maroon-800: #5e1622;
+  --jb-maroon-50: #f8e9e7;
+  --jb-saffron-500: #e8862a;
+  --jb-saffron-700: #9a4a12;
+  --jb-saffron-100: #fce9d2;
+  --jb-gold-500: #c9a227;
+  --jb-gold-600: #a88414;
+  --jb-gold-100: #f7edcc;
+  --jb-forest-700: #2f5d3a;
+  --jb-forest-100: #e2eedf;
+  --jb-blue-700: #1e3a5f;
+  --jb-blue-100: #e1e9f2;
+  --jb-danger-700: #a8261b;
+  --jb-danger-100: #fbe4e0;
+  --jb-night-900: #1c1512;
+
+  /* Type (§3.3) */
+  --jb-font-sans: "Mukta", "Noto Sans Devanagari", system-ui, sans-serif;
+  --jb-font-display: "Cormorant Garamond", "Tiro Devanagari Hindi", Georgia, serif;
+  --jb-font-deva: "Tiro Devanagari Hindi", "Mukta", serif;
+
+  /* Spacing, radii, elevation (§3.4) */
+  --jb-space-1: 4px;
+  --jb-space-2: 8px;
+  --jb-space-3: 12px;
+  --jb-space-4: 16px;
+  --jb-space-5: 20px;
+  --jb-space-6: 24px;
+  --jb-space-8: 32px;
+  --jb-space-10: 40px;
+  --jb-space-12: 48px;
+  --jb-space-16: 64px;
+  --jb-radius-sm: 6px;
+  --jb-radius-md: 10px;
+  --jb-radius-lg: 14px;
+  --jb-radius-xl: 20px;
+  --jb-radius-pill: 999px;
+  --jb-e1: 0 1px 2px rgba(43, 29, 20, 0.06), 0 2px 8px rgba(43, 29, 20, 0.05);
+  --jb-e2: 0 6px 20px rgba(43, 29, 20, 0.1);
+  --jb-e3: 0 24px 64px rgba(28, 21, 18, 0.28);
+
+  /* Motion (§8); the reduced-motion kill switch lives in base.css */
+  --motion-fast: 120ms;
+  --motion-base: 200ms;
+  --motion-slow: 320ms;
+  --motion-reward: 600ms;
+  --motion-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  /* shadcn/ui variables re-pointed to the tokens (§3.2), so components/ui/* match automatically */
+  --radius: 0.625rem;
+  --background: var(--jb-cream-50);
+  --foreground: var(--jb-ink);
+  --card: var(--jb-white);
+  --card-foreground: var(--jb-ink);
+  --popover: var(--jb-white);
+  --popover-foreground: var(--jb-ink);
+  --primary: var(--jb-maroon-700);
+  --primary-foreground: var(--jb-cream-50);
+  --secondary: var(--jb-cream-100);
+  --secondary-foreground: var(--jb-ink);
+  --muted: var(--jb-cream-200);
+  --muted-foreground: var(--jb-earth-600);
+  --accent: var(--jb-cream-200);
+  --accent-foreground: var(--jb-ink);
+  --destructive: var(--jb-danger-700);
+  --destructive-foreground: var(--jb-cream-50);
+  --border: var(--jb-sand-300);
+  --input: var(--jb-stone-500);
+  --ring: var(--jb-blue-700);
+  --chart-1: var(--jb-maroon-700);
+  --chart-2: var(--jb-saffron-500);
+  --chart-3: var(--jb-forest-700);
+  --chart-4: var(--jb-blue-700);
+  --chart-5: var(--jb-gold-600);
+  --sidebar: var(--jb-cream-100);
+  --sidebar-foreground: var(--jb-ink);
+  --sidebar-primary: var(--jb-maroon-700);
+  --sidebar-primary-foreground: var(--jb-cream-50);
+  --sidebar-accent: var(--jb-maroon-50);
+  --sidebar-accent-foreground: var(--jb-maroon-700);
+  --sidebar-border: var(--jb-sand-300);
+  --sidebar-ring: var(--jb-blue-700);
+}
+
+/* Tailwind 4: expose the tokens as utilities (bg-jb-cream-50, text-jb-ink, font-display, shadow-jb-e1, …) */
+@theme inline {
+  --color-jb-cream-50: var(--jb-cream-50);
+  --color-jb-cream-100: var(--jb-cream-100);
+  --color-jb-cream-200: var(--jb-cream-200);
+  --color-jb-sand-300: var(--jb-sand-300);
+  --color-jb-white: var(--jb-white);
+  --color-jb-ink: var(--jb-ink);
+  --color-jb-earth-700: var(--jb-earth-700);
+  --color-jb-earth-600: var(--jb-earth-600);
+  --color-jb-stone-600: var(--jb-stone-600);
+  --color-jb-stone-500: var(--jb-stone-500);
+  --color-jb-maroon-700: var(--jb-maroon-700);
+  --color-jb-maroon-800: var(--jb-maroon-800);
+  --color-jb-maroon-50: var(--jb-maroon-50);
+  --color-jb-saffron-500: var(--jb-saffron-500);
+  --color-jb-saffron-700: var(--jb-saffron-700);
+  --color-jb-saffron-100: var(--jb-saffron-100);
+  --color-jb-gold-500: var(--jb-gold-500);
+  --color-jb-gold-600: var(--jb-gold-600);
+  --color-jb-gold-100: var(--jb-gold-100);
+  --color-jb-forest-700: var(--jb-forest-700);
+  --color-jb-forest-100: var(--jb-forest-100);
+  --color-jb-blue-700: var(--jb-blue-700);
+  --color-jb-blue-100: var(--jb-blue-100);
+  --color-jb-danger-700: var(--jb-danger-700);
+  --color-jb-danger-100: var(--jb-danger-100);
+  --color-jb-night-900: var(--jb-night-900);
+  --font-sans: var(--jb-font-sans);
+  --font-display: var(--jb-font-display);
+  --font-deva: var(--jb-font-deva);
+  --radius-jb-sm: var(--jb-radius-sm);
+  --radius-jb-md: var(--jb-radius-md);
+  --radius-jb-lg: var(--jb-radius-lg);
+  --radius-jb-xl: var(--jb-radius-xl);
+  --shadow-jb-e1: var(--jb-e1);
+  --shadow-jb-e2: var(--jb-e2);
+  --shadow-jb-e3: var(--jb-e3);
+}

@@ -1,0 +1,3612 @@
+{
+ "label": "before",
+ "startedAt": "2026-10-07T12:41:56.298Z",
+ "console": [],
+ "checks": [
+  {
+   "name": "load: toast is announced (role=status/aria-live) and dismisses itself within 8 s",
+   "pass": false,
+   "detail": {
+    "atLoad": {
+     "text": "Welcome back. 3 tasks need your attention today.",
+     "role": null,
+     "live": null
+    },
+    "after8_5s": {
+     "text": "Welcome back. 3 tasks need your attention today.",
+     "role": null,
+     "live": null
+    }
+   }
+  },
+  {
+   "name": "load: page heading date matches the seed clock (one 'today')",
+   "pass": false,
+   "detail": {
+    "eyebrow": "TUESDAY, 29 SEPTEMBER 2026"
+   }
+  },
+  {
+   "name": "task create: empty title shows an inline error, not silence",
+   "pass": false,
+   "detail": {
+    "open": true,
+    "invalid": false,
+    "error": null
+   }
+  },
+  {
+   "name": "task create: a titled task is added to My feed",
+   "pass": false,
+   "error": "Object reference chain is too long"
+  },
+  {
+   "name": "task dialog (create): role, aria-modal, name, focus trap, Escape, focus return, reachable primary",
+   "pass": false,
+   "error": "Object reference chain is too long"
+  },
+  {
+   "name": "task dialog (create) at 390: primary action reachable, fields named",
+   "pass": false,
+   "detail": {
+    "role": null,
+    "ariaModal": null,
+    "name": null,
+    "height": 1315,
+    "innerHeight": 844,
+    "top": 22,
+    "bottom": 1337,
+    "primary": "Create task",
+    "primaryReachable": false,
+    "iconButtonsWithoutName": 1,
+    "fieldsWithoutName": [
+     "e.g. Collect faculty availability"
+    ]
+   }
+  },
+  {
+   "name": "task edit (A1): saving the HANUMAN task unchanged keeps journal, progress, subtasks, team",
+   "pass": false,
+   "detail": {
+    "before": {
+     "updates": 1,
+     "progress": "24%",
+     "subtasksDone": 1,
+     "team": "Strategic initiatives · Academic",
+     "parts": "1/2 parts done"
+    },
+    "after": {
+     "updates": 0,
+     "progress": null,
+     "subtasksDone": 0,
+     "team": "Leadership · Academic",
+     "parts": "0/2 parts done"
+    }
+   }
+  },
+  {
+   "name": "task edit (A2): Cancel on edit, then Create opens a fresh 'Create' dialog",
+   "pass": false,
+   "detail": {
+    "heading": "Edit task",
+    "title": "Finalize October JEE batch timetable",
+    "hasDelete": true
+   }
+  },
+  {
+   "name": "task delete (A7): asks for confirmation; Cancel keeps the task; confirm deletes it",
+   "pass": false,
+   "detail": {
+    "before": 12,
+    "confirmShown": false,
+    "afterDeleteClick": 11,
+    "afterCancel": null,
+    "afterConfirm": null
+   }
+  },
+  {
+   "name": "task complete (A4): the signed-in user can complete their own task 1 and reopen it",
+   "pass": false,
+   "detail": {
+    "completeButton": false,
+    "ownerNote": "Owner completes"
+   }
+  },
+  {
+   "name": "task complete (F14): a refused completion writes no audit entry and no toast",
+   "pass": true,
+   "detail": {
+    "completeButtonOnOthersTask": false
+   }
+  },
+  {
+   "name": "task status (A9): every card shows its status in text (task 6 'Blocked')",
+   "pass": false,
+   "detail": {
+    "firstLines": "Sugriv | Manual task | Team task | Resolve projector issue in Room 204 | 0 people seen | Mark seen"
+   }
+  },
+  {
+   "name": "seed families (D7): tasks 8 and 12 Angad, 9–11 Sugriv",
+   "pass": false,
+   "detail": {
+    "families": [
+     "Squirrel",
+     "Squirrel",
+     "Squirrel",
+     "Squirrel",
+     "Squirrel"
+    ]
+   }
+  },
+  {
+   "name": "subtasks: inline add, then toggle done",
+   "pass": false,
+   "detail": {
+    "added": true,
+    "done": true,
+    "fieldNamed": false
+   }
+  },
+  {
+   "name": "journal: post an update on the HANUMAN task; empty post is ignored",
+   "pass": false,
+   "detail": {
+    "before": 1,
+    "afterEmpty": 1,
+    "after": 2,
+    "countLabel": "2 updates"
+   }
+  },
+  {
+   "name": "attachments: dialog a11y",
+   "pass": false,
+   "error": "Object reference chain is too long"
+  },
+  {
+   "name": "attachments: a non-URL link is refused with an inline error; a valid https link is added",
+   "pass": false,
+   "detail": {
+    "invalid": {
+     "stillOpen": false,
+     "error": null,
+     "chips": 1
+    },
+    "chipsAfterValid": 1
+   }
+  },
+  {
+   "name": "acknowledge: Mark seen and Acknowledge change state and expose it (aria-pressed or text)",
+   "pass": false,
+   "detail": {
+    "seen": true,
+    "ack": true,
+    "seenCount": "1 people seen"
+   }
+  },
+  {
+   "name": "archive/restore: archive hides the card, Archived filter shows it, Restore brings it back",
+   "pass": false,
+   "error": "Object reference chain is too long"
+  },
+  {
+   "name": "filters: department, family, status narrow the list; an empty result says so",
+   "pass": false,
+   "detail": {
+    "departmentOnly": true,
+    "cardsOpsDone": 0,
+    "emptyListText": ""
+   }
+  },
+  {
+   "name": "search: the topbar search button opens a search dialog",
+   "pass": false,
+   "detail": {
+    "dialog": null
+   }
+  },
+  {
+   "name": "search: ⌘K opens search, typing finds a task, Enter jumps to it, Escape closes",
+   "pass": false,
+   "detail": {
+    "opened": false
+   }
+  },
+  {
+   "name": "search: dialog a11y",
+   "pass": false,
+   "detail": {
+    "opened": false
+   }
+  },
+  {
+   "name": "notifications: bell opens a labelled panel, Escape closes it, Mark all read clears the dot",
+   "pass": false,
+   "detail": {
+    "open": true,
+    "ariaExpanded": null,
+    "closedByEscape": false,
+    "focusReturned": true,
+    "dotAfterMarkAll": false
+   }
+  },
+  {
+   "name": "role switching: CEO/Director lens toggles and is exposed as pressed state",
+   "pass": false,
+   "detail": {
+    "heading": "Director lens across JAMBAVAN",
+    "ariaPressed": null
+   }
+  },
+  {
+   "name": "MOM: empty save shows errors; a filled MOM locks into the directory and creates its quick task",
+   "pass": false,
+   "error": "Object reference chain is too long"
+  },
+  {
+   "name": "MOM: dialog a11y",
+   "pass": false,
+   "error": "Object reference chain is too long"
+  },
+  {
+   "name": "event planner (A6): no action duplicates an existing event",
+   "pass": false,
+   "detail": {
+    "editPlanButton": true,
+    "before": 1,
+    "after": 2
+   }
+  },
+  {
+   "name": "event planner: Plan an event with a task row creates the event and its task",
+   "pass": false,
+   "detail": {
+    "eventListed": true,
+    "taskSourceLabel": "Squirrel Project responsibility QA event task 0 people seen Mark seen Acknowledge Add to My Day Handover Task Why is this task not moving? Date to be confirmed "
+   }
+  },
+  {
+   "name": "event planner: dialog a11y",
+   "pass": false,
+   "error": "Object reference chain is too long"
+  },
+  {
+   "name": "calendar: add an event; empty save shows an error",
+   "pass": false,
+   "detail": {
+    "emptySave": {
+     "open": true,
+     "invalid": 0
+    },
+    "listed": true
+   }
+  },
+  {
+   "name": "calendar: dialog a11y",
+   "pass": false,
+   "error": "Object reference chain is too long"
+  },
+  {
+   "name": "notices nav (C4): 'Notices & feedback' opens its own view and marks itself current",
+   "pass": false,
+   "detail": {
+    "current": null,
+    "active": false,
+    "h1": "Good morning, Arjun",
+    "noticeBoard": true
+   }
+  },
+  {
+   "name": "notices: send a notice; reply privately; mark seen",
+   "pass": false,
+   "detail": {
+    "sent": true,
+    "replyFieldNamed": false,
+    "seenState": {
+     "text": "Seen by me",
+     "pressed": null,
+     "toLine": "To: Targeted · Academic, You · seen · Sent by Arjun Mehta · Active for 24 hours"
+    }
+   }
+  },
+  {
+   "name": "notices: Send notice dialog a11y",
+   "pass": false,
+   "error": "Object reference chain is too long"
+  },
+  {
+   "name": "feedback: request (empty save errors), respond to a poll",
+   "pass": false,
+   "detail": {
+    "emptySave": {
+     "open": true,
+     "invalid": 0
+    },
+    "listed": true,
+    "responses": "For Academic · Event: Annual Parent Orientation · 1 response"
+   }
+  },
+  {
+   "name": "feedback: dialog a11y",
+   "pass": false,
+   "error": "Object reference chain is too long"
+  },
+  {
+   "name": "people (A7): the signed-in user cannot remove or deactivate themselves; removal asks first and keeps the record",
+   "pass": false,
+   "detail": {
+    "selfActions": {
+     "remove": true,
+     "suspend": true
+    },
+    "confirmShown": false,
+    "cardsBefore": 11,
+    "cardsAfter": 10
+   }
+  },
+  {
+   "name": "people: Add employee dialog a11y",
+   "pass": false,
+   "error": "Object reference chain is too long"
+  },
+  {
+   "name": "my profile (C4): nav opens the view without opening the edit dialog; Edit opens it",
+   "pass": false,
+   "error": "Object reference chain is too long"
+  },
+  {
+   "name": "my profile: dialog a11y",
+   "pass": false,
+   "error": "Object reference chain is too long"
+  },
+  {
+   "name": "access matrix: toggling a permission flips it and writes an audit entry",
+   "pass": false,
+   "detail": {
+    "before": "Allowed",
+    "after": "Restricted",
+    "toggleAccessibleName": "Restricted | ",
+    "latestAudit": "Access matrix updated CEO · View all departments Updated by CEO AM Arjun Mehta 05 Oct 2026, 3:15 PM"
+   }
+  },
+  {
+   "name": "audit log: search filters, empty filter says so, Export audit CSV downloads a well-formed, injection-safe CSV",
+   "pass": false,
+   "detail": {
+    "emptyText": "No audit records match these filters.",
+    "names": [
+     "jambavan-audit-log.csv"
+    ],
+    "header": "\"Action\",\"Subject\",\"Actor\",\"Timestamp\",\"Detail\"",
+    "rows": 5,
+    "formulaCellUnescaped": true,
+    "formulaRow": "\"Task created\",\"=HYPERLINK(\"\"http://x\"\",\"\"y\"\")\",\"Arjun Mehta\",\"05 Oct 2026, 3:15 PM\",\"Visible to permitted people\""
+   }
+  },
+  {
+   "name": "My Day: Top 3 add with Enter, cap at 3",
+   "pass": true,
+   "detail": {
+    "count": "3/3",
+    "inputShown": false
+   }
+  },
+  {
+   "name": "My Day (D5): Edit on a time block keeps it until saved; Cancel leaves it unchanged",
+   "pass": false,
+   "detail": {
+    "before": 1,
+    "afterEditClick": 0,
+    "cancelButton": false,
+    "afterCancel": 0,
+    "afterSave": [
+     "QA edited block"
+    ]
+   }
+  },
+  {
+   "name": "My Day (D6): a saved review answer can be cleared",
+   "pass": false,
+   "detail": {
+    "valueAfterClearing": "Finished the timetable"
+   }
+  },
+  {
+   "name": "My Day: date label and default date follow the seed clock (Monday, 5 October 2026)",
+   "pass": false,
+   "detail": {
+    "input": "2026-10-07",
+    "label": "WEDNESDAY, 7 OCTOBER 2026"
+   }
+  },
+  {
+   "name": "My Day: every field has an accessible name",
+   "pass": false,
+   "detail": {
+    "unnamed": [
+     "date",
+     "Add a priority...",
+     "select-one",
+     "time",
+     "time",
+     "Activity or time block",
+     "Category",
+     "What do you want to remember?",
+     "Optional note",
+     "date",
+     "select-one"
+    ]
+   }
+  },
+  {
+   "name": "My Day: privacy — Top 3 text never leaks to Dashboard, Audit log, feed or search",
+   "pass": true,
+   "detail": {
+    "leaks": {
+     "dashboard": false,
+     "auditLog": false,
+     "feed": false,
+     "people": false,
+     "search": false
+    }
+   }
+  },
+  {
+   "name": "blocker check-in (D15/D9): selected reason exposes aria-pressed; it can be cleared; completion clears it",
+   "pass": false,
+   "detail": {
+    "ariaPressed": null,
+    "current": "Current blocker: Too much other work No extra context added. · Reported by Arjun Mehta",
+    "noteFieldNamed": false,
+    "clearControl": false,
+    "blockerAfterClear": true,
+    "blockerAfterCompleteReopen": "Current blocker: Too much other work No extra context added. · Reported by Arjun Mehta"
+   }
+  },
+  {
+   "name": "blocker dashboard headline is grammatical",
+   "pass": true,
+   "detail": {
+    "headline": "PROCESS SIGNALS Why are open tasks not moving? Blocker reasons turn delay into a solvable process conversation. They are not employee performance labels. 40% of delayed tasks with a check-in are waiti"
+   }
+  },
+  {
+   "name": "dependencies: hint and card copy say 'waiting', not 'must be completed first' / 'Blocked by'",
+   "pass": false,
+   "detail": {
+    "cardLine": "BLOCKED BY Approve admission campaign poster Blocked",
+    "hint": "Optional · the upstream task must be completed first",
+    "selectLabelLength": 680
+   }
+  },
+  {
+   "name": "dependencies: cycle prevention — editing task 9 does not offer its downstream tasks 10–12",
+   "pass": true,
+   "detail": {
+    "offendingOptions": [],
+    "optionCount": 9
+   }
+  },
+  {
+   "name": "dependencies (F23): deleting an upstream task clears links to it",
+   "pass": false,
+   "detail": {
+    "confirmText": "",
+    "task12DependencyLine": null
+   }
+  },
+  {
+   "name": "handover (D1): task 4 cannot be handed to 'You'; default is a valid recipient or blank and blocks submit",
+   "pass": false,
+   "detail": {
+    "value": "",
+    "shown": "Select employee",
+    "youOption": false,
+    "createEnabled": true,
+    "ownerAfter": "Task Owner · You"
+   }
+  },
+  {
+   "name": "handover (D2/D4): from = previous owner, created by = current user; recipient leaves Contributors",
+   "pass": false,
+   "detail": {
+    "defaultRecipient": "Karan Joshi",
+    "owner": "Task Owner · Karan Joshi",
+    "pkg": "TASK HANDOVER Ready for Karan Joshi Created by Arjun Mehta · 06 Oct 2026, 3:45 PM",
+    "contributors": [
+     "PN Priya Nair",
+     "KJ Karan Joshi"
+    ],
+    "audit": "Task handed over Finalize October JEE batch timetable From Arjun Mehta to Karan Joshi AM Arjun Mehta 05 Oct 2026, 3:15 PM"
+   }
+  },
+  {
+   "name": "handover (D2): handing over Neha's task 2 records 'from Neha Kapoor'",
+   "pass": false,
+   "detail": {
+    "audit": "Task handed over Call pending scholarship applicants From Arjun Mehta to Manav Shah AM Arjun Mehta 05 Oct 2026, 3:15 PM"
+   }
+  },
+  {
+   "name": "handover: dialog a11y",
+   "pass": false,
+   "error": "Object reference chain is too long"
+  },
+  {
+   "name": "handover at 390: primary reachable",
+   "pass": false,
+   "detail": {
+    "role": null,
+    "ariaModal": null,
+    "name": null,
+    "height": 939,
+    "innerHeight": 844,
+    "top": 22,
+    "bottom": 961,
+    "primary": "Create handover package",
+    "primaryReachable": false,
+    "iconButtonsWithoutName": 1,
+    "fieldsWithoutName": [],
+    "toastOverDialog": {
+     "text": "Welcome back. 3 tasks need your attention today.",
+     "role": null,
+     "live": null
+    }
+   }
+  },
+  {
+   "name": "navigation (A5): every view, including Projects and Guide, is reachable from the sidebar",
+   "pass": false,
+   "detail": {
+    "missing": [
+     "Projects",
+     "Guide"
+    ],
+    "ariaCurrent": null
+   }
+  },
+  {
+   "name": "dead controls (C3): no visible button without a handler (Workspace settings, New project, Open project, This week, banner arrow)",
+   "pass": false,
+   "detail": {
+    "dead": {
+     "feed": [
+      "Workspace settings",
+      "Search tasks, people... ⌘ K",
+      "Open focus details"
+     ],
+     "projects": [
+      "Workspace settings",
+      "Search tasks, people... ⌘ K",
+      "New project",
+      "Open project",
+      "Open project",
+      "Open project"
+     ],
+     "dashboard": [
+      "Workspace settings",
+      "Search tasks, people... ⌘ K",
+      "This week"
+     ]
+    }
+   }
+  },
+  {
+   "name": "mobile nav (A8): drawer has a named close button and backdrop, traps focus, Escape closes and returns focus",
+   "pass": false,
+   "detail": {
+    "role": null,
+    "ariaModal": null,
+    "closeBtn": false,
+    "backdrop": false,
+    "expanded": null,
+    "focusInside": false,
+    "tabEscapedAfter": 1,
+    "closedByEscape": false,
+    "focusReturned": false
+   }
+  },
+  {
+   "name": "focus-visible: keyboard focus shows a ≥2 px outline or ring on buttons, nav items, inputs and the active nav pill",
+   "pass": false,
+   "detail": {
+    "results": [
+     {
+      "sel": ".page-heading button",
+      "reached": true,
+      "outline": "solid 2px rgb(30, 58, 95)",
+      "boxShadow": "rgba(31, 42, 86, 0.15) 0px 6px 14px 0px",
+      "visible": true
+     },
+     {
+      "sel": ".sidebar .main-nav button.active",
+      "reached": false,
+      "outline": "solid 2px rgb(30, 58, 95)",
+      "boxShadow": "none",
+      "visible": true
+     },
+     {
+      "sel": ".sidebar .main-nav button:not(.active)",
+      "reached": true,
+      "outline": "solid 2px rgb(30, 58, 95)",
+      "boxShadow": "none",
+      "visible": true
+     },
+     {
+      "sel": ".task-card .ack-button",
+      "reached": true,
+      "outline": "solid 2px rgb(30, 58, 95)",
+      "boxShadow": "none",
+      "visible": true
+     },
+     {
+      "sel": ".filter-row select",
+      "reached": true,
+      "outline": "none 3px rgb(105, 113, 125)",
+      "boxShadow": "none",
+      "visible": false
+     },
+     {
+      "sel": ".task-card .inline-subtask-add input",
+      "reached": true,
+      "outline": "none 3px rgb(94, 100, 113)",
+      "boxShadow": "rgba(212, 164, 90, 0.12) 0px 0px 0px 3px",
+      "visible": true
+     },
+     {
+      "sel": ".blocker-checkin summary",
+      "reached": true,
+      "outline": "solid 2px rgb(30, 58, 95)",
+      "boxShadow": "none",
+      "visible": true
+     }
+    ]
+   }
+  },
+  {
+   "name": "reduced motion: no transition/animation longer than 0.01 ms",
+   "pass": true,
+   "detail": {
+    "elements": 2034,
+    "moving": 0
+   }
+  },
+  {
+   "name": "responsive mobile: no horizontal overflow on any view",
+   "pass": false,
+   "detail": {
+    "dashboard": "609px article.reward-card, article.planner-card",
+    "roleMatrix": "766px section.access-matrix-hero, div.access-matrix-card, div.access-matrix-footer"
+   }
+  },
+  {
+   "name": "a11y mobile: no unnamed fields or icon buttons on any view",
+   "pass": false,
+   "detail": {
+    "feed": "15 fields, 41 icon buttons",
+    "myDay": "11 fields, 1 icon buttons",
+    "department": "8 fields, 9 icon buttons",
+    "dashboard": "0 fields, 1 icon buttons",
+    "momDirectory": "1 fields, 1 icon buttons",
+    "eventPlanner": "0 fields, 1 icon buttons",
+    "projects": "0 fields, 1 icon buttons",
+    "calendar": "0 fields, 1 icon buttons",
+    "notices": "0 fields, 1 icon buttons",
+    "guide": "0 fields, 1 icon buttons",
+    "people": "0 fields, 1 icon buttons",
+    "myProfile": "0 fields, 1 icon buttons",
+    "roleMatrix": "0 fields, 1 icon buttons",
+    "auditLog": "2 fields, 1 icon buttons"
+   }
+  },
+  {
+   "name": "contrast mobile: 0 failing text nodes",
+   "pass": false,
+   "detail": {
+    "feed": "260/522",
+    "myDay": "24/49",
+    "department": "73/147",
+    "dashboard": "149/225",
+    "momDirectory": "50/84",
+    "eventPlanner": "24/54",
+    "projects": "18/31",
+    "calendar": "44/65",
+    "notices": "7/8",
+    "guide": "48/84",
+    "people": "68/189",
+    "myProfile": "21/36",
+    "roleMatrix": "50/66",
+    "auditLog": "46/67"
+   }
+  },
+  {
+   "name": "type mobile: no visible text under 12 px",
+   "pass": false,
+   "detail": {
+    "feed": "493/522",
+    "myDay": "38/49",
+    "department": "138/147",
+    "dashboard": "201/225",
+    "momDirectory": "76/84",
+    "eventPlanner": "47/54",
+    "projects": "24/31",
+    "calendar": "49/65",
+    "notices": "6/8",
+    "guide": "68/84",
+    "people": "168/189",
+    "myProfile": "28/36",
+    "roleMatrix": "61/66",
+    "auditLog": "54/67"
+   }
+  },
+  {
+   "name": "touch mobile: no interactive target under 24 px; report under 44 px",
+   "pass": false,
+   "detail": {
+    "feed": "<24: 44, <44: 257 of 257",
+    "myDay": "<24: 4, <44: 22 of 25",
+    "department": "<24: 13, <44: 73 of 73",
+    "dashboard": "<24: 3, <44: 10 of 10",
+    "momDirectory": "<24: 1, <44: 8 of 8",
+    "eventPlanner": "<24: 2, <44: 10 of 10",
+    "projects": "<24: 3, <44: 7 of 7",
+    "calendar": "<24: 0, <44: 4 of 4",
+    "notices": "<24: 0, <44: 3 of 3",
+    "guide": "<24: 0, <44: 4 of 4",
+    "people": "<24: 22, <44: 29 of 29",
+    "myProfile": "<24: 0, <44: 5 of 5",
+    "roleMatrix": "<24: 0, <44: 3 of 31",
+    "auditLog": "<24: 1, <44: 6 of 6"
+   }
+  },
+  {
+   "name": "responsive tablet: no horizontal overflow on any view",
+   "pass": false,
+   "detail": {
+    "feed": "849px div.hanuman-mini-list",
+    "roleMatrix": "996px section.access-matrix-hero, div.access-matrix-card, div.access-matrix-footer"
+   }
+  },
+  {
+   "name": "a11y tablet: no unnamed fields or icon buttons on any view",
+   "pass": false,
+   "detail": {
+    "feed": "15 fields, 41 icon buttons",
+    "myDay": "11 fields, 1 icon buttons",
+    "department": "8 fields, 9 icon buttons",
+    "dashboard": "0 fields, 1 icon buttons",
+    "momDirectory": "1 fields, 1 icon buttons",
+    "eventPlanner": "0 fields, 1 icon buttons",
+    "projects": "0 fields, 1 icon buttons",
+    "calendar": "0 fields, 1 icon buttons",
+    "notices": "0 fields, 1 icon buttons",
+    "guide": "0 fields, 1 icon buttons",
+    "people": "0 fields, 1 icon buttons",
+    "myProfile": "0 fields, 1 icon buttons",
+    "roleMatrix": "0 fields, 1 icon buttons",
+    "auditLog": "2 fields, 1 icon buttons"
+   }
+  },
+  {
+   "name": "contrast tablet: 0 failing text nodes",
+   "pass": false,
+   "detail": {
+    "feed": "264/527",
+    "myDay": "28/54",
+    "department": "77/152",
+    "dashboard": "164/242",
+    "momDirectory": "54/89",
+    "eventPlanner": "28/59",
+    "projects": "22/36",
+    "calendar": "48/70",
+    "notices": "11/12",
+    "guide": "52/89",
+    "people": "72/194",
+    "myProfile": "25/41",
+    "roleMatrix": "54/71",
+    "auditLog": "50/72"
+   }
+  },
+  {
+   "name": "type tablet: no visible text under 12 px",
+   "pass": false,
+   "detail": {
+    "feed": "497/527",
+    "myDay": "42/54",
+    "department": "142/152",
+    "dashboard": "217/242",
+    "momDirectory": "80/89",
+    "eventPlanner": "51/59",
+    "projects": "28/36",
+    "calendar": "53/70",
+    "notices": "10/12",
+    "guide": "72/89",
+    "people": "172/194",
+    "myProfile": "32/41",
+    "roleMatrix": "65/71",
+    "auditLog": "58/72"
+   }
+  },
+  {
+   "name": "touch tablet: no interactive target under 24 px; report under 44 px",
+   "pass": false,
+   "detail": {
+    "feed": "<24: 32, <44: 257 of 257",
+    "myDay": "<24: 6, <44: 22 of 25",
+    "department": "<24: 9, <44: 73 of 73",
+    "dashboard": "<24: 3, <44: 10 of 10",
+    "momDirectory": "<24: 1, <44: 8 of 8",
+    "eventPlanner": "<24: 2, <44: 10 of 10",
+    "projects": "<24: 3, <44: 7 of 7",
+    "calendar": "<24: 0, <44: 4 of 4",
+    "notices": "<24: 0, <44: 3 of 3",
+    "guide": "<24: 0, <44: 4 of 4",
+    "people": "<24: 22, <44: 29 of 29",
+    "myProfile": "<24: 0, <44: 5 of 5",
+    "roleMatrix": "<24: 0, <44: 3 of 31",
+    "auditLog": "<24: 0, <44: 6 of 6"
+   }
+  },
+  {
+   "name": "responsive laptop: no horizontal overflow on any view",
+   "pass": true,
+   "detail": {}
+  },
+  {
+   "name": "a11y laptop: no unnamed fields or icon buttons on any view",
+   "pass": false,
+   "detail": {
+    "feed": "15 fields, 41 icon buttons",
+    "myDay": "11 fields, 1 icon buttons",
+    "department": "8 fields, 9 icon buttons",
+    "dashboard": "0 fields, 1 icon buttons",
+    "momDirectory": "1 fields, 1 icon buttons",
+    "eventPlanner": "0 fields, 1 icon buttons",
+    "projects": "0 fields, 1 icon buttons",
+    "calendar": "0 fields, 1 icon buttons",
+    "notices": "0 fields, 1 icon buttons",
+    "guide": "0 fields, 1 icon buttons",
+    "people": "0 fields, 1 icon buttons",
+    "myProfile": "0 fields, 1 icon buttons",
+    "roleMatrix": "0 fields, 1 icon buttons",
+    "auditLog": "2 fields, 1 icon buttons"
+   }
+  },
+  {
+   "name": "contrast laptop: 0 failing text nodes",
+   "pass": false,
+   "detail": {
+    "feed": "264/527",
+    "myDay": "28/54",
+    "department": "77/152",
+    "dashboard": "164/242",
+    "momDirectory": "54/89",
+    "eventPlanner": "28/59",
+    "projects": "22/36",
+    "calendar": "48/70",
+    "notices": "11/12",
+    "guide": "52/89",
+    "people": "72/194",
+    "myProfile": "25/41",
+    "roleMatrix": "54/71",
+    "auditLog": "50/72"
+   }
+  },
+  {
+   "name": "type laptop: no visible text under 12 px",
+   "pass": false,
+   "detail": {
+    "feed": "497/527",
+    "myDay": "42/54",
+    "department": "142/152",
+    "dashboard": "217/242",
+    "momDirectory": "80/89",
+    "eventPlanner": "51/59",
+    "projects": "28/36",
+    "calendar": "53/70",
+    "notices": "10/12",
+    "guide": "72/89",
+    "people": "172/194",
+    "myProfile": "32/41",
+    "roleMatrix": "65/71",
+    "auditLog": "58/72"
+   }
+  },
+  {
+   "name": "responsive desktop: no horizontal overflow on any view",
+   "pass": true,
+   "detail": {}
+  },
+  {
+   "name": "a11y desktop: no unnamed fields or icon buttons on any view",
+   "pass": false,
+   "detail": {
+    "feed": "15 fields, 41 icon buttons",
+    "myDay": "11 fields, 1 icon buttons",
+    "department": "8 fields, 9 icon buttons",
+    "dashboard": "0 fields, 1 icon buttons",
+    "momDirectory": "1 fields, 1 icon buttons",
+    "eventPlanner": "0 fields, 1 icon buttons",
+    "projects": "0 fields, 1 icon buttons",
+    "calendar": "0 fields, 1 icon buttons",
+    "notices": "0 fields, 1 icon buttons",
+    "guide": "0 fields, 1 icon buttons",
+    "people": "0 fields, 1 icon buttons",
+    "myProfile": "0 fields, 1 icon buttons",
+    "roleMatrix": "0 fields, 1 icon buttons",
+    "auditLog": "2 fields, 1 icon buttons"
+   }
+  },
+  {
+   "name": "contrast desktop: 0 failing text nodes",
+   "pass": false,
+   "detail": {
+    "feed": "264/527",
+    "myDay": "28/54",
+    "department": "77/152",
+    "dashboard": "164/242",
+    "momDirectory": "54/89",
+    "eventPlanner": "28/59",
+    "projects": "22/36",
+    "calendar": "48/70",
+    "notices": "11/12",
+    "guide": "52/89",
+    "people": "72/194",
+    "myProfile": "25/41",
+    "roleMatrix": "54/71",
+    "auditLog": "50/72"
+   }
+  },
+  {
+   "name": "type desktop: no visible text under 12 px",
+   "pass": false,
+   "detail": {
+    "feed": "497/527",
+    "myDay": "42/54",
+    "department": "142/152",
+    "dashboard": "217/242",
+    "momDirectory": "80/89",
+    "eventPlanner": "51/59",
+    "projects": "28/36",
+    "calendar": "53/70",
+    "notices": "10/12",
+    "guide": "72/89",
+    "people": "172/194",
+    "myProfile": "32/41",
+    "roleMatrix": "65/71",
+    "auditLog": "58/72"
+   }
+  }
+ ],
+ "metrics": {
+  "mobile": {
+   "feed": {
+    "heading": "Good morning, Arjun",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 390,
+    "culprits": [],
+    "contrastChecked": 522,
+    "contrastFailing": 260,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 493,
+    "textTotal": 522,
+    "taps": {
+     "total": 257,
+     "under44": 257,
+     "under24": 44,
+     "smallest": [
+      {
+       "t": "Reopen",
+       "w": 49,
+       "h": 14
+      },
+      {
+       "t": "Reopen",
+       "w": 49,
+       "h": 14
+      },
+      {
+       "t": "Define the mentor cohort Arjun",
+       "w": 326,
+       "h": 14
+      },
+      {
+       "t": "Draft the year-long rollout Ne",
+       "w": 326,
+       "h": 14
+      }
+     ]
+    },
+    "unlabeledFields": 15,
+    "iconButtonsWithoutName": 41
+   },
+   "myDay": {
+    "heading": "My Day",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 390,
+    "culprits": [],
+    "contrastChecked": 49,
+    "contrastFailing": 24,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.04:1 #fffaf0/#fbf5e9 17px \"Plan the day you want to compl\""
+    ],
+    "textUnder12": 38,
+    "textTotal": 49,
+    "taps": {
+     "total": 25,
+     "under44": 22,
+     "under24": 4,
+     "smallest": [
+      {
+       "t": "Add",
+       "w": 37,
+       "h": 15
+      },
+      {
+       "t": "Edit",
+       "w": 48,
+       "h": 15
+      },
+      {
+       "t": "Add block",
+       "w": 63,
+       "h": 15
+      },
+      {
+       "t": "Add",
+       "w": 37,
+       "h": 15
+      }
+     ]
+    },
+    "unlabeledFields": 11,
+    "iconButtonsWithoutName": 1
+   },
+   "department": {
+    "heading": "Department pulse",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 390,
+    "culprits": [],
+    "contrastChecked": 147,
+    "contrastFailing": 73,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 138,
+    "textTotal": 147,
+    "taps": {
+     "total": 73,
+     "under44": 73,
+     "under24": 13,
+     "smallest": [
+      {
+       "t": "Define the mentor cohort Arjun",
+       "w": 326,
+       "h": 14
+      },
+      {
+       "t": "Draft the year-long rollout Ne",
+       "w": 326,
+       "h": 14
+      },
+      {
+       "t": "Academic All departments Admis",
+       "w": 68,
+       "h": 15
+      },
+      {
+       "t": "Add subtask",
+       "w": 326,
+       "h": 15
+      }
+     ]
+    },
+    "unlabeledFields": 8,
+    "iconButtonsWithoutName": 9
+   },
+   "dashboard": {
+    "heading": "Execution dashboard",
+    "viewSet": true,
+    "overflowX": true,
+    "scrollWidth": 609,
+    "culprits": [
+     {
+      "el": "article.reward-card",
+      "right": 609
+     },
+     {
+      "el": "article.planner-card",
+      "right": 609
+     }
+    ],
+    "contrastChecked": 225,
+    "contrastFailing": 149,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.04:1 #fffaf0/#fbf5e9 19px \"CEO lens across JAMBAVAN\""
+    ],
+    "textUnder12": 201,
+    "textTotal": 225,
+    "taps": {
+     "total": 10,
+     "under44": 10,
+     "under24": 3,
+     "smallest": [
+      {
+       "t": "Day",
+       "w": 27,
+       "h": 22
+      },
+      {
+       "t": "Week",
+       "w": 32,
+       "h": 22
+      },
+      {
+       "t": "Month",
+       "w": 36,
+       "h": 22
+      },
+      {
+       "t": "CEO",
+       "w": 36,
+       "h": 28
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "momDirectory": {
+    "heading": "MOM Directory",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 390,
+    "culprits": [],
+    "contrastChecked": 84,
+    "contrastFailing": 50,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 76,
+    "textTotal": 84,
+    "taps": {
+     "total": 8,
+     "under44": 8,
+     "under24": 1,
+     "smallest": [
+      {
+       "t": "All departments Academic Admis",
+       "w": 68,
+       "h": 15
+      },
+      {
+       "t": "Open menu",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Create task",
+       "w": 354,
+       "h": 38
+      }
+     ]
+    },
+    "unlabeledFields": 1,
+    "iconButtonsWithoutName": 1
+   },
+   "eventPlanner": {
+    "heading": "Event Planner",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 390,
+    "culprits": [],
+    "contrastChecked": 54,
+    "contrastFailing": 24,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 47,
+    "textTotal": 54,
+    "taps": {
+     "total": 10,
+     "under44": 10,
+     "under24": 2,
+     "smallest": [
+      {
+       "t": "Edit plan",
+       "w": 57,
+       "h": 15
+      },
+      {
+       "t": "Edit plan",
+       "w": 57,
+       "h": 15
+      },
+      {
+       "t": "Open menu",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "projects": {
+    "heading": "Major responsibilities",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 390,
+    "culprits": [],
+    "contrastChecked": 31,
+    "contrastFailing": 18,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 24,
+    "textTotal": 31,
+    "taps": {
+     "total": 7,
+     "under44": 7,
+     "under24": 3,
+     "smallest": [
+      {
+       "t": "Open project",
+       "w": 78,
+       "h": 15
+      },
+      {
+       "t": "Open project",
+       "w": 78,
+       "h": 15
+      },
+      {
+       "t": "Open project",
+       "w": 78,
+       "h": 15
+      },
+      {
+       "t": "Open menu",
+       "w": 34,
+       "h": 34
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "calendar": {
+    "heading": "Yearly Calendar",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 390,
+    "culprits": [],
+    "contrastChecked": 65,
+    "contrastFailing": 44,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 49,
+    "textTotal": 65,
+    "taps": {
+     "total": 4,
+     "under44": 4,
+     "under24": 0,
+     "smallest": [
+      {
+       "t": "Open menu",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Create task",
+       "w": 354,
+       "h": 38
+      },
+      {
+       "t": "Add calendar event",
+       "w": 320,
+       "h": 38
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "notices": {
+    "heading": "",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 390,
+    "culprits": [],
+    "contrastChecked": 8,
+    "contrastFailing": 7,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 6,
+    "textTotal": 8,
+    "taps": {
+     "total": 3,
+     "under44": 3,
+     "under24": 0,
+     "smallest": [
+      {
+       "t": "Open menu",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Create task",
+       "w": 354,
+       "h": 38
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "guide": {
+    "heading": "JAMBAVAN Guide",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 390,
+    "culprits": [],
+    "contrastChecked": 84,
+    "contrastFailing": 48,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.04:1 #fffaf0/#fbf5e9 17px \"JAMBAVAN is a field guide, not\""
+    ],
+    "textUnder12": 68,
+    "textTotal": 84,
+    "taps": {
+     "total": 4,
+     "under44": 4,
+     "under24": 0,
+     "smallest": [
+      {
+       "t": "Open menu",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Create task",
+       "w": 354,
+       "h": 38
+      },
+      {
+       "t": "Open Event Planner",
+       "w": 145,
+       "h": 38
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "people": {
+    "heading": "People & hierarchy",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 390,
+    "culprits": [],
+    "contrastChecked": 189,
+    "contrastFailing": 68,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 168,
+    "textTotal": 189,
+    "taps": {
+     "total": 29,
+     "under44": 29,
+     "under24": 22,
+     "smallest": [
+      {
+       "t": "Suspend",
+       "w": 55,
+       "h": 15
+      },
+      {
+       "t": "Remove",
+       "w": 53,
+       "h": 15
+      },
+      {
+       "t": "Suspend",
+       "w": 55,
+       "h": 15
+      },
+      {
+       "t": "Remove",
+       "w": 53,
+       "h": 15
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "myProfile": {
+    "heading": "My employee profile",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 390,
+    "culprits": [],
+    "contrastChecked": 36,
+    "contrastFailing": 21,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.04:1 #fffaf0/#fbf5e9 20px \"Your work identity, kept curre\""
+    ],
+    "textUnder12": 28,
+    "textTotal": 36,
+    "taps": {
+     "total": 5,
+     "under44": 5,
+     "under24": 0,
+     "smallest": [
+      {
+       "t": "Open menu",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Create task",
+       "w": 354,
+       "h": 38
+      },
+      {
+       "t": "Edit my profile",
+       "w": 320,
+       "h": 38
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "roleMatrix": {
+    "heading": "Role access matrix",
+    "viewSet": true,
+    "overflowX": true,
+    "scrollWidth": 766,
+    "culprits": [
+     {
+      "el": "section.access-matrix-hero",
+      "right": 766
+     },
+     {
+      "el": "div.access-matrix-card",
+      "right": 766
+     },
+     {
+      "el": "div.access-matrix-footer",
+      "right": 766
+     }
+    ],
+    "contrastChecked": 66,
+    "contrastFailing": 50,
+    "worstContrast": [
+     "1.01:1 #fff4d2/#fbf5e9 9px \"Editing as CEO\"",
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\""
+    ],
+    "textUnder12": 61,
+    "textTotal": 66,
+    "taps": {
+     "total": 31,
+     "under44": 3,
+     "under24": 0,
+     "smallest": [
+      {
+       "t": "Open menu",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Create task",
+       "w": 354,
+       "h": 38
+      },
+      {
+       "t": "Allowed",
+       "w": 131,
+       "h": 58
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "auditLog": {
+    "heading": "Audit log",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 390,
+    "culprits": [],
+    "contrastChecked": 67,
+    "contrastFailing": 46,
+    "worstContrast": [
+     "1.01:1 #fff4d2/#fbf5e9 9px \"3 records\"",
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\""
+    ],
+    "textUnder12": 54,
+    "textTotal": 67,
+    "taps": {
+     "total": 6,
+     "under44": 6,
+     "under24": 1,
+     "smallest": [
+      {
+       "t": "Search actor, action, subject.",
+       "w": 326,
+       "h": 18
+      },
+      {
+       "t": "Open menu",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "All actions Permission changes",
+       "w": 326,
+       "h": 36
+      }
+     ]
+    },
+    "unlabeledFields": 2,
+    "iconButtonsWithoutName": 1
+   }
+  },
+  "tablet": {
+   "feed": {
+    "heading": "Good morning, Arjun",
+    "viewSet": true,
+    "overflowX": true,
+    "scrollWidth": 849,
+    "culprits": [
+     {
+      "el": "div.hanuman-mini-list",
+      "right": 849
+     }
+    ],
+    "contrastChecked": 527,
+    "contrastFailing": 264,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 497,
+    "textTotal": 527,
+    "taps": {
+     "total": 257,
+     "under44": 257,
+     "under24": 32,
+     "smallest": [
+      {
+       "t": "Reopen",
+       "w": 49,
+       "h": 14
+      },
+      {
+       "t": "Reopen",
+       "w": 49,
+       "h": 14
+      },
+      {
+       "t": "Define the mentor cohort Arjun",
+       "w": 468,
+       "h": 14
+      },
+      {
+       "t": "Draft the year-long rollout Ne",
+       "w": 468,
+       "h": 14
+      }
+     ]
+    },
+    "unlabeledFields": 15,
+    "iconButtonsWithoutName": 41
+   },
+   "myDay": {
+    "heading": "My Day",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 768,
+    "culprits": [],
+    "contrastChecked": 54,
+    "contrastFailing": 28,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.04:1 #fffaf0/#fbf5e9 20px \"Plan the day you want to compl\""
+    ],
+    "textUnder12": 42,
+    "textTotal": 54,
+    "taps": {
+     "total": 25,
+     "under44": 22,
+     "under24": 6,
+     "smallest": [
+      {
+       "t": "Add",
+       "w": 37,
+       "h": 15
+      },
+      {
+       "t": "Edit",
+       "w": 17,
+       "h": 15
+      },
+      {
+       "t": "Add block",
+       "w": 63,
+       "h": 15
+      },
+      {
+       "t": "Add",
+       "w": 37,
+       "h": 15
+      }
+     ]
+    },
+    "unlabeledFields": 11,
+    "iconButtonsWithoutName": 1
+   },
+   "department": {
+    "heading": "Department pulse",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 768,
+    "culprits": [],
+    "contrastChecked": 152,
+    "contrastFailing": 77,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 142,
+    "textTotal": 152,
+    "taps": {
+     "total": 73,
+     "under44": 73,
+     "under24": 9,
+     "smallest": [
+      {
+       "t": "Define the mentor cohort Arjun",
+       "w": 468,
+       "h": 14
+      },
+      {
+       "t": "Draft the year-long rollout Ne",
+       "w": 468,
+       "h": 14
+      },
+      {
+       "t": "Academic All departments Admis",
+       "w": 68,
+       "h": 15
+      },
+      {
+       "t": "Add subtask",
+       "w": 73,
+       "h": 15
+      }
+     ]
+    },
+    "unlabeledFields": 8,
+    "iconButtonsWithoutName": 9
+   },
+   "dashboard": {
+    "heading": "Execution dashboard",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 768,
+    "culprits": [],
+    "contrastChecked": 242,
+    "contrastFailing": 164,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.04:1 #fffaf0/#fbf5e9 19px \"CEO lens across JAMBAVAN\""
+    ],
+    "textUnder12": 217,
+    "textTotal": 242,
+    "taps": {
+     "total": 10,
+     "under44": 10,
+     "under24": 3,
+     "smallest": [
+      {
+       "t": "Day",
+       "w": 27,
+       "h": 22
+      },
+      {
+       "t": "Week",
+       "w": 32,
+       "h": 22
+      },
+      {
+       "t": "Month",
+       "w": 36,
+       "h": 22
+      },
+      {
+       "t": "CEO",
+       "w": 36,
+       "h": 28
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "momDirectory": {
+    "heading": "MOM Directory",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 768,
+    "culprits": [],
+    "contrastChecked": 89,
+    "contrastFailing": 54,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 80,
+    "textTotal": 89,
+    "taps": {
+     "total": 8,
+     "under44": 8,
+     "under24": 1,
+     "smallest": [
+      {
+       "t": "All departments Academic Admis",
+       "w": 68,
+       "h": 15
+      },
+      {
+       "t": "Search tasks, people... ⌘ K",
+       "w": 169,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Create task",
+       "w": 108,
+       "h": 38
+      }
+     ]
+    },
+    "unlabeledFields": 1,
+    "iconButtonsWithoutName": 1
+   },
+   "eventPlanner": {
+    "heading": "Event Planner",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 768,
+    "culprits": [],
+    "contrastChecked": 59,
+    "contrastFailing": 28,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 51,
+    "textTotal": 59,
+    "taps": {
+     "total": 10,
+     "under44": 10,
+     "under24": 2,
+     "smallest": [
+      {
+       "t": "Edit plan",
+       "w": 57,
+       "h": 15
+      },
+      {
+       "t": "Edit plan",
+       "w": 57,
+       "h": 15
+      },
+      {
+       "t": "Search tasks, people... ⌘ K",
+       "w": 169,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "projects": {
+    "heading": "Major responsibilities",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 768,
+    "culprits": [],
+    "contrastChecked": 36,
+    "contrastFailing": 22,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 28,
+    "textTotal": 36,
+    "taps": {
+     "total": 7,
+     "under44": 7,
+     "under24": 3,
+     "smallest": [
+      {
+       "t": "Open project",
+       "w": 78,
+       "h": 15
+      },
+      {
+       "t": "Open project",
+       "w": 78,
+       "h": 15
+      },
+      {
+       "t": "Open project",
+       "w": 78,
+       "h": 15
+      },
+      {
+       "t": "Search tasks, people... ⌘ K",
+       "w": 169,
+       "h": 34
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "calendar": {
+    "heading": "Yearly Calendar",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 768,
+    "culprits": [],
+    "contrastChecked": 70,
+    "contrastFailing": 48,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 53,
+    "textTotal": 70,
+    "taps": {
+     "total": 4,
+     "under44": 4,
+     "under24": 0,
+     "smallest": [
+      {
+       "t": "Search tasks, people... ⌘ K",
+       "w": 169,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Create task",
+       "w": 108,
+       "h": 38
+      },
+      {
+       "t": "Add calendar event",
+       "w": 143,
+       "h": 38
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "notices": {
+    "heading": "",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 768,
+    "culprits": [],
+    "contrastChecked": 12,
+    "contrastFailing": 11,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 10,
+    "textTotal": 12,
+    "taps": {
+     "total": 3,
+     "under44": 3,
+     "under24": 0,
+     "smallest": [
+      {
+       "t": "Search tasks, people... ⌘ K",
+       "w": 169,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Create task",
+       "w": 108,
+       "h": 38
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "guide": {
+    "heading": "JAMBAVAN Guide",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 768,
+    "culprits": [],
+    "contrastChecked": 89,
+    "contrastFailing": 52,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.04:1 #fffaf0/#fbf5e9 20px \"JAMBAVAN is a field guide, not\""
+    ],
+    "textUnder12": 72,
+    "textTotal": 89,
+    "taps": {
+     "total": 4,
+     "under44": 4,
+     "under24": 0,
+     "smallest": [
+      {
+       "t": "Search tasks, people... ⌘ K",
+       "w": 169,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Create task",
+       "w": 108,
+       "h": 38
+      },
+      {
+       "t": "Open Event Planner",
+       "w": 145,
+       "h": 38
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "people": {
+    "heading": "People & hierarchy",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 768,
+    "culprits": [],
+    "contrastChecked": 194,
+    "contrastFailing": 72,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 172,
+    "textTotal": 194,
+    "taps": {
+     "total": 29,
+     "under44": 29,
+     "under24": 22,
+     "smallest": [
+      {
+       "t": "Suspend",
+       "w": 55,
+       "h": 15
+      },
+      {
+       "t": "Remove",
+       "w": 53,
+       "h": 15
+      },
+      {
+       "t": "Suspend",
+       "w": 55,
+       "h": 15
+      },
+      {
+       "t": "Remove",
+       "w": 53,
+       "h": 15
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "myProfile": {
+    "heading": "My employee profile",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 768,
+    "culprits": [],
+    "contrastChecked": 41,
+    "contrastFailing": 25,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.04:1 #fffaf0/#fbf5e9 20px \"Your work identity, kept curre\""
+    ],
+    "textUnder12": 32,
+    "textTotal": 41,
+    "taps": {
+     "total": 5,
+     "under44": 5,
+     "under24": 0,
+     "smallest": [
+      {
+       "t": "Search tasks, people... ⌘ K",
+       "w": 169,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Create task",
+       "w": 108,
+       "h": 38
+      },
+      {
+       "t": "Edit my profile",
+       "w": 120,
+       "h": 38
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "roleMatrix": {
+    "heading": "Role access matrix",
+    "viewSet": true,
+    "overflowX": true,
+    "scrollWidth": 996,
+    "culprits": [
+     {
+      "el": "section.access-matrix-hero",
+      "right": 996
+     },
+     {
+      "el": "div.access-matrix-card",
+      "right": 996
+     },
+     {
+      "el": "div.access-matrix-footer",
+      "right": 996
+     }
+    ],
+    "contrastChecked": 71,
+    "contrastFailing": 54,
+    "worstContrast": [
+     "1.01:1 #fff4d2/#fbf5e9 9px \"Editing as CEO\"",
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\""
+    ],
+    "textUnder12": 65,
+    "textTotal": 71,
+    "taps": {
+     "total": 31,
+     "under44": 3,
+     "under24": 0,
+     "smallest": [
+      {
+       "t": "Search tasks, people... ⌘ K",
+       "w": 169,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Create task",
+       "w": 108,
+       "h": 38
+      },
+      {
+       "t": "Allowed",
+       "w": 131,
+       "h": 58
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "auditLog": {
+    "heading": "Audit log",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 768,
+    "culprits": [],
+    "contrastChecked": 72,
+    "contrastFailing": 50,
+    "worstContrast": [
+     "1.01:1 #fff4d2/#fbf5e9 9px \"3 records\"",
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\""
+    ],
+    "textUnder12": 58,
+    "textTotal": 72,
+    "taps": {
+     "total": 6,
+     "under44": 6,
+     "under24": 0,
+     "smallest": [
+      {
+       "t": "Search tasks, people... ⌘ K",
+       "w": 169,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Search actor, action, subject.",
+       "w": 334,
+       "h": 36
+      },
+      {
+       "t": "All actions Permission changes",
+       "w": 121,
+       "h": 36
+      }
+     ]
+    },
+    "unlabeledFields": 2,
+    "iconButtonsWithoutName": 1
+   }
+  },
+  "laptop": {
+   "feed": {
+    "heading": "Good morning, Arjun",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1280,
+    "culprits": [],
+    "contrastChecked": 527,
+    "contrastFailing": 264,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 497,
+    "textTotal": 527,
+    "taps": {
+     "total": 257,
+     "under44": 257,
+     "under24": 31,
+     "smallest": [
+      {
+       "t": "Reopen",
+       "w": 49,
+       "h": 14
+      },
+      {
+       "t": "Reopen",
+       "w": 49,
+       "h": 14
+      },
+      {
+       "t": "Define the mentor cohort Arjun",
+       "w": 924,
+       "h": 14
+      },
+      {
+       "t": "Draft the year-long rollout Ne",
+       "w": 924,
+       "h": 14
+      }
+     ]
+    },
+    "unlabeledFields": 15,
+    "iconButtonsWithoutName": 41
+   },
+   "myDay": {
+    "heading": "My Day",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1280,
+    "culprits": [],
+    "contrastChecked": 54,
+    "contrastFailing": 28,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.04:1 #fffaf0/#fbf5e9 20px \"Plan the day you want to compl\""
+    ],
+    "textUnder12": 42,
+    "textTotal": 54,
+    "taps": {
+     "total": 25,
+     "under44": 22,
+     "under24": 4,
+     "smallest": [
+      {
+       "t": "Add",
+       "w": 37,
+       "h": 15
+      },
+      {
+       "t": "Edit",
+       "w": 17,
+       "h": 15
+      },
+      {
+       "t": "Add block",
+       "w": 63,
+       "h": 15
+      },
+      {
+       "t": "Add",
+       "w": 37,
+       "h": 15
+      }
+     ]
+    },
+    "unlabeledFields": 11,
+    "iconButtonsWithoutName": 1
+   },
+   "department": {
+    "heading": "Department pulse",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1280,
+    "culprits": [],
+    "contrastChecked": 152,
+    "contrastFailing": 77,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 142,
+    "textTotal": 152,
+    "taps": {
+     "total": 73,
+     "under44": 73,
+     "under24": 9,
+     "smallest": [
+      {
+       "t": "Define the mentor cohort Arjun",
+       "w": 924,
+       "h": 14
+      },
+      {
+       "t": "Draft the year-long rollout Ne",
+       "w": 924,
+       "h": 14
+      },
+      {
+       "t": "Academic All departments Admis",
+       "w": 68,
+       "h": 15
+      },
+      {
+       "t": "Add subtask",
+       "w": 73,
+       "h": 15
+      }
+     ]
+    },
+    "unlabeledFields": 8,
+    "iconButtonsWithoutName": 9
+   },
+   "dashboard": {
+    "heading": "Execution dashboard",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1280,
+    "culprits": [],
+    "contrastChecked": 242,
+    "contrastFailing": 164,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.04:1 #fffaf0/#fbf5e9 19px \"CEO lens across JAMBAVAN\""
+    ],
+    "textUnder12": 217,
+    "textTotal": 242,
+    "taps": {
+     "total": 10,
+     "under44": 10,
+     "under24": 3,
+     "smallest": [
+      {
+       "t": "Day",
+       "w": 27,
+       "h": 22
+      },
+      {
+       "t": "Week",
+       "w": 32,
+       "h": 22
+      },
+      {
+       "t": "Month",
+       "w": 36,
+       "h": 22
+      },
+      {
+       "t": "CEO",
+       "w": 36,
+       "h": 28
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "momDirectory": {
+    "heading": "MOM Directory",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1280,
+    "culprits": [],
+    "contrastChecked": 89,
+    "contrastFailing": 54,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 80,
+    "textTotal": 89,
+    "taps": {
+     "total": 8,
+     "under44": 8,
+     "under24": 1,
+     "smallest": [
+      {
+       "t": "All departments Academic Admis",
+       "w": 68,
+       "h": 15
+      },
+      {
+       "t": "Search tasks, people... ⌘ K",
+       "w": 169,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Create task",
+       "w": 108,
+       "h": 38
+      }
+     ]
+    },
+    "unlabeledFields": 1,
+    "iconButtonsWithoutName": 1
+   },
+   "eventPlanner": {
+    "heading": "Event Planner",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1280,
+    "culprits": [],
+    "contrastChecked": 59,
+    "contrastFailing": 28,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 51,
+    "textTotal": 59,
+    "taps": {
+     "total": 10,
+     "under44": 10,
+     "under24": 2,
+     "smallest": [
+      {
+       "t": "Edit plan",
+       "w": 57,
+       "h": 15
+      },
+      {
+       "t": "Edit plan",
+       "w": 57,
+       "h": 15
+      },
+      {
+       "t": "Search tasks, people... ⌘ K",
+       "w": 169,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "projects": {
+    "heading": "Major responsibilities",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1280,
+    "culprits": [],
+    "contrastChecked": 36,
+    "contrastFailing": 22,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 28,
+    "textTotal": 36,
+    "taps": {
+     "total": 7,
+     "under44": 7,
+     "under24": 3,
+     "smallest": [
+      {
+       "t": "Open project",
+       "w": 78,
+       "h": 15
+      },
+      {
+       "t": "Open project",
+       "w": 78,
+       "h": 15
+      },
+      {
+       "t": "Open project",
+       "w": 78,
+       "h": 15
+      },
+      {
+       "t": "Search tasks, people... ⌘ K",
+       "w": 169,
+       "h": 34
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "calendar": {
+    "heading": "Yearly Calendar",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1280,
+    "culprits": [],
+    "contrastChecked": 70,
+    "contrastFailing": 48,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 53,
+    "textTotal": 70,
+    "taps": {
+     "total": 4,
+     "under44": 4,
+     "under24": 0,
+     "smallest": [
+      {
+       "t": "Search tasks, people... ⌘ K",
+       "w": 169,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Create task",
+       "w": 108,
+       "h": 38
+      },
+      {
+       "t": "Add calendar event",
+       "w": 143,
+       "h": 38
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "notices": {
+    "heading": "",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1280,
+    "culprits": [],
+    "contrastChecked": 12,
+    "contrastFailing": 11,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 10,
+    "textTotal": 12,
+    "taps": {
+     "total": 3,
+     "under44": 3,
+     "under24": 0,
+     "smallest": [
+      {
+       "t": "Search tasks, people... ⌘ K",
+       "w": 169,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Create task",
+       "w": 108,
+       "h": 38
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "guide": {
+    "heading": "JAMBAVAN Guide",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1280,
+    "culprits": [],
+    "contrastChecked": 89,
+    "contrastFailing": 52,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.04:1 #fffaf0/#fbf5e9 20px \"JAMBAVAN is a field guide, not\""
+    ],
+    "textUnder12": 72,
+    "textTotal": 89,
+    "taps": {
+     "total": 4,
+     "under44": 4,
+     "under24": 0,
+     "smallest": [
+      {
+       "t": "Search tasks, people... ⌘ K",
+       "w": 169,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Create task",
+       "w": 108,
+       "h": 38
+      },
+      {
+       "t": "Open Event Planner",
+       "w": 145,
+       "h": 38
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "people": {
+    "heading": "People & hierarchy",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1280,
+    "culprits": [],
+    "contrastChecked": 194,
+    "contrastFailing": 72,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 172,
+    "textTotal": 194,
+    "taps": {
+     "total": 29,
+     "under44": 29,
+     "under24": 22,
+     "smallest": [
+      {
+       "t": "Suspend",
+       "w": 55,
+       "h": 15
+      },
+      {
+       "t": "Remove",
+       "w": 53,
+       "h": 15
+      },
+      {
+       "t": "Suspend",
+       "w": 55,
+       "h": 15
+      },
+      {
+       "t": "Remove",
+       "w": 53,
+       "h": 15
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "myProfile": {
+    "heading": "My employee profile",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1280,
+    "culprits": [],
+    "contrastChecked": 41,
+    "contrastFailing": 25,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.04:1 #fffaf0/#fbf5e9 20px \"Your work identity, kept curre\""
+    ],
+    "textUnder12": 32,
+    "textTotal": 41,
+    "taps": {
+     "total": 5,
+     "under44": 5,
+     "under24": 0,
+     "smallest": [
+      {
+       "t": "Search tasks, people... ⌘ K",
+       "w": 169,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Create task",
+       "w": 108,
+       "h": 38
+      },
+      {
+       "t": "Edit my profile",
+       "w": 120,
+       "h": 38
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "roleMatrix": {
+    "heading": "Role access matrix",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1280,
+    "culprits": [],
+    "contrastChecked": 71,
+    "contrastFailing": 54,
+    "worstContrast": [
+     "1.01:1 #fff4d2/#fbf5e9 9px \"Editing as CEO\"",
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\""
+    ],
+    "textUnder12": 65,
+    "textTotal": 71,
+    "taps": {
+     "total": 31,
+     "under44": 3,
+     "under24": 0,
+     "smallest": [
+      {
+       "t": "Search tasks, people... ⌘ K",
+       "w": 169,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Create task",
+       "w": 108,
+       "h": 38
+      },
+      {
+       "t": "Allowed",
+       "w": 167,
+       "h": 58
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "auditLog": {
+    "heading": "Audit log",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1280,
+    "culprits": [],
+    "contrastChecked": 72,
+    "contrastFailing": 50,
+    "worstContrast": [
+     "1.01:1 #fff4d2/#fbf5e9 9px \"3 records\"",
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\""
+    ],
+    "textUnder12": 58,
+    "textTotal": 72,
+    "taps": {
+     "total": 6,
+     "under44": 6,
+     "under24": 0,
+     "smallest": [
+      {
+       "t": "Search tasks, people... ⌘ K",
+       "w": 169,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Search actor, action, subject.",
+       "w": 790,
+       "h": 36
+      },
+      {
+       "t": "All actions Permission changes",
+       "w": 121,
+       "h": 36
+      }
+     ]
+    },
+    "unlabeledFields": 2,
+    "iconButtonsWithoutName": 1
+   }
+  },
+  "desktop": {
+   "feed": {
+    "heading": "Good morning, Arjun",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1536,
+    "culprits": [],
+    "contrastChecked": 527,
+    "contrastFailing": 264,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 497,
+    "textTotal": 527,
+    "taps": {
+     "total": 257,
+     "under44": 257,
+     "under24": 31,
+     "smallest": [
+      {
+       "t": "Reopen",
+       "w": 49,
+       "h": 14
+      },
+      {
+       "t": "Reopen",
+       "w": 49,
+       "h": 14
+      },
+      {
+       "t": "Define the mentor cohort Arjun",
+       "w": 1102,
+       "h": 14
+      },
+      {
+       "t": "Draft the year-long rollout Ne",
+       "w": 1102,
+       "h": 14
+      }
+     ]
+    },
+    "unlabeledFields": 15,
+    "iconButtonsWithoutName": 41
+   },
+   "myDay": {
+    "heading": "My Day",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1536,
+    "culprits": [],
+    "contrastChecked": 54,
+    "contrastFailing": 28,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.04:1 #fffaf0/#fbf5e9 20px \"Plan the day you want to compl\""
+    ],
+    "textUnder12": 42,
+    "textTotal": 54,
+    "taps": {
+     "total": 25,
+     "under44": 22,
+     "under24": 4,
+     "smallest": [
+      {
+       "t": "Add",
+       "w": 37,
+       "h": 15
+      },
+      {
+       "t": "Edit",
+       "w": 17,
+       "h": 15
+      },
+      {
+       "t": "Add block",
+       "w": 63,
+       "h": 15
+      },
+      {
+       "t": "Add",
+       "w": 37,
+       "h": 15
+      }
+     ]
+    },
+    "unlabeledFields": 11,
+    "iconButtonsWithoutName": 1
+   },
+   "department": {
+    "heading": "Department pulse",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1536,
+    "culprits": [],
+    "contrastChecked": 152,
+    "contrastFailing": 77,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 142,
+    "textTotal": 152,
+    "taps": {
+     "total": 73,
+     "under44": 73,
+     "under24": 9,
+     "smallest": [
+      {
+       "t": "Define the mentor cohort Arjun",
+       "w": 1102,
+       "h": 14
+      },
+      {
+       "t": "Draft the year-long rollout Ne",
+       "w": 1102,
+       "h": 14
+      },
+      {
+       "t": "Academic All departments Admis",
+       "w": 68,
+       "h": 15
+      },
+      {
+       "t": "Add subtask",
+       "w": 73,
+       "h": 15
+      }
+     ]
+    },
+    "unlabeledFields": 8,
+    "iconButtonsWithoutName": 9
+   },
+   "dashboard": {
+    "heading": "Execution dashboard",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1536,
+    "culprits": [],
+    "contrastChecked": 242,
+    "contrastFailing": 164,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.04:1 #fffaf0/#fbf5e9 19px \"CEO lens across JAMBAVAN\""
+    ],
+    "textUnder12": 217,
+    "textTotal": 242,
+    "taps": {
+     "total": 10,
+     "under44": 10,
+     "under24": 3,
+     "smallest": [
+      {
+       "t": "Day",
+       "w": 27,
+       "h": 22
+      },
+      {
+       "t": "Week",
+       "w": 32,
+       "h": 22
+      },
+      {
+       "t": "Month",
+       "w": 36,
+       "h": 22
+      },
+      {
+       "t": "CEO",
+       "w": 36,
+       "h": 28
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "momDirectory": {
+    "heading": "MOM Directory",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1536,
+    "culprits": [],
+    "contrastChecked": 89,
+    "contrastFailing": 54,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 80,
+    "textTotal": 89,
+    "taps": {
+     "total": 8,
+     "under44": 8,
+     "under24": 1,
+     "smallest": [
+      {
+       "t": "All departments Academic Admis",
+       "w": 68,
+       "h": 15
+      },
+      {
+       "t": "Search tasks, people... ⌘ K",
+       "w": 169,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Create task",
+       "w": 108,
+       "h": 38
+      }
+     ]
+    },
+    "unlabeledFields": 1,
+    "iconButtonsWithoutName": 1
+   },
+   "eventPlanner": {
+    "heading": "Event Planner",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1536,
+    "culprits": [],
+    "contrastChecked": 59,
+    "contrastFailing": 28,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 51,
+    "textTotal": 59,
+    "taps": {
+     "total": 10,
+     "under44": 10,
+     "under24": 2,
+     "smallest": [
+      {
+       "t": "Edit plan",
+       "w": 57,
+       "h": 15
+      },
+      {
+       "t": "Edit plan",
+       "w": 57,
+       "h": 15
+      },
+      {
+       "t": "Search tasks, people... ⌘ K",
+       "w": 169,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "projects": {
+    "heading": "Major responsibilities",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1536,
+    "culprits": [],
+    "contrastChecked": 36,
+    "contrastFailing": 22,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 28,
+    "textTotal": 36,
+    "taps": {
+     "total": 7,
+     "under44": 7,
+     "under24": 3,
+     "smallest": [
+      {
+       "t": "Open project",
+       "w": 78,
+       "h": 15
+      },
+      {
+       "t": "Open project",
+       "w": 78,
+       "h": 15
+      },
+      {
+       "t": "Open project",
+       "w": 78,
+       "h": 15
+      },
+      {
+       "t": "Search tasks, people... ⌘ K",
+       "w": 169,
+       "h": 34
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "calendar": {
+    "heading": "Yearly Calendar",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1536,
+    "culprits": [],
+    "contrastChecked": 70,
+    "contrastFailing": 48,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 53,
+    "textTotal": 70,
+    "taps": {
+     "total": 4,
+     "under44": 4,
+     "under24": 0,
+     "smallest": [
+      {
+       "t": "Search tasks, people... ⌘ K",
+       "w": 169,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Create task",
+       "w": 108,
+       "h": 38
+      },
+      {
+       "t": "Add calendar event",
+       "w": 143,
+       "h": 38
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "notices": {
+    "heading": "",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1536,
+    "culprits": [],
+    "contrastChecked": 12,
+    "contrastFailing": 11,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 10,
+    "textTotal": 12,
+    "taps": {
+     "total": 3,
+     "under44": 3,
+     "under24": 0,
+     "smallest": [
+      {
+       "t": "Search tasks, people... ⌘ K",
+       "w": 169,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Create task",
+       "w": 108,
+       "h": 38
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "guide": {
+    "heading": "JAMBAVAN Guide",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1536,
+    "culprits": [],
+    "contrastChecked": 89,
+    "contrastFailing": 52,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.04:1 #fffaf0/#fbf5e9 20px \"JAMBAVAN is a field guide, not\""
+    ],
+    "textUnder12": 72,
+    "textTotal": 89,
+    "taps": {
+     "total": 4,
+     "under44": 4,
+     "under24": 0,
+     "smallest": [
+      {
+       "t": "Search tasks, people... ⌘ K",
+       "w": 169,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Create task",
+       "w": 108,
+       "h": 38
+      },
+      {
+       "t": "Open Event Planner",
+       "w": 145,
+       "h": 38
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "people": {
+    "heading": "People & hierarchy",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1536,
+    "culprits": [],
+    "contrastChecked": 194,
+    "contrastFailing": 72,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.3:1 #f8d58a/#fbf5e9 9px \"JAMBAVAN · Ramayana-inspired e\""
+    ],
+    "textUnder12": 172,
+    "textTotal": 194,
+    "taps": {
+     "total": 29,
+     "under44": 29,
+     "under24": 22,
+     "smallest": [
+      {
+       "t": "Suspend",
+       "w": 55,
+       "h": 15
+      },
+      {
+       "t": "Remove",
+       "w": 53,
+       "h": 15
+      },
+      {
+       "t": "Suspend",
+       "w": 55,
+       "h": 15
+      },
+      {
+       "t": "Remove",
+       "w": 53,
+       "h": 15
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "myProfile": {
+    "heading": "My employee profile",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1536,
+    "culprits": [],
+    "contrastChecked": 41,
+    "contrastFailing": 25,
+    "worstContrast": [
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\"",
+     "1.04:1 #fffaf0/#fbf5e9 20px \"Your work identity, kept curre\""
+    ],
+    "textUnder12": 32,
+    "textTotal": 41,
+    "taps": {
+     "total": 5,
+     "under44": 5,
+     "under24": 0,
+     "smallest": [
+      {
+       "t": "Search tasks, people... ⌘ K",
+       "w": 169,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Create task",
+       "w": 108,
+       "h": 38
+      },
+      {
+       "t": "Edit my profile",
+       "w": 120,
+       "h": 38
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "roleMatrix": {
+    "heading": "Role access matrix",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1536,
+    "culprits": [],
+    "contrastChecked": 71,
+    "contrastFailing": 54,
+    "worstContrast": [
+     "1.01:1 #fff4d2/#fbf5e9 9px \"Editing as CEO\"",
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\""
+    ],
+    "textUnder12": 65,
+    "textTotal": 71,
+    "taps": {
+     "total": 31,
+     "under44": 3,
+     "under24": 0,
+     "smallest": [
+      {
+       "t": "Search tasks, people... ⌘ K",
+       "w": 169,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Create task",
+       "w": 108,
+       "h": 38
+      },
+      {
+       "t": "Allowed",
+       "w": 199,
+       "h": 58
+      }
+     ]
+    },
+    "unlabeledFields": 0,
+    "iconButtonsWithoutName": 1
+   },
+   "auditLog": {
+    "heading": "Audit log",
+    "viewSet": true,
+    "overflowX": false,
+    "scrollWidth": 1536,
+    "culprits": [],
+    "contrastChecked": 72,
+    "contrastFailing": 50,
+    "worstContrast": [
+     "1.01:1 #fff4d2/#fbf5e9 9px \"3 records\"",
+     "1.04:1 #fffaf0/#fbf5e9 14px \"Small steps. Brave journeys. W\"",
+     "1.04:1 #fff1bf/#fbf5e9 16px \"॥ श्री राम ॥\""
+    ],
+    "textUnder12": 58,
+    "textTotal": 72,
+    "taps": {
+     "total": 6,
+     "under44": 6,
+     "under24": 0,
+     "smallest": [
+      {
+       "t": "Search tasks, people... ⌘ K",
+       "w": 169,
+       "h": 34
+      },
+      {
+       "t": "Deadline reminders",
+       "w": 34,
+       "h": 34
+      },
+      {
+       "t": "Search actor, action, subject.",
+       "w": 968,
+       "h": 36
+      },
+      {
+       "t": "All actions Permission changes",
+       "w": 121,
+       "h": 36
+      }
+     ]
+    },
+    "unlabeledFields": 2,
+    "iconButtonsWithoutName": 1
+   }
+  }
+ },
+ "summary": {
+  "checks": 82,
+  "passed": 8,
+  "failed": [
+   "load: toast is announced (role=status/aria-live) and dismisses itself within 8 s",
+   "load: page heading date matches the seed clock (one 'today')",
+   "task create: empty title shows an inline error, not silence",
+   "task create: a titled task is added to My feed",
+   "task dialog (create): role, aria-modal, name, focus trap, Escape, focus return, reachable primary",
+   "task dialog (create) at 390: primary action reachable, fields named",
+   "task edit (A1): saving the HANUMAN task unchanged keeps journal, progress, subtasks, team",
+   "task edit (A2): Cancel on edit, then Create opens a fresh 'Create' dialog",
+   "task delete (A7): asks for confirmation; Cancel keeps the task; confirm deletes it",
+   "task complete (A4): the signed-in user can complete their own task 1 and reopen it",
+   "task status (A9): every card shows its status in text (task 6 'Blocked')",
+   "seed families (D7): tasks 8 and 12 Angad, 9–11 Sugriv",
+   "subtasks: inline add, then toggle done",
+   "journal: post an update on the HANUMAN task; empty post is ignored",
+   "attachments: dialog a11y",
+   "attachments: a non-URL link is refused with an inline error; a valid https link is added",
+   "acknowledge: Mark seen and Acknowledge change state and expose it (aria-pressed or text)",
+   "archive/restore: archive hides the card, Archived filter shows it, Restore brings it back",
+   "filters: department, family, status narrow the list; an empty result says so",
+   "search: the topbar search button opens a search dialog",
+   "search: ⌘K opens search, typing finds a task, Enter jumps to it, Escape closes",
+   "search: dialog a11y",
+   "notifications: bell opens a labelled panel, Escape closes it, Mark all read clears the dot",
+   "role switching: CEO/Director lens toggles and is exposed as pressed state",
+   "MOM: empty save shows errors; a filled MOM locks into the directory and creates its quick task",
+   "MOM: dialog a11y",
+   "event planner (A6): no action duplicates an existing event",
+   "event planner: Plan an event with a task row creates the event and its task",
+   "event planner: dialog a11y",
+   "calendar: add an event; empty save shows an error",
+   "calendar: dialog a11y",
+   "notices nav (C4): 'Notices & feedback' opens its own view and marks itself current",
+   "notices: send a notice; reply privately; mark seen",
+   "notices: Send notice dialog a11y",
+   "feedback: request (empty save errors), respond to a poll",
+   "feedback: dialog a11y",
+   "people (A7): the signed-in user cannot remove or deactivate themselves; removal asks first and keeps the record",
+   "people: Add employee dialog a11y",
+   "my profile (C4): nav opens the view without opening the edit dialog; Edit opens it",
+   "my profile: dialog a11y",
+   "access matrix: toggling a permission flips it and writes an audit entry",
+   "audit log: search filters, empty filter says so, Export audit CSV downloads a well-formed, injection-safe CSV",
+   "My Day (D5): Edit on a time block keeps it until saved; Cancel leaves it unchanged",
+   "My Day (D6): a saved review answer can be cleared",
+   "My Day: date label and default date follow the seed clock (Monday, 5 October 2026)",
+   "My Day: every field has an accessible name",
+   "blocker check-in (D15/D9): selected reason exposes aria-pressed; it can be cleared; completion clears it",
+   "dependencies: hint and card copy say 'waiting', not 'must be completed first' / 'Blocked by'",
+   "dependencies (F23): deleting an upstream task clears links to it",
+   "handover (D1): task 4 cannot be handed to 'You'; default is a valid recipient or blank and blocks submit",
+   "handover (D2/D4): from = previous owner, created by = current user; recipient leaves Contributors",
+   "handover (D2): handing over Neha's task 2 records 'from Neha Kapoor'",
+   "handover: dialog a11y",
+   "handover at 390: primary reachable",
+   "navigation (A5): every view, including Projects and Guide, is reachable from the sidebar",
+   "dead controls (C3): no visible button without a handler (Workspace settings, New project, Open project, This week, banner arrow)",
+   "mobile nav (A8): drawer has a named close button and backdrop, traps focus, Escape closes and returns focus",
+   "focus-visible: keyboard focus shows a ≥2 px outline or ring on buttons, nav items, inputs and the active nav pill",
+   "responsive mobile: no horizontal overflow on any view",
+   "a11y mobile: no unnamed fields or icon buttons on any view",
+   "contrast mobile: 0 failing text nodes",
+   "type mobile: no visible text under 12 px",
+   "touch mobile: no interactive target under 24 px; report under 44 px",
+   "responsive tablet: no horizontal overflow on any view",
+   "a11y tablet: no unnamed fields or icon buttons on any view",
+   "contrast tablet: 0 failing text nodes",
+   "type tablet: no visible text under 12 px",
+   "touch tablet: no interactive target under 24 px; report under 44 px",
+   "a11y laptop: no unnamed fields or icon buttons on any view",
+   "contrast laptop: 0 failing text nodes",
+   "type laptop: no visible text under 12 px",
+   "a11y desktop: no unnamed fields or icon buttons on any view",
+   "contrast desktop: 0 failing text nodes",
+   "type desktop: no visible text under 12 px"
+  ],
+  "consoleEntries": 0
+ }
+}
