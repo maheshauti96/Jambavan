@@ -23,6 +23,8 @@ Site URL: [Jambavan](https://maheshauti96.github.io/Jambavan/).
 
 The initial `/Jambavan/` build passed TypeScript, the design guard and all 158 tests. `check:pages` verified 22 asset references, the configuration script's public keys and the 404 fallback. In Brave, all 14 views rendered under the repository path and their artwork URLs used the same prefix. The 404 recovery button returned to the workspace under that path, and task validation worked. The production preview reported no browser errors or warnings.
 
-Local evidence is in `/Users/maheshauti/Documents/Jambavan-design-review-2026-10-12/github-pages/`.
+The first deployment succeeded in [GitHub Actions](https://github.com/maheshauti96/Jambavan/actions/runs/38269402664). The public site was then opened in Brave. All 14 views rendered at the public URL, artwork paths retained the repository prefix, the HANUMAN filter returned its one matching task, and the browser reported no errors or warnings. The workflow now uses the Node 24 pnpm setup action and Ubuntu 24.04 runners.
+
+Local and live evidence is in `/Users/maheshauti/Documents/Jambavan-design-review-2026-10-12/github-pages/`.
 
 The preview retains in-memory example data. GitHub Pages does not provide the Express API, database or persistent shared task storage.
