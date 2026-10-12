@@ -1,7 +1,19 @@
-// Moved from pages/Home.tsx (checkpoint 5f248af) in increment 0 (§13).
-// Phase 5: the CEO/Director lens exposes aria-pressed; the dead "This week" button is static text (IA-6, C3);
 // dependency rows say "Waiting on" (F18, D21); the blocker headline is grammatical for every reason (D22).
-import { AlertCircle, ArrowUpRight, Bell, CheckCircle2, Filter, FileText, ShieldCheck, Users, Trophy, Medal, CalendarRange, CheckCheck, GitBranch } from "lucide-react";
+import {
+  AlertCircle,
+  ArrowUpRight,
+  Bell,
+  CheckCircle2,
+  Filter,
+  FileText,
+  ShieldCheck,
+  Users,
+  Trophy,
+  Medal,
+  CalendarRange,
+  CheckCheck,
+  GitBranch,
+} from "lucide-react";
 import type { Task } from "../state/types";
 import { departments } from "../state/seed";
 import { initials } from "../state/format";
@@ -11,21 +23,505 @@ import { useJambavan } from "../state/JambavanProvider";
 import { reasonPhrase } from "../state/blockers";
 
 export function DashboardView() {
-  const { activeView, tasks, leadershipRole, setLeadershipRole, dependencyAlerts, deadlineReminders, auditTrend, completionByDepartment, exportLeadershipAnalytics, plannerRange, setPlannerRange, rewardSummary, plannerTasks, acknowledgementSummary, blockerAnalytics } = useJambavan();
+  const {
+    activeView,
+    tasks,
+    leadershipRole,
+    setLeadershipRole,
+    dependencyAlerts,
+    deadlineReminders,
+    auditTrend,
+    completionByDepartment,
+    exportLeadershipAnalytics,
+    plannerRange,
+    setPlannerRange,
+    rewardSummary,
+    plannerTasks,
+    acknowledgementSummary,
+    blockerAnalytics,
+  } = useJambavan();
   return (
     <>
-          {activeView === "dashboard" && <>
-            <section className="leadership-banner"><div className="leadership-mark"><ShieldCheck size={22} /></div><div><span className="eyebrow">Leadership control room · cross-department visibility</span><h2>{leadershipRole} lens across JAMBAVAN</h2><p>Aggregated completion, open work, department heads, and people needing attention in one view.</p></div><div className="role-switch" role="group" aria-label="Leadership lens"><button className={leadershipRole === "CEO" ? "active" : ""} aria-pressed={leadershipRole === "CEO"} onClick={() => setLeadershipRole("CEO")}>CEO</button><button className={leadershipRole === "Director" ? "active" : ""} aria-pressed={leadershipRole === "Director"} onClick={() => setLeadershipRole("Director")}>Director</button></div></section>
-            <section className="dashboard-summary"><div><span>Institute completion</span><strong>69%</strong><p>Across all departments this week</p><div className="leadership-avatars">{departments.map(dept => <span key={dept.name} title={`${dept.lead} · ${dept.name}`}><Avatar text={initials(dept.lead)} name={dept.lead} tone={dept.color} /></span>)}</div><small>Department heads reporting into this view</small></div><div className="summary-bars"><div><span>Academic</span><i><b style={{ width: "76%" }} /></i><strong>76%</strong></div><div><span>Admissions</span><i><b style={{ width: "64%" }} /></i><strong>64%</strong></div><div><span>Operations</span><i><b style={{ width: "52%" }} /></i><strong>52%</strong></div><div><span>Marketing</span><i><b style={{ width: "83%" }} /></i><strong>83%</strong></div></div></section>
-            <div className="section-header"><div><h2>Department pulse</h2><p>Completion, open work, and department head.</p></div><div className="report-actions"><button className="outline-button" onClick={exportLeadershipAnalytics}><FileText size={14} /> Export leadership PDF</button><span className="outline-button" aria-label="Period: this week"><Filter size={15} aria-hidden="true" /> This week</span></div></div>
-            <div className="department-table">{departments.map(dept => <div className="department-row" key={dept.name}><span className={`dept-bullet ${dept.color}`} /><div className="dept-name"><strong>{dept.name}</strong><span>{dept.people} people</span></div><div className="dept-progress"><div className="progress-track"><span style={{ width: `${dept.done}%` }} /></div><strong>{dept.done}%</strong></div><span className="open-count">{dept.open} open</span><span className="dept-lead"><Avatar text={initials(dept.lead)} name={dept.lead} tone={dept.color} />{dept.lead}</span><ArrowUpRight size={16} /></div>)}</div>
-            <section className="attention-grid"><div className="attention-card"><div className="attention-card-head"><div><span className="eyebrow"><Bell size={13} /> Deadline watch</span><h3>Owners and assistants needing a nudge</h3></div><strong>{deadlineReminders.length}</strong></div>{deadlineReminders.slice(0, 4).map(reminder => <div className="attention-row" key={reminder.id}><Avatar text={reminder.task.initials} name={reminder.task.assignee} tone={reminder.task.department.toLowerCase()} /><div><strong>{reminder.task.title}</strong><span>{reminder.task.department} · {reminder.task.assignee} + {reminder.task.assistants.length} assistant{reminder.task.assistants.length === 1 ? "" : "s"}</span></div><em className={reminder.urgency}>{reminder.task.due}</em></div>)}</div><div className="attention-card people-attention"><div className="attention-card-head"><div><span className="eyebrow"><Users size={13} /> Photo indicators</span><h3>Leadership coverage</h3></div><strong>4/4</strong></div><p>Every department head is represented with a profile photo so leadership can scan ownership at a glance.</p><div className="coverage-list">{departments.map(dept => <span key={dept.name}><Avatar text={initials(dept.lead)} name={dept.lead} tone={dept.color} /><small>{dept.name}</small></span>)}</div></div></section>
-            <section className="ack-dashboard"><div className="ack-dashboard-head"><div><span className="eyebrow"><CheckCheck size={13} /> Acknowledgment dashboard</span><h3>Who has seen and acknowledged open work?</h3><p>Leadership can track confirmation across departments without opening every task.</p></div><div className="ack-metrics"><span><strong>{acknowledgementSummary.pending}</strong> pending</span><span><strong>{acknowledgementSummary.seen}</strong> seen</span><span><strong>{acknowledgementSummary.acknowledged}</strong> acknowledged</span></div></div><div className="ack-department-grid">{acknowledgementSummary.byDepartment.map(department => <div className="ack-department-card" key={department.name}><div><Avatar text={initials(department.lead)} name={department.lead} tone={department.color} /><span><strong>{department.name}</strong><small>{department.tasks} open task{department.tasks === 1 ? "" : "s"}</small></span></div><div className="ack-bar"><i style={{ width: `${department.tasks ? Math.min(100, (department.acknowledgements / department.tasks) * 100) : 0}%` }} /></div><small>{department.seen} seen · {department.acknowledgements} acknowledged</small></div>)}</div><div className="ack-task-list">{acknowledgementSummary.openTasks.slice(0, 5).map(task => <div className="ack-task-row" key={task.id}><Avatar text={task.initials} name={task.assignee} tone={task.department.toLowerCase()} /><div><strong>{task.title}</strong><span>{task.department} · Owner {task.assignee}</span></div><span>{task.seenBy?.length || 0} seen</span><span className={(task.acknowledgedBy?.length || 0) ? "ack-ok" : "ack-pending"}>{task.acknowledgedBy?.length || 0} acknowledged</span></div>)}</div></section>
-            <section className="blocker-dashboard"><div className="blocker-dashboard-head"><div><span className="eyebrow"><AlertCircle size={13} /> Process signals</span><h3>Why are open tasks not moving?</h3><p>Blocker reasons turn delay into a solvable process conversation. They are not employee performance labels.</p></div><div className="blocker-highlight"><strong>{blockerAnalytics.topPercent}%</strong><span>of delayed tasks with a check-in are<br />{reasonPhrase[blockerAnalytics.topReason.reason]}.</span></div></div><div className="blocker-dashboard-body"><div className="blocker-bars">{blockerAnalytics.byReason.filter(item => item.count > 0).map(item => <div className="blocker-bar-row" key={item.reason}><span>{item.reason}</span><div><i style={{ width: `${blockerAnalytics.reportedTasks.length ? Math.max(8, (item.count / blockerAnalytics.reportedTasks.length) * 100) : 0}%` }} /></div><strong>{item.count}</strong></div>)}</div><div className="blocker-dashboard-foot"><span><strong>{blockerAnalytics.delayedTasks.length}</strong> delayed/open process signals</span><span><strong>{blockerAnalytics.reportedTasks.length}</strong> check-ins recorded</span><small>Leadership can use this view to remove dependencies, clarify work, and rebalance load.</small></div></div></section>
-            <section className="dependency-dashboard"><div className="dependency-dashboard-head"><div><span className="eyebrow"><GitBranch size={13} /> Task dependencies</span><h3>See what is holding the work behind it.</h3><p>JAMBAVAN follows the chain so managers see the first pending prerequisite instead of only seeing a late final outcome.</p></div><strong>{dependencyAlerts.length} downstream alert{dependencyAlerts.length === 1 ? "" : "s"}</strong></div>{dependencyAlerts.length > 0 ? <div className="dependency-alert-list">{dependencyAlerts.slice(0, 6).map(item => <div className="dependency-alert-row" key={item.task.id}><div className="dependency-chain-label"><span>{item.task.project || item.task.team}</span><strong>{item.task.title}</strong></div><ArrowUpRight size={15} /><div className="dependency-cause"><small>Waiting on</small><strong>{item.blocker?.title}</strong><span>{item.blocker?.status === "blocked" ? "Blocked" : item.blocker?.status === "progress" ? "In progress" : "Not started"} · {item.blocker?.assignee}</span></div></div>)}</div> : <div className="dependency-empty"><CheckCircle2 size={16} /> No downstream task is currently waiting on an unfinished prerequisite.</div>}<div className="dependency-dashboard-foot">Dependency links are manager-editable. Completing the upstream task automatically removes its downstream impact.</div></section>
-            <section className="analytics-grid"><TrendChart title="Completion rate over time" subtitle="Institute completion trend across the recent execution cycle." labels={auditTrend.labels} series={[{ name: "Completion %", values: auditTrend.completion }]} colors={["#d58a42"]} /><TrendChart title="Department completion snapshot" subtitle="Current completion rate by department, with photo-led ownership elsewhere in the dashboard." labels={completionByDepartment.map(item => item.name.slice(0, 3))} series={[{ name: "Done %", values: completionByDepartment.map(item => item.value) }]} colors={["#4b76a8"]} /></section>
-                        <section className="reward-planner-grid"><article className="reward-card"><div className="reward-card-top"><div className="reward-icon"><Trophy size={21} /></div><span className="eyebrow">Encouragement, not competition</span></div><h3>Arjun’s progress this cycle</h3><div className="reward-score"><strong>{rewardSummary.points}</strong><span>points</span><b className={`reward-tier ${rewardSummary.tier.toLowerCase()}`}><Medal size={14} /> {rewardSummary.tier}</b></div><p>On-time completion earns recognition. Missed tasks are a reminder to ask for help, not a public penalty.</p><div className="reward-stats"><span><strong>+10</strong> completed on time</span><span><strong>{rewardSummary.completed}</strong> tasks completed</span><span><strong>{rewardSummary.missed}</strong> overdue to recover</span></div></article><article className="planner-card"><div className="planner-head"><div><span className="eyebrow"><CalendarRange size={13} /> Task planner</span><h3>Assigned work at a glance</h3></div><div className="planner-switch" role="group" aria-label="Planner range">{(["day", "week", "month"] as const).map(range => <button key={range} className={plannerRange === range ? "active" : ""} aria-pressed={plannerRange === range} onClick={() => setPlannerRange(range)}>{range}</button>)}</div></div><div className={`planner-grid ${plannerRange}`}>{plannerTasks.map(day => <div className="planner-day" key={day.slot}><strong>{day.slot}</strong><span>{day.tasks.length} task{day.tasks.length === 1 ? "" : "s"}</span>{day.tasks.slice(0, 3).map(task => <div className={`planner-task ${task.status}`} key={task.id}><i />{task.title}</div>)}</div>)}</div></article></section>
-          </>}
+      {activeView === "dashboard" && (
+        <>
+          <section className="leadership-banner">
+            <div className="leadership-mark">
+              <ShieldCheck size={22} />
+            </div>
+            <div>
+              <span className="eyebrow">Institute progress</span>
+              <h2>{leadershipRole} overview</h2>
+              <p>
+                Aggregated completion, open work, department heads, and people
+                needing attention in one view.
+              </p>
+            </div>
+            <div
+              className="role-switch"
+              role="group"
+              aria-label="Leadership lens"
+            >
+              <button
+                className={leadershipRole === "CEO" ? "active" : ""}
+                aria-pressed={leadershipRole === "CEO"}
+                onClick={() => setLeadershipRole("CEO")}
+              >
+                CEO
+              </button>
+              <button
+                className={leadershipRole === "Director" ? "active" : ""}
+                aria-pressed={leadershipRole === "Director"}
+                onClick={() => setLeadershipRole("Director")}
+              >
+                Director
+              </button>
+            </div>
+          </section>
+          <section className="dashboard-summary">
+            <div>
+              <span>Institute completion</span>
+              <strong>69%</strong>
+              <p>Across all departments this week</p>
+              <div className="leadership-avatars">
+                {departments.map(dept => (
+                  <span key={dept.name} title={`${dept.lead} · ${dept.name}`}>
+                    <Avatar
+                      text={initials(dept.lead)}
+                      name={dept.lead}
+                      tone={dept.color}
+                    />
+                  </span>
+                ))}
+              </div>
+              <small>Department heads reporting into this view</small>
+            </div>
+            <div className="summary-bars">
+              <div>
+                <span>Academic</span>
+                <i>
+                  <b style={{ width: "76%" }} />
+                </i>
+                <strong>76%</strong>
+              </div>
+              <div>
+                <span>Admissions</span>
+                <i>
+                  <b style={{ width: "64%" }} />
+                </i>
+                <strong>64%</strong>
+              </div>
+              <div>
+                <span>Operations</span>
+                <i>
+                  <b style={{ width: "52%" }} />
+                </i>
+                <strong>52%</strong>
+              </div>
+              <div>
+                <span>Marketing</span>
+                <i>
+                  <b style={{ width: "83%" }} />
+                </i>
+                <strong>83%</strong>
+              </div>
+            </div>
+          </section>
+          <div className="section-header">
+            <div>
+              <h2>Department progress</h2>
+              <p>Completion, open work, and department head.</p>
+            </div>
+            <div className="report-actions">
+              <button
+                className="outline-button"
+                onClick={exportLeadershipAnalytics}
+              >
+                <FileText size={14} /> Export leadership PDF
+              </button>
+              <span className="outline-button" aria-label="Period: this week">
+                <Filter size={15} aria-hidden="true" /> This week
+              </span>
+            </div>
+          </div>
+          <div className="department-table">
+            {departments.map(dept => (
+              <div className="department-row" key={dept.name}>
+                <span className={`dept-bullet ${dept.color}`} />
+                <div className="dept-name">
+                  <strong>{dept.name}</strong>
+                  <span>{dept.people} people</span>
+                </div>
+                <div className="dept-progress">
+                  <div className="progress-track">
+                    <span style={{ width: `${dept.done}%` }} />
+                  </div>
+                  <strong>{dept.done}%</strong>
+                </div>
+                <span className="open-count">{dept.open} open</span>
+                <span className="dept-lead">
+                  <Avatar
+                    text={initials(dept.lead)}
+                    name={dept.lead}
+                    tone={dept.color}
+                  />
+                  {dept.lead}
+                </span>
+                <ArrowUpRight size={16} />
+              </div>
+            ))}
+          </div>
+          <section className="attention-grid">
+            <div className="attention-card">
+              <div className="attention-card-head">
+                <div>
+                  <span className="eyebrow">
+                    <Bell size={13} /> Deadline watch
+                  </span>
+                  <h3>People with overdue tasks</h3>
+                </div>
+                <strong>{deadlineReminders.length}</strong>
+              </div>
+              {deadlineReminders.slice(0, 4).map(reminder => (
+                <div className="attention-row" key={reminder.id}>
+                  <Avatar
+                    text={reminder.task.initials}
+                    name={reminder.task.assignee}
+                    tone={reminder.task.department.toLowerCase()}
+                  />
+                  <div>
+                    <strong>{reminder.task.title}</strong>
+                    <span>
+                      {reminder.task.department} · {reminder.task.assignee} +{" "}
+                      {reminder.task.assistants.length} assistant
+                      {reminder.task.assistants.length === 1 ? "" : "s"}
+                    </span>
+                  </div>
+                  <em className={reminder.urgency}>{reminder.task.due}</em>
+                </div>
+              ))}
+            </div>
+            <div className="attention-card people-attention">
+              <div className="attention-card-head">
+                <div>
+                  <span className="eyebrow">
+                    <Users size={13} /> Photo indicators
+                  </span>
+                  <h3>Reporting relationships</h3>
+                </div>
+                <strong>4/4</strong>
+              </div>
+              <p>
+                Every department head is represented with a profile photo so
+                leadership can scan ownership at a glance.
+              </p>
+              <div className="coverage-list">
+                {departments.map(dept => (
+                  <span key={dept.name}>
+                    <Avatar
+                      text={initials(dept.lead)}
+                      name={dept.lead}
+                      tone={dept.color}
+                    />
+                    <small>{dept.name}</small>
+                  </span>
+                ))}
+              </div>
+            </div>
+          </section>
+          <section className="ack-dashboard">
+            <div className="ack-dashboard-head">
+              <div>
+                <span className="eyebrow">
+                  <CheckCheck size={13} /> Acknowledgment dashboard
+                </span>
+                <h3>Task acknowledgments</h3>
+                <p>
+                  Leadership can track confirmation across departments without
+                  opening every task.
+                </p>
+              </div>
+              <div className="ack-metrics">
+                <span>
+                  <strong>{acknowledgementSummary.pending}</strong> pending
+                </span>
+                <span>
+                  <strong>{acknowledgementSummary.seen}</strong> seen
+                </span>
+                <span>
+                  <strong>{acknowledgementSummary.acknowledged}</strong>{" "}
+                  acknowledged
+                </span>
+              </div>
+            </div>
+            <div className="ack-department-grid">
+              {acknowledgementSummary.byDepartment.map(department => (
+                <div className="ack-department-card" key={department.name}>
+                  <div>
+                    <Avatar
+                      text={initials(department.lead)}
+                      name={department.lead}
+                      tone={department.color}
+                    />
+                    <span>
+                      <strong>{department.name}</strong>
+                      <small>
+                        {department.tasks} open task
+                        {department.tasks === 1 ? "" : "s"}
+                      </small>
+                    </span>
+                  </div>
+                  <div className="ack-bar">
+                    <i
+                      style={{
+                        width: `${department.tasks ? Math.min(100, (department.acknowledgements / department.tasks) * 100) : 0}%`,
+                      }}
+                    />
+                  </div>
+                  <small>
+                    {department.seen} seen · {department.acknowledgements}{" "}
+                    acknowledged
+                  </small>
+                </div>
+              ))}
+            </div>
+            <div className="ack-task-list">
+              {acknowledgementSummary.openTasks.slice(0, 5).map(task => (
+                <div className="ack-task-row" key={task.id}>
+                  <Avatar
+                    text={task.initials}
+                    name={task.assignee}
+                    tone={task.department.toLowerCase()}
+                  />
+                  <div>
+                    <strong>{task.title}</strong>
+                    <span>
+                      {task.department} · Owner {task.assignee}
+                    </span>
+                  </div>
+                  <span>{task.seenBy?.length || 0} seen</span>
+                  <span
+                    className={
+                      task.acknowledgedBy?.length || 0
+                        ? "ack-ok"
+                        : "ack-pending"
+                    }
+                  >
+                    {task.acknowledgedBy?.length || 0} acknowledged
+                  </span>
+                </div>
+              ))}
+            </div>
+          </section>
+          <section className="blocker-dashboard">
+            <div className="blocker-dashboard-head">
+              <div>
+                <span className="eyebrow">
+                  <AlertCircle size={13} /> Process signals
+                </span>
+                <h3>Reported blockers</h3>
+                <p>
+                  Blocker reasons turn delay into a solvable process
+                  conversation. They are not employee performance labels.
+                </p>
+              </div>
+              <div className="blocker-highlight">
+                <strong>{blockerAnalytics.topPercent}%</strong>
+                <span>
+                  of delayed tasks with a check-in are
+                  <br />
+                  {reasonPhrase[blockerAnalytics.topReason.reason]}.
+                </span>
+              </div>
+            </div>
+            <div className="blocker-dashboard-body">
+              <div className="blocker-bars">
+                {blockerAnalytics.byReason
+                  .filter(item => item.count > 0)
+                  .map(item => (
+                    <div className="blocker-bar-row" key={item.reason}>
+                      <span>{item.reason}</span>
+                      <div>
+                        <i
+                          style={{
+                            width: `${blockerAnalytics.reportedTasks.length ? Math.max(8, (item.count / blockerAnalytics.reportedTasks.length) * 100) : 0}%`,
+                          }}
+                        />
+                      </div>
+                      <strong>{item.count}</strong>
+                    </div>
+                  ))}
+              </div>
+              <div className="blocker-dashboard-foot">
+                <span>
+                  <strong>{blockerAnalytics.delayedTasks.length}</strong>{" "}
+                  delayed/open process signals
+                </span>
+                <span>
+                  <strong>{blockerAnalytics.reportedTasks.length}</strong>{" "}
+                  check-ins recorded
+                </span>
+                <small>
+                  Leadership can use this view to remove dependencies, clarify
+                  work, and rebalance load.
+                </small>
+              </div>
+            </div>
+          </section>
+          <section className="dependency-dashboard">
+            <div className="dependency-dashboard-head">
+              <div>
+                <span className="eyebrow">
+                  <GitBranch size={13} /> Task dependencies
+                </span>
+                <h3>Task dependencies</h3>
+                <p>
+                  JAMBAVAN follows the chain so managers see the first pending
+                  prerequisite instead of only seeing a late final outcome.
+                </p>
+              </div>
+              <strong>
+                {dependencyAlerts.length} downstream alert
+                {dependencyAlerts.length === 1 ? "" : "s"}
+              </strong>
+            </div>
+            {dependencyAlerts.length > 0 ? (
+              <div className="dependency-alert-list">
+                {dependencyAlerts.slice(0, 6).map(item => (
+                  <div className="dependency-alert-row" key={item.task.id}>
+                    <div className="dependency-chain-label">
+                      <span>{item.task.project || item.task.team}</span>
+                      <strong>{item.task.title}</strong>
+                    </div>
+                    <ArrowUpRight size={15} />
+                    <div className="dependency-cause">
+                      <small>Waiting on</small>
+                      <strong>{item.blocker?.title}</strong>
+                      <span>
+                        {item.blocker?.status === "blocked"
+                          ? "Blocked"
+                          : item.blocker?.status === "progress"
+                            ? "In progress"
+                            : "Not started"}{" "}
+                        · {item.blocker?.assignee}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="dependency-empty">
+                <CheckCircle2 size={16} /> No downstream task is currently
+                waiting on an unfinished prerequisite.
+              </div>
+            )}
+            <div className="dependency-dashboard-foot">
+              Dependency links are manager-editable. Completing the upstream
+              task automatically removes its downstream impact.
+            </div>
+          </section>
+          <section className="analytics-grid">
+            <TrendChart
+              title="Completion rate over time"
+              subtitle="Department completion over time."
+              labels={auditTrend.labels}
+              series={[{ name: "Completion %", values: auditTrend.completion }]}
+              colors={["#d58a42"]}
+            />
+            <TrendChart
+              title="Department completion snapshot"
+              subtitle="Current completion rate by department, with photo-led ownership elsewhere in the dashboard."
+              labels={completionByDepartment.map(item => item.name.slice(0, 3))}
+              series={[
+                {
+                  name: "Done %",
+                  values: completionByDepartment.map(item => item.value),
+                },
+              ]}
+              colors={["#4b76a8"]}
+            />
+          </section>
+          <section className="reward-planner-grid">
+            <article className="reward-card">
+              <div className="reward-card-top">
+                <div className="reward-icon">
+                  <Trophy size={21} />
+                </div>
+                <span className="eyebrow">Encouragement, not competition</span>
+              </div>
+              <h3>Your completed work</h3>
+              <div className="reward-score">
+                <strong>{rewardSummary.points}</strong>
+                <span>points</span>
+                <b
+                  className={`reward-tier ${rewardSummary.tier.toLowerCase()}`}
+                >
+                  <Medal size={14} /> {rewardSummary.tier}
+                </b>
+              </div>
+              <p>
+                On-time completion earns recognition. Missed tasks are a
+                reminder to ask for help, not a public penalty.
+              </p>
+              <div className="reward-stats">
+                <span>
+                  <strong>+10</strong> completed on time
+                </span>
+                <span>
+                  <strong>{rewardSummary.completed}</strong> tasks completed
+                </span>
+                <span>
+                  <strong>{rewardSummary.missed}</strong> overdue to recover
+                </span>
+              </div>
+            </article>
+            <article className="planner-card">
+              <div className="planner-head">
+                <div>
+                  <span className="eyebrow">
+                    <CalendarRange size={13} /> Task planner
+                  </span>
+                  <h3>Assigned tasks</h3>
+                </div>
+                <div
+                  className="planner-switch"
+                  role="group"
+                  aria-label="Planner range"
+                >
+                  {(["day", "week", "month"] as const).map(range => (
+                    <button
+                      key={range}
+                      className={plannerRange === range ? "active" : ""}
+                      aria-pressed={plannerRange === range}
+                      onClick={() => setPlannerRange(range)}
+                    >
+                      {range}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div className={`planner-grid ${plannerRange}`}>
+                {plannerTasks.map(day => (
+                  <div className="planner-day" key={day.slot}>
+                    <strong>{day.slot}</strong>
+                    <span>
+                      {day.tasks.length} task{day.tasks.length === 1 ? "" : "s"}
+                    </span>
+                    {day.tasks.slice(0, 3).map(task => (
+                      <div
+                        className={`planner-task ${task.status}`}
+                        key={task.id}
+                      >
+                        <i />
+                        {task.title}
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </article>
+          </section>
+        </>
+      )}
     </>
   );
 }

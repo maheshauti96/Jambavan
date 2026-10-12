@@ -6,11 +6,16 @@ const JambavanContext = createContext<JambavanStore | null>(null);
 
 export function JambavanProvider({ children }: { children: ReactNode }) {
   const store = useJambavanStore();
-  return <JambavanContext.Provider value={store}>{children}</JambavanContext.Provider>;
+  return (
+    <JambavanContext.Provider value={store}>
+      {children}
+    </JambavanContext.Provider>
+  );
 }
 
 export function useJambavan(): JambavanStore {
   const store = useContext(JambavanContext);
-  if (!store) throw new Error("useJambavan must be used inside <JambavanProvider>");
+  if (!store)
+    throw new Error("useJambavan must be used inside <JambavanProvider>");
   return store;
 }

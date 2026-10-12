@@ -1,5 +1,3 @@
-// Moved from pages/Home.tsx (checkpoint 5f248af) in increment 0 (§13).
-// Phase 5 (B9, D17): the toast is announced (role="status", aria-live="polite"), its close button is named, it
 // dismisses itself after 6 s, and a toast already on screen is cleared when a dialog opens, so it never covers or
 // sits unannounced behind an aria-modal dialog. The live region stays mounted so screen readers pick up each message.
 import { useEffect, useRef } from "react";
@@ -23,8 +21,24 @@ export function Toast() {
     previousOpen.current = openDialogs;
   }, [openDialogs, setNotice]);
   return (
-    <div role="status" aria-live="polite" aria-atomic="true" className="toast-region">
-      {notice && <div className="toast"><CheckCircle2 size={16} aria-hidden="true" /><span>{notice}</span><button aria-label="Dismiss notification" onClick={() => setNotice("")}><X size={14} /></button></div>}
+    <div
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+      className="toast-region"
+    >
+      {notice && (
+        <div className="toast">
+          <CheckCircle2 size={16} aria-hidden="true" />
+          <span>{notice}</span>
+          <button
+            aria-label="Dismiss notification"
+            onClick={() => setNotice("")}
+          >
+            <X size={14} />
+          </button>
+        </div>
+      )}
     </div>
   );
 }

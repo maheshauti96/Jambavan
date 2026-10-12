@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useJambavan } from "../state/JambavanProvider";
 // The page skeleton from pages/Home.tsx (Home.tsx:1068–1225), with each region extracted into a component.
 import { Sidebar } from "./Sidebar";
 import { Topbar } from "./Topbar";
@@ -29,6 +31,10 @@ import { MomDialog } from "../modals/MomDialog";
 import { AttachmentDialog } from "../task/AttachmentDialog";
 
 export function AppShell() {
+  const { activeView } = useJambavan();
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0 });
+  }, [activeView]);
   return (
     <div className="jambavan-app">
       <Sidebar />
@@ -38,7 +44,6 @@ export function AppShell() {
 
         <div className="content-wrap">
           <PageHeader />
-
 
           <MyDayView />
           <FeedView />
@@ -55,7 +60,10 @@ export function AppShell() {
           <MyProfileView />
           <PeopleView />
         </div>
-        <footer className="app-footer"><span><span className="footer-dot" /> All systems clear</span><span>JAMBAVAN workspace · Simple execution for coaching teams</span></footer>
+        <footer className="app-footer">
+          <span>Jambavan Institute</span>
+          <span>Tasks, meetings and responsibilities</span>
+        </footer>
       </main>
 
       <Toast />

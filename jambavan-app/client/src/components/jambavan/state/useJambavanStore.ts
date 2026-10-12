@@ -1,5 +1,5 @@
-// All useState + handlers from pages/Home.tsx (checkpoint 5f248af), moved line by line in increment 0 (§13.2).
-// Same names, same initial values, same handler bodies. My Day state lives in MyDayProvider (§11 IA-10).
+import { saveEventPlan, syncEventTasks } from "./eventPlans";
+// Same names, same initial values, same handler bodies. My day state lives in MyDayProvider (§11 IA-10).
 import { useEffect, useMemo, useState } from "react";
 import type { Status, ViewKey, AttachmentKind, TaskKind, TaskCategory, BlockerReason, AuditEntry, AppNotification, NoticeAudience, Notice, CalendarEventType, CalendarEvent, EventTaskPlan, EventRole, EventPlan, FeedbackKind, FeedbackRequest, AccessPermission, EmployeeProfile, TaskAttachment, Subtask, TaskHandover, Task } from "./types";
 import { blockerReasons, initialTasksWithCategories, noticeSeed, calendarSeed, feedbackSeed, profileSeed, departments, staffOptions, momDirectorySeed, projects, eventPlanSeed, accessMatrixSeed } from "./seed";
@@ -60,6 +60,7 @@ export function useJambavanStore() {
   }, []);
   const [showCalendarModal, setShowCalendarModal] = useState(false);
   const [calendarDraft, setCalendarDraft] = useState({ title: "", date: "", month: 0, type: "Academic program" as CalendarEventType, visibility: ["Academic"] as string[] });
+  const [editingEventId, setEditingEventId] = useState<number | null>(null);
   const [eventPlans, setEventPlans] = useState<EventPlan[]>(eventPlanSeed);
   const [showEventModal, setShowEventModal] = useState(false);
   const [eventDraft, setEventDraft] = useState({ title: "", date: "", venue: "", description: "", departments: ["Academic"] as string[], isTemplate: false, templateName: "", roles: [{ id: 1, role: "Event head", inCharge: "Arjun Mehta", department: "Academic" }] as EventRole[], tasks: [{ id: 1, title: "", department: "Academic", assignee: "Arjun Mehta", category: "Squirrel" as TaskCategory, note: "" }] as EventTaskPlan[] });
@@ -88,9 +89,9 @@ export function useJambavanStore() {
   const [readReminderIds, setReadReminderIds] = useState<number[]>([]);
   const [editingTaskId, setEditingTaskId] = useState<number | null>(null);
   const [showMobileNav, setShowMobileNav] = useState(false);
-  const [notice, setNotice] = useState("Welcome back. 3 tasks need your attention today.");
+  const [notice, setNotice] = useState("");
   const [newTask, setNewTask] = useState<TaskDraft>(emptyTaskDraft);
-  // IA-6: "View tasks" on a project card filters My feed by project (null = no project filter).
+  // IA-6: "View tasks" on a project card filters Task feed by project (null = no project filter).
   const [projectFilter, setProjectFilter] = useState<string | null>(null);
   // F6 (§12.3): People hides Removed profiles unless "Show removed" is on.
   const [showRemoved, setShowRemoved] = useState(false);
@@ -155,7 +156,7 @@ export function useJambavanStore() {
     if (!result) return;
     setTasks(next);
     logActivity("Task completed", result.title, "Owner completion recorded");
-    setNotice("Nice work — task marked complete and the team feed is updated.");
+    setNotice("Task completed.");
   };
 
   const openHandoverModal = (task: Task) => {
@@ -217,7 +218,7 @@ export function useJambavanStore() {
     setTasks(current => current.map(task => task.id === attachmentTaskId ? { ...task, attachments: [...(task.attachments || []), ...additions] } : task));
     logActivity("Attachment added", attachmentTask?.title || "Task", `${additions.length} ${attachmentKind} file${additions.length === 1 ? "" : "s"}`);
     setShowAttachmentModal(false);
-    setNotice(`${additions.length} ${attachmentKind === "evidence" ? "completion evidence" : "helping material"} file${additions.length === 1 ? "" : "s"} added to the task.`);
+    setNotice(`${additions.length} ${attachmentKind === "evidence" ? "completion evidence" : "guidance"} file${additions.length === 1 ? "" : "s"} added to the task.`);
   };
 
   // F10/M7: only absolute http(s) links are accepted; the dialog shows the inline error when this returns false.
@@ -228,7 +229,7 @@ export function useJambavanStore() {
     setTasks(current => current.map(task => task.id === attachmentTaskId ? { ...task, attachments: [...(task.attachments || []), { id: Date.now(), name, kind: attachmentKind, type: "link", url: link, addedBy: "You" }] } : task));
     logActivity("Attachment added", attachmentTask?.title || "Task", `${attachmentKind} link added`);
     setShowAttachmentModal(false);
-    setNotice(`${attachmentKind === "evidence" ? "Evidence" : "Helping material"} link added to the task.`);
+    setNotice(`${attachmentKind === "evidence" ? "Evidence" : "Guidance"} link added to the task.`);
     return true;
   };
 
@@ -236,7 +237,7 @@ export function useJambavanStore() {
     const subject = tasks.find(task => task.id === id)?.title || "Task";
     setTasks(current => current.map(task => task.id === id ? { ...task, status: "progress", progress: Math.min(task.progress || 40, 80), reopenedAt: "05 Oct 2026, 3:15 PM" } : task));
     logActivity("Task reopened", subject, "Reopened for quality review");
-    setNotice("Task reopened by the department head for another review.");
+    setNotice("Task reopened.");
   };
 
   const editTask = (task: Task) => {
@@ -293,11 +294,11 @@ export function useJambavanStore() {
       const ctx = { departmentOf: (name: string) => profiles.find(profile => profile.name === name)?.department, nextId: () => Date.now() + Math.random() };
       setTasks(current => current.map(existing => existing.id === editingTaskId ? mergeTaskEdit(existing, newTask, ctx) : existing));
       logActivity("Task edited", task.title, "Task details updated by department head");
-      setNotice("Task updated by the department head. Owner and assistants have been notified.");
+      setNotice("Task updated. The owner and contributors have been notified.");
     } else {
       setTasks(current => [task, ...current]);
       logActivity(task.kind === "HANUMAN" ? "HANUMAN task created" : "Task created", task.title, task.longRunning ? "Long-running workstream added to the feed" : "Visible to permitted people");
-      setNotice("Task created. It is now visible to the right people in their feed.");
+      setNotice("Task created.");
     }
     pushNotification(editingTaskId ? "Task assignment updated" : "New task assignment", `${task.title} · Owner ${task.assignee}${task.assistants.length ? ` · ${task.assistants.length} assistant${task.assistants.length === 1 ? "" : "s"}` : ""}`, "assignment");
     closeTaskDialog();
@@ -308,7 +309,7 @@ export function useJambavanStore() {
     const archived = !tasks.find(task => task.id === id)?.archived;
     setTasks(current => current.map(task => task.id === id ? { ...task, archived, archivedBy: "Arjun Mehta", archivedAt: "05 Oct 2026, 3:45 PM" } : task));
     logActivity(archived ? "Task archived" : "Task restored", subject, archived ? "Archived by department head" : "Restored by department head");
-    setNotice(archived ? "Task archived. It is hidden from active feeds but retained for future reference." : "Task restored to the active task feed.");
+    setNotice(archived ? "Task archived. You can restore it from archived tasks." : "Task restored.");
   };
   // §12.3: the delete confirmation's non-toggling Archive. Same fields, audit string and message as archiveTask.
   const setArchived = (id: number, archived: true) => {
@@ -317,7 +318,7 @@ export function useJambavanStore() {
     setTasks(current => setArchivedPure(current, id, archived, "Arjun Mehta", "05 Oct 2026, 3:45 PM"));
     logActivity("Task archived", task.title, "Archived by department head");
     closeTaskDialog();
-    setNotice("Task archived. It is hidden from active feeds but retained for future reference.");
+    setNotice("Task archived. You can restore it from archived tasks.");
   };
   // F6/F23: reached only through the confirmation; also clears every link to the deleted task.
   const deleteTask = (id: number) => {
@@ -458,9 +459,12 @@ export function useJambavanStore() {
     setNotice("Yearly calendar event added for the selected audience.");
   };
 
-  const openEventPlanner = (plan?: EventPlan) => {
+  const openEventPlanner = (request: { kind: "new" } | { kind: "edit" | "copy"; plan: EventPlan } = { kind: "new" }) => {
+    const plan = request.kind === "new" ? undefined : request.plan;
+    const copying = request.kind === "copy";
+    setEditingEventId(request.kind === "edit" ? request.plan.id : null);
     if (plan) {
-      setEventDraft({ title: plan.isTemplate ? `${plan.title} · new event` : plan.title, date: plan.isTemplate ? "" : plan.date, venue: plan.venue, description: plan.description, departments: [...plan.departments], isTemplate: false, templateName: plan.templateName || plan.title, roles: (plan.roles || []).map(role => ({ ...role, id: Date.now() + Math.random() })), tasks: plan.tasks.map(task => ({ ...task, id: Date.now() + Math.random() })) });
+      setEventDraft({ title: copying ? `${plan.title} · new event` : plan.title, date: copying ? "" : plan.date, venue: plan.venue, description: plan.description, departments: [...plan.departments], isTemplate: false, templateName: plan.templateName || plan.title, roles: (plan.roles || []).map(role => ({ ...role, id: copying ? Date.now() + Math.random() : role.id })), tasks: plan.tasks.map(task => ({ ...task, id: copying ? Date.now() + Math.random() : task.id })) });
     } else {
       setEventDraft({ title: "", date: "", venue: "", description: "", departments: ["Academic"], isTemplate: false, templateName: "", roles: [{ id: Date.now(), role: "Event head", inCharge: "Arjun Mehta", department: "Academic" }], tasks: [{ id: Date.now(), title: "", department: "Academic", assignee: "Arjun Mehta", category: "Squirrel", note: "" }] });
     }
@@ -469,14 +473,14 @@ export function useJambavanStore() {
   const createEventPlan = () => {
     if (!eventDraft.title.trim()) return;
     const plannedTasks = eventDraft.tasks.filter(task => task.title.trim()).map(task => ({ ...task, title: task.title.trim() }));
-    const event: EventPlan = { id: Date.now(), title: eventDraft.title.trim(), date: eventDraft.date || "Date to be confirmed", venue: eventDraft.venue || "Venue to be confirmed", description: eventDraft.description.trim() || "Event plan created in JAMBAVAN.", departments: eventDraft.departments, roles: eventDraft.roles.filter(role => role.role.trim() && role.inCharge), tasks: plannedTasks, isTemplate: eventDraft.isTemplate, templateName: eventDraft.isTemplate ? (eventDraft.templateName.trim() || eventDraft.title.trim()) : undefined, createdBy: "Arjun Mehta" };
-    setEventPlans(current => [event, ...current]);
-    if (plannedTasks.length) {
-      setTasks(current => [...plannedTasks.map((planned, index) => ({ id: Date.now() + index + 1, title: planned.title, assignee: planned.assignee, initials: initials(planned.assignee), team: event.title, department: planned.department, due: event.date, status: "todo" as Status, priority: "Medium" as Task["priority"], visibility: "Department" as Task["visibility"], progress: 0, kind: "Responsibility" as TaskKind, category: planned.category, project: event.title, source: `Event plan · ${event.title}`, assistants: [], assignmentNotes: { [planned.assignee]: planned.note } })), ...current]);
-    }
-    logActivity(event.isTemplate ? "Event template created" : "Event planned", event.title, `${event.departments.join(", ")} · ${plannedTasks.length} task${plannedTasks.length === 1 ? "" : "s"}`);
+    const previous = editingEventId !== null && !eventDraft.isTemplate ? eventPlans.find(plan => plan.id === editingEventId) : undefined;
+    const event: EventPlan = { id: previous?.id ?? Date.now(), title: eventDraft.title.trim(), date: eventDraft.date || "Date to be confirmed", venue: eventDraft.venue || "Venue to be confirmed", description: eventDraft.description.trim(), departments: eventDraft.departments, roles: eventDraft.roles.filter(role => role.role.trim() && role.inCharge), tasks: plannedTasks, isTemplate: eventDraft.isTemplate, templateName: eventDraft.isTemplate ? (eventDraft.templateName.trim() || eventDraft.title.trim()) : undefined, createdBy: previous?.createdBy ?? "Arjun Mehta" };
+    setEventPlans(current => saveEventPlan(current, event));
+    setTasks(current => syncEventTasks(event, previous, current, { actor: "Arjun Mehta", at: "05 Oct 2026, 3:15 PM", nextId: () => Date.now() + Math.random() }));
+    logActivity(previous ? "Event plan updated" : event.isTemplate ? "Event template created" : "Event planned", event.title, `${event.departments.join(", ")} · ${plannedTasks.length} task${plannedTasks.length === 1 ? "" : "s"}`);
     setShowEventModal(false);
-    setNotice(event.isTemplate ? "Event template saved for reuse." : `Event planned. ${plannedTasks.length} task${plannedTasks.length === 1 ? "" : "s"} added to the task feed.`);
+    setNotice(previous ? "Event plan updated." : event.isTemplate ? "Event template saved." : `Event planned. ${plannedTasks.length} task${plannedTasks.length === 1 ? "" : "s"} assigned.`);
+    setEditingEventId(null);
   };
   const createNotice = () => {
     if (!noticeDraft.title.trim() && !noticeDraft.body.trim() && !noticeDraft.media) return;
@@ -553,42 +557,6 @@ export function useJambavanStore() {
     return { delayedTasks, reportedTasks, byReason, topReason, topPercent: reportedTasks.length ? Math.round((topReason.count / reportedTasks.length) * 100) : 0 };
   }, [tasks]);
 
-  const viewTitle = {
-    feed: "Good morning, Arjun",
-    myDay: "My Day",
-    department: "Department pulse",
-    meetings: "Meeting execution",
-    momDirectory: "MOM Directory",
-    dashboard: "Execution dashboard",
-    calendar: "Yearly Calendar",
-    eventPlanner: "Event Planner",
-    guide: "JAMBAVAN Guide",
-    projects: "Major responsibilities",
-    notices: "Notices & feedback",
-    people: "People & hierarchy",
-    myProfile: "My employee profile",
-    roleMatrix: "Role access matrix",
-    auditLog: "Audit log",
-  }[activeView];
-
-  const viewSubtitle = {
-    feed: "Here’s the work that keeps JAMBAVAN moving today.",
-    myDay: "A private daily plan for your priorities, schedule, and personal follow-through.",
-    department: "See what your department is moving, finishing, and waiting on.",
-    meetings: "Use the MOM Directory to record attendance, decisions, and explicitly assigned tasks.",
-    momDirectory: "Locked meeting records by department, with tasks assigned from the MOM.",
-    dashboard: "A clear view of execution across your reporting hierarchy.",
-    calendar: "Holidays, festivals, programs, and birthdays in one permission-aware calendar.",
-    eventPlanner: "Plan an event once, assign every department, and reuse the playbook next time.",
-    guide: "A simple field guide to task families, event playbooks, and accountable execution.",
-    projects: "Keep the big rocks visible beside daily action items.",
-    notices: "Schedules, timetables, notices, and feedback requests for the people you work with.",
-    people: "Shared teams, department heads, and the reporting view in one place.",
-    myProfile: "Keep your attendance, schedule, weekly off, and leave status current for the whole team.",
-    roleMatrix: "Define what each institute role can see and manage, without losing leadership control.",
-    auditLog: "Review permission changes and sensitive institute actions with actor, time, and context.",
-  }[activeView];
-
   return {
     activeView,
     setActiveView,
@@ -639,6 +607,7 @@ export function useJambavanStore() {
     calendarDraft,
     setCalendarDraft,
     eventPlans,
+    editingEventId,
     setEventPlans,
     showEventModal,
     setShowEventModal,
@@ -771,8 +740,6 @@ export function useJambavanStore() {
     plannerTasks,
     acknowledgementSummary,
     blockerAnalytics,
-    viewTitle,
-    viewSubtitle,
   };
 }
 

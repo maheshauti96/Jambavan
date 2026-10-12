@@ -45,6 +45,7 @@ export type PersonalPlan = {
 };
 
 export type Task = {
+  eventLink?: { eventId: number; rowId: number };
   id: number;
   title: string;
   assignee: string;

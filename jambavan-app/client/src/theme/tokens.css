@@ -33,7 +33,8 @@
 
   /* Type (§3.3) */
   --jb-font-sans: "Mukta", "Noto Sans Devanagari", system-ui, sans-serif;
-  --jb-font-display: "Cormorant Garamond", "Tiro Devanagari Hindi", Georgia, serif;
+  --jb-font-display:
+    "Cormorant Garamond", "Tiro Devanagari Hindi", Georgia, serif;
   --jb-font-deva: "Tiro Devanagari Hindi", "Mukta", serif;
 
   /* Spacing, radii, elevation (§3.4) */
@@ -131,6 +132,10 @@
   --font-display: var(--jb-font-display);
   --font-deva: var(--jb-font-deva);
   --radius-jb-sm: var(--jb-radius-sm);
+  --radius-jb-md: var(--jb-radius-md);
+  --radius-jb-lg: var(--jb-radius-lg);
+  --radius-jb-xl: var(--jb-radius-xl);
+  --radius-jb-pill: var(--jb-radius-pill);
   --radius-jb-md: var(--jb-radius-md);
   --radius-jb-lg: var(--jb-radius-lg);
   --radius-jb-xl: var(--jb-radius-xl);

@@ -1,18 +1,39 @@
-// Moved from pages/Home.tsx (checkpoint 5f248af) in increment 0 (§13).
-// Phase 5: the eyebrow date reads the seed clock (F21, D18), and "Create task" always opens a fresh draft (F2, A2).
-import { Plus, Sparkles } from "lucide-react";
+import { Plus } from "lucide-react";
 import { TODAY_LONG } from "../state/clock";
 import { useJambavan } from "../state/JambavanProvider";
+import { viewMeta } from "./viewMeta";
 
 export function PageHeader() {
-  const { openCreateTask, viewTitle, viewSubtitle } = useJambavan();
+  const { activeView, openCreateTask } = useJambavan();
+  const meta = viewMeta[activeView];
+  const canCreateTask =
+    activeView === "feed" ||
+    activeView === "department" ||
+    activeView === "projects";
   return (
-    <>
-          <div className="ramayana-ribbon"><div><span>JAMBAVAN · Ramayana-inspired execution</span><strong>Small steps. Brave journeys. Work that reaches its destination.</strong></div><span className="ribbon-symbol">॥ श्री राम ॥</span></div>
-          <div className="page-heading">
-            <div><div className="eyebrow"><Sparkles size={14} /> {TODAY_LONG}</div><h1>{viewTitle}</h1><p>{viewSubtitle}</p></div>
-            <button className="primary-button" onClick={openCreateTask}><Plus size={18} /> Create task</button>
-          </div>
-    </>
+    <section className="page-heading" data-scene={meta.artwork}>
+      <div className="page-heading-copy">
+        <p className="eyebrow">{TODAY_LONG}</p>
+        <h1>{meta.title}</h1>
+        <p className="page-description">{meta.description}</p>
+      </div>
+      <img
+        className="page-artwork"
+        src={`/art/${meta.artwork}.webp`}
+        alt=""
+        aria-hidden="true"
+        width="320"
+        height="128"
+      />
+      {canCreateTask && (
+        <button
+          type="button"
+          className="primary-button page-action"
+          onClick={openCreateTask}
+        >
+          <Plus size={18} aria-hidden="true" /> Create task
+        </button>
+      )}
+    </section>
   );
 }

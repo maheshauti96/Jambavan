@@ -1,0 +1,72 @@
+[
+  {
+    "file": "/art/ayodhya-courtyard.webp",
+    "source": "ayodhya-courtyard.png",
+    "bytes": 91194,
+    "generator": "Built-in ImageGen",
+    "artDirection": "Indian manuscript watercolor and gouache on ivory paper. Muted cream, maroon, sandstone, forest green and gold. Panoramic scene on the right, quiet ivory left edge. No figures, lettering or UI.",
+    "prompt": "Indian manuscript watercolor and gouache on ivory paper. Muted cream, maroon, sandstone, forest green and gold. Panoramic scene on the right, quiet ivory left edge. No figures, lettering or UI. Ayodhya courtyard prepared for a gathering, marigolds, a few diyas, a stone pavilion and sunset.",
+    "width": 1024,
+    "height": 409
+  },
+  {
+    "file": "/art/ayodhya-dawn.webp",
+    "source": "ayodhya-dawn.png",
+    "bytes": 66220,
+    "generator": "Built-in ImageGen",
+    "artDirection": "Indian manuscript watercolor and gouache on ivory paper. Muted cream, maroon, sandstone, forest green and gold. Panoramic scene on the right, quiet ivory left edge. No figures, lettering or UI.",
+    "prompt": "Indian manuscript watercolor and gouache on ivory paper. Muted cream, maroon, sandstone, forest green and gold. Panoramic scene on the right, quiet ivory left edge. No figures, lettering or UI. Ayodhya riverfront at dawn, palace and temple architecture, saffron pennants and diyas. Quiet ivory left edge.",
+    "width": 1024,
+    "height": 409
+  },
+  {
+    "file": "/art/ayodhya-gateway.webp",
+    "source": "ayodhya-gateway.png",
+    "bytes": 67904,
+    "generator": "Built-in ImageGen",
+    "artDirection": "Indian manuscript watercolor and gouache on ivory paper. Muted cream, maroon, sandstone, forest green and gold. Panoramic scene on the right, quiet ivory left edge. No figures, lettering or UI.",
+    "prompt": "Indian manuscript watercolor and gouache on ivory paper. Muted cream, maroon, sandstone, forest green and gold. Panoramic scene on the right, quiet ivory left edge. No figures, lettering or UI. Ayodhya stone gateway and sheltered archive alcove, tied blank manuscripts, carved pillars and a diya.",
+    "width": 1024,
+    "height": 409
+  },
+  {
+    "file": "/art/ayodhya-messages.webp",
+    "source": "ayodhya-messages.png",
+    "bytes": 64180,
+    "generator": "Built-in ImageGen",
+    "artDirection": "Indian manuscript watercolor and gouache on ivory paper. Muted cream, maroon, sandstone, forest green and gold. Panoramic scene on the right, quiet ivory left edge. No figures, lettering or UI.",
+    "prompt": "Indian manuscript watercolor and gouache on ivory paper. Muted cream, maroon, sandstone, forest green and gold. Panoramic scene on the right, quiet ivory left edge. No figures, lettering or UI. Ayodhya palace veranda with blank palm-leaf manuscripts, tied scrolls, diya, maroon pillars and a river glimpse.",
+    "width": 1024,
+    "height": 409
+  },
+  {
+    "file": "/art/forest-ashram.webp",
+    "source": "forest-ashram.png",
+    "bytes": 90480,
+    "generator": "Built-in ImageGen",
+    "artDirection": "Indian manuscript watercolor and gouache on ivory paper. Muted cream, maroon, sandstone, forest green and gold. Panoramic scene on the right, quiet ivory left edge. No figures, lettering or UI.",
+    "prompt": "Indian manuscript watercolor and gouache on ivory paper. Muted cream, maroon, sandstone, forest green and gold. Panoramic scene on the right, quiet ivory left edge. No figures, lettering or UI. A quiet forest ashram, winding path, banyan trees, stone cave, palm-leaf scroll and diya. Represents planning and wisdom.",
+    "width": 1024,
+    "height": 409
+  },
+  {
+    "file": "/art/kishkindha-council.webp",
+    "source": "kishkindha-council.png",
+    "bytes": 99430,
+    "generator": "Built-in ImageGen",
+    "artDirection": "Indian manuscript watercolor and gouache on ivory paper. Muted cream, maroon, sandstone, forest green and gold. Panoramic scene on the right, quiet ivory left edge. No figures, lettering or UI.",
+    "prompt": "Indian manuscript watercolor and gouache on ivory paper. Muted cream, maroon, sandstone, forest green and gold. Panoramic scene on the right, quiet ivory left edge. No figures, lettering or UI. Kishkindha stone council pavilion, sandstone cliffs, forest, waterfall, saffron pennants and a planning scroll.",
+    "width": 1024,
+    "height": 409
+  },
+  {
+    "file": "/art/ram-setu-shore.webp",
+    "source": "ram-setu-shore.png",
+    "bytes": 66234,
+    "generator": "Built-in ImageGen",
+    "artDirection": "Indian manuscript watercolor and gouache on ivory paper. Muted cream, maroon, sandstone, forest green and gold. Panoramic scene on the right, quiet ivory left edge. No figures, lettering or UI.",
+    "prompt": "Indian manuscript watercolor and gouache on ivory paper. Muted cream, maroon, sandstone, forest green and gold. Panoramic scene on the right, quiet ivory left edge. No figures, lettering or UI. Ram Setu ocean shore with gathered stones and an unfinished path toward distant Lanka. The artwork is decorative; the separate bridge chart shows actual progress.",
+    "width": 1024,
+    "height": 409
+  }
+]

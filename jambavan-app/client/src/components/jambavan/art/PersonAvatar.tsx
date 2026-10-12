@@ -1,6 +1,5 @@
 // PersonAvatar (§3.5, F11): initials (2 letters, 13/700, ink) on a department tint with a 1.5 px gold inset ring and
 // a small kolam-dot motif. A photo renders only when one is supplied (the asset manifest's avatarOverrides from
-// increment 2, or the Add employee blob URL); if it fails to load, onError switches to initials, so an avatar can
 // never show a broken image. alt = the person's name, or decorative (aria-hidden) when the name is printed beside it.
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -13,9 +12,22 @@ const tints: Record<string, string> = {
   Marketing: "bg-jb-saffron-100",
   Leadership: "bg-jb-maroon-50",
 };
-const sizes = { sm: "size-8", md: "size-10", lg: "size-12", xl: "size-16" } as const;
+const sizes = {
+  sm: "size-8",
+  md: "size-10",
+  lg: "size-12",
+  xl: "size-16",
+} as const;
 
-export function PersonAvatar({ name, department, photo, initials, size = "md", decorative = false, className }: {
+export function PersonAvatar({
+  name,
+  department,
+  photo,
+  initials,
+  size = "md",
+  decorative = false,
+  className,
+}: {
   name: string;
   department?: string;
   photo?: string;
@@ -36,17 +48,31 @@ export function PersonAvatar({ name, department, photo, initials, size = "md", d
         "shadow-[inset_0_0_0_1.5px_var(--jb-gold-500)]",
         tints[department ?? ""] ?? "bg-jb-cream-200",
         sizes[size],
-        className,
+        className
       )}
-      {...(decorative ? { "aria-hidden": true } : src ? {} : { role: "img", "aria-label": name })}
+      {...(decorative
+        ? { "aria-hidden": true }
+        : src
+          ? {}
+          : { role: "img", "aria-label": name })}
     >
       {src ? (
-        <img src={src} alt={decorative ? "" : name} className="size-full object-cover" onError={() => setFailedSrc(src)} />
+        <img
+          src={src}
+          alt={decorative ? "" : name}
+          className="size-full object-cover"
+          onError={() => setFailedSrc(src)}
+        />
       ) : (
         <>
           <span aria-hidden="true">{text}</span>
           {/* kolam dots (decorative) */}
-          <svg aria-hidden="true" focusable="false" viewBox="0 0 8 8" className="absolute bottom-[3px] right-[3px] size-2 text-jb-gold-600">
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 8 8"
+            className="absolute bottom-[3px] right-[3px] size-2 text-jb-gold-600"
+          >
             <circle cx="2" cy="2" r="0.9" fill="currentColor" />
             <circle cx="6" cy="2" r="0.9" fill="currentColor" />
             <circle cx="2" cy="6" r="0.9" fill="currentColor" />

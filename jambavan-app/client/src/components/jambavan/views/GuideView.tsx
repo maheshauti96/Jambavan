@@ -1,15 +1,160 @@
-// Moved verbatim from pages/Home.tsx (checkpoint 5f248af) in increment 0 (§13). Do not change behaviour here.
-import { BookOpenCheck, CalendarDays, CheckCircle2, ShieldCheck, Target, Save } from "lucide-react";
-import type { Task } from "../state/types";
-import { departments } from "../state/seed";
-import { Avatar } from "../art/Avatar";
+import { ArrowRight, LockKeyhole } from "lucide-react";
+import { FamilyBadge } from "../primitives/Badge";
 import { useJambavan } from "../state/JambavanProvider";
+import type { TaskCategory } from "../state/types";
+
+const families = [
+  {
+    name: "Squirrel",
+    title: "Small tasks",
+    description:
+      "One owner and a clear finish line. Use this for short follow-ups, checks and bookings.",
+  },
+  {
+    name: "Angad",
+    title: "Individual deliverables",
+    description:
+      "One owner with optional subtasks. Use this for work that takes several steps.",
+  },
+  {
+    name: "Sugriv",
+    title: "Team responsibilities",
+    description:
+      "One owner and several contributors. Each contributor updates their own part.",
+  },
+  {
+    name: "HANUMAN",
+    title: "Long-term work",
+    description:
+      "Keep milestones, subtasks and progress updates together for work that runs over weeks or months.",
+  },
+] satisfies { name: TaskCategory; title: string; description: string }[];
 
 export function GuideView() {
-  const { activeView, setActiveView, tasks } = useJambavan();
+  const { activeView, setActiveView, openCreateTask } = useJambavan();
+  if (activeView !== "guide") return null;
   return (
-    <>
-          {activeView === "guide" && <section className="guide-view"><section className="guide-hero"><div className="guide-hero-mark"><BookOpenCheck size={28} /></div><div><span className="eyebrow">Simple execution · coaching institute edition</span><h2>JAMBAVAN is a field guide, not a maze.</h2><p>Use the task family that matches the size of the responsibility, then let the Event Planner turn a real institute program into a reusable execution playbook.</p></div></section><section className="guide-section"><div className="section-header"><div><span className="eyebrow"><Target size={13} /> Task families</span><h2>Choose the right level of work.</h2><p>Every person can filter their feed by these categories. The category tells the team how much coordination and endurance the work needs.</p></div></div><div className="guide-task-grid"><article className="guide-task-card squirrel"><span className="guide-token">S</span><div><h3>Squirrel tasks</h3><p><strong>Small, focused contributions.</strong> One person, short horizon, clear finish line.</p><ul><li>Best for quick follow-ups and simple actions</li><li>Usually one owner and no assistants</li><li>Example: confirm a batch-room booking</li></ul></div></article><article className="guide-task-card angad"><span className="guide-token">A</span><div><h3>Angad tasks</h3><p><strong>One-person deliverables with weight.</strong> Bigger than a quick action, but still owned by one person.</p><ul><li>Use for decks, reports, calls, and planned deliverables</li><li>One owner can add optional subtasks</li><li>Example: prepare the parent orientation deck</li></ul></div></article><article className="guide-task-card sugriv"><span className="guide-token">Su</span><div><h3>Sugriv tasks</h3><p><strong>Coordinated team responsibilities.</strong> Multiple people contribute and everyone sees the shared progress.</p><ul><li>Assign an owner plus multiple assistants</li><li>Add a separate responsibility note for each person</li><li>Only the owner marks the parent task complete</li></ul></div></article><article className="guide-task-card hanuman"><span className="guide-token">H</span><div><h3>HANUMAN tasks</h3><p><strong>Long journeys and major responsibilities.</strong> Work that may run for months or a full year.</p><ul><li>Keep progress updates and a growing subtask map</li><li>Use for strategic programs and institutional missions</li><li>Visible in the dedicated long-running workstream area</li></ul></div></article></div></section><section className="guide-section guide-workflow"><div className="guide-workflow-copy"><span className="eyebrow"><CalendarDays size={13} /> Event Planner workflow</span><h2>Turn a program into a repeatable playbook.</h2><p>Use this for parent orientations, admission drives, test series, faculty programs, and any event involving more than one department.</p><div className="guide-steps"><div><b>1</b><span><strong>Choose departments</strong><small>Select every department involved, even when the event belongs to one department.</small></span></div><div><b>2</b><span><strong>Add roles and in-charges</strong><small>Record event head, coordinators, venue lead, or any other named responsibility.</small></span></div><div><b>3</b><span><strong>Add task rows</strong><small>Each row gets a department, employee, category, and responsibility note.</small></span></div><div><b>4</b><span><strong>Save and reuse</strong><small>Create the event and tasks now, or save the whole plan as a template for the next cycle.</small></span></div></div><button className="primary-button" onClick={() => setActiveView("eventPlanner")}><CalendarDays size={15} /> Open Event Planner</button></div><div className="guide-playbook"><div className="playbook-top"><span className="event-plan-badge">Example playbook</span><span>4 departments</span></div><h3>Parent Orientation 2026</h3><p>One event · four department feeds · named roles · accountable task rows</p><div className="playbook-row"><Avatar text="AM" name="Arjun Mehta" tone="saffron" /><span><strong>Event head</strong><small>Arjun Mehta · Academic</small></span></div><div className="playbook-row"><Avatar text="NK" name="Neha Kapoor" tone="mint" /><span><strong>Admissions in-charge</strong><small>Neha Kapoor · Admissions</small></span></div><div className="playbook-row"><Avatar text="RS" name="Ritesh Shah" tone="blue" /><span><strong>Venue & logistics</strong><small>Ritesh Shah · Operations</small></span></div><div className="playbook-row"><Avatar text="SI" name="Sana Iyer" tone="coral" /><span><strong>Communications</strong><small>Sana Iyer · Marketing</small></span></div></div></section><section className="guide-section guide-rules"><div><span className="eyebrow"><ShieldCheck size={13} /> Accountability rules</span><h2>Simple permissions, visible responsibility.</h2></div><div className="guide-rule-grid"><span><CheckCircle2 size={15} /> Owner marks the parent task complete</span><span><CheckCircle2 size={15} /> Assistants report their own part</span><span><CheckCircle2 size={15} /> Managers can edit or reassign department work</span><span><CheckCircle2 size={15} /> Directors and CEO can see across departments</span><span><CheckCircle2 size={15} /> Every sensitive action keeps actor and time</span><span><CheckCircle2 size={15} /> Templates preserve roles, categories, and notes</span></div></section></section>}
-    </>
+    <div className="guide-view">
+      <section className="guide-section">
+        <div className="section-header">
+          <div>
+            <h2>Choose a task family</h2>
+            <p>
+              The family describes how the work is assigned. The action labels
+              stay the same.
+            </p>
+          </div>
+        </div>
+        <div className="guide-task-grid">
+          {families.map(family => (
+            <article className="guide-task-card" key={family.name}>
+              <FamilyBadge category={family.name} />
+              <h3>{family.title}</h3>
+              <p>{family.description}</p>
+            </article>
+          ))}
+        </div>
+        <button
+          type="button"
+          className="primary-button"
+          onClick={openCreateTask}
+        >
+          Create task
+          <ArrowRight size={17} />
+        </button>
+      </section>
+      <section className="guide-section">
+        <div className="section-header">
+          <h2>Task ownership</h2>
+        </div>
+        <div className="guide-rule-grid">
+          <div>
+            <h3>One owner completes the task</h3>
+            <p>
+              Contributors can finish their parts. The owner confirms the final
+              result.
+            </p>
+          </div>
+          <div>
+            <h3>Managers handle reassignment</h3>
+            <p>
+              A department head or another authorized manager can edit, reassign
+              or hand over work.
+            </p>
+          </div>
+          <div>
+            <h3>Keep the supporting detail</h3>
+            <p>
+              Open Task details to add subtasks, evidence, guidance or progress
+              updates.
+            </p>
+          </div>
+          <div>
+            <h3>Report a blocker</h3>
+            <p>
+              Record what is holding up the task and what would help you
+              continue. Clear the blocker when it is resolved.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="guide-section">
+        <div className="section-header">
+          <h2>Meetings and events</h2>
+        </div>
+        <div className="guide-rule-grid">
+          <div>
+            <h3>Meeting records</h3>
+            <p>
+              Record attendance, decisions and follow-up tasks in the MOM
+              directory. Written meeting records lock when saved.
+            </p>
+            <button
+              type="button"
+              className="text-button"
+              onClick={() => setActiveView("momDirectory")}
+            >
+              Open MOM directory
+              <ArrowRight size={16} />
+            </button>
+          </div>
+          <div>
+            <h3>Event plans</h3>
+            <p>
+              Assign departments, roles and tasks before the event. Save
+              recurring plans as templates.
+            </p>
+            <button
+              type="button"
+              className="text-button"
+              onClick={() => setActiveView("eventPlanner")}
+            >
+              Open event planner
+              <ArrowRight size={16} />
+            </button>
+          </div>
+        </div>
+      </section>
+      <section className="guide-section">
+        <div className="section-header">
+          <h2>
+            <LockKeyhole size={20} />
+            My day is private
+          </h2>
+        </div>
+        <p>
+          Your priorities, schedule and end-of-day review stay in your personal
+          plan. Linked institute tasks still follow their usual ownership rules.
+        </p>
+        <button
+          type="button"
+          className="text-button"
+          onClick={() => setActiveView("myDay")}
+        >
+          Open My day
+          <ArrowRight size={16} />
+        </button>
+      </section>
+    </div>
   );
 }

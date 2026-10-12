@@ -9,15 +9,38 @@ export function useFormErrors<K extends string>(prefix: string) {
     errors,
     /** Sets the errors; returns true when the form is valid. Focuses the first invalid field otherwise. */
     check(found: Partial<Record<K, string>>) {
-      const clean = Object.fromEntries(Object.entries(found).filter(([, value]) => value)) as Partial<Record<K, string>>;
+      const clean = Object.fromEntries(
+        Object.entries(found).filter(([, value]) => value)
+      ) as Partial<Record<K, string>>;
       setErrors(clean);
       const valid = Object.keys(clean).length === 0;
-      if (!valid) requestAnimationFrame(() => document.querySelector<HTMLElement>('[role="dialog"] [aria-invalid="true"]')?.focus());
+      if (!valid)
+        requestAnimationFrame(() =>
+          document
+            .querySelector<HTMLElement>('[role="dialog"] [aria-invalid="true"]')
+            ?.focus()
+        );
       return valid;
     },
-    clear(key: K) { setErrors(current => (current[key] ? { ...current, [key]: undefined } : current)); },
-    reset() { setErrors({}); },
-    props(key: K) { return errors[key] ? { "aria-invalid": true as const, "aria-describedby": id(key) } : {}; },
-    message(key: K) { return errors[key] ? <span className="field-error" id={id(key)} role="alert">{errors[key]}</span> : null; },
+    clear(key: K) {
+      setErrors(current =>
+        current[key] ? { ...current, [key]: undefined } : current
+      );
+    },
+    reset() {
+      setErrors({});
+    },
+    props(key: K) {
+      return errors[key]
+        ? { "aria-invalid": true as const, "aria-describedby": id(key) }
+        : {};
+    },
+    message(key: K) {
+      return errors[key] ? (
+        <span className="field-error" id={id(key)} role="alert">
+          {errors[key]}
+        </span>
+      ) : null;
+    },
   };
 }

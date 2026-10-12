@@ -67,14 +67,14 @@ export function draftFromTask(task: Task): TaskDraft {
   return { title: task.title, assignee: task.assignee, department: task.department, due: task.due, priority: task.priority, teamTask: Boolean(task.isTeamTask), kind: task.kind, category: task.category || "Squirrel", source: task.source || "", longRunning: Boolean(task.longRunning), assistants: task.assistants.map(assistant => assistant.name), assignmentNotes: task.assignmentNotes || Object.fromEntries(task.assistants.filter(assistant => assistant.note).map(assistant => [assistant.name, assistant.note || ""])), subtasks: task.subtasks?.map(subtask => subtask.title) || [], dependsOnTaskId: task.dependsOnTaskId };
 }
 
-export const emptyTaskDraft = (): TaskDraft => ({ title: "", assignee: "You", department: "Academic", due: "03 Oct", priority: "Medium", teamTask: false, kind: "Task", category: "Squirrel", longRunning: false, source: "", assistants: [], assignmentNotes: {}, subtasks: [], dependsOnTaskId: undefined });
+export const emptyTaskDraft = (): TaskDraft => ({ title: "", assignee: "You", department: "Academic", due: "Today", priority: "Medium", teamTask: false, kind: "Task", category: "Squirrel", longRunning: false, source: "", assistants: [], assignmentNotes: {}, subtasks: [], dependsOnTaskId: undefined });
 
 export type TaskDraftErrors = Partial<Record<"title" | "dependsOnTaskId", string>>;
 
 /** F10, §13.2: a title is required; a dependency must exist, be active, not be the task itself and not loop. */
 export function validateTaskDraft(draft: TaskDraft, tasks: Task[], editingId: number | null): TaskDraftErrors {
   const errors: TaskDraftErrors = {};
-  if (!draft.title.trim()) errors.title = "Enter what needs to move forward.";
+  if (!draft.title.trim()) errors.title = "Enter a task title.";
   if (draft.dependsOnTaskId !== undefined) {
     const upstream = tasks.find(task => task.id === draft.dependsOnTaskId);
     if (!upstream || upstream.archived) errors.dependsOnTaskId = "Choose an active task.";

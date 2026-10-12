@@ -1,62 +1,42 @@
-import { cn } from "@/lib/utils";
-import { AlertTriangle, RotateCcw } from "lucide-react";
-import { Component, ReactNode } from "react";
+import { Component, type ReactNode } from "react";
+import { RotateCcw } from "lucide-react";
 
-interface Props {
-  children: ReactNode;
-}
+type Props = { children: ReactNode };
+type State = { kind: "ready" } | { kind: "failed"; error: Error };
 
-interface State {
-  hasError: boolean;
-  error: Error | null;
-}
-
-class ErrorBoundary extends Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = { hasError: false, error: null };
+export default class ErrorBoundary extends Component<Props, State> {
+  state: State = { kind: "ready" };
+  static getDerivedStateFromError(error: unknown): State {
+    return {
+      kind: "failed",
+      error:
+        error instanceof Error
+          ? error
+          : new Error("The workspace couldn't be loaded."),
+    };
   }
-
-  static getDerivedStateFromError(error: Error): State {
-    return { hasError: true, error };
-  }
-
   render() {
-    if (this.state.hasError) {
-      return (
-        <div className="flex items-center justify-center min-h-screen p-8 bg-background">
-          <div className="flex flex-col items-center w-full max-w-2xl p-8">
-            <AlertTriangle
-              size={48}
-              className="text-destructive mb-6 flex-shrink-0"
-            />
-
-            <h2 className="text-xl mb-4">An unexpected error occurred.</h2>
-
-            <div className="p-4 w-full rounded bg-muted overflow-auto mb-6">
-              <pre className="text-sm text-muted-foreground whitespace-break-spaces">
-                {this.state.error?.stack}
-              </pre>
-            </div>
-
-            <button
-              onClick={() => window.location.reload()}
-              className={cn(
-                "flex items-center gap-2 px-4 py-2 rounded-lg",
-                "bg-primary text-primary-foreground",
-                "hover:opacity-90 cursor-pointer"
-              )}
-            >
-              <RotateCcw size={16} />
-              Reload Page
-            </button>
-          </div>
-        </div>
-      );
-    }
-
-    return this.props.children;
+    if (this.state.kind === "ready") return this.props.children;
+    return (
+      <main className="standalone-page">
+        <section>
+          <span className="standalone-brand">JAMBAVAN</span>
+          <h1>We couldn't load the workspace</h1>
+          <p>Reload the page to try again.</p>
+          <button
+            type="button"
+            className="primary-button"
+            onClick={() => window.location.reload()}
+          >
+            <RotateCcw size={18} />
+            Reload page
+          </button>
+          <details className="error-details">
+            <summary>Technical details</summary>
+            <pre>{this.state.error.stack || this.state.error.message}</pre>
+          </details>
+        </section>
+      </main>
+    );
   }
 }
-
-export default ErrorBoundary;

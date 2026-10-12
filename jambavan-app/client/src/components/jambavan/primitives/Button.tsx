@@ -15,8 +15,10 @@ export const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: "bg-jb-maroon-700 text-jb-cream-50 shadow-[0_2px_6px_rgba(122,30,44,0.25)] hover:bg-jb-maroon-800",
-        secondary: "bg-jb-white text-jb-ink border-jb-stone-500 hover:bg-jb-cream-100",
+        primary:
+          "bg-jb-maroon-700 text-jb-cream-50 shadow-[0_2px_6px_rgba(122,30,44,0.25)] hover:bg-jb-maroon-800",
+        secondary:
+          "bg-jb-white text-jb-ink border-jb-stone-500 hover:bg-jb-cream-100",
         ghost: "bg-transparent text-jb-earth-700 hover:bg-jb-cream-200",
         danger: "bg-jb-danger-700 text-jb-cream-50 hover:brightness-90",
       },
@@ -27,42 +29,67 @@ export const buttonVariants = cva(
       },
     },
     defaultVariants: { variant: "primary", size: "md" },
-  },
+  }
 );
 
-export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & VariantProps<typeof buttonVariants> & { icon?: ReactNode };
+export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
+  VariantProps<typeof buttonVariants> & { icon?: ReactNode };
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button({ className, variant, size, icon, children, type = "button", ...props }, ref) {
-  return (
-    <button ref={ref} type={type} className={cn(buttonVariants({ variant, size }), className)} {...props}>
-      {icon && <span aria-hidden="true" className="inline-flex">{icon}</span>}
-      {children}
-    </button>
-  );
-});
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  function Button(
+    { className, variant, size, icon, children, type = "button", ...props },
+    ref
+  ) {
+    return (
+      <button
+        ref={ref}
+        type={type}
+        className={cn(buttonVariants({ variant, size }), className)}
+        {...props}
+      >
+        {icon && (
+          <span aria-hidden="true" className="inline-flex">
+            {icon}
+          </span>
+        )}
+        {children}
+      </button>
+    );
+  }
+);
 
 // IconButton: 44×44, `aria-label` is required by the type (§3.5).
-export type IconButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "aria-label" | "children"> & {
+export type IconButtonProps = Omit<
+  ButtonHTMLAttributes<HTMLButtonElement>,
+  "aria-label" | "children"
+> & {
   "aria-label": string;
   icon: ReactNode;
   variant?: "ghost" | "secondary";
 };
 
-export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function IconButton({ className, icon, variant = "ghost", type = "button", ...props }, ref) {
-  return (
-    <button
-      ref={ref}
-      type={type}
-      className={cn(
-        "inline-grid size-11 shrink-0 place-items-center rounded-jb-md border border-transparent text-jb-earth-700",
-        "transition-colors duration-[var(--motion-fast)] hover:bg-jb-cream-200 [&_svg]:size-5",
-        variant === "secondary" && "border-jb-stone-500 bg-jb-white",
-        "disabled:cursor-not-allowed disabled:opacity-45",
-        className,
-      )}
-      {...props}
-    >
-      <span aria-hidden="true" className="inline-flex">{icon}</span>
-    </button>
-  );
-});
+export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
+  function IconButton(
+    { className, icon, variant = "ghost", type = "button", ...props },
+    ref
+  ) {
+    return (
+      <button
+        ref={ref}
+        type={type}
+        className={cn(
+          "inline-grid size-11 shrink-0 place-items-center rounded-jb-md border border-transparent text-jb-earth-700",
+          "transition-colors duration-[var(--motion-fast)] hover:bg-jb-cream-200 [&_svg]:size-5",
+          variant === "secondary" && "border-jb-stone-500 bg-jb-white",
+          "disabled:cursor-not-allowed disabled:opacity-45",
+          className
+        )}
+        {...props}
+      >
+        <span aria-hidden="true" className="inline-flex">
+          {icon}
+        </span>
+      </button>
+    );
+  }
+);

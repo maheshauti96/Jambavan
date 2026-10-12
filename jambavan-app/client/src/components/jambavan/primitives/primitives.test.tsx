@@ -20,34 +20,48 @@ describe("RamSetuProgress (§10.2, AC-7.2)", () => {
   it("is a labelled image with the % as text", () => {
     const out = html(<RamSetuProgress value={72} label="October Launch" />);
     expect(out).toContain('role="img"');
-    expect(out).toContain('aria-label="October Launch: 72% complete, 14 of 20 Setu stones placed. Approaching Lanka."');
+    expect(out).toContain(
+      'aria-label="October Launch: 72% complete, 14 of 20 Setu stones placed. Approaching Lanka."'
+    );
     expect(out).toContain(">72%<");
     expect(out).toContain("Approaching Lanka");
   });
 
   it("shows before → after and marks only the newly placed stones", () => {
-    const out = html(<RamSetuProgress value={50} from={34} label="October Launch" />);
+    const out = html(
+      <RamSetuProgress value={50} from={34} label="October Launch" />
+    );
     expect(out).toContain("34% → 50%");
     expect(out.match(/jb-setu-fresh/g)?.length).toBe(10 - 7);
-    expect(out).toContain('aria-label="October Launch: 50% complete, 10 of 20 Setu stones placed. Halfway across the ocean."');
+    expect(out).toContain(
+      'aria-label="October Launch: 50% complete, 10 of 20 Setu stones placed. Halfway across the ocean."'
+    );
   });
 
   it("draws the deck only at exactly 100%", () => {
-    expect(html(<RamSetuProgress value={99} label="J" />)).not.toContain("Q160 24 278 42");
-    expect(html(<RamSetuProgress value={100} label="J" />)).toContain("Q160 24 278 42");
+    expect(html(<RamSetuProgress value={99} label="J" />)).not.toContain(
+      "Q160 24 278 42"
+    );
+    expect(html(<RamSetuProgress value={100} label="J" />)).toContain(
+      "Q160 24 278 42"
+    );
   });
 });
 
 describe("PersonAvatar and the legacy Avatar (F11)", () => {
   it("renders initials with the person's name as the accessible name and no image", () => {
-    const out = html(<PersonAvatar name="Neha Kapoor" department="Admissions" />);
+    const out = html(
+      <PersonAvatar name="Neha Kapoor" department="Admissions" />
+    );
     expect(out).toContain('aria-label="Neha Kapoor"');
     expect(out).toContain(">NK<");
     expect(out).not.toContain("<img");
   });
 
   it("is hidden from assistive tech when decorative", () => {
-    expect(html(<PersonAvatar name="Neha Kapoor" decorative />)).toContain('aria-hidden="true"');
+    expect(html(<PersonAvatar name="Neha Kapoor" decorative />)).toContain(
+      'aria-hidden="true"'
+    );
   });
 
   it("keeps stored initials such as YO", () => {
@@ -67,7 +81,12 @@ describe("PersonAvatar and the legacy Avatar (F11)", () => {
       for (const entry of readdirSync(dir)) {
         const full = path.join(dir, entry);
         if (statSync(full).isDirectory()) walk(full);
-        else if (/\.(tsx?|css)$/.test(entry) && !entry.endsWith(".test.tsx") && readFileSync(full, "utf8").includes("manus-storage")) hits.push(full);
+        else if (
+          /\.(tsx?|css)$/.test(entry) &&
+          !entry.endsWith(".test.tsx") &&
+          readFileSync(full, "utf8").includes("manus-storage")
+        )
+          hits.push(full);
       }
     };
     walk(root);
@@ -85,8 +104,19 @@ describe("Badges (§3.5)", () => {
 
   it("SourceBadge uses sourceLabel (F13)", () => {
     expect(html(<SourceBadge task={task(1)} />)).toContain("MOM task");
-    expect(html(<SourceBadge task={{ ...task(3), source: "Event plan · Annual Parent Orientation" }} />)).toContain("Event task");
-    expect(html(<SourceBadge task={task(7)} suffix="year-long" />)).toContain("HANUMAN mission · year-long");
+    expect(
+      html(
+        <SourceBadge
+          task={{
+            ...task(3),
+            source: "Event plan · Annual Parent Orientation",
+          }}
+        />
+      )
+    ).toContain("Event task");
+    expect(html(<SourceBadge task={task(7)} suffix="year-long" />)).toContain(
+      "HANUMAN mission · year-long"
+    );
   });
 
   it("FamilyBadge shows the emblem and the name", () => {
@@ -104,7 +134,9 @@ describe("Badges (§3.5)", () => {
 
 describe("Buttons and fields (§3.5)", () => {
   it("IconButton carries its aria-label and hides the icon", () => {
-    const out = html(<IconButton aria-label="Edit task: Finalize" icon={<svg />} />);
+    const out = html(
+      <IconButton aria-label="Edit task: Finalize" icon={<svg />} />
+    );
     expect(out).toContain('aria-label="Edit task: Finalize"');
     expect(out).toContain('aria-hidden="true"');
     expect(out).toContain('type="button"');
@@ -116,9 +148,15 @@ describe("Buttons and fields (§3.5)", () => {
 
   it("Field wires label, hint, error, aria-describedby and aria-invalid", () => {
     const out = html(
-      <Field id="title" label="Mission title" hint="Keep it short." error="Give your mission a title to start it." required>
+      <Field
+        id="title"
+        label="Mission title"
+        hint="Keep it short."
+        error="Give your mission a title to start it."
+        required
+      >
         {control => <Input {...control} />}
-      </Field>,
+      </Field>
     );
     expect(out).toContain('for="title"');
     expect(out).toContain('id="title"');
@@ -129,12 +167,20 @@ describe("Buttons and fields (§3.5)", () => {
   });
 
   it("ToggleButton exposes aria-pressed", () => {
-    expect(html(<ToggleButton pressed>Seen</ToggleButton>)).toContain('aria-pressed="true"');
-    expect(html(<ToggleButton pressed={false}>Mark seen</ToggleButton>)).toContain('aria-pressed="false"');
+    expect(html(<ToggleButton pressed>Seen</ToggleButton>)).toContain(
+      'aria-pressed="true"'
+    );
+    expect(
+      html(<ToggleButton pressed={false}>Mark seen</ToggleButton>)
+    ).toContain('aria-pressed="false"');
   });
 
   it("InlineError is an alert; EmptyState has a display heading", () => {
-    expect(html(<InlineError title="The mission could not be completed. Please try again." />)).toContain('role="alert"');
+    expect(
+      html(
+        <InlineError title="The mission could not be completed. Please try again." />
+      )
+    ).toContain('role="alert"');
     expect(html(<EmptyState title="No missions here yet" />)).toContain("<h3");
   });
 });
