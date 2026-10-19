@@ -23,6 +23,6 @@ pnpm test
 pnpm build
 ```
 
-The current UI uses example institute data in memory. My day keeps a separate personal plan by date during the current session. Reloading resets the example data. Authentication, durable institute data and production authorization still need deployment configuration and backend integration.
+The current UI uses example institute data in memory. My day keeps a separate personal plan by date during the current session. Reloading resets the example data. Authentication, durable institute data and production authorization still need deployment configuration and backend integration. [The platform architecture draft](jambavan-app/docs/architecture/README.md) designs the database, authentication and multi-tenant model.
 
 See [the application README](jambavan-app/README.md) for production commands and [the design notes](jambavan-app/docs/design/redesign.md) for the UI structure and verification workflow.
